@@ -1,0 +1,17 @@
+# Extracted trace data contains real conversations; never commit it.
+data/
+runs/
+*.pt
+*.onnx
+__pycache__/
+.venv/
+node_modules/
+dist/
+dist-demo/
+.bb-prompts/
+.claude/
+.env.local
+web/public/model/
+*.tgz
+.DS_Store
+.pytest_cache/

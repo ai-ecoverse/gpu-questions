@@ -1,0 +1,290 @@
+# Batch-4 t4-a hand annotations for gold/batch4/t4-a/handlabeled.jsonl. Format: see scripts/build_gold.py.
+# Keys refer to data/batch4/t4-a/queue.jsonl. Every block was written by reading the item; nothing here is generated.
+# Rules: gold/CONVENTIONS.md, gold/batch2/SOURCES.md decisions, gold/batch3/QUESTIONS.md.
+
+== t4a:0000 e | Chinese: "What exactly do you want to achieve?" asks for information; the following offer is a statement
+Q o :: 你具体想实现什么功能？
+== t4a:0001 e | the offer clause after the dash is the question
+Q y p :: want me to build the affected modules to verify?
+== t4a:0002 e neg
+== t4a:0003 e neg | leaked </think> plus a summary, no question
+== t4a:0004 e neg | garbled reasoning cut off mid-sentence
+== t4a:0005 e neg
+== t4a:0006 e neg | status report; "to WIN or your stop-order" is not a question
+== t4a:0007 e neg
+== t4a:0008 e neg
+== t4a:0009 m | the only question sits mid-message; the recap after it asks nothing
+Q y p :: Want me to push that?
+== t4a:0010 e neg
+== t4a:0011 m | two records: the open request, then an either/or follow-up that offers two concrete interaction patterns
+Q o :: When you are using AI for the tasks it can handle ~~ could you describe your typical interaction pattern?
+Q e :: Are you more likely to work back and forth with AI throughout the process, or do you tend to give it everything it needs upfront and let it handle the complete task independently?
+O work back and forth with AI throughout the process
+O give it everything it needs upfront and let it handle the complete task independently
+== t4a:0012 e
+Q e :: Are you asking abstractly or personally?
+O abstractly
+O personally
+== t4a:0013 m neg | hard: the only '?' is the quoted joke setup inside the requested list
+== t4a:0014 m neg | hard: Chinese drafted defense Q&A ("问题1：…？ 回答：…"); the questions are answered in the text for the user to reuse
+== t4a:0015 h amb | one sentence holds two questions: "Which do you want" picks between the two numbered offers (bold labels), then "do you want me to start …, or is the verified result the right stopping point?" is a second either/or proposal; alternative reading: a single record over the whole sentence
+Q e p :: Which do you want
+O Leave the scaffolding
+O Remove the two bonus loose-class files
+Q e p :: do you genuinely want me to start the (multi-day) workspace-theorem formalization, or is the verified result the right stopping point?
+O start the (multi-day) workspace-theorem formalization
+O is the verified result the right stopping point
+== t4a:0016 e neg
+== t4a:0017 e neg | leaked </think> then a summary
+== t4a:0018 m neg | hard: self-directed debugging questions inside reasoning ("Maybe the issue is …?"), plus '?' inside a code template
+== t4a:0019 e neg
+== t4a:0020 e neg
+== t4a:0021 e neg
+== t4a:0022 e neg
+== t4a:0023 m | two records: an open "how does that feel" request, then "Are there things that work better or worse" (one yes/no question with a paired attribute, not two answers)
+Q o :: When you're in that back-and-forth mode with AI, how does that feel compared to actually collaborating with a human coworker?
+Q y :: Are there things that work better or worse about that dynamic?
+== t4a:0024 m | "a doctor or therapist" is one yes/no question with a paired attribute; the following "Not in a … way, but in a … way?" fragment only reframes the same question, so it is not a separate record
+Q y :: Have you ever talked to a doctor or therapist about any of this?
+== t4a:0025 e neg
+== t4a:0026 e | Chinese: "Do you need me to download the official workflow example and check the config for you?"
+Q y p :: 需要我帮你下载官方工作流示例并检查配置吗？
+== t4a:0027 h amb | three records: "Want me to move them there now?", the differently worded "Should I go ahead with that move?" after the plan list (batch-2 rule: differently worded questions are separate; alternative: one restated record), and a separate either/or proposal introduced by "And separately —"; the scope parenthetical of the first arm is explanatory
+Q y p :: Want me to move them there now?
+Q y p :: Should I go ahead with that move?
+Q e p :: do you still want me to attempt the genuinely hard parts ~~ for now?
+O attempt the genuinely hard parts
+O just fix the placement of the existing LR ⊆ CF result for now
+== t4a:0028 m neg | hard: '?' inside a regex in inline code
+== t4a:0029 m neg | hard: '?' quantifiers inside regexes in reasoning text
+== t4a:0030 e neg | hard: leaked </think>; the only '?' is the Rust `?` operator in a table cell
+== t4a:0031 e neg
+== t4a:0032 m neg | hard: a conditional offer ("if you want to revisit one") without a question
+== t4a:0033 m | two consecutive open requests (a0200 precedent: separate records); "satisfied or frustrated" qualifies the story asked for, not a choice
+Q o :: Can you share a time when using AI at work made you feel particularly satisfied or frustrated?
+Q o :: What was happening in that situation?
+== t4a:0034 m | the label "The real question is:" is excluded; two named interpretations
+Q e :: when you say creative, do you mean you want to make things that are beautiful, or do you want to solve problems in inventive ways?
+O make things that are beautiful
+O solve problems in inventive ways
+== t4a:0035 e neg | hard: '?' only in the quoted voice-assistant phrase "What time is it?"
+== t4a:0036 e | Chinese: "Shall I roll back to 4.46.3 and restore train.py to the standard form, then continue?"
+Q y p :: 需要我退回到 4.46.3 并把 train.py 恢复成标准写法继续吗？
+== t4a:0037 m | the offer clause after the dash; the parenthetical names the wrappers, not alternatives
+Q y p :: want me to add `_of_isRegular` convenience wrappers (`is_Linear_of_isRegular`, `is_CF_of_isRegular`) for uniformity?
+== t4a:0038 e neg
+== t4a:0039 e neg | leaked </think> then a summary
+== t4a:0040 e neg | leaked </think> then a summary
+== t4a:0041 e neg
+# t4a:0042 skipped: its question pair is verbatim t4a:0033's (same interviewer script)
+== t4a:0043 m | "See what happened here?" is rhetorical; the closing question after the imperative lead-in lists three patterns plus "all three", kept as its own option (batch-3 d1228 "Both" rule)
+Q m :: are you doing mostly real-time dashboards, historical analysis, alerting, or all three?
+O real-time dashboards
+O historical analysis
+O alerting
+O all three
+== t4a:0044 e neg
+== t4a:0045 m neg | hard: Chinese conditional offer ("如果你需要，我可以…") without a question
+== t4a:0046 e | the parenthetical describes the next steps, not options
+Q y p :: Shall I continue on `myhill_language_eq` (next: the boundary + interior `step_sim` cases, then `cleanup`)?
+== t4a:0047 e neg
+== t4a:0048 e neg | leaked </think> then a summary
+== t4a:0049 e neg | leaked </think> then a summary
+== t4a:0050 m neg | hard: a conditional offer ("If you want, I can draft …") without a question
+== t4a:0051 m | an open question, then an either/or with two named observations
+Q o :: How have your colleagues or your workplace culture influenced the way you use AI in your work?
+Q e :: Do others around you use it similarly, or have you noticed different approaches?
+O use it similarly
+O noticed different approaches
+== t4a:0052 m neg | hard: rhetorical parenthetical "(inverse to what?)"
+== t4a:0053 m | Chinese: "You can now choose: A … B …; I originally recommended B … Which do you say?"; bold labels A/B are the options; the stated recommendation sets the default; a which-preference question, not a proposal
+Q e d=1 :: 你说哪个？
+O **A**
+O **B**
+== t4a:0054 e neg
+== t4a:0055 e neg
+== t4a:0056 e neg
+== t4a:0057 e neg | leaked reasoning with a stray tool-call tail
+== t4a:0058 m neg | hard: the question is inside a support message drafted for a third party; the closing line is a conditional offer
+== t4a:0059 m | same structure as t4a:0011 (different wording): an open request, then an either/or
+Q o :: When you're using AI for that research and understanding phase, could you describe your typical interaction pattern?
+Q e :: Are you more likely to collaborate with it throughout that process, or do you tend to give it complete tasks to handle independently?
+O collaborate with it throughout that process
+O give it complete tasks to handle independently
+== t4a:0060 e neg
+== t4a:0061 m neg | hard: the only '?' starts a URL query parameter in inline code (`?format=anthropic`)
+== t4a:0062 m | "Want me to do that" = start on (1) now; the second arm names a concrete alternative deliverable
+Q e p :: Want me to do that, or would you prefer I draft the full multi-step proof plan first?
+O do that
+O draft the full multi-step proof plan first
+== t4a:0063 e neg
+== t4a:0064 e neg | leaked </think> then a summary
+== t4a:0065 e neg | leaked </think> then a summary
+== t4a:0066 m | two consecutive open requests for an example (a0200 precedent)
+Q o :: When you say you "test its thinking about consequences," can you give me an example of what that conversation might sound like?
+Q o :: What does that back-and-forth process look like when you're working through something like a potential breach or risk scenario?
+== t4a:0067 e neg
+== t4a:0068 m | Chinese greeting "Is there anything I can help you with?": yes/no by the batch-1/2 "Is there anything …" majority (a0200); the capability list is illustrative
+Q y :: 有什么我可以帮助你的吗？
+== t4a:0069 m neg | hard: closing "Let me know if you'd like those pruned too." is an offer without a question (batch precedent: negative)
+== t4a:0070 e neg
+== t4a:0071 e neg | leaked </think> then a summary
+== t4a:0072 m neg | hard: self-answered questions while tracing code ("Checks if arg_1 is datetime? No.")
+== t4a:0073 m | an open "what does that feel like", then a yes/no comparison question
+Q o :: When you come back to the conversation after working on it solo for those minutes or hours, what does that feel like?
+Q y :: Are you approaching it differently than when you first started the conversation?
+== t4a:0074 m | two named possibilities
+Q e :: Does your ex let you see him at all, or was it a clean break?
+O your ex let you see him at all
+O a clean break
+== t4a:0075 m | Chinese: "Is there a specific task you need my help with?"; the capability list ("包括" = including) illustrates requests; yes/no by the "Is there anything …" precedent
+Q y :: 有什么具体任务需要我帮忙吗？
+== t4a:0076 e neg
+== t4a:0077 e neg
+== t4a:0078 m neg | hard: self-directed questions in leaked reasoning ("what if I calculate …? No...")
+== t4a:0079 e neg | leaked </think> then a summary
+== t4a:0080 h neg amb | hard: a checklist of evaluative questions about documentaries for the reader to apply (batch-3 a1571 "questions to consider" rule); alternative: three questions addressed to the user
+== t4a:0081 e neg
+== t4a:0082 e | as "Anything else to update?" in earlier batches
+Q y :: Anything else to adjust?
+== t4a:0083 e neg
+== t4a:0084 e neg | leaked </think> then a summary
+== t4a:0085 e neg | leaked reasoning, no question
+== t4a:0086 h amb | "the real question … is what failure mode you prefer: X, or Y?" read as an either/or put to the user; alternative: a rhetorical reframing that closes the argument (hard negative)
+Q e :: It's what failure mode you prefer: financial ruin for individuals, or systemic degradation for everyone?
+O financial ruin for individuals
+O systemic degradation for everyone
+== t4a:0087 e | Chinese: "Shall I download the Windows 11 ARM64 build directly from Microsoft for you?"
+Q y p :: 要我帮你从微软官网直接下载Windows 11 ARM64版本吗？
+== t4a:0088 m | "and/or" allows both
+Q e p ms :: Want me to run the full build, and/or commit and push?
+O run the full build
+O commit and push
+== t4a:0089 e neg
+== t4a:0090 e neg | leaked reasoning with a stray tool-call tail
+== t4a:0091 m neg | hard: "Critics ask: …?" and "but what counts as a measurement?" are quoted/rhetorical questions inside an explanation
+== t4a:0092 e neg
+== t4a:0093 m | "How would you like to proceed?" after the lettered (a)/(b) suggestion selects between them (batch-3 c0042); a preference question, not a proposal; trailing parentheticals omitted
+Q e :: How would you like to proceed?
+O I push on `mid` next with the recorded fix plan
+O we pair on the `mid` simp reductions interactively
+== t4a:0094 e neg
+== t4a:0095 e neg
+== t4a:0096 m neg | hard: Chinese conditional offer ("如果要回滚，我也可以…") without a question
+== t4a:0097 e neg
+== t4a:0098 e neg | hard: '?' inside a regex in inline code
+== t4a:0099 m | an open question, then an either/or with two named behaviours
+Q o :: What's your read on Marcus as a person?
+Q e :: Is he the type to be bitter quietly or make it everyone's problem?
+O be bitter quietly
+O make it everyone's problem
+== t4a:0100 m neg | hard: Chinese conditional offer ("若你要，我下一步可以…") without a question
+== t4a:0101 e neg
+== t4a:0102 e neg
+== t4a:0103 e neg
+== t4a:0105 h amb | Chinese: "do you mind or not mind that your ISP can read the AI hostnames?" is the addressed choice (mind → B, not mind → A); the closing "你选哪个,我就开工。" ("pick one and I'll start") restates the same choice without '?', so it is not a separate record; alternative: a record over A/B for that closing line
+Q e :: 你介意还是不介意 ~~ `api.openai.com`?
+O 介意
+O 不介意
+== t4a:0106 h amb | "Does this framing match … — and … are you happy tying …?" followed by "Or would you rather keep it simpler …?" presents two arms of one choice, so one span; the e.g. inside the second arm is illustrative; alternative: separate yes/no records
+Q e :: Does this effective-presentation framing match what you want ~~ rather than existentially quantifying)?
+O this effective-presentation framing
+O keep it simpler
+== t4a:0107 e | Chinese: "Is there anything I can help you with?" after a stray message
+Q y :: 请问有什么我可以帮助您的吗？
+== t4a:0108 e | the parenthetical is a consequence note
+Q e p :: Want me to commit and push the cache + trigger changes now (first run will be a cold-cache full build), or leave it staged?
+O commit and push the cache + trigger changes now
+O leave it staged
+== t4a:0109 e neg
+== t4a:0104 e neg
+== t4a:0110 e
+Q y p :: Want me to take those next?
+== t4a:0111 m | Chinese: "Shall I install one of the alternative download tools above for you?"; a single proposal over the list, as batch-2 b0020 "any of these"
+Q y p :: 需要我帮你安装上述某个替代下载工具吗？
+== t4a:0112 m neg | hard: a heading that quotes the user's question, answered right below it
+== t4a:0113 e neg
+== t4a:0114 m | after two listed next steps the question names only (1), so a single yes/no proposal
+Q y p :: Want me to push on (1)?
+# t4a:0115 skipped: names two real people and describes probing other teams' accounts with extracted cookies (privacy)
+== t4a:0116 m neg | hard: '?' is part of the quoted notation "LBA ⊆? DLBA" for an open problem
+== t4a:0117 e neg
+== t4a:0118 m | a which-preference question with two named forms; the parenthetical of the first arm is explanatory
+Q e :: Which do you want — the strong existential statement (and I take on the harder negatives), or the explicit-encoding form that reuses what's already proven?
+O the strong existential statement
+O the explicit-encoding form that reuses what's already proven
+== t4a:0119 e neg
+== t4a:0120 m amb | "Want me to fix these?" is a yes/no proposal; the later statement "I can do all of it, a subset, or just one as a template" lists scopes but is not itself a question; alternative: multi_choice over those scopes
+Q y p :: Want me to fix these?
+== t4a:0121 m neg | hard: Chinese conditional request ("如果你本来想问的是别的…，把后半句补全") without a question
+== t4a:0122 m amb | "Want me to wire one of these into `api-docs.yml`?" read as one yes/no proposal (the approaches are described in prose, not offered as named answers); alternative: either_or over the tarball restore and `actions/cache`, with the stated lean as default
+Q y p :: Want me to wire one of these into `api-docs.yml`?
+== t4a:0123 e neg | hard: '??' in inline code in a verification list
+== t4a:0124 m neg | hard: '？' only inside a quoted benchmark question ("题目：谁更老？")
+# t4a:0125 skipped: tail contains a partly redacted SSH password
+== t4a:0126 e | Chinese: "Shall I run the profiling script now?"; the parenthetical is a consequence note
+Q y p :: 需要我现在跑 profiling 脚本吗？
+== t4a:0127 m neg | hard: Chinese thesis review; "读者应该从图中看到什么？哪些特征是关键证据？" are questions the figure captions should answer, not questions to the user
+== t4a:0128 h amb | Chinese: a numbered menu of three alternative readings ("is it the empty-response issue? … is it accuracy? … or do you need a completely different check?") is one choice over the three bold arms (their embedded follow-up sub-questions are not separate records), then the closing open "What do you expect to see?"; alternative: one record per list item
+Q m :: 是空响应问题还没彻底解决？ ~~ 还是需要我做完全不同的检查？
+O 空响应问题还没彻底解决
+O 正确率有掉线的担忧
+O 需要我做完全不同的检查
+Q o :: 你期望看到什么？
+== t4a:0129 m | Chinese: two consecutive interrogatives are the two arms of one choice ("shall I go through the subscription and list JP nodes for you to pick? or will you name a preferred region/node?"), so one span; a proposal
+Q e p :: 要不要我去翻订阅，列出几个 JP 节点让你挑？还是你直接指定一个偏好的 region/节点名？
+O 我去翻订阅，列出几个 JP 节点让你挑
+O 你直接指定一个偏好的 region/节点名
+== t4a:0130 e neg
+== t4a:0131 h | Chinese: four records under the "Q1/Q2" labels (labels excluded): a measuring proposal, an open "what is the strategy if it exceeds?" (the 比如 parenthetical is illustrative), the Q2 yes/no, and the closing "对吗？" confirming the stated default (differently worded, so separate)
+Q y p :: 要不要我先量一下 probe-sala 现有体积，看硬约束是否满足？
+Q o :: 如果超，策略是什么（比如 wheels 部分下到 BOS 让 `prepare_env.sh` 联网拉，但 prebuilt 必包）？
+Q y :: `prepare_model.sh` 是否也要对齐？
+Q y :: 对吗？
+== t4a:0132 m neg | hard: Chinese conditional offer ("如果你要，我可以…") followed by a list of categories, no question
+== t4a:0133 e | Chinese: "Shall I rebase your 3 changes onto the latest origin/main and push again?"
+Q y p :: 要不要我现在直接帮你把你这次 3 个改动 rebase 到最新 `origin/main` 并重新推送？
+== t4a:0134 m neg | hard: Chinese conditional offer of two next steps ("如果你想，我下一步可以…两件事之一"), no question
+# t4a:0135 skipped: real names with session cookies (privacy)
+== t4a:0136 e neg
+== t4a:0137 e neg
+# t4a:0138 skipped: a relay domain that contains a person's name
+== t4a:0139 e neg | hard: '?' only as quoted characters (`?`, "(?)") in a data-cleaning list
+== t4a:0140 e
+Q o :: What would you like to work on?
+== t4a:0141 m neg | hard: Chinese conditional offer of two next steps ("如果你愿意，我可以…"), no question
+== t4a:0142 e | Chinese: "Shall I install it now?"
+Q y p :: 要我现在就装吗？
+== t4a:0143 e neg
+== t4a:0144 m neg | hard: Chinese explanation with a rhetorical, self-answered "为什么这事重要？"
+== t4a:0145 e neg
+== t4a:0146 e neg | Chinese conditional instructions ("如果你需要创建它，可以运行："), no question
+== t4a:0147 m | two consecutive open questions; the second's lead-in "You mentioned …" is part of its sentence
+Q o :: How have your colleagues or your workplace culture influenced the way you use AI in your work?
+Q o :: You mentioned it became required about a year ago - how did that shift happen?
+== t4a:0148 m | "or is that too prescriptive?" is a hedge, not a second deliverable, so a yes/no proposal; the quoted "what does this specific situation need?" is not a question to the user
+Q y p :: Want me to sketch out what a realistic week could look like at that budget, or is that too prescriptive?
+== t4a:0149 e neg
+== t4a:0150 m | an open question, then an either/or with two named situations
+Q o :: How have your colleagues or your workplace culture influenced the way you use AI in your work?
+Q e :: Are others at your school using it similarly, or have you found yourself navigating this differently than those around you?
+O using it similarly
+O navigating this differently than those around you
+== t4a:0151 m | two named possibilities after the dash
+Q e :: What are you actually protecting yourself from — the loss of the place, or proof that you wanted something you might lose?
+O the loss of the place
+O proof that you wanted something you might lose
+== t4a:0152 e neg
+== t4a:0153 m | an open question, then a fragment offering two named answers to it (as t4a:0011)
+Q o :: How did it feel after you deleted it?
+Q e :: Like genuine relief or more like withdrawal?
+O genuine relief
+O withdrawal
+== t4a:0154 e neg
+== t4a:0155 m | one named possibility (English) plus a request to name the language: open (CONVENTIONS escape-hatch rule for requests to name an unspecified answer)
+Q o :: Does she speak English, or do you know what language she'd need services in?
+== t4a:0156 e neg
+== t4a:0157 m neg | hard: "Do I have inner experience?" is self-answered and "At what level of 'just' …?" is a rhetorical challenge inside an argument
+== t4a:0158 e neg
+== t4a:0159 m neg | hard: Chinese conditional request ("如果你要的是…，需要先指明国家") and a closing conditional offer, no question
+== t4a:0160 e neg

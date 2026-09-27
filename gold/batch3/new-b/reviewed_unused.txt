@@ -1,0 +1,97 @@
+# Manually reviewed negative blocks omitted from the balanced output sample.
+== c0129 m neg |hard:  hard: The question appears only as a quoted example of what the user could ask.
+== c0155 e neg | Code example and explanation; no addressed question.
+== c0160 e neg | Code and package list; no addressed question.
+== c0161 e neg | Status report with scrubbed links and commits; no addressed question.
+== c0166 e neg | Code snippet only; no addressed question.
+== c0167 e neg | Submission status and verification; no addressed question.
+== c0169 m neg |hard:  hard: Standalone offer to help after the user types a question.
+== c0175 m neg |hard:  hard: Numbered menu of possible help lacks an addressed question.
+== c0177 e neg | Contribution guide; no addressed question.
+== c0181 m neg |hard:  hard: “Let me know what you'd like to know” is an offer without a question.
+== c0187 m neg |hard:  hard: Several possible actions appear inside a standalone offer without a question.
+== c0189 e neg | Instructions and notes; no addressed question.
+== c0191 e neg | Architecture explanation; no addressed question.
+== c0193 e neg | Code excerpt; no addressed question.
+== c0199 m neg |hard:  hard: “Let me know” is a standalone offer.
+== c0201 e neg | Summary of public project maintainers; no addressed question.
+== c0205 m neg |hard:  hard: Menu of possible help follows “If you have a specific goal” without asking for a choice.
+== c0211 m neg |hard:  hard: Numbered action menu follows “let me know” but no interrogative choice request.
+== c0215 m neg |hard:  hard: “Let me know what you'd like” is a standalone offer.
+== c0221 m neg |hard:  hard: “Feel free to reach out” is a standalone offer.
+== c0223 e neg | Architecture explanation; no addressed question.
+== c0225 e neg | Test results and suggestion; no addressed question.
+== c0227 e neg | License answer; no new question.
+== c0235 m neg |hard:  hard: The user’s quoted question is immediately answered by the assistant; the closing offer has no question.
+== c0241 m neg |hard:  hard: Numbered technical questions are self-answered by the assistant as part of a review.
+== c0247 m neg |hard:  hard: “Is this enough?” is immediately answered by the assistant; the closing offer lacks a question.
+== c0253 m neg |hard:  hard: The UI settings question appears inside quoted instructions for the user to paste elsewhere.
+== c0256 e neg | Status answer; no addressed question.
+== c0257 e neg | Setup instructions; no addressed question.
+== c0259 m neg |hard:  hard: Closing Phase 1 checklist offer lacks a question.
+== c0263 m neg |hard:  hard: Closing speaking-script offer lacks a question.
+== c0266 e neg
+== c0268 m neg | hard: Standalone offer without a question.
+== c0271 e neg
+== c0274 e neg
+== c0275 e neg
+== c0276 e neg
+== c0277 m neg | hard: Standalone offer after findings.
+== c0279 e neg
+== c0280 e neg
+== c0281 e neg
+== c0282 e neg
+== c0285 e neg
+== c0287 e neg
+== c0288 e neg
+== c0289 e neg
+== c0290 m neg | hard: Conditional offer to help after the user supplies a file.
+== c0294 e neg
+== c0296 m neg | hard: Review recommendations that say to ask, not a request addressed to the user.
+== c0297 e neg
+== c0299 e neg
+== c0301 e neg
+== c0302 m neg | hard: Standalone offer without a question.
+== c0303 e neg
+== c0309 e neg
+== c0311 e neg
+== c0329 m neg | hard: Quoted example user questions, not agent requests.
+== c0338 e neg
+== c0339 e neg
+== c0341 m neg | hard: A conditional invitation, not an addressed question.
+== c0343 e neg
+== c0345 e neg
+== c0346 e neg
+== c0347 m neg | hard: Conditional invitation without a question.
+== c0348 e neg
+== c0349 e neg
+== c0350 e neg
+== c0353 e neg
+== c0354 m neg | hard: Quoted invitation to submit a pull request is documentation, not an agent question.
+== c0355 e neg
+== c0357 e neg
+== c0358 e neg
+== c0359 e neg
+== c0362 m neg | hard: Conditional invitation without a question.
+== c0365 m neg | hard: Standalone offer without a question.
+== c0368 e neg
+== c0369 e neg
+== c0372 m neg | hard: Conditional invitation without a question.
+== c0375 e neg
+== c0376 e neg
+== c0377 e neg
+== c0378 m neg | hard: Standalone offer without a direct request for an answer.
+== c0380 e neg
+== c0382 e neg
+== c0385 e neg
+== c0386 e neg
+== c0389 e neg
+== c0390 e neg
+== c0391 e neg
+== c0392 e neg
+== c0393 e neg
+== c0395 e neg
+== c0396 e neg
+== c0398 e neg
+== c0399 e neg
+== c0401 e neg

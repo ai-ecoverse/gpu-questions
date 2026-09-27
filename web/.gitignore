@@ -1,0 +1,5 @@
+# Built ONNX + sidecars (from scripts/export_onnx.py)
+public/model/
+node_modules/
+dist/
+*.local

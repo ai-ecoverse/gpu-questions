@@ -1,0 +1,1385 @@
+# Silver queue_5 hand annotations. Format: see scripts/build_gold.py.
+# Keys refer to data/silver/queue_5.jsonl. Every block was written by reading the item.
+
+== s5_0000 m | explore vs different type; elaborations after em-dash illustrate the second arm
+Q e p :: Would you like me to explore this question, or would you prefer a different type of question—perhaps something simpler, more focused on a specific aspect (economic, political, or social causes), or about a particular figure or event?
+O explore this question
+O a different type of question
+== s5_0001 m neg | hard: rhetorical "the question worth asking isn't … but …"
+== s5_0002 e neg
+== s5_0003 e neg | hard: '?' only in URL query strings inside a sed command
+== s5_0004 m | interrogative lead-in "Could you please share:" requests the three listed details; e.g. parentheticals are examples
+Q o :: Could you please share:
+== s5_0005 e neg | hard: '?' only in JS ternaries inside code
+== s5_0006 m | offer to help think through connecting, not execute the plan
+Q y p :: Is there a genuine way I could help you think about connecting with him?
+== s5_0007 e neg
+== s5_0008 e neg
+== s5_0009 m | name table is suggestions; question only asks whether to rename
+Q y p :: Want me to rename it?
+== s5_0010 m neg | hard: villain monologue / screenplay dialogue, not addressed to the user
+== s5_0011 e
+Q e p :: Want me to go deeper on any piece — the cookie auth setup, or wiring the notification persistence?
+O the cookie auth setup
+O wiring the notification persistence
+== s5_0012 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s5_0013 e
+Q o :: What are your thoughts on this topic?
+== s5_0014 e
+Q y p :: Would you like guidance on implementing specific strategies in your particular environment or tools?
+== s5_0015 e
+Q o :: What's the specific situation you're thinking about?
+== s5_0016 m neg | hard: '?' only in the quoted TSA tool name "What Can I Bring?"
+== s5_0017 m neg | hard: "What's working well? What needs to change?" are self-check prompts in advice
+== s5_0018 e neg
+== s5_0019 m neg | hard: decision-tree questions inside an ASCII diagnostic diagram
+== s5_0020 m neg | hard: checklist self-questions ("What is the smallest version…?")
+== s5_0021 e neg | hard: conditional "tell me what fps…" offer has no addressed question
+== s5_0022 e
+Q o :: What specific scenario were you thinking about?
+== s5_0023 e neg
+== s5_0024 m neg | hard: '?' only inside a quoted sample outreach message
+== s5_0025 m | three named interest areas after the question
+Q m :: What aspects of this question interest you most? The economic implications, educational access, or perhaps intellectual property considerations?
+O The economic implications
+O educational access
+O intellectual property considerations
+== s5_0026 m neg | hard: self-answered rhetorical ("The fascinating question isn't really…")
+== s5_0027 m neg | hard: dialogic-reading example questions for the parent to ask the child
+== s5_0028 e neg | hard: '?' only in JS ternaries inside a tool call
+== s5_0029 e neg | hard: '?' only in sample program output ("Convert another temperature?")
+== s5_0030 m | one named concern with "or something else" escape hatch
+Q y :: What's your underlying concern here - clinical practice or something else?
+== s5_0031 e
+Q o :: What can I help you with?
+== s5_0032 m neg | hard: advice checklist and template questions ("What support do you need…?")
+== s5_0033 h amb | leaked reasoning shows the imperative was drafted as a user-style follow-up prompt for the agent (d0260); alternative reading: open request to the reader
+== s5_0034 m | "tool, OS, or editor" are attributes of one walk-through
+Q y p :: Want a tailored walk-through for a specific tool, OS, or editor?
+== s5_0035 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s5_0036 e neg | hard: '?' only as SQL parameter placeholders inside code
+== s5_0037 e neg
+== s5_0038 e
+Q o :: Could you please provide your email address?
+== s5_0039 e neg | hard: '?' only in JS ternaries inside a tool call
+== s5_0040 e
+Q y p :: Want me to push these changes to GitHub?
+== s5_0041 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s5_0042 e neg
+== s5_0043 e neg
+== s5_0044 m | practical questions are self-checks; addressed question is the closing open
+Q o :: What specific aspect makes it questionable to you?
+== s5_0045 e | French: "Interested in us doing it?"
+Q y p :: Intéressé pour qu'on le fasse ?
+== s5_0046 e
+Q y p :: Would you like me to hide it when it's the default value (50%), and only show it when explicitly set to something else?
+== s5_0047 e
+Q o :: How can I help you today?
+== s5_0048 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s5_0049 e neg
+== s5_0050 m | lead-in requests the listed details; nested '?' under item 1 explain what the statement covers
+Q o :: Could you please provide:
+== s5_0051 e
+Q y p :: Want me to look at the repo in this directory and tell you exactly which commands fit your test runner?
+== s5_0052 e neg
+== s5_0053 e neg | hard: imperative "please provide it" with no addressed question
+== s5_0054 e neg | hard: '?' only in table header "Less than 1500?"
+== s5_0055 e neg | hard: '?' only inside sample chat strings in demo code
+== s5_0056 m neg | hard: rhetorical question inside Polish narrative prose
+== s5_0057 m | two Spanish information questions; favorite places after the first are examples
+Q o :: ¿Ya has pensado a qué países específicos te gustaría ir?
+Q o :: ¿qué otros lugares del mundo te han gustado en tus viajes o te gustaría conocer?
+== s5_0058 e
+Q y p :: Want me to proceed with this approach?
+== s5_0059 e neg
+== s5_0060 e
+Q o :: What specific aspect concerns you most?
+== s5_0061 e neg | hard: Chinese conditional offer without a question
+== s5_0062 m neg | hard: rhetorical "practical test" questions answered in the same turn
+== s5_0063 e neg | hard: Chinese conditional offer without a question
+== s5_0064 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s5_0065 m neg | hard: self-answered FAQ headings
+== s5_0066 e
+Q o :: How can I help you today?
+== s5_0067 e | two ways to identify, not two answers (d0001)
+Q o :: Could you please provide your email address or your name and zip code?
+== s5_0068 m neg | hard: documentation heading "When to use this?"
+== s5_0069 m | "like detecting a cycle" illustrates the example, not a second arm
+Q y p :: Want me to walk through a worked example, like detecting a cycle in a graph?
+== s5_0070 e neg | hard: bare imperative "Please provide…" with no '?'
+== s5_0071 m neg | hard: "Ask yourself these three final questions" self-check
+== s5_0072 e neg
+== s5_0073 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s5_0074 m neg | hard: rhetorical "One question worth asking"
+== s5_0075 h amb | in-character mentor question to the user's character; alternative reading: story dialogue (hard negative)
+Q y :: Are you willing to pay it?
+== s5_0076 e neg | hard: '?' only in table header "Why?"
+== s5_0077 m | bold need-help offer; "tool or use-case" are attributes of one request
+Q y p :: Need recommendations or help for a specific tool or use-case?
+== s5_0078 e neg
+== s5_0079 e neg
+== s5_0080 e
+Q y p :: Want me to find and remove those?
+== s5_0081 e neg
+== s5_0082 m | A–C are selectable focuses; D is an escape hatch
+Q m p :: What do you want me to focus on?
+O Fix the failing tests
+O Run a scan
+O Do more subjective reviews
+== s5_0083 e neg
+== s5_0084 e neg | hard: '?' only inside regex patterns in code
+== s5_0085 e neg
+== s5_0086 e
+Q e p :: Do you want recommendations for a specific tool, or sample code for tracking and linking runs?
+O recommendations for a specific tool
+O sample code for tracking and linking runs
+== s5_0087 e
+Q y p :: Want me to rename it?
+== s5_0088 e
+Q o :: Where's the image saved?
+== s5_0089 e
+Q o :: How can I help you today?
+== s5_0090 e
+Q o :: What does your send-2 click-through rate look like relative to send-1?
+== s5_0091 e
+Q o :: What's your specific interest in the question?
+== s5_0092 e
+Q y p :: Want me to start on any of these refactorings?
+== s5_0093 e neg
+== s5_0094 e | phone or customer ID are two ways to identify
+Q o :: Could you please provide your phone number or customer ID so I can check your account details and verify the plan you're currently on?
+== s5_0095 e
+Q o :: How can I help you?
+== s5_0096 e neg | hard: '?' only in URL query strings inside code
+== s5_0097 m neg | hard: advice checklist question, not addressed to the assistant
+== s5_0098 h amb | in-character NPC question; alternative reading: story dialogue (hard negative)
+Q y :: have you seen Sturm's dagger? The little one with the Solamnic crest?
+== s5_0099 e
+Q y :: Does this help explain how Shakespeare uses Brutus to delve into the theme of the moral complexity of political assassination?
+== s5_0100 h amb | in-character butler either_or; alternative reading: story dialogue
+Q e :: Will there be anything else, or may I be dismissed to attend to more stimulating matters?
+O anything else
+O be dismissed to attend to more stimulating matters
+== s5_0101 e neg
+== s5_0102 m | checklist is advice; closing question is addressed
+Q o :: How are you feeling physically?
+== s5_0103 e neg | hard: "Let me know if…" offer has no question
+== s5_0104 e | two ways to identify (d0001)
+Q o :: Could you please provide your email address or your name and zip code?
+== s5_0105 e neg
+== s5_0106 e
+Q o :: Could you please provide the **complete problem statement**?
+== s5_0107 e
+Q o :: What aspect interests you most?
+== s5_0108 e neg
+== s5_0109 e neg
+== s5_0110 e neg | hard: '?' only in a JS ternary inside code
+== s5_0111 e
+Q o :: What aspects of consciousness do you find most essential to this question?
+== s5_0112 e neg | hard: '?' only in regex optional groups
+== s5_0113 e
+Q y p :: Want me to commit it to the branch too?
+== s5_0114 e neg | hard: Chinese conditional offer without a question
+== s5_0115 e neg
+== s5_0116 e neg | hard: '?' only in shell `$?`
+== s5_0117 e
+Q o :: What kind of shifts will you be working?
+== s5_0118 e neg
+== s5_0119 e
+Q y p :: Is there a specific calculation or word problem you would like to expand upon using these numbers?
+== s5_0120 e | confirms the plan before coding
+Q y p :: Before I code anything - is that correct?
+== s5_0121 e neg
+== s5_0122 e neg | hard: '?' only in a JS ternary inside a tool call
+== s5_0123 e
+Q y :: Does this help you visualize the 12 edges of a cube?
+== s5_0124 m neg | hard: self-answered verification question in a worked solution
+== s5_0125 h amb | cliffhanger invites the user to continue the story; alternative reading: narrative content only
+Q o :: What does Jarin see in the room at the top of the tower?
+Q o :: What secrets or dangers await him there?
+== s5_0126 e neg
+== s5_0127 m | lead-in requests the listed setup details; e.g. parentheticals are examples
+Q o :: Could you provide details on the following?
+== s5_0128 e neg | hard: '?' only inside a palindrome test string
+== s5_0129 e neg | hard: '?' only inside game dialogue strings in code
+== s5_0130 e
+Q o :: What specific aspect interests you most?
+== s5_0131 e
+Q o :: Could you please provide the specific problem you'd like me to work on?
+== s5_0132 e
+Q o :: What word shall we begin with?
+== s5_0133 e neg
+== s5_0134 h amb | imperative "Let me know which problem(s)" chooses among the three listed classics, ms for (s); alternative reading: offer without a question
+Q m p ms :: Let me know which problem(s) you'd like solved, and I'll walk through the solution step by step.
+O Problem 1
+O Problem 2
+O Problem 3
+== s5_0135 e
+Q o :: What specific aspect concerns you most?
+== s5_0136 e
+Q y p :: Would you like me to expand on any specific aspect?
+== s5_0137 h amb | in-character interactive fiction prompt; alternative reading: story narration
+Q o :: What do you do next?
+== s5_0138 e neg
+== s5_0139 e
+Q o :: What data do you actually have to work with?
+== s5_0140 e neg | hard: '?' only in optional chaining inside code
+== s5_0141 m neg | hard: "ask:" clinician self-check list, not addressed to the assistant
+== s5_0142 e neg
+== s5_0143 e neg
+== s5_0144 e neg | hard: '?' only in optional chaining inside code
+== s5_0145 e neg
+== s5_0146 m neg | hard: joke setup self-answered in the same turn
+== s5_0147 m neg | hard: "please let me know" with illustrative example tasks, no addressed '?'
+== s5_0148 e neg
+== s5_0149 h amb | bare user-style info request with no assistant framing (d0260); alternative reading: hard negative leaked user line
+Q o :: What is the name of the new accelerator backend you are integrating?
+== s5_0150 e
+Q o :: What's on your mind today?
+== s5_0151 e neg | hard: '?' only in optional chaining (`media?.url`)
+== s5_0152 m | "any of these phases" is a single yes/no proposal; Phase 1 lean is not a selectable menu
+Q y p :: Want me to proceed with implementing any of these phases?
+== s5_0153 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s5_0154 e
+Q e p :: Want me to start fixing things, or would you like to discuss priorities first?
+O start fixing things
+O discuss priorities first
+== s5_0155 e neg | hard: '?' only in a URL query string
+== s5_0156 e
+Q o :: What aspects of moral evolution interest you most?
+== s5_0157 e neg | hard: '?' only in a JS ternary inside code
+== s5_0158 m | two clarifying arms of one choice, then a separate situation question
+Q e p :: Do you want the video to start **after** the audio begins playing (so audio starts first, then video joins later)? ~~ Or do you want me to find where in the audio file the actual speech/content begins and start from there (skipping any silence or intro)?
+O the video to start **after** the audio begins playing
+O find where in the audio file the actual speech/content begins and start from there
+Q o :: What's the current situation you're seeing?
+== s5_0159 e neg | hard: '?' only inside probe strings in a tool call
+== s5_0160 m | asks for order ID, current shoe, and new shoe in one request
+Q o :: Could you please provide the order ID and the current shoe option you'd like to change?
+== s5_0161 e
+Q e p :: Would you like me to commit and push those as well, or were those work-in-progress changes you want to keep separate?
+O commit and push those as well
+O keep separate
+== s5_0162 e
+Q o :: What specific skill context are you thinking about?
+== s5_0163 e
+Q y p :: Would you like me to continue reducing the file size?
+== s5_0164 e
+Q y p :: Would you like me to update these consumer components now?
+== s5_0165 e
+Q m :: What specific aspect concerns you most - economic, cultural, or policy responses?
+O economic
+O cultural
+O policy responses
+== s5_0166 m | lead-in requests the listed details; nested '?' explains item 1
+Q o :: Could you please provide:
+== s5_0167 e neg
+== s5_0168 e
+Q o :: What aspect of this question interests you most?
+== s5_0169 e
+Q o :: What's the problem you've been thinking about?
+== s5_0170 m neg | hard: translation-dilemma and table "?" are teaching content, not addressed to the user
+== s5_0171 e neg
+== s5_0172 e
+Q o :: What aspects of biological transcendence are you most interested in exploring?
+== s5_0173 e neg | hard: '?' only in an HMR timestamp query string; closing offer has no question
+== s5_0174 e
+Q y p :: want me to run one?
+== s5_0175 e neg
+== s5_0176 e
+Q y :: Was there anything specific about his behavior during the show that made you worry he'd recognized you?
+== s5_0177 h amb | bare user-style imperative with leaked attachment framing (d0260); alternative reading: open request to the reader
+== s5_0178 e neg | hard: conditional offer without a question
+== s5_0179 e neg
+== s5_0180 e neg | hard: '?' only inside sample generate() prompt strings in code
+== s5_0181 e neg
+== s5_0182 e
+Q y p :: Want me to implement this fix?
+== s5_0183 e neg
+== s5_0184 e | verify or provide more details — two ways to unblock, open (d0134)
+Q o :: Could you please verify the line ID or provide additional details?
+== s5_0185 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s5_0186 e neg | hard: '?' only inside a tool-call content string (table header Kept?)
+== s5_0187 m neg | hard: quoted reframing questions in prose, not addressed to the user
+== s5_0188 e
+Q e p :: Want me to refine any part of this, or start building it?
+O refine any part of this
+O start building it
+== s5_0189 e neg
+== s5_0190 e | "Is there something specific…" yes_no (batch 1/2 majority)
+Q y :: Is there something specific on your mind today that I can assist you with?
+== s5_0191 e
+Q y p :: Want me to start writing tests for the 4 untested modules?
+== s5_0192 m neg | hard: rhetorical questions in Polish literary prose
+== s5_0193 e neg
+== s5_0194 e neg
+== s5_0195 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s5_0196 e
+Q o :: What aspects of this question interest you most?
+== s5_0197 e neg
+== s5_0198 m | "either of these methods" is yes/no about wanting more, not a choice between methods
+Q y :: Would you like to know more about either of these methods?
+== s5_0199 m | closing open request; prior bullets illustrate needed details
+Q o :: Could you provide details or point me to relevant parts of the repo that handle data ingestion, dataset updates, or pipelines?
+== s5_0200 m | three addressed info questions; e.g. lists are examples; third is either_or
+Q o :: What programming language and framework is your customer support tool built with?
+Q o :: Do you want to use a specific translation API/service (e.g., Google Translate, DeepL, OpenAI GPT, or a local library)?
+Q e :: Should translation be automatic for all messages, or only when requested by the user/agent?
+O automatic for all messages
+O only when requested by the user/agent
+== s5_0201 e | French: "What do you get when trying to mount sda5?"
+Q o :: Qu'est-ce que vous obtenez en essayant de monter sda5 ?
+== s5_0202 e neg | hard: '?' only inside regex lookaheads in code
+== s5_0203 e
+Q y :: Is there anyone you've been able to talk to about this?
+== s5_0204 m | short open then multi_choice among the bold notification types; "I'll build it" is a proposal
+Q o :: What kind?
+Q m p :: Which type do you need?
+O In-app notifications
+O Browser push notifications
+O Mobile push notifications
+O Email/SMS notifications
+O Full notification system
+== s5_0205 e
+Q o :: What aspects of this question interest you most?
+== s5_0206 h amb | in-character tennis prompt; alternative reading: game narration
+Q o :: What's your play?
+== s5_0207 m neg | hard: dialogue in a scripted workplace scene
+== s5_0208 e neg
+== s5_0209 m | recommends Model Saving Hook as default
+Q m p d=0 :: Which integration point would you like to tackle next?
+O Model Saving Hook
+O Model Loading Hook
+O Forward Pass
+== s5_0210 e neg
+== s5_0211 e neg
+== s5_0212 e
+Q e p :: Want me to proceed with the TSX-only version, or should I build it with a Python adapter from the start?
+O the TSX-only version
+O build it with a Python adapter from the start
+== s5_0213 e
+Q o :: What specific aspect interests you most?
+== s5_0214 e
+Q o :: Is there something specific about the film or its themes you'd like to discuss?
+== s5_0215 m | listed party ideas are background; "or something else" escape → yes_no
+Q y :: Would any of these ideas work for your family, or do you have something else in mind?
+== s5_0216 m neg | hard: '?' only in a parenthetical URL; closing "let me know"/"please share" has no question
+== s5_0217 e | French: "Do you have a USB key available to plug in?"
+Q y :: Avez-vous une clé USB disponible à brancher ?
+== s5_0218 e neg
+== s5_0219 e neg
+== s5_0220 e neg
+== s5_0221 e neg
+== s5_0222 e neg | hard: '?' only in Kotlin nullable types
+== s5_0223 e
+Q y p :: Want me to start working on any phase?
+== s5_0224 e neg | hard: '?' only in JS ternaries inside a tool call
+== s5_0225 e neg
+== s5_0226 m | three diagnostic questions about the phrase's origin
+Q y :: Is this terminology from a specific book, consulting firm, or training program?
+Q y :: Did you encounter this language somewhere and want to verify whether it's legitimate?
+Q y :: Is this a phrase from a specific restaurant group's internal methodology?
+== s5_0227 e neg
+== s5_0228 e neg
+== s5_0229 e neg | hard: "Please let me know if…" offer has no question
+== s5_0230 e neg | hard: '?' only inside probe strings in a tool call
+== s5_0231 e
+Q y p :: Would you like more suggestions like this?
+== s5_0232 e
+Q o :: How can I help you today?
+== s5_0233 e
+Q y p :: Should I create a shared `MediaTypeFilter` component similar to `ShotFilter`?
+== s5_0234 m | "or assist you with something else" is an escape hatch
+Q y p :: Would you like me to try another approach or assist you with something else?
+== s5_0235 e
+Q y :: Does that sound like something that would suit what you are looking for?
+== s5_0236 e neg
+== s5_0237 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s5_0238 e neg
+== s5_0239 m | earlier "Can you describe failure…" is a general admonition; closing is addressed
+Q o :: What specifically prompted this question?
+== s5_0240 e neg
+== s5_0241 e neg
+== s5_0242 m neg | hard: self-answered section heading "When DOES the zero stay?"
+== s5_0243 e neg | hard: '?' only inside an error-message template in a tool call
+== s5_0244 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s5_0245 e
+Q o :: How can I help you today?
+== s5_0246 h amb | agent-recruitment pitch asks Jessica to team up; alternative reading: sample letter content
+Q y :: So what do you say Jessica, ready to team up and take the basketball world by storm?
+== s5_0247 e
+Q y p :: Should I help you explore or integrate a specific OCR model from Hugging Face or elsewhere?
+== s5_0248 e
+Q o :: What specific concerns are driving your question?
+== s5_0249 m neg | hard: self-answered reasoning step "Why would Jae offer…"
+== s5_0250 m | update config vs treat as upstream bug
+Q e :: Do you want to update the config `badge_path` to `assets/scorecard.png` to match the new behavior, or is this a bug in desloppify 0.6.0 that should be fixed there?
+O update the config `badge_path` to `assets/scorecard.png`
+O a bug in desloppify 0.6.0 that should be fixed there
+== s5_0251 e
+Q y :: do you see the "Enhanced" badge and the AI-enhanced prompt displayed?
+== s5_0252 e | French: "How can I help you today?"
+Q o :: Comment puis-je vous aider aujourd'hui ?
+== s5_0253 e neg
+== s5_0254 e neg | hard: conditional offer without a question
+== s5_0255 e
+Q e p :: Want me to include those, or only snapshot on structural changes (add/remove/reorder images) and task completions?
+O include those
+O only snapshot on structural changes (add/remove/reorder images) and task completions
+== s5_0256 e | phone or customer ID — two ways to identify
+Q o :: Could you please verify the phone number or provide the customer ID?
+== s5_0257 e neg
+== s5_0258 e neg
+== s5_0259 e neg
+== s5_0260 m neg | hard: rhetorical measurement questions in academic prose
+== s5_0261 e neg
+== s5_0262 e
+Q y p :: Would you like to proceed with booking this flight?
+== s5_0263 e
+Q o :: What specific aspect interests you most?
+== s5_0264 e
+Q o :: What superpower would you pick and why?
+== s5_0265 e neg
+== s5_0266 e neg
+== s5_0267 e neg
+== s5_0268 e neg
+== s5_0269 e neg
+== s5_0270 e neg | hard: '?' only in sample program input prompt inside code
+== s5_0271 e
+Q y p :: Would you like me to suggest any specific playlists or artists to start with?
+== s5_0272 e neg
+== s5_0273 e
+Q y p :: Want me to include iPads too?
+== s5_0274 e neg | hard: closing "I'm happy to help" offer has no question
+== s5_0275 m neg | hard: dating-advice self-check questions for the reader
+== s5_0276 e neg
+== s5_0277 e neg | hard: '?' only inside template strings in a tool call
+== s5_0278 m | "For example" bullets illustrate kinds of context; lead-in is open
+Q o :: Could you share more context?
+== s5_0279 e neg
+== s5_0280 e neg
+== s5_0281 e
+Q y :: Is there something specific you'd like help with?
+== s5_0282 e
+Q m :: What specific aspect are you most interested in exploring - policy implications, the science, or the political economy?
+O policy implications
+O the science
+O the political economy
+== s5_0283 m neg | hard: cliffhanger questions in story narration, self-continued in the same turn
+== s5_0284 e neg | hard: '?' only in Ruby ternaries and predicate methods
+== s5_0285 m neg | hard: critique checklist questions about a study, not addressed to the user
+== s5_0286 e neg
+== s5_0287 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s5_0288 e
+Q o :: What specifically does the child enjoy?
+== s5_0289 e
+Q o :: What are the exceptions where this breaks down today?
+== s5_0290 e neg
+== s5_0291 m neg | hard: rhetorical "what if the career is…" in prose
+== s5_0292 e neg
+== s5_0293 e neg
+== s5_0294 e
+Q o :: What aspect would you like to dig deeper on?
+== s5_0295 e neg
+== s5_0296 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s5_0297 e neg
+== s5_0298 e
+Q o :: What is on your mind?
+== s5_0299 e neg | hard: '?' only in a JS ternary inside code
+== s5_0300 e neg
+== s5_0301 e neg
+== s5_0302 e
+Q y :: Is there anything in particular you'd like to chat about on this fine day?
+== s5_0303 e neg
+== s5_0304 e
+Q o :: What's the actual situation?
+== s5_0305 e
+Q o :: What's driving your interest in this question?
+== s5_0306 e neg | hard: '?' only in a JS ternary inside code
+== s5_0307 e neg
+== s5_0308 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s5_0309 e neg
+== s5_0310 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s5_0311 e neg
+== s5_0312 e neg
+== s5_0313 e neg | hard: '?' only in JS ternaries inside code
+== s5_0314 e
+Q y p :: Want me to go ahead and clean up item 1 — remove `baselineCount` and the unnecessary `useTaskStatusCounts` imports from those 4 files?
+== s5_0315 e neg | hard: "Let me know if…" offer has no question
+== s5_0316 e neg
+== s5_0317 e
+Q o :: How can I help you today?
+== s5_0318 e neg
+== s5_0319 e
+Q o :: How can I help you today?
+== s5_0320 e | tic-tac-toe move request
+Q o :: Where would you like to move?
+== s5_0321 e neg
+== s5_0322 e neg
+== s5_0323 m neg | hard: example problem questions then imperative "Please share" with no addressed '?'
+== s5_0324 e neg
+== s5_0325 e neg
+== s5_0326 e
+Q y p :: Would you like that?
+== s5_0327 e neg
+== s5_0328 e neg
+== s5_0329 e
+Q o :: What's driving your interest in this question specifically?
+== s5_0330 m neg | hard: decision-factor headings with '?' are self-answered advice
+== s5_0331 h amb | bare user-style technical question (d0260); alternative reading: hard negative leaked user line
+Q y :: Does `hf sync` compare file hashes or sizes to avoid re-uploading?
+== s5_0332 e
+Q m p :: Would you like a diagram description, real-world examples, or related topics?
+O a diagram description
+O real-world examples
+O related topics
+== s5_0333 e neg | hard: '?' only as checkmark verification in a worked example
+== s5_0334 e | interrogative lead-in without trailing '?' on the stem; three bullet offers
+Q m p :: Would you like me to:
+O Create a script to deploy the endpoint via `hf endpoints deploy`?
+O Add specific monitoring/alerting configuration?
+O Explore alternative hardware options?
+== s5_0335 e
+Q o :: What do you think of this version?
+== s5_0336 e neg | hard: '?' only in Rust error propagation inside code
+== s5_0337 m neg | hard: rhetorical hot-dog mystery joke, not addressed
+== s5_0338 m neg | hard: heading "More Guidance?" plus "Let me know" with no addressed question
+== s5_0339 m neg | hard: example questions in a recommendation table
+== s5_0340 m | For example list supplies selectable expansion topics; "Something else" escape
+Q m p :: Would you like me to expand on any particular aspect?
+O Specific GraphQL framework
+O Different runtime
+O GraphQL Federation
+O GraphQL subscriptions
+O Schema-first vs code-first
+== s5_0341 e neg
+== s5_0342 e neg
+== s5_0343 m | five numbered worldbuilding prompts; "etc." / inline lists are examples; "Let me know" has no '?'
+Q o :: What kind of fantasy setting do you envision? High fantasy, urban fantasy, dark fantasy, etc.?
+Q o :: Who is your main character? What are their strengths, weaknesses, goals and motivations?
+Q o :: What central conflict or quest will drive the plot? An epic battle of good vs evil, a dangerous journey, a mystery to solve?
+Q o :: What themes do you want to explore? Courage, love, betrayal, destiny?
+Q o :: What fantasy elements do you want to include? Magic, mythical creatures, prophecies, alternate worlds?
+== s5_0344 e
+Q e p :: Would you like me to demonstrate with a specific dataset, or adjust the script for your needs?
+O demonstrate with a specific dataset
+O adjust the script for your needs
+== s5_0345 e neg
+== s5_0346 m neg | hard: quiz question selected and answered in the same turn
+== s5_0347 m neg | hard: table header "Match?" and imperative "Please provide" with no '?'
+== s5_0348 m | framework / demo / audience are attributes of one recommendation request
+Q y p :: Do you want recommendations tailored to a specific framework or the kind of demo or audience you have?
+== s5_0349 e
+Q e p :: Want me to help you check your current repo's storage status or perform a test migration?
+O check your current repo's storage status
+O perform a test migration
+== s5_0350 m neg | hard: rhetorical strategy questions answered in the same turn
+== s5_0351 e neg
+== s5_0352 e
+Q y p :: Want me to blast through some of these?
+== s5_0353 e | asks for the public Supabase anon key (placeholder only in text, not a live secret)
+Q o :: Can you give me the anon key to hardcode as the default?
+== s5_0354 e
+Q y p :: Want to try one of those?
+== s5_0355 e neg
+== s5_0356 e neg
+== s5_0357 e neg
+== s5_0358 e
+Q o :: What specific aspect interests you most?
+== s5_0359 e
+Q o :: What specific aspect interests you most?
+== s5_0360 e neg
+== s5_0361 e neg | hard: '?' only in a JS ternary inside a tool call
+== s5_0362 e neg
+== s5_0363 e neg
+== s5_0364 e
+Q y :: How was that?
+== s5_0365 e
+Q m :: What aspects of this question interest you most? The nature of scientific truth? Religious perspectives? How this affects everyday judgments?
+O The nature of scientific truth
+O Religious perspectives
+O How this affects everyday judgments
+== s5_0366 e neg
+== s5_0367 e neg
+== s5_0368 e neg
+== s5_0369 m neg | hard: coaching example of a bad question to avoid
+== s5_0370 e neg
+== s5_0371 e neg
+== s5_0372 e
+Q y p :: Want to tackle those next?
+== s5_0373 e
+Q o :: What actually happens when your girlfriend doesn't text back?
+== s5_0374 e neg
+== s5_0375 m | four setup choices then a yes/no confirmation of the product
+Q e :: **Le format voulu** : un fichier Markdown dans le repo ? Un doc structuré à présenter ?
+O un fichier Markdown dans le repo
+O Un doc structuré à présenter
+Q e :: **Le niveau de détail** : vulgarisé pour management / très technique pour l'équipe dev ?
+O vulgarisé pour management
+O très technique pour l'équipe dev
+Q e :: **La langue** : français ou bilingue (FR/EN) ?
+O français
+O bilingue (FR/EN)
+Q e :: **Les sections prioritaires** : tout, ou tu veux commencer par une partie (l'existant, les choix techniques, le planning 4 mois...) ?
+O tout
+O commencer par une partie
+Q y :: c'est bien un **assistant vocal bancaire** pour les clients de Afriland First Bank ?
+== s5_0376 e
+Q y :: Are there any other specific areas in your home you are concerned about?
+== s5_0377 e
+Q y :: Do any of those sound appealing for your anniversary dinner?
+== s5_0378 m neg | hard: bad-greeting examples containing '?', not addressed to the user
+== s5_0379 e
+Q y p :: Want me to check if there are other modals with similar `modal={false}` + custom overlay patterns that might have the same issue?
+== s5_0380 e | phone or customer ID — two ways to identify
+Q o :: Could you please provide that information?
+== s5_0381 e
+Q y p :: Want me to run `desloppify review --prepare` to kick off the subjective re-review?
+== s5_0382 m neg | hard: joke setup self-answered in the same turn
+== s5_0383 e
+Q y :: Is there anything else you'd like to work on?
+== s5_0384 m | diagnostic either_or before committing to a refactor
+Q e :: is the logging identical across branches, or does `user.segment_id` usage diverge in *more* ways than discount math?
+O the logging identical across branches
+O `user.segment_id` usage diverge in *more* ways than discount math
+== s5_0385 e
+Q y p :: Would you like me to elaborate on any specific aspect of this implementation approach?
+== s5_0386 m neg | hard: quoted reviewer question in prose, not addressed
+== s5_0387 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s5_0388 e neg
+== s5_0389 e neg
+== s5_0390 e neg
+== s5_0391 e | email, or name+zip as alternative — open (d0001)
+Q o :: Could you please provide your email address?
+== s5_0392 m neg | hard: quoted exam question being graded, not asked of the user
+== s5_0393 e neg
+== s5_0394 e
+Q o :: What can I help you with today?
+== s5_0395 e
+Q o :: What subject or topic is your science test covering?
+== s5_0396 e
+Q y p :: Want me to add a buffer flush on exception to prevent this class of invisible crash in the future?
+== s5_0397 m neg | hard: in-character rhetorical True Detective monologue
+== s5_0398 e neg
+== s5_0399 e neg
+== s5_0400 m neg | hard: quoted system dialogue inside a story, not addressed to the user
+== s5_0401 m neg | hard: grading a sample answer to a history question
+== s5_0402 e
+Q o :: What specific aspect concerns you most?
+== s5_0403 e neg | hard: '?' only in shell `$?` inside a tool call
+== s5_0404 e neg
+== s5_0405 e
+Q o :: How can I help you today?
+== s5_0406 e
+Q y p :: Want me to draft the migration for CharacterAnimatePage as an example of what the cleanup looks like?
+== s5_0407 e neg | hard: '?' only inside a tool-call prompt listing unknowns
+== s5_0408 e
+Q e :: Were you expecting a separate button in the top left for adding to shot? Or are you thinking of the "New image" button which creates a standalone copy of the current variant?
+O a separate button in the top left for adding to shot
+O the "New image" button which creates a standalone copy of the current variant
+== s5_0409 e neg
+== s5_0410 e neg
+== s5_0411 e neg
+== s5_0412 e
+Q y :: Is there something specific you're trying to figure out about this situation?
+== s5_0413 e
+Q y p :: Do you want to set the stage by describing our arrival at the mansion and the colorful cast of characters in attendance?
+== s5_0414 e
+Q y :: How's that?
+== s5_0415 m neg | hard: in-character reflective prose with rhetorical questions
+== s5_0416 e neg
+== s5_0417 e neg
+== s5_0418 e neg
+== s5_0419 e neg
+== s5_0420 e neg
+== s5_0421 e neg | hard: '?' only in a Ruby predicate method inside code
+== s5_0422 e
+Q o :: How can I help you today?
+== s5_0423 e
+Q o :: How can I help you today?
+== s5_0424 e | French: ask to check Eureka and give the registered service name
+Q o :: Peux-tu vérifier le dashboard Eureka et me donner le nom exact sous lequel ton service est enregistré ?
+== s5_0425 e neg
+== s5_0426 e neg
+== s5_0427 e
+Q y :: Does this help explain those aspects in more depth?
+== s5_0428 m neg | hard: writing-feedback rhetorical questions about a character
+== s5_0429 e neg | hard: '?' only in optional chaining / ternary inside a tool call
+== s5_0430 e neg | hard: '?' only in a verification table header "Defined?"
+== s5_0431 m neg | hard: diagnostic questions posed as methodology advice, not to the user
+== s5_0432 e
+Q y :: Test it locally?
+== s5_0433 e neg | hard: '?' only in TypeScript optional fields inside a tool call
+== s5_0434 h amb | leaked reasoning drafts a user-facing question then emits it; alternative reading: hard negative (prompt content)
+Q o :: Can you share your Inference Endpoint URL and response format?
+== s5_0435 e
+Q o :: What can I assist you with today?
+== s5_0436 m | user ID request, then new booking vs modify existing
+Q o :: Could you please provide your user ID?
+Q e p :: Please confirm if you'd like to proceed with a new booking or if you'd like to modify your existing reservation.
+O proceed with a new booking
+O modify your existing reservation
+== s5_0437 h amb | sample absence email containing questions for a teacher; alternative reading: draft content only (hard negative)
+Q o :: Were there any important announcements, assignments, or readings handed out?
+== s5_0438 e
+Q y p :: Would you like me to create optimized versions of these videos using ffmpeg?
+== s5_0439 e neg
+== s5_0440 e
+Q o :: What made you think of it?
+== s5_0441 e neg
+== s5_0442 e neg | hard: '?' only as SQL parameter placeholders
+== s5_0443 e neg | hard: '?' only in C# nullable types
+== s5_0444 m neg | hard: chicken-persona puns and rhetorical asides
+== s5_0445 e neg
+== s5_0446 e neg
+== s5_0447 e
+Q y p :: Would you like me to run the comparison on a specific dataset to demonstrate the results?
+== s5_0448 e | user ID or order ID — two ways to identify
+Q o :: Could you please provide your user ID or order ID so I can check the details of your order?
+== s5_0449 e neg
+== s5_0450 m neg | hard: in-character fairy dialogue, not addressed to the user
+== s5_0451 e neg
+== s5_0452 e neg
+== s5_0453 h amb | in-character Dumbledore self-reflection; alternative reading: addressed either_or to the reader
+Q e :: Was that wise or was it irresponsible?
+O wise
+O irresponsible
+== s5_0454 e
+Q o :: What is your collaborator's Hugging Face username so I can add them as a reader?
+== s5_0455 e
+Q o :: What aspects of this question interest you most?
+== s5_0456 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s5_0457 e neg
+== s5_0458 m neg | hard: quoted prompt question answered in the same turn
+== s5_0459 m neg | hard: joke setup self-answered
+== s5_0460 e neg
+== s5_0461 m | policy vs research; "or something else" escape
+Q e :: What specifically prompted this reframing question - are you thinking about policy, research, or something else?
+O policy
+O research
+== s5_0462 e neg
+== s5_0463 e
+Q o :: Could you please provide this information or any relevant files/configurations so I can diagnose the root cause and propose a fix?
+== s5_0464 e
+Q o :: What specifically prompted your question?
+== s5_0465 e neg
+== s5_0466 e neg
+== s5_0467 m neg | hard: rhetorical time-estimate question answered immediately
+== s5_0468 e
+Q o :: What's your specific situation?
+== s5_0469 e neg
+== s5_0470 e
+Q o :: What kind of adventure activities are you most interested in?
+== s5_0471 e neg
+== s5_0472 e neg | hard: '?' only in optional chaining inside code
+== s5_0473 e
+Q o :: Could you provide the formula or the context (e.g., a specific word problem) you are working with?
+== s5_0474 e neg
+== s5_0475 m neg | hard: suggested question to ask a nutritionist, not the user
+== s5_0476 e neg
+== s5_0477 m neg | hard: self-answered section heading "Why does it matter?"
+== s5_0478 e neg | hard: '?' only as SQL placeholders
+== s5_0479 e
+Q o :: What is on your mind?
+== s5_0480 e neg
+== s5_0481 e neg
+== s5_0482 e
+Q o :: What would you like to know?
+== s5_0483 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s5_0484 e
+Q y p :: Want me to scaffold a small React app that reads your `timeline.yaml` and displays it?
+== s5_0485 m neg | hard: self-answered "Why do it this way?" heading
+== s5_0486 m neg | hard: '?' only inside a quoted sample script for the shopper
+== s5_0487 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s5_0488 e neg
+== s5_0489 e
+Q e p :: Would you like me to help you verify the database configuration or add logging to show which credentials are being used?
+O verify the database configuration
+O add logging to show which credentials are being used
+== s5_0490 e neg
+== s5_0491 e
+Q o :: Could you please double-check the details and provide accurate information?
+== s5_0492 m neg | hard: design-review self-check questions
+== s5_0493 e
+Q o :: What specific aspect are you most interested in exploring further?
+== s5_0494 e
+Q y p :: Would you like me to help you build a sample continuous batching server implementation in a specific language or framework?
+== s5_0495 e | phone or customer ID — two ways to identify
+Q o :: Could you please provide your phone number or customer ID so I can look up your account?
+== s5_0496 e neg
+== s5_0497 e neg
+== s5_0498 e
+Q y :: Maybe try restarting Claude Code and then approving the deploy?
+== s5_0499 m neg | hard: firmware checklist self-questions
+== s5_0500 e
+Q y :: Do any of those appeal to you?
+== s5_0501 m neg | hard: example questions the setup might lead to; closing is imperative without '?'
+== s5_0502 e
+Q y p :: Want me to implement that?
+== s5_0503 e neg
+== s5_0504 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s5_0505 e neg | hard: '?' only in optional chaining inside a tool call
+== s5_0506 e neg
+== s5_0507 h amb | bare user-style path question (d0260); alternative reading: hard negative leaked user line
+Q o :: Where is the local transformers checkpoint located?
+== s5_0508 e neg | hard: '?' only in TypeScript optional / nullish inside code
+== s5_0509 e
+Q y p :: Want me to thread `--exclude` through the grep-based detectors too?
+== s5_0510 e
+Q y :: Can you try running this directly in your terminal?
+== s5_0511 e
+Q e p :: Would you like to view your order history or look up a specific order by order ID?
+O view your order history
+O look up a specific order by order ID
+== s5_0512 e
+Q o :: What are you reading right now besides Heaney?
+== s5_0513 e neg | hard: advice prose; no addressed question (rhetorical "what specifically is causing" buried)
+== s5_0514 e neg
+== s5_0515 e
+Q o :: What aspects of justice do you find most compelling as potentially universal?
+== s5_0516 h amb | leaked reasoning then emits an imperative path request; alternative reading: hard negative
+Q o :: Please provide your local checkpoint path so I can help convert it to GGUF.
+== s5_0517 m | candidates illustrated; closing asks which were meant
+Q o :: Which two folders are you referring to?
+Q o :: Could you clarify which ones you meant?
+== s5_0518 m | lead-ins request the listed model/serving details
+Q o :: Could you provide:
+== s5_0519 m | three confirmation questions for refund eligibility
+Q o :: The reason for the refund?
+Q y :: Whether you have travel insurance?
+Q y :: If the booking was made within the last 24 hours?
+== s5_0520 e neg
+== s5_0521 e neg
+== s5_0522 e
+Q o :: Could you please confirm the correct email address?
+== s5_0523 e
+Q e p :: Would you like a template for PR reviews or guidance on a specific framework/tooling?
+O a template for PR reviews
+O guidance on a specific framework/tooling
+== s5_0524 e neg
+== s5_0525 e neg
+== s5_0526 e neg
+== s5_0527 e
+Q o :: What specific problems are you most concerned about?
+== s5_0528 m | clarify plus candidate interpretations; "Something else" escape
+Q m :: Could you clarify what you'd like to ask?
+O Array indexing
+O Counting
+O A pattern/puzzle
+== s5_0529 e
+Q o :: What's on your mind today?
+== s5_0530 e
+Q y :: Does this make sense?
+== s5_0531 e neg
+== s5_0532 e
+Q o :: Which platform are you using?
+== s5_0533 e
+Q o :: What specific aspect of this are you navigating?
+== s5_0534 e neg
+== s5_0535 e
+Q y :: Do any of these sound like the one you were looking for?
+== s5_0536 e neg | hard: '?' only as rhetorical aside in analysis prose
+== s5_0537 e neg
+== s5_0538 e neg
+== s5_0539 e neg
+== s5_0540 e
+Q y p :: Want step-by-step guides or scripts to set up any of these strategies?
+== s5_0541 e
+Q o :: What specific aspect interests you most?
+== s5_0542 h amb | in-character Bilbo offer of tea; alternative reading: story dialogue
+Q y :: I don't suppose you'd like some tea?
+== s5_0543 e neg
+== s5_0544 e neg
+== s5_0545 e
+Q y p :: Would you like more details on any of these?
+== s5_0546 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s5_0547 e neg
+== s5_0548 e
+Q o :: Could you please provide the order ID of the delivery you'd like to track?
+== s5_0549 e neg
+== s5_0550 e
+Q y p :: Ready to start Phase 1?
+== s5_0551 e
+Q o :: What aspect would you like to explore further?
+== s5_0552 e
+Q o :: How can I help you today?
+== s5_0553 e neg
+== s5_0554 e
+Q o :: How can I help you today?
+== s5_0555 e neg | hard: '?' only as SQL placeholders
+== s5_0556 e neg
+== s5_0557 e
+Q y p :: Want me to tackle the PhaseConfigSelectorModal issue?
+== s5_0558 m | "or something else more pressing" escape → yes_no proposal
+Q y p :: Do you want me to build this into a full actionable plan now, or is there something else more pressing first?
+== s5_0559 e neg
+== s5_0560 e
+Q o :: Which language would you like to explore further?
+== s5_0561 e
+Q o :: Could you please provide:
+== s5_0562 e neg
+== s5_0563 e neg
+== s5_0564 e | service-role key vs ID source — two ways to unblock (no secret value present)
+Q e :: Do you have the service role key available, or can you check where you got that ID from?
+O the service role key available
+O check where you got that ID from
+== s5_0565 e neg
+== s5_0566 e neg
+== s5_0567 e neg
+== s5_0568 m neg | hard: self-answered FAQ "Why MobileNetV2?"
+== s5_0569 e
+Q y :: Are you drawn to particular perspectives on human meaning?
+== s5_0570 e neg
+== s5_0571 m neg | hard: rhetorical "extend or fork?" design aside
+== s5_0572 e neg
+== s5_0573 e neg
+== s5_0574 e neg
+== s5_0575 e
+Q y :: Do any of these sound like they might apply to your situation?
+== s5_0576 e neg
+== s5_0577 e neg | hard: '?' only in a JS ternary inside code
+== s5_0578 e neg
+== s5_0579 e neg | hard: '?' only in a C# ternary inside code
+== s5_0580 e
+Q y p :: Want me to set this up?
+== s5_0581 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s5_0582 e
+Q y p :: Would you like me to provide a full proofread of the specific paragraphs you updated to ensure the tone remains cohesive with the rest of the document?
+== s5_0583 e
+Q o :: Could you provide this info?
+== s5_0584 m | open driver question then either_or about the board's motive
+Q o :: What's driving the 18-month timeline?
+Q e :: Is the board pushing this for strategic reasons (IPO narrative, competitive positioning, TAM story) or because someone said "we should be international by now"?
+O for strategic reasons
+O because someone said "we should be international by now"
+== s5_0585 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s5_0586 e neg
+== s5_0587 e
+Q e p :: Does that make sense, or would you like me to walk through another example?
+O make sense
+O walk through another example
+== s5_0588 m neg | hard: educator self-check questions in a curriculum summary
+== s5_0589 e neg | hard: '?' only as a blank in a math expression
+== s5_0590 e
+Q o :: What specific aspect would you like to dig into further?
+== s5_0591 e
+Q y p :: Want me to start with any of these?
+== s5_0592 e
+Q o :: What do you think?
+== s5_0593 e neg
+== s5_0594 e
+Q y :: Is there something on your mind that I can assist you with today?
+== s5_0595 m | yes/no to run queries; numbered starters are optional focuses (not forced choice)
+Q y p :: Want me to run some exploratory queries to see what's in there?
+== s5_0596 e neg | hard: '?' only inside a mermaid/diagram string in a tool call
+== s5_0597 e neg
+== s5_0598 e neg
+== s5_0599 e
+Q m p :: Would you like me to walk through the full solution, the code, or a different test case?
+O the full solution
+O the code
+O a different test case
+== s5_0600 m neg | hard: rhetorical evaluation question answered in the same turn
+== s5_0601 m | favorites invite has no '?'; then hard vs soft, then genre multi
+Q e :: Do you prefer "hard" sci-fi that tries to be scientifically accurate, or more imaginative "soft" sci-fi?
+O "hard" sci-fi that tries to be scientifically accurate
+O more imaginative "soft" sci-fi
+Q m :: Do you like space operas, dystopian futures, alien invasions, or a mix of all of the above?
+O space operas
+O dystopian futures
+O alien invasions
+O a mix of all of the above
+== s5_0602 e
+Q y p :: Want me to pull more data for the visualization?
+== s5_0603 e
+Q e p :: Would you like me to help you scaffold a simple visual fine-tuning interface in your Next.js dashboard or suggest existing tools that integrate well?
+O scaffold a simple visual fine-tuning interface in your Next.js dashboard
+O suggest existing tools that integrate well
+== s5_0604 e neg
+== s5_0605 e
+Q o :: Can you share the specific error message or the portion of your code where the mismatch occurs?
+== s5_0606 e
+Q y p :: Would you like me to help you with the next steps once you've run these commands?
+== s5_0607 m neg | hard: joke setup self-answered
+== s5_0608 e neg
+== s5_0609 e
+Q y :: Do you find one aspect more compelling than the other?
+== s5_0610 m neg | hard: documentation heading "When to use this?"
+== s5_0611 m | lead-in requests the listed details
+Q o :: Could you please provide:
+== s5_0612 e neg | hard: '?' only inside a WebFetch tool-call prompt
+== s5_0613 m neg | hard: rhetorical policy question answered in the same turn
+== s5_0614 e neg
+== s5_0615 e neg | hard: '?' only in shell `$?` inside a tool call
+== s5_0616 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s5_0617 e neg | hard: '?' only in optional chaining inside code
+== s5_0618 h amb | in-character V/Zorro challenge; alternative reading: story dialogue
+Q y :: Do you?
+== s5_0619 e neg | hard: '?' only in a verification table header
+== s5_0620 e
+Q e p :: Want me to dig into the implementation or start working on this?
+O dig into the implementation
+O start working on this
+== s5_0621 e neg
+== s5_0622 e
+Q y p :: Would you like me to help you with any specific aspect of model preparation or provide more detailed information about any part of this process?
+== s5_0623 m | open driver question; trailing list illustrates possible drivers
+Q o :: What's driving the requirement?
+== s5_0624 e
+Q y :: Do you find it a helpful principle?
+== s5_0625 e
+Q o :: What specific institution are you thinking about?
+== s5_0626 e neg | hard: '?' only inside a tool-call research prompt
+== s5_0627 e neg
+== s5_0628 e neg
+== s5_0629 m neg | hard: chemistry heuristic self-question in prose
+== s5_0630 e
+Q e p :: Would you like a sample code snippet or more detail on any step?
+O a sample code snippet
+O more detail on any step
+== s5_0631 e | email or name+zip — open (d0001)
+Q o :: Could you please provide your email address or your name and zip code?
+== s5_0632 e neg
+== s5_0633 m neg | hard: heuristic "ask:" question for the reader's workflow
+== s5_0634 e
+Q y :: Is there something specific you're working on that I can help with?
+== s5_0635 h amb | bare cliffhanger / story-continue prompt (d0260); alternative reading: open to the reader
+Q o :: What will Addison want to do next?
+== s5_0636 m | three setup details for a cron email
+Q o :: Who is the email to?
+Q o :: What should it say?
+Q e :: Is this a one-time send or recurring?
+O one-time send
+O recurring
+== s5_0637 e
+Q y p :: Want me to set up a small reproduction of this conflict in the working directory so you can document the actual command output at each step?
+== s5_0638 e neg
+== s5_0639 m neg | hard: parenthetical platform examples and "Let me know" without addressed '?'
+== s5_0640 e neg | hard: '?' only inside a UI string in code
+== s5_0641 e neg | hard: '?' only as a ternary fallback string in code
+== s5_0642 e
+Q o :: Could you please provide these details so I can assist you properly?
+== s5_0643 e neg
+== s5_0644 m | Swedish: what draws you; nostalgia/simplicity vs something else
+Q o :: Vad är det som lockar dig med den bilden?
+Q e :: Är det nostalgin, enkelheten, eller något annat?
+O nostalgin
+O enkelheten
+== s5_0645 e
+Q o :: What aspects of justice do you find most challenging to achieve?
+== s5_0646 m | several diagnostic yes/no and open troubleshooting questions
+Q o :: To start, can you provide some more details on what exactly the problem is?
+Q y :: Is the Xbox not powering on at all?
+Q y :: Is it turning on but not outputting video/audio?
+Q y :: Are you seeing any error messages?
+Q e :: Also, do you know if this started happening suddenly after the Xbox was working fine, or has it been a gradual issue?
+O suddenly after the Xbox was working fine
+O a gradual issue
+Q y :: And have there been any recent power surges, drops, or accidental damage to the console?
+== s5_0647 e neg
+== s5_0648 e neg
+== s5_0649 e
+Q y p :: Are you thinking we should give unassessed dimensions a default pessimistic score so they show up immediately?
+== s5_0650 m neg | hard: quoted field-shift questions in academic prose
+== s5_0651 e neg
+== s5_0652 e neg
+== s5_0653 e
+Q o :: Could you please verify the line ID once again?
+== s5_0654 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s5_0655 e
+Q e p :: Would you like up-to-date API usage examples or help selecting based on your stack?
+O up-to-date API usage examples
+O help selecting based on your stack
+== s5_0656 e neg
+== s5_0657 e neg
+== s5_0658 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s5_0659 e
+Q y p :: Want me to sketch the TypeScript reconnect class and the FastAPI upgrade-path limiter as code examples for the post?
+== s5_0660 m | naming options listed before the preference question
+Q m :: What feels right to you?
+O `task_handlers`
+O `compound_tasks`
+O `workflows`
+O Just leave it as `sm_functions` with the documentation
+== s5_0661 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s5_0662 e
+Q o :: What breed of dog do you have?
+== s5_0663 e neg | hard: '?' only in a JS ternary inside code
+== s5_0664 e
+Q o :: What specific context prompted the question?
+== s5_0665 m neg | hard: quoted example question in advice prose
+== s5_0666 e neg | hard: conditional storage advice without a question
+== s5_0667 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s5_0668 e
+Q o :: Could you please provide your email address?
+== s5_0669 e neg | hard: '?' only in Rust error propagation
+== s5_0670 e
+Q y p :: Want me to close the problematic ones (#35 at minimum) and rewrite the keepers in a more natural voice?
+== s5_0671 e
+Q y p :: Want me to add notes to those too while we're here?
+== s5_0672 e neg | hard: '?' only mentioning optional chaining in prose/code
+== s5_0673 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s5_0674 e neg | hard: '?' only in sample program input prompts
+== s5_0675 m neg | hard: in-character emotional dialogue without an addressed question to the user
+== s5_0676 e
+Q y p :: Want me to build these 4?
+== s5_0677 e neg
+== s5_0678 m neg | hard: rhetorical "Add a new overlay?" in a changelog
+== s5_0679 e neg
+== s5_0680 e neg
+== s5_0681 m neg | hard: rhetorical reframing questions in prose
+== s5_0682 e neg | hard: '?' only in sample program prompts inside code
+== s5_0683 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s5_0684 e neg | hard: '?' only in a worked math verification table
+== s5_0685 e
+Q y p :: Do you want me to help you set up or test a specific embedding model for clustering in your environment?
+== s5_0686 e neg
+== s5_0687 e
+Q m p :: Would you like to:
+O Set up real tokens and run it against a test repository?
+O Test against a small, safe repo first?
+O Just keep the scripts for future use?
+== s5_0688 e
+Q y p :: Would you like to try a practice prompt?
+== s5_0689 e neg
+== s5_0690 e
+Q o :: Where would you like to focus your trip?
+== s5_0691 e
+Q o :: Could you please share the full problem you'd like me to solve?
+== s5_0692 e
+Q o :: What's your specific context?
+== s5_0693 m neg | hard: rhetorical sharper question in prose
+== s5_0694 e neg | hard: cooking advice; no addressed question
+== s5_0695 e
+Q y p :: Would you like to proceed with that?
+== s5_0696 e
+Q o :: What's on your mind today?
+== s5_0697 e
+Q o :: What aspects of this relationship are you most interested in exploring further?
+== s5_0698 e
+Q y p :: Want to walk through a concrete example, like how an interval analysis proves an array access safe (or fails to)?
+== s5_0699 e
+Q y :: Is there an academic or practical problem I can assist you with today?
+== s5_0700 e
+Q e :: Was there a specific headline that caught your eye, or are you looking for a summary of the top stories in a particular sector?
+O a specific headline that caught your eye
+O a summary of the top stories in a particular sector
+== s5_0701 e neg | hard: '?' only in a quoted path/config fragment
+== s5_0702 m | lead-in plus three detail requests
+Q o :: Could you please share the specific example image or provide more details about:
+== s5_0703 e neg
+== s5_0704 e neg
+== s5_0705 m neg | hard: self-answered section heading in a worked solution
+== s5_0706 e
+Q o :: What draws you to this question?
+== s5_0707 e
+Q y p :: Would you like me to proceed with integrating these hooks?
+== s5_0708 h amb | in-character Hebrew genie asks for the first wish; alternative reading: story dialogue
+Q o :: נו, מה המשאלה הראשונה?
+== s5_0709 e neg
+== s5_0710 m neg | hard: home-buying self-check questions for the reader
+== s5_0711 m | lead-in for missing problem details
+Q o :: Could you please provide:
+== s5_0712 e
+Q o :: How can I help you today?
+== s5_0713 e neg
+== s5_0714 e
+Q e :: Do you remember if the light stayed on your skin, or was it purely the reflection of the sky?
+O the light stayed on your skin
+O purely the reflection of the sky
+== s5_0715 e neg | hard: '?' only inside a tool-call code edit
+== s5_0716 e neg
+== s5_0717 e
+Q y p :: Would you like a detailed guide for a specific model or platform?
+== s5_0718 e neg | hard: '?' only in a speculative aside in technical prose
+== s5_0719 e neg | hard: '?' only in shell `$?` inside a tool call
+== s5_0720 e neg
+== s5_0721 e neg
+== s5_0722 m neg | hard: quoted vendor boast in Korean literary prose
+== s5_0723 m neg | hard: rhetorical caveat question answered immediately
+== s5_0724 e
+Q y p :: Want me to build this out?
+== s5_0725 e neg
+== s5_0726 e neg
+== s5_0727 m | leaked decision then still asks before running auth/deploy
+Q y p :: Should I execute this command to verify authentication, and then proceed with the full deployment?
+== s5_0728 e neg
+== s5_0729 e neg
+== s5_0730 e
+Q y p :: Would you like me to help you explore or scaffold an example using LangChain or another framework?
+== s5_0731 e neg
+== s5_0732 m neg | hard: rhetorical "should they publish?" answered in prose
+== s5_0733 e neg | hard: '?' only in documentation/example prose about FindTest
+== s5_0734 m neg | hard: self-answered heading "Why use Active Voice?"
+== s5_0735 m | one ordering question that gates the design; happy to dig either path
+Q y :: does your consumer require strict per-key ordering?
+== s5_0736 h amb | blurb tagline posed to the reader; alternative reading: marketing copy only
+Q o :: What would you forget to save the world?
+== s5_0737 e neg
+== s5_0738 e neg | hard: '?' only in TypeScript optional fields
+== s5_0739 e neg
+== s5_0740 e
+Q o :: How can I help you today?
+== s5_0741 e neg
+== s5_0742 e
+Q o :: What can I help you with today?
+== s5_0743 m | diagnostic either_or on k-factor root cause
+Q e :: is it low invites-per-user, or low conversion of invites sent?
+O low invites-per-user
+O low conversion of invites sent
+== s5_0744 e
+Q y :: Do you believe you'll witness humans walking on Mars in your lifetime?
+== s5_0745 e
+Q e p :: Would you like me to help you refine a specific paragraph or suggest specific academic keywords for your abstract?
+O refine a specific paragraph
+O suggest specific academic keywords for your abstract
+== s5_0746 m neg | hard: heading "Where to Start?" plus "let me know" without addressed '?'
+== s5_0747 e neg
+== s5_0748 e neg | drop: privacy
+== s5_0749 e neg
+== s5_0750 e neg
+== s5_0751 e
+Q o :: How can I help you today?
+== s5_0752 e neg
+== s5_0753 e
+Q y p :: Would you like me to check if this project has existing infrastructure or configurations around LLM inference costs or specific recommendations?
+== s5_0754 e neg
+== s5_0755 m neg | hard: quoted diagnostic question in teaching prose
+== s5_0756 e neg
+== s5_0757 m | open fine-tuning kind (e.g. illustrative) then either_or on tool vs build
+Q o :: Which kind of fine-tuning are you aiming for (e.g., text, vision, multimodal)?
+Q e p :: do you want a ready-to-use tool/platform, or to build your own visual interface?
+O a ready-to-use tool/platform
+O to build your own visual interface
+== s5_0758 e
+Q o :: What specific angle interests you most?
+== s5_0759 e neg
+== s5_0760 m neg | hard: self-help "what's the actual barrier?" with illustrative Fear/Money/Inertia
+== s5_0761 e neg
+== s5_0762 e
+Q y p :: Would that be useful?
+== s5_0763 e
+Q e :: Have you had much experience with any of these cuisines before, or are you looking to try something completely new?
+O had much experience with any of these cuisines before
+O looking to try something completely new
+== s5_0764 m neg | hard: self-answered "Why does this work?" in a worked solution
+== s5_0765 m | lead-in open; For-example-style diagnostics supply selectable observations (amb)
+Q m :: Can you help me understand the problem more specifically?
+O When you open a video
+O What does "controls disconnected" mean exactly
+O For the thumbnail dimension issue
+== s5_0766 e
+Q y p :: Would you like help with anything else for your curriculum?
+== s5_0767 e | French: what should I add or change?
+Q o :: Qu'est-ce que tu souhaites que j'ajoute ou modifie ?
+== s5_0768 e
+Q o :: Could you please provide the specific problem or question you'd like me to solve?
+== s5_0769 m neg | hard: math-spirit self-check questions for the reader
+== s5_0770 m | finish cleanup vs something else escape → yes_no proposal
+Q y p :: Want me to finish the dprint definition cleanup (the last 5 files), or move on to something else?
+== s5_0771 m neg | hard: self-answered "Why not the others?" in a multiple-choice solution

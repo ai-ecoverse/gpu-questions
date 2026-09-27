@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gpu-questions · spot check</title>
+<style>
+  :root { --bg:#fafaf9; --panel:#fff; --line:#e7e5e4; --ink:#1c1917; --mute:#78716c;
+          --q:#fde68a; --opt:#bbf7d0; --rec:#e9d5ff; --mq:#f97316; --mopt:#2563eb; --mrec:#9333ea; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.45 -apple-system, system-ui, sans-serif; color:var(--ink); background:var(--bg);
+         display:grid; grid-template-columns: 340px 1fr; height:100vh; }
+  aside { border-right:1px solid var(--line); display:flex; flex-direction:column; min-height:0; background:var(--panel); }
+  .filters { padding:10px; border-bottom:1px solid var(--line); display:grid; gap:6px; }
+  .filters select, .filters input { width:100%; padding:5px 6px; border:1px solid var(--line); border-radius:6px; font:inherit; }
+  .progress { font-size:12px; color:var(--mute); }
+  .bar { height:6px; background:var(--line); border-radius:3px; overflow:hidden; }
+  .bar > div { height:100%; background:#16a34a; }
+  ul { list-style:none; margin:0; padding:0; overflow:auto; flex:1; }
+  li { padding:7px 10px; border-bottom:1px solid var(--line); cursor:pointer; font-size:12.5px; }
+  li:hover { background:#f5f5f4; } li.sel { background:#fef3c7; }
+  li .t { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  li .m { color:var(--mute); font-size:11.5px; display:flex; gap:6px; flex-wrap:wrap; margin-top:2px; }
+  .pill { padding:0 6px; border-radius:9px; background:#f5f5f4; border:1px solid var(--line); font-size:11px; }
+  .pill.amb { background:#fef3c7; border-color:#fcd34d; } .pill.dis { background:#fee2e2; border-color:#fca5a5; }
+  .pill.ok { background:#dcfce7; border-color:#86efac; } .pill.wrong { background:#fecaca; border-color:#f87171; }
+  .pill.unsure { background:#e0e7ff; border-color:#a5b4fc; }
+  main { overflow:auto; padding:16px 22px 80px; min-width:0; }
+  h2 { margin:0 0 4px; font-size:15px; } .meta { color:var(--mute); font-size:12px; margin-bottom:10px; }
+  .legend { font-size:12px; color:var(--mute); display:flex; gap:12px; flex-wrap:wrap; margin:6px 0 10px; align-items:center; }
+  .sw { display:inline-block; width:14px; height:10px; border-radius:2px; vertical-align:middle; margin-right:3px; }
+  .text { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:12px 14px;
+          white-space:pre-wrap; word-wrap:break-word; font:13px/1.55 ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .g-Q { background:var(--q); } .g-OPT { background:var(--opt); } .g-REC { background:var(--rec); }
+  .m-Q { box-shadow: inset 0 -2px 0 var(--mq); } .m-OPT { box-shadow: inset 0 -3px 0 var(--mopt); } .m-REC { box-shadow: inset 0 -3px 0 var(--mrec); }
+  .cols { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:10px 12px; }
+  .card h3 { margin:0 0 6px; font-size:13px; }
+  .q { border-top:1px dashed var(--line); padding-top:6px; margin-top:6px; } .q:first-of-type { border:0; margin:0; padding:0; }
+  .q .k { font-weight:600; } .q ol { margin:4px 0 0 18px; padding:0; } .q .def { font-weight:600; color:#15803d; }
+  .none { color:var(--mute); font-style:italic; }
+  .note { margin-top:12px; font-size:13px; background:#fffbeb; border:1px solid #fde68a; border-radius:8px; padding:8px 10px; }
+  .dis { margin-top:8px; font-size:13px; color:#b91c1c; }
+  .verdict { position:fixed; bottom:0; left:340px; right:0; background:var(--panel); border-top:1px solid var(--line);
+             padding:10px 22px; display:flex; gap:8px; align-items:center; }
+  .verdict button { padding:6px 12px; border-radius:6px; border:1px solid var(--line); background:#fff; font:inherit; cursor:pointer; }
+  .verdict button.on { outline:2px solid var(--ink); }
+  .verdict .ok { background:#dcfce7; } .verdict .wrong { background:#fee2e2; } .verdict .unsure { background:#e0e7ff; }
+  .verdict input { flex:1; padding:6px 8px; border:1px solid var(--line); border-radius:6px; font:inherit; }
+  .keys { color:var(--mute); font-size:11.5px; white-space:nowrap; }
+  label.tog { font-size:12px; color:var(--mute); user-select:none; }
+</style>
+</head>
+<body>
+<aside>
+  <div class="filters">
+    <select id="f-view">
+      <option value="flagged">Check first: ambiguous or model disagrees</option>
+      <option value="all">All items</option>
+      <option value="ambiguous">Ambiguous only</option>
+      <option value="disagree">Model disagrees only</option>
+      <option value="positive">Has a question</option>
+      <option value="negative">No question (negatives)</option>
+      <option value="unreviewed">Not yet reviewed</option>
+      <option value="wrong">Marked wrong</option>
+    </select>
+    <select id="f-kind"><option value="">Any kind</option><option>yes_no</option><option>either_or</option><option>multi_choice</option><option>open</option></select>
+    <select id="f-agent"><option value="">Any agent</option></select>
+    <input id="f-search" placeholder="Search text, note, dataset…">
+    <div class="progress" id="progress"></div>
+    <div class="bar"><div id="bar" style="width:0"></div></div>
+  </div>
+  <ul id="list"></ul>
+</aside>
+<main id="detail"><p class="none">Loading…</p></main>
+<div class="verdict">
+  <button class="ok" data-v="ok">✓ Label OK</button>
+  <button class="wrong" data-v="wrong">✗ Label wrong</button>
+  <button class="unsure" data-v="unsure">? Unsure</button>
+  <input id="comment" placeholder="What's wrong? (optional, saved with the verdict)">
+  <span class="keys">a ok · w wrong · u unsure · j/k next/prev · m model marks</span>
+</div>
+<script>
+let items = [], reviews = {}, view = [], cur = 0, showModel = true;
+const $ = s => document.querySelector(s);
+const esc = s => s.replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+
+async function init() {
+  [items, reviews] = await Promise.all([fetch("/api/items").then(r => r.json()), fetch("/api/reviews").then(r => r.json())]);
+  const agents = [...new Set(items.map(i => i.agent))].sort();
+  $("#f-agent").innerHTML += agents.map(a => `<option>${a}</option>`).join("");
+  ["#f-view", "#f-kind", "#f-agent"].forEach(s => $(s).addEventListener("change", () => refilter()));
+  $("#f-search").addEventListener("input", () => refilter());
+  document.querySelectorAll(".verdict button").forEach(b => b.addEventListener("click", () => save(b.dataset.v)));
+  document.addEventListener("keydown", onKey);
+  refilter();
+}
+
+function lastKind(i) { return i.expected.length ? i.expected[i.expected.length - 1].kind : "none"; }
+
+function refilter(keepId) {
+  const v = $("#f-view").value, k = $("#f-kind").value, a = $("#f-agent").value, s = $("#f-search").value.toLowerCase();
+  view = items.filter(i => {
+    if (v === "flagged" && !i.priority) return false;
+    if (v === "ambiguous" && !i.ambiguous) return false;
+    if (v === "disagree" && !i.disagree.length) return false;
+    if (v === "positive" && !i.expected.length) return false;
+    if (v === "negative" && i.expected.length) return false;
+    if (v === "unreviewed" && reviews[i.id]?.verdict) return false;
+    if (v === "wrong" && reviews[i.id]?.verdict !== "wrong") return false;
+    if (k && !i.expected.some(q => q.kind === k)) return false;
+    if (a && i.agent !== a) return false;
+    if (s && !(i.text + " " + i.note + " " + i.dataset + " " + i.id).toLowerCase().includes(s)) return false;
+    return true;
+  });
+  view.sort((x, y) => y.priority - x.priority);
+  cur = Math.max(0, keepId ? view.findIndex(i => i.id === keepId) : 0);
+  renderList(); renderDetail();
+}
+
+function renderList() {
+  const done = items.filter(i => reviews[i.id]?.verdict).length;
+  $("#progress").textContent = `${view.length} shown · ${done}/${items.length} reviewed · ${items.filter(i => reviews[i.id]?.verdict === "wrong").length} marked wrong`;
+  $("#bar").style.width = (100 * done / items.length) + "%";
+  $("#list").innerHTML = view.map((i, n) => {
+    const q = i.expected.length ? i.expected[i.expected.length - 1].prompt : "(no question) " + i.text.slice(-90);
+    const r = reviews[i.id]?.verdict;
+    return `<li data-n="${n}" class="${n === cur ? "sel" : ""}"><div class="t">${esc(q)}</div><div class="m">
+      <span>${esc(i.agent)}</span><span class="pill">${lastKind(i)}</span>
+      ${i.ambiguous ? '<span class="pill amb">ambiguous</span>' : ""}
+      ${i.disagree.length ? `<span class="pill dis">${esc(i.disagree.join(", "))}</span>` : ""}
+      ${r ? `<span class="pill ${r}">${r}</span>` : ""}</div></li>`;
+  }).join("");
+  $("#list").querySelectorAll("li").forEach(li => li.addEventListener("click", () => { cur = +li.dataset.n; renderList(); renderDetail(); }));
+  const sel = $("#list li.sel"); if (sel) sel.scrollIntoView({block: "nearest"});
+}
+
+function highlight(text, gold, model) {
+  const g = new Array(text.length).fill(""), m = new Array(text.length).fill("");
+  gold.forEach(([s, e, k]) => { for (let x = s; x < e; x++) g[x] = k; });
+  if (showModel) model.forEach(([s, e, k]) => { for (let x = s; x < e; x++) m[x] = k; });
+  let out = "", start = 0;
+  for (let x = 1; x <= text.length; x++) {
+    if (x === text.length || g[x] !== g[start] || m[x] !== m[start]) {
+      const cls = [g[start] && "g-" + g[start], m[start] && "m-" + m[start]].filter(Boolean).join(" ");
+      const chunk = esc(text.slice(start, x));
+      out += cls ? `<span class="${cls}">${chunk}</span>` : chunk;
+      start = x;
+    }
+  }
+  return out;
+}
+
+function questions(qs) {
+  if (!qs.length) return '<div class="none">No question</div>';
+  return qs.map(q => `<div class="q"><div><span class="k">${q.kind}</span>${q.propose ? " · offers to act" : ""}${q.multiSelect ? " · multi-select" : ""}</div>
+    <div>${esc(q.prompt || "")}</div>
+    ${q.options && q.options.length ? `<ol>${q.options.map((o, n) => `<li class="${n === q.default ? "def" : ""}">${esc(o)}${n === q.default ? " ★" : ""}</li>`).join("")}</ol>` : ""}</div>`).join("");
+}
+
+function renderDetail() {
+  const i = view[cur];
+  if (!i) { $("#detail").innerHTML = '<p class="none">Nothing matches these filters.</p>'; return; }
+  const r = reviews[i.id] || {};
+  $("#detail").innerHTML = `<h2>${cur + 1} / ${view.length} · ${esc(i.id)}</h2>
+    <div class="meta">${esc(i.dataset)} · ${esc(i.license)} · agent ${esc(i.agent)} · turn ${i.turn} · difficulty ${i.difficulty || "?"}</div>
+    <div class="legend">Gold: <span><span class="sw" style="background:var(--q)"></span>question</span>
+      <span><span class="sw" style="background:var(--opt)"></span>option</span><span><span class="sw" style="background:var(--rec)"></span>recommended</span>
+      <label class="tog"><input type="checkbox" id="tog" ${showModel ? "checked" : ""}> Model underlines:
+      <span style="color:var(--mq)">question</span>, <span style="color:var(--mopt)">option</span></label></div>
+    <div class="text">${highlight(i.text, i.gold_spans, i.model_spans)}</div>
+    ${i.note ? `<div class="note"><b>Labeler note:</b> ${esc(i.note)}</div>` : ""}
+    ${i.disagree.length ? `<div class="dis">Model disagrees: ${esc(i.disagree.join(", "))}</div>` : ""}
+    <div class="cols"><div class="card"><h3>Expected (hand label)</h3>${questions(i.expected)}</div>
+      <div class="card"><h3>Model prediction</h3>${questions(i.predicted)}</div></div>`;
+  $("#tog").addEventListener("change", e => { showModel = e.target.checked; renderDetail(); });
+  document.querySelectorAll(".verdict button").forEach(b => b.classList.toggle("on", b.dataset.v === r.verdict));
+  $("#comment").value = r.comment || "";
+  $("#detail").scrollTop = 0;
+}
+
+async function save(verdict) {
+  const i = view[cur]; if (!i) return;
+  const comment = $("#comment").value;
+  await fetch("/api/review", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({id: i.id, verdict, comment})});
+  reviews[i.id] = {id: i.id, verdict, comment};
+  const next = view[cur + 1]?.id;
+  if ($("#f-view").value === "unreviewed") refilter(next); else { cur = Math.min(cur + 1, view.length - 1); renderList(); renderDetail(); }
+}
+
+function onKey(e) {
+  if (e.target.tagName === "INPUT" && e.key !== "Enter" && e.key !== "Escape") return;
+  if (e.key === "Escape") { e.target.blur(); return; }
+  if (e.target.tagName === "INPUT" && e.key === "Enter") { save("wrong"); e.target.blur(); return; }
+  const map = {a: "ok", w: "wrong", u: "unsure"};
+  if (map[e.key]) save(map[e.key]);
+  else if (e.key === "j") { cur = Math.min(cur + 1, view.length - 1); renderList(); renderDetail(); }
+  else if (e.key === "k") { cur = Math.max(cur - 1, 0); renderList(); renderDetail(); }
+  else if (e.key === "m") { showModel = !showModel; renderDetail(); }
+}
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,405 @@
+# Hand-authored yes_no vs either_or pairs pa0001–pa0025 (seed quality).
+# a = either_or (two deliverables), b = yes_no (one change, attribute alternatives).
+
+PAIRS = [
+  {
+    "n": 1,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "The failing assertion is in `parse_flags`. I can either drop a unified diff of the fix or walk you through the control flow.\n\nWant a diff or a walkthrough?",
+    "text_b": "The failing assertion is in `parse_flags`. The `!` marker on the failing branch is easy to miss in the log dump.\n\nWant the `!` indicator to use a different color or label?",
+    "ann_a": [
+      "Q e p :: Want a diff or a walkthrough?",
+      "O a diff",
+      "O a walkthrough",
+    ],
+    "ann_b": [
+      "Q y p :: Want the `!` indicator to use a different color or label?",
+    ],
+  },
+  {
+    "n": 2,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "CI is green on this branch. Next I can open the PR or write the release notes draft.\n\nShall I open the PR or draft the release notes?",
+    "text_b": "CI is green on this branch. The draft PR title is a bit bland right now.\n\nShall I give the PR a different title or subtitle?",
+    "ann_a": [
+      "Q e p :: Shall I open the PR or draft the release notes?",
+      "O open the PR",
+      "O draft the release notes",
+    ],
+    "ann_b": [
+      "Q y p :: Shall I give the PR a different title or subtitle?",
+    ],
+  },
+  {
+    "n": 3,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "I finished the migration sketch. Two ways to proceed:\n\nWant me to apply the Alembic revision or generate a rollback script?",
+    "text_b": "I finished the migration sketch. The revision id is `20260925_users`.\n\nWant me to use a different revision id or message?",
+    "ann_a": [
+      "Q e p :: Want me to apply the Alembic revision or generate a rollback script?",
+      "O apply the Alembic revision",
+      "O generate a rollback script",
+    ],
+    "ann_b": [
+      "Q y p :: Want me to use a different revision id or message?",
+    ],
+  },
+  {
+    "n": 4,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "Lint is clean. Tests still flake on `test_retry_backoff`.\n\nPrefer I quarantine that test or dig into the race?",
+    "text_b": "Lint is clean. Tests still flake on `test_retry_backoff`.\n\nPrefer I give that test a different timeout or seed?",
+    "ann_a": [
+      "Q e p :: Prefer I quarantine that test or dig into the race?",
+      "O quarantine that test",
+      "O dig into the race",
+    ],
+    "ann_b": [
+      "Q y p :: Prefer I give that test a different timeout or seed?",
+    ],
+  },
+  {
+    "n": 5,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "Dashboard chart is rendering, but the empty state looks sparse.\n\nWant a skeleton loader or a short empty-state copy block?",
+    "text_b": "Dashboard chart is rendering, but the empty state looks sparse.\n\nWant the empty state to use a different icon or caption?",
+    "ann_a": [
+      "Q e p :: Want a skeleton loader or a short empty-state copy block?",
+      "O a skeleton loader",
+      "O a short empty-state copy block",
+    ],
+    "ann_b": [
+      "Q y p :: Want the empty state to use a different icon or caption?",
+    ],
+  },
+  {
+    "n": 6,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "Found the leak in the Redis client pool. Patch is ready in memory.\n\nDo you want me to push the fix or just paste the patch here?",
+    "text_b": "Found the leak in the Redis client pool. Patch is ready in memory.\n\nDo you want me to use a different pool size or idle timeout?",
+    "ann_a": [
+      "Q e p :: Do you want me to push the fix or just paste the patch here?",
+      "O push the fix",
+      "O just paste the patch here",
+    ],
+    "ann_b": [
+      "Q y p :: Do you want me to use a different pool size or idle timeout?",
+    ],
+  },
+  {
+    "n": 7,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "Docs for the CLI flag are missing. I can add a man-page section or a README example.\n\nShall I write the man-page section or draft the README example?",
+    "text_b": "Docs for the CLI flag are missing. The flag is currently `--fast`.\n\nShall I pick a different flag name or short alias?",
+    "ann_a": [
+      "Q e p :: Shall I write the man-page section or draft the README example?",
+      "O write the man-page section",
+      "O draft the README example",
+    ],
+    "ann_b": [
+      "Q y p :: Shall I pick a different flag name or short alias?",
+    ],
+  },
+  {
+    "n": 8,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "Typecheck fails on the new `WidgetProps` union. I have a fix path and a smaller reproduction.\n\nWant the fix commit or the minimal repro file?",
+    "text_b": "Typecheck fails on the new `WidgetProps` union. The error banner is buried in noise.\n\nWant a different error prefix or severity?",
+    "ann_a": [
+      "Q e p :: Want the fix commit or the minimal repro file?",
+      "O the fix commit",
+      "O the minimal repro file",
+    ],
+    "ann_b": [
+      "Q y p :: Want a different error prefix or severity?",
+    ],
+  },
+  {
+    "n": 9,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "Infra plan:\n- bump node image\n- pin pnpm\n- drop unused cache key\n\nReady for me to apply the Dockerfile changes or open an issue listing them?",
+    "text_b": "Infra plan:\n- bump node image\n- pin pnpm\n- drop unused cache key\n\nReady for me to use a different base image tag or digest?",
+    "ann_a": [
+      "Q e p :: Ready for me to apply the Dockerfile changes or open an issue listing them?",
+      "O apply the Dockerfile changes",
+      "O open an issue listing them",
+    ],
+    "ann_b": [
+      "Q y p :: Ready for me to use a different base image tag or digest?",
+    ],
+  },
+  {
+    "n": 10,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "The CSV importer swallows malformed rows. I can either hard-fail or write them to a sidecar.\n\nWant me to hard-fail on bad rows or write a sidecar reject file?",
+    "text_b": "The CSV importer swallows malformed rows. Logging is too quiet.\n\nWant me to use a different log level or channel for rejects?",
+    "ann_a": [
+      "Q e p :: Want me to hard-fail on bad rows or write a sidecar reject file?",
+      "O hard-fail on bad rows",
+      "O write a sidecar reject file",
+    ],
+    "ann_b": [
+      "Q y p :: Want me to use a different log level or channel for rejects?",
+    ],
+  },
+  {
+    "n": 11,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "Storybook build is loud about the Button stories. I trimmed the args table locally.\n\nWant a cleaned Storybook build or a patch that silences the warnings?",
+    "text_b": "Storybook build is loud about the Button stories. I trimmed the args table locally.\n\nWant a different story title or layout?",
+    "ann_a": [
+      "Q e p :: Want a cleaned Storybook build or a patch that silences the warnings?",
+      "O a cleaned Storybook build",
+      "O a patch that silences the warnings",
+    ],
+    "ann_b": [
+      "Q y p :: Want a different story title or layout?",
+    ],
+  },
+  {
+    "n": 12,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "Auth middleware rejects expired tokens correctly now. Next step is docs or a smoke test.\n\nShould I add an integration smoke test or update the auth README?",
+    "text_b": "Auth middleware rejects expired tokens correctly now. The 401 body is generic.\n\nShould I use a different error code or message body?",
+    "ann_a": [
+      "Q e p :: Should I add an integration smoke test or update the auth README?",
+      "O add an integration smoke test",
+      "O update the auth README",
+    ],
+    "ann_b": [
+      "Q y p :: Should I use a different error code or message body?",
+    ],
+  },
+  {
+    "n": 13,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "GraphQL schema drift: `User.email` is non-null in code but nullable in the SDL.\n\nWant me to align the SDL or add a client-side null guard?",
+    "text_b": "GraphQL schema drift: `User.email` is non-null in code but nullable in the SDL.\n\nWant me to pick a different field name or nullability?",
+    "ann_a": [
+      "Q e p :: Want me to align the SDL or add a client-side null guard?",
+      "O align the SDL",
+      "O add a client-side null guard",
+    ],
+    "ann_b": [
+      "Q y p :: Want me to pick a different field name or nullability?",
+    ],
+  },
+  {
+    "n": 14,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "Playwright run: 1 flake in `checkout.spec.ts` on webkit.\n\nShall I mark it `fixRetries` or replace the selector?",
+    "text_b": "Playwright run: 1 flake in `checkout.spec.ts` on webkit.\n\nShall I use a different selector strategy or wait?",
+    "ann_a": [
+      "Q e p :: Shall I mark it `fixRetries` or replace the selector?",
+      "O mark it `fixRetries`",
+      "O replace the selector",
+    ],
+    "ann_b": [
+      "Q y p :: Shall I use a different selector strategy or wait?",
+    ],
+  },
+  {
+    "n": 15,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "Terraform plan shows 3 destroys in `networking`. I held off applying.\n\nWant the full plan output or a targeted `terraform state list` dump?",
+    "text_b": "Terraform plan shows 3 destroys in `networking`. I held off applying.\n\nWant a different workspace name or backend key?",
+    "ann_a": [
+      "Q e p :: Want the full plan output or a targeted `terraform state list` dump?",
+      "O the full plan output",
+      "O a targeted `terraform state list` dump",
+    ],
+    "ann_b": [
+      "Q y p :: Want a different workspace name or backend key?",
+    ],
+  },
+  {
+    "n": 16,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "I extracted the shared date formatter. Call sites still import the old path.\n\nWant me to update the call sites or leave a deprecated re-export?",
+    "text_b": "I extracted the shared date formatter. Call sites still import the old path.\n\nWant me to use a different export name or module path?",
+    "ann_a": [
+      "Q e p :: Want me to update the call sites or leave a deprecated re-export?",
+      "O update the call sites",
+      "O leave a deprecated re-export",
+    ],
+    "ann_b": [
+      "Q y p :: Want me to use a different export name or module path?",
+    ],
+  },
+  {
+    "n": 17,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "Sentry fingerprinting groups unrelated 500s together.\n\nPrefer I tighten the fingerprint rules or add a sample event dump?",
+    "text_b": "Sentry fingerprinting groups unrelated 500s together.\n\nPrefer I use a different fingerprint key or sample rate?",
+    "ann_a": [
+      "Q e p :: Prefer I tighten the fingerprint rules or add a sample event dump?",
+      "O tighten the fingerprint rules",
+      "O add a sample event dump",
+    ],
+    "ann_b": [
+      "Q y p :: Prefer I use a different fingerprint key or sample rate?",
+    ],
+  },
+  {
+    "n": 18,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "Feature flag `checkout_v2` is at 5%. Rollout notes are drafted.\n\nWant me to bump the percentage or write the kill-switch runbook?",
+    "text_b": "Feature flag `checkout_v2` is at 5%. Rollout notes are drafted.\n\nWant me to use a different flag key or default?",
+    "ann_a": [
+      "Q e p :: Want me to bump the percentage or write the kill-switch runbook?",
+      "O bump the percentage",
+      "O write the kill-switch runbook",
+    ],
+    "ann_b": [
+      "Q y p :: Want me to use a different flag key or default?",
+    ],
+  },
+  {
+    "n": 19,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "OpenAPI still lists `GET /v1/items` as experimental.\n\nShall I promote it to stable in the spec or add a deprecation notice instead?",
+    "text_b": "OpenAPI still lists `GET /v1/items` as experimental.\n\nShall I use a different operationId or tag?",
+    "ann_a": [
+      "Q e p :: Shall I promote it to stable in the spec or add a deprecation notice instead?",
+      "O promote it to stable in the spec",
+      "O add a deprecation notice instead",
+    ],
+    "ann_b": [
+      "Q y p :: Shall I use a different operationId or tag?",
+    ],
+  },
+  {
+    "n": 20,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "Kafka consumer lag spiked after the deploy. I have a lag chart and a proposed partition bump.\n\nWant the lag chart pasted here or the partition-bump PR?",
+    "text_b": "Kafka consumer lag spiked after the deploy. I have a lag chart and a proposed partition bump.\n\nWant a different consumer group name or client id?",
+    "ann_a": [
+      "Q e p :: Want the lag chart pasted here or the partition-bump PR?",
+      "O the lag chart pasted here",
+      "O the partition-bump PR",
+    ],
+    "ann_b": [
+      "Q y p :: Want a different consumer group name or client id?",
+    ],
+  },
+  {
+    "n": 21,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "i18n audit: 12 hard-coded strings in Settings.\n\nWant me to extract them to `en.json` or open a tracking issue per file?",
+    "text_b": "i18n audit: 12 hard-coded strings in Settings.\n\nWant me to use a different locale file name or namespace?",
+    "ann_a": [
+      "Q e p :: Want me to extract them to `en.json` or open a tracking issue per file?",
+      "O extract them to `en.json`",
+      "O open a tracking issue per file",
+    ],
+    "ann_b": [
+      "Q y p :: Want me to use a different locale file name or namespace?",
+    ],
+  },
+  {
+    "n": 22,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "Accessibility: the modal traps focus incorrectly on Escape.\n\nShould I fix the focus trap or add a failing axe test first?",
+    "text_b": "Accessibility: the modal traps focus incorrectly on Escape.\n\nShould I use a different aria-label or role?",
+    "ann_a": [
+      "Q e p :: Should I fix the focus trap or add a failing axe test first?",
+      "O fix the focus trap",
+      "O add a failing axe test first",
+    ],
+    "ann_b": [
+      "Q y p :: Should I use a different aria-label or role?",
+    ],
+  },
+  {
+    "n": 23,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "Dockerfile multi-stage build works; image is 180MB.\n\nWant a size breakdown or a further slim pass with distroless?",
+    "text_b": "Dockerfile multi-stage build works; image is 180MB.\n\nWant a different image name or tag scheme?",
+    "ann_a": [
+      "Q e p :: Want a size breakdown or a further slim pass with distroless?",
+      "O a size breakdown",
+      "O a further slim pass with distroless",
+    ],
+    "ann_b": [
+      "Q y p :: Want a different image name or tag scheme?",
+    ],
+  },
+  {
+    "n": 24,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "SQL migration adds `users.last_seen_at`. Local migrate succeeded.\n\nWant me to run it against staging or just commit the file?",
+    "text_b": "SQL migration adds `users.last_seen_at`. Local migrate succeeded.\n\nWant me to use a different column name or type?",
+    "ann_a": [
+      "Q e p :: Want me to run it against staging or just commit the file?",
+      "O run it against staging",
+      "O just commit the file",
+    ],
+    "ann_b": [
+      "Q y p :: Want me to use a different column name or type?",
+    ],
+  },
+  {
+    "n": 25,
+    "boundary": "yes_no/either_or",
+    "note_a": "two deliverables -> either_or",
+    "note_b": "one change several attributes -> yes_no",
+    "text_a": "Rate limiter is in place for `/api/search`. Defaults: 60/min per IP.\n\nShall I add Redis-backed counters or keep the in-memory stub for now?",
+    "text_b": "Rate limiter is in place for `/api/search`. Defaults: 60/min per IP.\n\nShall I use a different window size or burst cap?",
+    "ann_a": [
+      "Q e p :: Shall I add Redis-backed counters or keep the in-memory stub for now?",
+      "O add Redis-backed counters",
+      "O keep the in-memory stub for now",
+    ],
+    "ann_b": [
+      "Q y p :: Shall I use a different window size or burst cap?",
+    ],
+  },
+]

@@ -1,0 +1,222 @@
+== t4b-n0000 m
+Q o :: can you paste the browser console error?
+
+== t4b-n0001 m neg | hard: question mark occurs in a code placeholder, not an addressed question
+
+== t4b-n0002 m neg | hard: `exact?` is Lean syntax in a status report
+
+== t4b-n0003 m
+Q e :: Do you mean *higher‑order* PDA (stack of stacks), *higher‑dimensional* PDA, or something else by “HD‑PDA”?
+O *higher‑order* PDA
+O *higher‑dimensional* PDA
+
+== t4b-n0004 e
+Q y :: Anything else you want this pass to treat specially (e.g., ignore certain builtins or attributes)?
+
+== t4b-n0005 e
+Q y p :: Want me to clean up that deprecation and add the runtime-compose dependency?
+
+== t4b-n0006 h amb | The second numbered question combines approval of a version bump with a preference about exposing the byte; I kept its combined sentence as one approval question.
+Q o :: What should the byte represent exactly?
+Q y :: The existing `kind` strings from the CSV (e.g. `street`, `airport`, `bus_stop`, `sight`, etc.)?
+Q y p :: OK to bump packed version to v10 (hard switch), and should the web client expose the kind byte in results?
+
+== t4b-n0007 m
+Q e p :: Which one do you want?
+O set‑comprehension form
+O `Set.image` form
+
+== t4b-n0008 e
+Q y p :: Anything else you want renamed in this block?
+
+== t4b-n0009 m neg | hard: the question mark is inside a quoted subheader that was added to a file
+
+== t4b-n0010 m
+Q y :: Did you mean “try the label table for edge labels”?
+Q y p :: OK to bump to v8?
+Q y p :: Hard switch (drop v7 support) like before?
+
+== t4b-n0011 m
+Q e p :: Which do you prefer?
+O `aiohttp` + `asyncio`
+O `requests-futures`
+
+== t4b-n0012 m neg | hard: `?` occurs only inside a generated regular expression example
+
+== t4b-n0013 h
+Q e p :: To make it “unified,” do you want the structure to carry only ~~ or should we drop NT-level maps entirely and update the rest of the file to use only `embed`/`project` on symbols?
+O *define* `embedNT`/`projectNT` via these
+O drop NT-level maps entirely
+
+== t4b-n0014 e neg | no addressed question
+
+== t4b-n0015 m
+Q o :: Can you paste the debug log line for the two entries (or the `loc` array for Bern and Bercher)?
+
+== t4b-n0016 e
+Q e p :: Want it to output CSV or JSON instead?
+O CSV
+O JSON
+
+== t4b-n0017 m neg | hard: DLBA⇔?LBA is the name of an open research question, not a request to the user
+
+== t4b-n0018 m neg | hard: question mark appears in a quoted URL, not a question
+
+== t4b-n0019 m
+Q y p :: Want the command block to be selectable (long‑press to copy) as well, or is the icon enough?
+
+== t4b-n0020 m neg | hard: the question is a quoted explanation of a mathematical property and is answered in the turn
+
+== t4b-n0021 h
+Q o :: Can you share what server is hosting the shards (nginx, S3, a node/express app, etc.) and whether you want the URL to remain `*.packed` or you’re OK changing it to `*.packed.gz`?
+
+== t4b-n0022 m neg | hard: the user-style question is quoted and then answered by the assistant
+
+== t4b-n0023 m
+Q e p :: Just to confirm: do you want it to always **overwrite the evaled file** *and then* compute metrics from that freshly written file (current behavior), or do you want it to **prefer existing evaled outputs for metrics** but still overwrite them afterward?
+O always **overwrite the evaled file** *and then* compute metrics from that freshly written file
+O **prefer existing evaled outputs for metrics** but still overwrite them afterward
+
+== t4b-n0024 m neg | hard: conditional offer without a question
+
+== t4b-n0025 m neg | hard: `??` is git status output; the later offer is conditional
+
+== t4b-n0026 m
+Q e p :: did you mean `feat/IndexedNormalForm`, or should I create `feat/IndexedGrammar` pointing at that same commit?
+O `feat/IndexedNormalForm`
+O create `feat/IndexedGrammar` pointing at that same commit
+
+== t4b-n0027 h
+Q y :: Is “Denison Street” present in `street_polygons.csv`?
+Q y :: Did you rebuild `street_trie.packed` after generating the latest CSV?
+Q y :: Is the CSV filtered (bbox, region) or missing Sydney data?
+
+== t4b-n0028 m
+Q y p :: Want the status button to refresh when you return from Settings without leaving the help screen, or is current behavior fine?
+
+== t4b-n0029 h
+Q e p :: How would you like me to proceed?
+O Fix the errors in `[REDACTED].lean` directly
+O Restore your updated version of that file
+
+== t4b-n0030 m neg | hard: “Private or Public?” is text for an iOS Shortcut, not an addressed question
+
+== t4b-n0031 m
+Q m :: What do you want to use as “city name” for each street polygon?
+O Use `addr:city` tag on the way
+O Use enclosing admin boundary
+O Use `addr:place` as fallback
+
+== t4b-n0032 m neg | hard: two questions are quoted examples of the established and missing theorem
+
+== t4b-n0033 m neg | hard: `exact?` is a Lean placeholder discussed in a build report
+
+== t4b-n0034 e
+Q y p :: Want me to run `uv run python -m pytest trie/tests/test_build_street_trie.py`?
+
+== t4b-n0035 m
+Q e p :: Do you want the entire autth port **kept inside** `ContextFreeLanguage.lean`, or can I split it into helper files (e.g. `ContextFree/Leftmost.lean`, `ContextFree/CFGtoPDA.lean`, `ContextFree/PDAtoCFG.lean`) and just `import` them?
+O **kept inside** `ContextFreeLanguage.lean`
+O split it into helper files
+
+== t4b-n0036 h amb | The first question offers defining, reusing, or importing a notion, with the last two potentially overlapping; I kept the explicit three alternatives. The following examples illustrate possible theorem statements.
+Q m :: Do you want to define `Language.IsContextFree` (or reuse Mathlib’s) in this file, or just import it?
+O define `Language.IsContextFree`
+O reuse Mathlib’s
+O just import it
+Q o :: What is the exact statement you want to prove?
+Q y :: Do we already have (or should I build) **CFG ↔ PDA translations** inside Cslib?
+
+== t4b-n0037 m neg | hard: “Should you change anything besides augmentations?” is answered immediately by the assistant
+
+== t4b-n0038 h neg | hard: the advice gives a self-reflection prompt as an example, followed only by a conditional offer
+
+== t4b-n0039 m neg | hard: question marks occur inside the example prompt regex, not in an addressed question
+
+== t4b-n0040 m
+Q e :: Can you let me know which route you prefer?
+O Introduce Lean‑4 definitions of `List.join`/`List.nthLe`
+O Refactor the whole development away from those APIs
+
+== t4b-n0041 m neg | hard: “can we get normal form?” is a quoted research question answered by the assistant
+
+== t4b-n0042 m neg | hard: `??` is git status syntax in the report
+
+== t4b-n0043 m
+Q e p :: Want a different key color or also colorize the summary table headers in `list_entries`?
+O a different key color
+O colorize the summary table headers in `list_entries`
+
+== t4b-n0044 e
+Q o :: What do you want me to do next in `$HOME/git/grammars4`?
+
+== t4b-n0045 h
+Q y p :: Want me to rerun it and then tackle the pytest failures/warnings?
+Q e p :: tell me whether you want:
+O Fixes to test imports/pycardano dependency first
+O Pydantic v2 warning cleanups
+
+== t4b-n0046 h
+Q e p :: Do you want these included alongside street names in the same CSV/trie, or in a separate output?
+O alongside street names in the same CSV/trie
+O in a separate output
+Q e p :: should I filter to “major” sights only (e.g., based on `wikipedia`/`wikidata`/`tourism=attraction`) or include all attractions?
+O filter to “major” sights only
+O include all attractions
+
+== t4b-n0047 m neg | hard: the question marks are Lean proof placeholders in a code excerpt
+
+== t4b-n0048 m
+Q e p :: Want a matching namespace wrapper for this too (e.g., `PDA.FinalState`), or keep it directly under `PDA.FinAcc`?
+O a matching namespace wrapper for this too
+O keep it directly under `PDA.FinAcc`
+
+== t4b-n0049 m neg | hard: `??` denotes an untracked file in git status
+
+== t4b-n0050 m neg | hard: question mark is Kotlin nullable type syntax in an explanatory answer
+
+== t4b-n0051 m
+Q m p :: Which do you prefer?
+O Remove the auto city-name insertion entirely
+O Only add city-name entries when `kind != "city"` AND when the city row is missing
+O Aggregate city entries to one location per city
+
+== t4b-n0052 h amb | One sentence asks for two independent preferences, each with two explicit choices. I record the full sentence once with four selectable values rather than overlapping Q spans.
+Q m :: Where do you want the logs (console vs on-page), and should they be always-on or behind a flag (e.g., `window.STREET_LOOKUP_DEBUG = true`)?
+O console
+O on-page
+O always-on
+O behind a flag
+
+== t4b-n0053 e
+Q y p :: Want me to dig into the failure and fix it?
+
+== t4b-n0054 m
+Q o :: Can you clarify what “visibility” means here (e.g., SEO/readme/docs, UI contrast/accessibility, performance, logging/observability, or something else) and which surfaces matter (site, API, docs, repo)?
+
+== t4b-n0055 h
+Q o :: Can you share a bit more context—what component is handling the shards (backend service, storage layer, or a build step), and where in the repo should I look?
+Q e :: are you asking about keeping them zipped at rest only, or also serving them zipped to clients?
+O keeping them zipped at rest only
+O also serving them zipped to clients
+
+== t4b-n0056 m neg | hard: “Create boarding pass?” is a translated UI string, not an addressed question
+
+== t4b-n0057 m neg | hard: `?.` is Kotlin safe-call syntax inside code
+
+== t4b-n0058 m
+Q e p :: Which way do you want me to formalize?
+O **Commutation/reordering** of g₁/g₂ steps
+O **Stability under g₂ steps** plus induction on derivations
+
+== t4b-n0059 e neg | no addressed question
+
+== t4b-f000 m
+Q e p :: approve this complete plan or request a revision.
+O approve this complete plan
+O request a revision
+
+== t4b-f001 m
+Q e p :: Do you want me to authorize installing `openpyxl` ~~ until later?
+O authorize installing `openpyxl`
+O defer that and have S02 proceed on CSV/store work first

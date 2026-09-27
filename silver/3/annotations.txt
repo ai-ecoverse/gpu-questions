@@ -1,0 +1,1437 @@
+# Silver queue_3 hand annotations. Format: see scripts/build_gold.py.
+# Keys refer to data/silver/queue_3.jsonl. Every block was written by reading the item; nothing here is generated.
+# Rules: gold/CONVENTIONS.md, gold/batch3/QUESTIONS.md.
+
+== s3_0000 e
+Q y :: Do any of those sound appealing to you?
+== s3_0001 e neg
+== s3_0002 m neg | hard: imperative action request and 'Things you could ask next' suggestions, no addressed question
+== s3_0003 e
+Q y :: Do any of these "maps" or "limits" resonate with the way you currently structure your goals?
+== s3_0004 m neg | hard: self-answered rhetorical 'Is existence valuable?'
+== s3_0005 m neg | hard: diagnostic question posed as advice for evaluating studies, not asked of the user
+== s3_0006 m | Ask yourself self-reflection is not addressed; closing is either_or proposal
+Q e p :: Would you like me to tailor this more specifically to a home-office environment or a corporate setting?
+O a home-office environment
+O a corporate setting
+== s3_0007 e neg
+== s3_0008 e
+Q o :: What specific aspect concerns you most?
+== s3_0009 m neg | hard: self-answered joke question; 'Let me know if you'd like…' has no question mark
+== s3_0010 e | asks the user to continue testing (no 'me')
+Q y :: Want to do more testing to confirm the videos now track correctly with image moves?
+== s3_0011 e neg
+== s3_0012 e neg
+== s3_0013 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s3_0014 m neg | hard: in-character rhetorical 'Do you know how distracting…?' self-answered 'Very'
+== s3_0015 e
+Q y p :: Want me to commit these changes?
+== s3_0016 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s3_0017 e
+Q y p :: Would you like me to expand on any specific aspect?
+== s3_0018 e neg
+== s3_0019 m neg | hard: '?' only in JS ternaries inside an Edit tool payload
+== s3_0020 e | space examples after are e.g. illustrations
+Q o :: Where would you like to start?
+== s3_0021 m neg | hard: '?' only in optional chaining inside code
+== s3_0022 m neg | hard: '?' only in nullish-coalescing inside an Edit tool payload
+== s3_0023 e
+Q y p :: Want me to do that now?
+== s3_0024 h amb | in-character question addressed to the user's character; alternative reading: story dialogue (hard negative)
+Q o :: Somethin' on your mind?
+== s3_0025 e neg
+== s3_0026 m neg | hard: rhetorical questions inside literary prose, not addressed to the user
+== s3_0027 e
+Q o :: Could you please clarify or provide more details on what you're looking for?
+== s3_0028 e neg
+== s3_0029 e
+Q y p :: Would you like me to look for any existing tracking code or configuration in your repo?
+== s3_0030 m neg | hard: conditional offer 'If you want, I can commit…' without a question
+== s3_0031 e
+Q o :: What specific aspect matters most to you?
+== s3_0032 e neg
+== s3_0033 m neg | hard: self-answered joke Q&A; closing 'just let me know if…' has no question mark
+== s3_0034 m neg | hard: self-answered joke question
+== s3_0035 e
+Q y :: Does that distinction make sense for you?
+== s3_0036 e neg
+== s3_0037 m neg | hard: '?' only in JS ternaries inside test code
+== s3_0038 e
+Q o :: What specific aspect is giving you the most trouble?
+== s3_0039 m neg | hard: narrator rhetorical questions about the NPCs, answered 'Only time will tell'
+== s3_0040 m neg | hard: '?' only in Ruby predicate methods (`premium?`, `express?`) inside code
+== s3_0041 m neg | hard: conditional offer 'If you'd like, I can still help…' with a choice list, no question mark
+== s3_0042 e
+Q y :: Is there anything else you would like to practice or review?
+== s3_0043 e
+Q o :: What was the price of the book mentioned in your text?
+== s3_0044 m | 'instructions or code to set up…locally' is one arm; integrate is the other
+Q e p :: Would you like me to help you with instructions or code to set up Stable Diffusion locally or integrate it into your project?
+O instructions or code to set up Stable Diffusion locally
+O integrate it into your project
+== s3_0045 e neg
+== s3_0046 m neg | hard: bold 'Question:' is a constructed QA-pair example, not asked of the user
+== s3_0047 e
+Q o :: What specific aspect interests you most?
+== s3_0048 m neg | hard: self-answered rhetorical 'Is it impossible to violate the data?'
+== s3_0049 m | lead-in requests missing figure details; parentheticals are e.g. examples
+Q o :: Could you please:
+== s3_0050 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s3_0051 m neg | hard: evaluative checklist questions the reader should ask themselves, not the assistant
+== s3_0052 e neg
+== s3_0053 e neg
+== s3_0054 m neg | hard: '?' only in optional chaining inside an Edit tool payload
+== s3_0055 e neg
+== s3_0056 m neg | hard: '?' only in a film tagline quote
+== s3_0057 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s3_0058 e neg
+== s3_0059 m neg | hard: '?' only in Ruby predicate methods (`empty?`) inside code
+== s3_0060 e
+Q e p :: Would you like starter code or usage tips for any of these models?
+O starter code
+O usage tips
+== s3_0061 m neg | hard: rubric criteria phrased as questions; closing is an imperative paste request without '?'
+== s3_0062 e neg
+== s3_0063 e neg
+== s3_0064 m | five distinct information questions; 'or both' is a third option; closing 'Could you share this info' restates
+Q o :: What framework or tech stack is your demo using?
+Q o :: What kind of files do you want to upload?
+Q o :: How do you want to process the uploaded files?
+Q m :: Are you looking for client-side uploading, server-side processing, or both?
+O client-side uploading
+O server-side processing
+O both
+Q y :: Do you already have any infrastructure or backend APIs set up?
+== s3_0065 e neg
+== s3_0066 e neg
+== s3_0067 e neg | hard: '?' only in Rust error propagation inside code
+== s3_0068 e neg
+== s3_0069 e | joke Q is self-answered; closing offer is a proposal
+Q y p :: Want another one?
+== s3_0070 e
+Q y p :: Want another one?
+== s3_0071 e neg
+== s3_0072 e neg
+== s3_0073 e neg
+== s3_0074 e neg
+== s3_0075 e neg
+== s3_0076 h amb | open clarification with For example diagnostic subquestions treated as selectable observations; alternative reading: open with illustrative examples
+Q m :: Could you please provide more details about the situation?
+O Which professors are you talking about
+O What kind of spending are they doing
+O What is the budget they are working with
+O Is there a specific reason the spending needs to be reduced
+== s3_0077 e
+Q e :: Do you remember if you actually woke up right after that line, or did the dream keep going?
+O you actually woke up right after that line
+O did the dream keep going
+== s3_0078 e neg
+== s3_0079 e neg
+== s3_0080 m | lead-in requests missing problem materials
+Q o :: Could you please provide:
+== s3_0081 m neg | hard: prep questions the user should answer to a doctor, not to the assistant
+== s3_0082 e
+Q o :: What specific qualifications were misrepresented?
+== s3_0083 e
+Q o :: What word or phrase would you like to start with for me to anagram?
+== s3_0084 m | first asks what to test; then two concrete test actions (something else is escape); agent would run them
+Q o :: Could you let me know what you'd like me to test?
+Q e p :: Are you asking me to:
+O Apply the `place` tool to actually move a clip (without `--dry-run`) and then verify with `python3 tools/cli.py view`
+O Test a specific scenario with the place tool
+== s3_0085 e
+Q o :: What's your specific context?
+== s3_0086 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s3_0087 m neg | hard: '?' only in a quoted example user message inside code
+== s3_0088 h amb | in-character questions to the user's character (Loki); alternative reading: story dialogue
+Q o :: Who was it that never looked, I wonder?
+Q o :: A father?
+Q o :: A brother?
+== s3_0089 m neg | hard: 'Are you running tight on time?' is a self-check inside advice, not asked of the assistant
+== s3_0090 e neg
+== s3_0091 e neg
+== s3_0092 e neg
+== s3_0093 e neg
+== s3_0094 e neg
+== s3_0095 e | arms are two ways to identify the account, not two answers
+Q o :: Could you please provide a valid customer email address associated with your account?
+== s3_0096 h amb | clarification with common interpretations as selectable observations; alternative reading: open with illustrative examples
+Q m :: Could you clarify what you're trying to convey?
+O Palindromic substring identification
+O An algorithm trace
+O A transformation puzzle
+== s3_0097 e neg
+== s3_0098 e
+Q o :: What specific questions do you have?
+== s3_0099 e
+Q y p :: Want me to rewrite it?
+== s3_0100 m neg | hard: instructional 'Want X? Do Y.' pattern, not asking the user to answer
+== s3_0101 e
+Q e p :: Would you like a specific template for any of these sections, or perhaps a sample paragraph for a specific teaching methodology?
+O a specific template for any of these sections
+O a sample paragraph for a specific teaching methodology
+== s3_0102 e neg
+== s3_0103 m | joke is self-answered; closing imperative asks the user for a joke
+Q o :: hit me with your best joke!
+== s3_0104 m neg | hard: '?' only as SQL parameter placeholders inside code
+== s3_0105 e neg
+== s3_0106 e neg
+== s3_0107 m neg | hard: '?' only in optional chaining and nullish-coalescing inside code
+== s3_0108 e | 'either lever' refers to the two listed paths as a single yes/no proposal
+Q y p :: Want me to start on either lever?
+== s3_0109 e neg
+== s3_0110 e | clarifying which of two UI behaviors; closing restates
+Q e :: do you want the "New shot" button to:
+O Always be visible
+O Only appear on hover
+== s3_0111 e neg
+== s3_0112 m | second arm is an open escape ('further questions')
+Q y p :: Would you like a sample deployment YAML for a specific ML serving framework (e.g., Triton, TensorFlow Serving, TorchServe) or have further questions about GPU config or monitoring?
+== s3_0113 e
+Q o :: What do you want to push on?
+== s3_0114 m | three verification questions asking the user to report what they see
+Q y :: Do you see `[ShareButtonFix] handleShare called` in console?
+Q y :: Do you see `[ShareButtonFix] Copying existing share URL`?
+Q y :: Do you see `[ShareButtonFix] Copy result: true/false`?
+== s3_0115 e | Swahili: would you like me to tell you more about daily life, the education system, or wars between animal cities
+Q m p :: Je, ungependa nikuelezee zaidi kuhusu maisha ya kila siku, mfumo wa elimu, au pengine vita kati ya majiji ya wanyama?
+O maisha ya kila siku
+O mfumo wa elimu
+O vita kati ya majiji ya wanyama
+== s3_0116 e
+Q o :: please provide:
+== s3_0117 e
+Q o :: What do you think?
+Q o :: Are there particular forms of art you find especially truth-revealing?
+== s3_0118 e neg
+== s3_0119 e neg
+== s3_0120 e
+Q y p :: Want me to commit all these debug tool improvements?
+== s3_0121 e
+Q e p :: Would you like me to check your current `requirements.txt` or `pyproject.toml` to tell you exactly where to insert the line?
+O `requirements.txt`
+O `pyproject.toml`
+== s3_0122 e
+Q e p :: Want me to fix the quick wins (entry patterns + threshold), or do you want to think about the deeper `orphaned.py` abstraction question first?
+O fix the quick wins
+O think about the deeper `orphaned.py` abstraction question first
+== s3_0123 e
+Q y p :: Is there anything else you'd like me to implement or test for the tool calling feature?
+== s3_0124 e
+Q o :: How has your energy been lately?
+== s3_0125 m neg | hard: '?' only in sample program output / prompts inside code
+== s3_0126 e
+Q y p :: Would you like me to execute the full setup now?
+== s3_0127 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s3_0128 e
+Q y p :: Want me to try a different angle - like "members who posted in the last 30/90 days" for a more meaningful "active" count?
+== s3_0129 e neg
+== s3_0130 e neg
+== s3_0131 e | recommends Option A, asks approval to implement it
+Q y p :: Should I implement Option A to add orphan detection to the segment slots?
+== s3_0132 e neg
+== s3_0133 e
+Q e p :: Want step-by-step for a specific method, or help picking a model?
+O step-by-step for a specific method
+O help picking a model
+== s3_0134 e | numbered interview follow-up addressed to the user
+Q o :: What inspired you to venture out and explore beyond your hometown?
+== s3_0135 e
+Q o :: What specific aspect interests you most?
+== s3_0136 e neg
+== s3_0137 e
+Q e p :: Would you like me to help design a specific architecture or provide implementation details for a particular cloud or setup?
+O design a specific architecture
+O provide implementation details for a particular cloud or setup
+== s3_0138 e | For example bullets illustrate kinds of requests
+Q o :: Could you please share what you'd like help with?
+== s3_0139 m | second arm is further-assistance escape
+Q y :: Could you please confirm if the reservation ID is correct or if you need further assistance in locating it?
+== s3_0140 e
+Q o :: how would you like me to handle the subjective reviews?
+== s3_0141 e
+Q o :: How can I assist you today?
+== s3_0142 m neg | hard: self-answered joke; 'Let me know if you'd like…' has no question mark
+== s3_0143 e
+Q y p :: Would you like me to tailor this draft further?
+== s3_0144 m neg | hard: conditional offer '如果你愿意…' with two next steps, no question mark
+== s3_0145 e | greeting check-in then help offer
+Q o :: How about you?
+Q y :: Is there something I can help you with today?
+== s3_0146 e neg
+== s3_0147 m neg | hard: '?' only in Ruby safe-navigation inside code
+== s3_0148 e neg
+== s3_0149 e neg
+== s3_0150 m neg | hard: directors' self-check compliance questions, not asked of the user
+== s3_0151 e neg
+== s3_0152 e
+Q o :: What would you like to talk about today?
+== s3_0153 e | parenthetical 'Is it: Extrinsic/Intrinsic' is a rhetorical reflection prompt inside advice
+Q o :: What specific talents or traits do you see in him now that make you most excited for his journey?
+== s3_0154 e
+Q m p :: Want me to go deeper on any part — the Roth IRA mechanics, specific fund comparisons, or how to structure the learning conversations?
+O the Roth IRA mechanics
+O specific fund comparisons
+O how to structure the learning conversations
+== s3_0155 e neg
+== s3_0156 e neg
+== s3_0157 e
+Q y :: Did you get caught up in the Wordle craze?
+== s3_0158 e
+Q o :: Do you have a sense of what the dress code or atmosphere of the party might be like?
+== s3_0159 e neg
+== s3_0160 e neg
+== s3_0161 e
+Q o :: What's your perspective on this question?
+Q o :: Do you think there are aspects of human experience that machines could never replicate?
+== s3_0162 e neg | hard: '?' only in a ternary inside code
+== s3_0163 e
+Q y p :: Would you like tips on choosing gutter guards?
+== s3_0164 e
+Q y p :: Would you like me to close those gaps?
+== s3_0165 e neg
+== s3_0166 e
+Q o :: What specific aspect would you like to dig into further?
+== s3_0167 e
+Q o :: What does the raw data actually look like, and what's the construct you're trying to measure?
+== s3_0168 e neg
+== s3_0169 e
+Q y :: Should the per-file import also generate a remediation plan document, same as holistic does?
+== s3_0170 h amb | in-character Umbridge closing; alternative reading: story dialogue
+Q o :: Was there anything else?
+== s3_0171 e
+Q e :: do you see math as "real" or a human invention?
+O "real"
+O a human invention
+== s3_0172 e neg
+== s3_0173 e neg
+== s3_0174 e
+Q o :: What's your perspective on how they might relate in your own thinking?
+== s3_0175 e
+Q y p :: Want me to commit and push these?
+== s3_0176 e neg
+== s3_0177 h amb | clarification with For example diagnostic types; alternative reading: open with illustrative examples
+Q m :: Could you provide more details about what you'd like help with?
+O Is this part of a **competitive programming problem**
+O Are these **coordinates**, **intervals**, **pairs in a sequence**, or something else
+O What **operation or question** do you want to perform on these pairs
+== s3_0178 e
+Q y p :: Want me to start implementing these simplifications?
+== s3_0179 m neg | hard: quoted politeness examples and a comparison table of help-request phrasings, not asked of the user
+== s3_0180 e
+Q o :: What specific aspect interests you most?
+== s3_0181 e neg
+== s3_0182 e neg
+== s3_0183 e
+Q e p :: Would you like example evaluation scripts, or recommendations tailored to your language or reasoning focus?
+O example evaluation scripts
+O recommendations tailored to your language or reasoning focus
+== s3_0184 m neg | hard: '?' only in a quoted user question inside leaked reasoning
+== s3_0185 e | tutor persona then meta check on the delivery
+Q y :: So what do you say, ready to embark on an exciting educational journey with me as your trusty guide?
+Q y :: How's that?
+Q y :: Do I sound like an appropriately chipper and encouraging tutor?
+== s3_0186 e neg
+== s3_0187 m neg | hard: '?' only in a C ternary inside an Edit tool payload
+== s3_0188 m neg | hard: '?' only in mermaid flowchart decision nodes
+== s3_0189 e
+Q o :: Could you please provide the correct line ID or verify the details?
+== s3_0190 e | German: hope you're well; anything nice today; tell me what's on your mind
+Q y :: Ich hoffe, dir geht es auch gut?
+Q o :: Hast du heute schon etwas Schönes erlebt oder geplant?
+Q o :: erzähl mir, was dich gerade so umtreibt!
+== s3_0191 e
+Q y p :: Want help with anything code-related?
+== s3_0192 m neg | hard: self-check questions in a shopping checklist, not asked of the assistant
+== s3_0193 e neg
+== s3_0194 e
+Q o :: What would you like to talk about today?
+== s3_0195 e
+Q o :: How can I help you today?
+== s3_0196 m neg | hard: rhetorical 'Does mass incarceration make society safer?' answered in the same turn
+== s3_0197 m neg | hard: troubleshooting FAQ questions in a baking tutorial, not asked of the user
+== s3_0198 e neg
+== s3_0199 e
+Q y p :: Would you like implementation examples for any of these strategies?
+== s3_0200 m neg | hard: '?' only in Japanese story dialogue
+== s3_0201 m neg | hard: checklist self-check questions before submission
+== s3_0202 e neg
+== s3_0203 e
+Q e p :: Would you like me to adapt it fully to JavaScript or add features like input validation?
+O adapt it fully to JavaScript
+O add features like input validation
+== s3_0204 m neg | hard: self-answered verification question in a reasoning trace
+== s3_0205 e
+Q o :: What would you like to know?
+== s3_0206 h amb | conversation-starter bullets put to the user; alternative reading: topic suggestions with no addressed question
+Q o :: If you could have any superpower, what would it be and why?
+Q o :: What are some of your favorite books, movies, or TV shows?
+Q o :: Do you have any interesting hobbies or creative pursuits?
+Q o :: Have you done any fun traveling or do you have any dream destinations you'd like to visit one day?
+Q o :: If you could have dinner with any historical figure, who would it be and what would you want to discuss with them?
+== s3_0207 e | recommends Option 1 in prose; asks which approach
+Q m :: Which approach do you prefer?
+O Remove `invalidateGenerationsSync` from mutation's `onSuccess`
+O Move shift logic INTO the mutation
+O Use our normalization instead
+O Don't shift on delete, just normalize
+== s3_0208 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s3_0209 e neg
+== s3_0210 e | something else is escape
+Q m p :: would you like me to:
+O Provide a list of your recent orders
+O Show your profile information
+O Look up a specific order by order ID
+== s3_0211 e neg
+== s3_0212 e neg
+== s3_0213 e neg
+== s3_0214 e neg
+== s3_0215 e
+Q y p :: Would you like me to continue with the remaining three steps?
+== s3_0216 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s3_0217 m | four context questions; sample email's 'Do you have 15 minutes' is draft content
+Q o :: What does "KC" refer to?
+Q o :: What's the "$" about?
+Q o :: Who's the recipient?
+Q o :: What's the goal of the email?
+== s3_0218 h amb | bare user-style request with no leaked reasoning; labeled as addressed; alternative: simulator line for the agent
+Q o :: Can you provide a code snippet showing how to load the dataset with `load_dataset(streaming=True)`?
+== s3_0219 e
+Q y p :: Want me to log this as an issue on the desloppify repo?
+== s3_0220 e neg
+== s3_0221 e neg | hard: '?' only in ternaries inside an Edit tool payload
+== s3_0222 m neg | hard: diagnostic checklist questions for the user to inspect in console, phrased as agent needs; no direct ask
+== s3_0223 h amb | interactive-fiction choice addressed to the player; alternative reading: story dialogue
+Q y :: Will you accept this vital quest for the kingdom?
+O 使命を引き受ける
+O もう少し考えさせてほしいと言う
+== s3_0224 e neg
+== s3_0225 e
+Q y p :: Do you want me to add something like a capability matrix — where each plugin reports what it can and can't do, and we show a breakdown of gaps?
+== s3_0226 e | something else is escape
+Q m :: Are you looking for:
+O Reassurance/perspective on the situation
+O Advice on whether to follow up on thyroid testing given family history
+O How to handle future clinic visits
+== s3_0227 e
+Q y p :: Want me to create a benchmark with 10,000 dummy files to get real numbers on your machine?
+== s3_0228 e
+Q o :: What kinds of things are you most interested in or curious about?
+== s3_0229 m neg | hard: '?' only inside a WebFetch tool-call prompt
+== s3_0230 e
+Q y p :: Would you like to proceed that way?
+== s3_0231 m neg | hard: '?' only in a table cell of example couple dialogue
+== s3_0232 e
+Q y p :: Want a deeper dive into how a specific CRDT (like a text-editing one) actually works?
+== s3_0233 e neg
+== s3_0234 e neg
+== s3_0235 e neg
+== s3_0236 e neg
+== s3_0237 e
+Q y p :: Would you like me to show you the output you'd see when uploading files to your repository as well?
+== s3_0238 e
+Q o :: Which of these eras do you feel had the biggest impact on how you play the game today?
+== s3_0239 e
+Q e p :: Would you like to continue with Phase 2 verification, or review the Phase 1 implementation first?
+O continue with Phase 2 verification
+O review the Phase 1 implementation first
+== s3_0240 e neg
+== s3_0241 e
+Q o :: What's your retention period and event size?
+== s3_0242 m neg | hard: '?' only as a string in a PowerShell tool-call probe
+== s3_0243 m neg | hard: '?' only in a comparison-table header
+== s3_0244 e
+Q y :: Does this isolation look correct to you?
+== s3_0245 m neg | hard: self-answered joke question
+== s3_0246 e
+Q y p :: Would you like me to calculate the specific element for a particular date in 2024?
+== s3_0247 m neg | hard: self-answered joke question
+== s3_0248 e
+Q o :: What subjects most interest and excite you?
+== s3_0249 e
+Q o :: What aspect interests you most?
+== s3_0250 e neg
+== s3_0251 e neg | hard: '?' only in nullish-coalescing mention and inline code
+== s3_0252 e
+Q o :: What specifically prompted your interest in this?
+== s3_0253 e neg
+== s3_0254 e
+Q y p :: Want me to action the deletions/fixes?
+== s3_0255 e
+Q e p :: Want me to do that cleanup pass, or is this good enough for now?
+O do that cleanup pass
+O is this good enough for now
+== s3_0256 e
+Q y p :: Ready to start on task #1?
+== s3_0257 e neg
+== s3_0258 e neg
+== s3_0259 m neg | hard: rhetorical comparison questions answered in the explanation
+== s3_0260 e neg
+== s3_0261 e
+Q o :: What aspects of moral education are you particularly interested in exploring?
+== s3_0262 e
+Q e p :: Would you like me to kick off a fresh scan or start working on any of the open debt areas?
+O kick off a fresh scan
+O start working on any of the open debt areas
+== s3_0263 e neg | hard: '?' only in a ternary inside code
+== s3_0264 m neg | hard: '?' only in shell `$?` inside a Bash tool call
+== s3_0265 e neg
+== s3_0266 e neg
+== s3_0267 e
+Q o :: What language/framework is the test in, and does it fail locally or only in CI?
+== s3_0268 e neg
+== s3_0269 m neg | hard: 'Bottom Line Questions to Answer' are self-checks for the reader about their property
+== s3_0270 e
+Q o :: How can I assist you today?
+== s3_0271 e | list illustrates kinds of given values
+Q o :: Could you please provide details such as:
+== s3_0272 m neg | hard: riddle posed and answered in the same turn
+== s3_0273 e neg
+== s3_0274 e
+Q e p :: Want a starter template or code sample for this?
+O a starter template
+O code sample
+== s3_0275 e neg
+== s3_0276 e neg | hard: '?' only in parenthetical diagnostic examples inside an explanation
+== s3_0277 e neg
+== s3_0278 e
+Q m :: Are you referring to:
+O A specific repo name containing "pm"
+O The `peteromallet` GitHub account
+O A different directory path
+== s3_0279 m neg | hard: self-answered joke questions
+== s3_0280 e neg | hard: '?' only in optional chaining inside a summary of code changes
+== s3_0281 e
+Q o :: What aspect interests you most?
+== s3_0282 e
+Q o :: Is there a specific concern you have about this, or were you just acknowledging something on your mind?
+== s3_0283 e
+Q o :: What aspects of progress are you most interested in examining?
+== s3_0284 m neg | hard: strategic 'Do you use…' self-check inside game rules
+== s3_0285 e
+Q o :: What specific aspect concerns you most?
+== s3_0286 e neg
+== s3_0287 e neg
+== s3_0288 e
+Q o :: What aspect interests you most?
+== s3_0289 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s3_0290 e
+Q y p :: Would you like guidance on any specific aspect of this?
+== s3_0291 m neg | hard: workshop prompts and gap-analysis questions for a team exercise, not asked of the user
+== s3_0292 e neg
+== s3_0293 e
+Q o :: What's your question?
+== s3_0294 e
+Q o :: What specifically draws you to this reframing?
+== s3_0295 e
+Q y p :: Want me to steelman the opposing position equally?
+== s3_0296 e neg
+== s3_0297 e
+Q m p :: Would you like me to go deeper on any particular component - soil systems, marine management, governance structures, or specific climate scenarios?
+O soil systems
+O marine management
+O governance structures
+O specific climate scenarios
+== s3_0298 m neg | hard: '?' only in Japanese story dialogue
+== s3_0299 e neg
+== s3_0300 e
+Q o :: Please provide:
+== s3_0301 e neg
+== s3_0302 e neg
+== s3_0303 e neg
+== s3_0304 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s3_0305 e
+Q y p :: Want me to do the types+hooks cleanup?
+== s3_0306 e neg
+== s3_0307 e neg
+== s3_0308 e neg
+== s3_0309 e neg
+== s3_0310 e
+Q o :: What can I assist you with today?
+== s3_0311 e
+Q o :: What specifically prompted this question?
+== s3_0312 e neg
+== s3_0313 e
+Q y :: Could you please double-check the reservation ID and let me know if you need any further assistance?
+== s3_0314 e neg
+== s3_0315 e
+Q y p :: Would you like me to commit these?
+== s3_0316 e | something else is escape
+Q m :: What are you actually looking for?
+O Advice on handling the situation
+O Validation that this is normal
+O Help framing a conversation if you change your mind
+== s3_0317 e | rhetorical harder question is self-posed; addressed Q is the close
+Q o :: What specifically drew you to this framing?
+== s3_0318 e
+Q o :: Is there something I can actually help you with?
+== s3_0319 e
+Q o :: How can I help you make your shopping experience better today?
+== s3_0320 e neg
+== s3_0321 m neg | hard: quoted example question the user should ask a friend, not asked of the assistant
+== s3_0322 e
+Q y p :: Would you like me to help you put together a basic routine?
+== s3_0323 m neg | hard: diagnostic 'do you see' guidance for the user's own console check, not a request for an answer
+== s3_0324 e
+Q o :: What would you like to chat about?
+== s3_0325 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s3_0326 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s3_0327 e neg
+== s3_0328 e
+Q o :: What's the actual situation you're trying to work through?
+== s3_0329 e neg
+== s3_0330 e neg
+== s3_0331 e neg
+== s3_0332 e neg | hard: '?' only in nullish-coalescing inside an Edit tool payload
+== s3_0333 e neg
+== s3_0334 e
+Q o :: What aspects of this question interest you most?
+== s3_0335 e
+Q o :: What kind of database are you working with, and what are you trying to accomplish with pandas?
+Q o :: what level of experience do you have with Python and pandas?
+== s3_0336 e neg | hard: '?' only in a ternary inside truncated code
+== s3_0337 e neg
+== s3_0338 e
+Q o :: What specific aspect concerns you most?
+== s3_0339 m neg | hard: 'ask yourself' juror self-check, not a question to answer to the assistant
+== s3_0340 m neg | hard: '?' only in shell `$?` inside a Bash tool call
+== s3_0341 e
+Q o :: What specifically draws you to this lens?
+== s3_0342 e neg
+== s3_0343 e
+Q y p :: Would you like me to explore any particular aspect of this question in more depth?
+== s3_0344 e
+Q o :: Could you please provide your email address?
+== s3_0345 e
+Q o :: Is it possible you're seeing the console output scroll rapidly or the pane behavior is somehow interfering with mouse focus near the DevTools area?
+== s3_0346 m neg | hard: '?' only as SQL placeholders in comments inside code
+== s3_0347 e neg
+== s3_0348 m neg | hard: rhetorical essay questions answered 'Only time will tell'
+== s3_0349 e neg
+== s3_0350 e
+Q o :: What specific aspect were you most curious about?
+== s3_0351 e
+Q y p :: Want me to proceed with these changes?
+== s3_0352 e
+Q e p :: Want me to adjust the outline, or start drafting a section?
+O adjust the outline
+O start drafting a section
+== s3_0353 m neg | hard: '?' only in a ternary inside an Edit tool payload
+== s3_0354 e neg
+== s3_0355 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s3_0356 e
+Q y :: Could you please check if the environment has outbound internet access?
+== s3_0357 e neg
+== s3_0358 e neg
+== s3_0359 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s3_0360 e
+Q o :: Which of these approaches feels most like your friendship?
+== s3_0361 e neg
+== s3_0362 e neg
+== s3_0363 e neg
+== s3_0364 e
+Q o :: What aspect interests you most?
+== s3_0365 e neg
+== s3_0366 m neg | hard: '?' only in shell `$?` inside a Bash tool call
+== s3_0367 e neg
+== s3_0368 e neg
+== s3_0369 e
+Q m :: What aspect of truth interests you most? Its philosophical nature, its role in human relationships, or perhaps how we determine what is true?
+O Its philosophical nature
+O its role in human relationships
+O how we determine what is true
+== s3_0370 e
+Q y :: Did you modify `next.config.js` yourself?
+== s3_0371 e
+Q o :: Could you please provide those details?
+== s3_0372 e
+Q o :: How can I help you today?
+Q y :: Is there something on your mind or a question you would like to ask?
+== s3_0373 m | second arm is open preference escape
+Q y p :: Want me to start building the auto-fixer for unused vars / dead exports to tackle T2, or would you prefer a different approach?
+== s3_0374 e
+Q y :: Is there something on your mind that I can assist you with today?
+== s3_0375 e
+Q e p :: Is there anything else you'd like me to address on these issues, or should I move on to something else?
+O address on these issues
+O move on to something else
+== s3_0376 m neg | hard: speech checklist self-check questions
+== s3_0377 m neg | hard: character-voice questionnaire for the writer's own prep, not asked of the assistant
+== s3_0378 e
+Q y p :: Want the dead-letter file format + a replay command sketch to close the loop on durability?
+== s3_0379 h amb | in-character direct question; alternative reading: story dialogue
+Q o :: Where is Charles Pendry?
+== s3_0380 e neg
+== s3_0381 e neg
+== s3_0382 e
+Q o :: What's the rough breakdown of this supplier's cost as a share of your product pricing?
+== s3_0383 e
+Q y p :: Want me to set up a small practice scenario locally — e.g., a kind cluster or mock manifests with seeded drift — so you can run through the `kubectl diff` workflow hands-on?
+== s3_0384 e
+Q o :: What would you like to do next?
+== s3_0385 e neg
+== s3_0386 e neg
+== s3_0387 m neg | hard: '?' only in URL query strings inside a Bash sed command
+== s3_0388 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s3_0389 e neg
+== s3_0390 e
+Q y p :: Ready for the next step?
+== s3_0391 e
+Q e :: Do any of these show content jumping (misalignment) vs just subtle shifts?
+O content jumping (misalignment)
+O just subtle shifts
+== s3_0392 e
+Q o :: What specific area of economics or school of thought would you like to explore?
+Q o :: Is there a particular economic issue or question you're interested in discussing?
+== s3_0393 e neg
+== s3_0394 e
+Q o :: What specifically are you concerned about?
+== s3_0395 e
+Q o :: Where would you like to push deeper on this?
+== s3_0396 e neg
+== s3_0397 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s3_0398 e
+Q y p :: Would you like recommendations on frameworks and libraries to integrate such models for function calls in your project?
+== s3_0399 e neg
+== s3_0400 e neg
+== s3_0401 e neg
+== s3_0402 e neg
+== s3_0403 e
+Q o :: Let me know how you'd like to proceed!
+== s3_0404 h amb | parenthetical enumerates closed answer space; alternative reading: open with illustrations
+Q m :: Anything specific you're trying to do?
+O API testing
+O file downloads
+O scripting
+== s3_0405 e neg
+== s3_0406 e
+Q o :: What can I assist you with today?
+== s3_0407 e
+Q y p :: Want me to file issues for the ID collision bug and the missing dimensions?
+== s3_0408 m neg | hard: quoted example offers and listening phrases in advice, not asked of the user
+== s3_0409 e
+Q o :: Which direction would you like to go?
+== s3_0410 m neg | hard: rhetorical climate questions answered in the same turn
+== s3_0411 e neg
+== s3_0412 e neg
+== s3_0413 e neg | hard: '?' only in a JS ternary inside code discussion
+== s3_0414 e
+Q o :: Could you share where you saw this?
+== s3_0415 e neg
+== s3_0416 e neg
+== s3_0417 e neg
+== s3_0418 e neg
+== s3_0419 e neg
+== s3_0420 e neg
+== s3_0421 e
+Q m :: What aspects of this question interest you most? The moral dimension, the psychological control we have, or perhaps the philosophical implications?
+O The moral dimension
+O the psychological control we have
+O the philosophical implications
+== s3_0422 e
+Q y p :: Want me to also call `enforceCacheLimits()` in the `useCacheCleanup` hook on every cleanup cycle for extra safety?
+== s3_0423 e
+Q o :: Please provide the graph or the problem you would like me to solve.
+== s3_0424 e
+Q o :: What aspects of selfhood are you most curious about?
+== s3_0425 e
+Q o :: What are the two model repository IDs (format: username/model-name) you want to compare discussions between?
+== s3_0426 e neg
+== s3_0427 m neg | hard: '?' only in shell `$?` inside a Bash tool call
+== s3_0428 e
+Q y p :: Want me to bump to 0.7.1 and publish the fix?
+== s3_0429 m neg | hard: mute-test self-check questions for evaluating acting, not asked of the assistant
+== s3_0430 e neg
+== s3_0431 e neg
+== s3_0432 e
+Q y p :: Want me to downgrade it from `console.error` to `console.warn`?
+== s3_0433 e
+Q y p :: Want another one?
+== s3_0434 m | three diagnostic information questions
+Q o :: What platform or tool is reporting this score?
+Q o :: What are the underlying signals it aggregates?
+Q o :: Are you seeing actual symptoms (broken traces, missing spans, dependency graph gaps) or just the score number?
+== s3_0435 e
+Q o :: What can I assist you with today?
+== s3_0436 e neg
+== s3_0437 e
+Q o :: Please share the problem you'd like me to solve!
+== s3_0438 e
+Q o :: What brings you here today?
+== s3_0439 e neg
+== s3_0440 e
+Q o :: could you share the PR number or URL?
+== s3_0441 e
+Q y p :: Would you like some specific morning stretches I could recommend?
+== s3_0442 e
+Q y p :: Shall I start by proposing changes to `src/transformers/cli/serving/chat_completion.py` to introduce the tool-calling loop structure?
+== s3_0443 e
+Q o :: Could you paste the complete problem?
+== s3_0444 e
+Q o :: Can you point me to the specific task and let me know what output or log file I should examine?
+== s3_0445 e neg
+== s3_0446 e neg
+== s3_0447 e
+Q y p :: Would you like that?
+== s3_0448 e neg
+== s3_0449 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s3_0450 e
+Q e p :: Should I add a visual indicator when `pairShotGenerationId` is missing to let users know settings won't be saved? Or is the current behavior (silent degradation + logging) sufficient?
+O add a visual indicator when `pairShotGenerationId` is missing to let users know settings won't be saved
+O is the current behavior (silent degradation + logging) sufficient
+== s3_0451 h amb | clarification with For example candidate readings; alternative reading: open with illustrations
+Q m :: Could you clarify what you mean?
+O Are you referring to Hawthorne Abendsen, the character from Philip K. Dick's *The Man in the High Castle*
+O Do you have a document or list of questions you meant to share
+O Is this from a specific book, interview, game, or other source
+== s3_0452 e
+Q e p :: Want me to go ahead and plan the `/resources` page as-is, or do you want to address the schema first?
+O plan the `/resources` page as-is
+O address the schema first
+== s3_0453 e
+Q e :: Is it mainly for everyday family meals, or do you also use it for entertaining guests?
+O mainly for everyday family meals
+O also use it for entertaining guests
+== s3_0454 e
+Q y p :: Would you like me to push this change to GitHub as well?
+== s3_0455 e
+Q y p :: Would you like to hear more about any specific area?
+== s3_0456 e neg
+== s3_0457 m neg | hard: '?' only inside a WebFetch tool-call prompt
+== s3_0458 e
+Q y :: Could you please confirm if this is the correct order ID you want to check?
+== s3_0459 e
+Q o :: What specific aspect interests you most?
+== s3_0460 m neg | hard: '?' only as SQL placeholders inside code
+== s3_0461 e neg
+== s3_0462 e
+Q o :: What specific aspect interests you most?
+== s3_0463 e
+Q y p :: Want me to go ahead and fix all of those?
+== s3_0464 e neg
+== s3_0465 e neg
+== s3_0466 e
+Q o :: What's on your mind today?
+== s3_0467 e
+Q y p :: Would you like me to implement any specific part of this experiment?
+== s3_0468 e neg
+== s3_0469 e neg
+== s3_0470 e neg
+== s3_0471 m neg | hard: '?' only as a SQL placeholder in a description of a query
+== s3_0472 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s3_0473 e neg
+== s3_0474 e neg
+== s3_0475 e neg
+== s3_0476 m neg | hard: project-intake questionnaire for the reader to fill, not asked of the assistant
+== s3_0477 e neg
+== s3_0478 m | jokes are self-answered; closing asks the user for a pun
+Q o :: Feel free to hit me with your best pun too, I'd love to hear it!
+== s3_0479 e
+Q o :: What's the specific context you're working in?
+== s3_0480 e
+Q y p :: Want me to plan the move to `shared/`?
+== s3_0481 e
+Q o :: What aspect interests you most?
+== s3_0482 e
+Q y p :: Would you like me to expand on any specific aspect?
+== s3_0483 e neg
+== s3_0484 e
+Q m :: What would you like to find — area of union, intersection, total perimeter, or something else?
+O area of union
+O intersection
+O total perimeter
+== s3_0485 e
+Q e p :: Want me to triage these or tackle a specific category?
+O triage these
+O tackle a specific category
+== s3_0486 e
+Q y p :: Would you like me to proceed with the first step of verifying the current implementation?
+== s3_0487 m neg | hard: rhetorical 'what should we stop doing?' inside advice, not asked of the user
+== s3_0488 e neg
+== s3_0489 e
+Q y p :: Want me to start working toward 95?
+== s3_0490 e
+Q o :: What's the specific relationship/stakes involved?
+== s3_0491 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s3_0492 e neg
+== s3_0493 e neg
+== s3_0494 e neg
+== s3_0495 m neg | hard: conditional offer 'If you want, I can also run…' without a question
+== s3_0496 e
+Q o :: Could you tell me a bit more about how far your commute is and what city you're in?
+== s3_0497 e neg
+== s3_0498 e
+Q o :: What aspect interests you most?
+== s3_0499 e neg
+== s3_0500 e neg
+== s3_0501 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s3_0502 e | any/all signals multiSelect
+Q y p ms :: Want me to proceed with any/all of these phases?
+== s3_0503 e neg
+== s3_0504 e
+Q o :: Where do you want to start?
+== s3_0505 e neg
+== s3_0506 e
+Q y p :: Would you like setup/code samples for any of these options?
+== s3_0507 e
+Q e p :: Would you like me to help you write a specific script for one of these sections, or perhaps explain how to calculate a specific crime index?
+O write a specific script for one of these sections
+O explain how to calculate a specific crime index
+== s3_0508 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s3_0509 m neg | hard: self-answered 'Are they indispensable?' in a summary
+== s3_0510 e neg
+== s3_0511 e neg
+== s3_0512 e
+Q y p :: Want to bulk-wontfix the boilerplate import clusters?
+== s3_0513 e neg
+== s3_0514 e | French: can you check the MTN config in the DB
+Q y :: Pouvez-vous vérifier en base de données la configuration MTN ?
+== s3_0515 e
+Q o :: What specific aspect interests you most?
+== s3_0516 e neg
+== s3_0517 m neg | hard: suggested question the user should ask their professor, not asked of the assistant
+== s3_0518 e
+Q y p :: Want another one?
+== s3_0519 e neg
+== s3_0520 e
+Q o :: How can I help you today?
+== s3_0521 e
+Q o :: What's your angle on this?
+== s3_0522 e neg
+== s3_0523 e
+Q y p :: Would you like me to start implementing any of these phases?
+== s3_0524 e
+Q y p :: Want me to implement one of these fixes?
+== s3_0525 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s3_0526 e
+Q o :: What specific situation are you considering?
+== s3_0527 e
+Q o :: What specific context are you thinking about?
+== s3_0528 m neg | hard: Invisibility Test self-check for the reader before a purchase
+== s3_0529 h amb | in-character emperor greeting; alternative reading: story dialogue
+Q o :: How may we assist you on this day?
+== s3_0530 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s3_0531 e
+Q o :: could you please provide more information such as:
+== s3_0532 e neg
+== s3_0533 e
+Q o :: Could you please provide the **complete problem statement**?
+== s3_0534 e
+Q y :: Do any of those categories spark your interest?
+== s3_0535 e neg
+== s3_0536 e neg
+== s3_0537 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s3_0538 e neg
+== s3_0539 e
+Q o :: Please paste the full problem description, and I'll provide a detailed, step-by-step solution with verification.
+== s3_0540 e neg
+== s3_0541 e neg | hard: '?' only in ternaries inside code
+== s3_0542 e
+Q o :: What's driving your question?
+== s3_0543 m | five distinct setup questions
+Q e :: Is your text generation model already containerized or do you need help creating a Docker image?
+O already containerized
+O need help creating a Docker image
+Q o :: Which framework or library is the model based on
+Q y :: Do you have an existing Kubernetes cluster ready for deployment?
+Q y p :: Would you like an example of a simple deployment YAML manifest and a service manifest?
+Q e :: Do you want to expose the model as a REST API server within the container or is it a batch job?
+O expose the model as a REST API server within the container
+O is it a batch job
+== s3_0544 e
+Q y :: Could you try running it in a separate terminal window outside of Claude Code?
+== s3_0545 e
+Q y p :: Want me to try a 12-line version?
+== s3_0546 e neg
+== s3_0547 e neg | hard: '?' only in nullish-coalescing and type predicates inside code
+== s3_0548 e neg
+== s3_0549 e
+Q y p :: Would you like me to look at how to fix the error classification so OOM errors from WGP stdout are properly caught?
+== s3_0550 e
+Q y p :: Want me to start executing?
+== s3_0551 e neg
+== s3_0552 e neg
+== s3_0553 m neg | hard: self-answered joke; 'Let me know if you'd like…' has no question mark
+== s3_0554 m neg | hard: self-answered jokes; closing 'Let me know if…' has no question mark
+== s3_0555 e neg
+== s3_0556 h amb | conversation-starter bullets; alternative reading: topic suggestions only
+Q o :: What's a book, movie, song, or other work of art that has had a big impact on your life?
+Q o :: If you could spend a day with any historical figure, who would you choose and what would you want to talk about with them?
+Q o :: What's one of your happiest childhood memories?
+== s3_0557 e neg
+== s3_0558 e neg
+== s3_0559 m | headed 'Open Questions for You' — three design decisions for the user
+Q e :: Keep this pattern or replace with explicit key lists?
+O Keep this pattern
+O replace with explicit key lists
+Q e :: Should these use the registry too, or keep inline?
+O use the registry too
+O keep inline
+Q y :: Can we deprecate one?
+== s3_0560 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s3_0561 e neg
+== s3_0562 e
+Q o :: what's the audience register — academic essay with citations (and if so, what style), or a polished long-form piece without formal references?
+== s3_0563 e neg
+== s3_0564 e neg
+== s3_0565 e neg
+== s3_0566 e
+Q y p :: Want me to delete `upgrade_patches/`, `upgrade_backup/`, and `agent_docs/`?
+== s3_0567 e
+Q y p :: Would you like me to explain any specific part of the process in more detail?
+== s3_0568 e
+Q o :: Please paste the complete problem description, and I'll provide a detailed step-by-step solution with:
+== s3_0569 e
+Q y p :: Would you like help with any specific part of the planning?
+== s3_0570 e neg
+== s3_0571 m neg | hard: '?' only in shell `$?` inside a Bash tool call
+== s3_0572 e neg
+== s3_0573 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s3_0574 e
+Q o :: What would you like to chat about?
+== s3_0575 e
+Q o :: What specific aspect concerns you most?
+== s3_0576 e neg
+== s3_0577 e neg
+== s3_0578 e
+Q y p :: Would you like me to go deeper into either type?
+== s3_0579 e neg
+== s3_0580 e
+Q y :: Does this help clarify the current state of the science?
+== s3_0581 e neg
+== s3_0582 e
+Q y :: Could you please confirm if you want to cancel the order #11122?
+== s3_0583 e | French: want me to add G.711 A-law support
+Q y p :: Voulez-vous que j'ajoute le support G.711 A-law au validateur ?
+== s3_0584 e
+Q o :: What specific case are you working through?
+== s3_0585 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s3_0586 e
+Q o :: How are you doing today?
+== s3_0587 e neg
+== s3_0588 e
+Q o :: What do you think?
+Q y :: Does art need witnesses to fulfill its purpose?
+== s3_0589 e | arms are two ways to identify, not two answers
+Q o :: Could you please provide your email address or your name and zip code?
+== s3_0590 e
+Q o :: What specific aspect are you most interested in examining?
+== s3_0591 e neg
+== s3_0592 m neg | hard: '?' only in a usage string inside code
+== s3_0593 e
+Q y p :: Would you like some tips on what to pack for the hike and the town visit?
+== s3_0594 e
+Q e :: Which was it?
+O how should I think about designing flipped classroom modules that don't overwhelm students or go stale too quickly
+O whether I'll confidently bullshit when prompted with impressive-sounding nonsense
+== s3_0595 e
+Q o :: What specific aspect of this are you wrestling with?
+== s3_0596 m neg | hard: '?' only in shell `$?` inside a Bash tool call
+== s3_0597 e
+Q o :: What's on your mind?
+== s3_0598 e neg
+== s3_0599 e
+Q o :: So how has your day been so far?
+Q o :: What's been on your mind?
+== s3_0600 e
+Q y p :: Would you like me to try linking a specific model to this paper?
+== s3_0601 e
+Q y p :: Want me to commit and push these changes?
+== s3_0602 e
+Q o :: What specific aspect concerns you most?
+== s3_0603 e
+Q o :: What aspects of mortality feel most significant to you personally?
+== s3_0604 e | French: do you have your Nextcloud credentials
+Q y :: Avez-vous vos identifiants Nextcloud (URL WebDAV, user, app password) ?
+== s3_0605 e
+Q e :: does it still work given these wants? Or is it the ending you wrote when this was a movie about an ex-couple working through their issues?
+O does it still work given these wants
+O is it the ending you wrote when this was a movie about an ex-couple working through their issues
+== s3_0606 e
+Q o :: What are you looking for help with?
+== s3_0607 h amb | bare user-style request with leaked drafting but presented as the turn; labeled as addressed
+Q o :: Please provide the procedure for revoking the leaked HF token and rotating dependent secrets across all CI systems.
+== s3_0608 m neg | hard: '?' only in shell `$?` inside a Bash tool call
+== s3_0609 e
+Q o :: What's your perspective on this question?
+Q o :: Are you drawn to particular arguments about free will?
+== s3_0610 e neg
+== s3_0611 e neg
+== s3_0612 e neg
+== s3_0613 m | five essay-briefing information questions
+Q o :: Who is the target audience for this essay?
+Q o :: Do you have any specific requirements regarding the format, such as double-spacing, font, citation style, etc.?
+Q o :: Approximately how many sources should I aim to reference in the essay?
+Q o :: Is there any particular aspect of the crisis you'd like me to focus on or emphasize beyond the key points listed?
+Q o :: What's the deadline for completing this essay?
+== s3_0614 e neg
+== s3_0615 e
+Q y p :: Want me to run the upload for you?
+== s3_0616 m neg | hard: '?' only in a verification table header
+== s3_0617 e
+Q o :: What does your current pipeline look like?
+== s3_0618 e
+Q e :: Do you think true perfection is achievable in literature? Or is imperfection a necessary and even desirable aspect of powerful art?
+O true perfection is achievable in literature
+O is imperfection a necessary and even desirable aspect of powerful art
+== s3_0619 m | key questions to narrow the recommendation
+Q o :: How uniform is your data's schema?
+Q y :: Do you need to join time-series data with other relational data?
+Q o :: What's your expected ingest rate and retention period?
+Q e :: Are you doing heavy analytical queries or mostly point lookups?
+O heavy analytical queries
+O mostly point lookups
+== s3_0620 e
+Q o :: What specific aspect concerns you most?
+== s3_0621 e neg
+== s3_0622 e neg
+== s3_0623 m neg | hard: '?' only in screenplay dialogue
+== s3_0624 m neg | hard: '?' only in ternaries inside an Edit tool payload
+== s3_0625 e neg
+== s3_0626 e neg
+== s3_0627 e
+Q o :: What specifically draws you to this framing?
+== s3_0628 e
+Q o :: What specifically interests you about this?
+== s3_0629 e
+Q m :: What aspects of this question interest you most? The nature of mathematical truth, ethical relativism, or perhaps how we might navigate a world where both objective and subjective truths seem to operate?
+O The nature of mathematical truth
+O ethical relativism
+O how we might navigate a world where both objective and subjective truths seem to operate
+== s3_0630 m neg | hard: rhetorical leadership questions in a closing essay
+== s3_0631 e
+Q y p :: Would you like to discuss any specific aspect of this?
+== s3_0632 e neg
+== s3_0633 e
+Q y p :: Want me to tackle any of these?
+== s3_0634 e neg
+== s3_0635 e neg
+== s3_0636 e | something else is escape
+Q m :: can you describe what you'd prefer?
+O Should new data points "grow up" from zero
+O Should it feel more energetic/bouncy
+== s3_0637 e neg
+== s3_0638 e neg | hard: '?' only in ternaries inside code
+== s3_0639 e neg
+== s3_0640 e neg
+== s3_0641 m neg | hard: rhetorical sleep question inside advice prose
+== s3_0642 e
+Q o :: Could you please provide the problem statement you'd like me to solve?
+== s3_0643 e neg
+== s3_0644 e neg
+== s3_0645 e neg
+== s3_0646 e neg
+== s3_0647 m neg | hard: '?' only in character dialogue in fanfiction
+== s3_0648 h amb | in-character comfort question; alternative reading: story dialogue
+Q y :: Do you want to talk about what happened?
+== s3_0649 e | something else is escape
+Q m :: If you're looking for something specific from me:
+O A non-judgmental ear to process something
+O Safety/privacy advice
+== s3_0650 e
+Q o :: How can I help you today?
+== s3_0651 e neg
+== s3_0652 e neg
+== s3_0653 e neg | hard: '?' only in a template literal ternary inside code
+== s3_0654 e neg
+== s3_0655 e neg
+== s3_0656 e
+Q y p :: Want me to?
+== s3_0657 e
+Q o :: What kinds of activities do your grandparents enjoy?
+== s3_0658 e neg
+== s3_0659 e
+Q o :: What specific circumstances are you observing?
+== s3_0660 e neg
+== s3_0661 h amb | bare follow-up request with leaked drafting; labeled as addressed
+Q o :: Can you provide the specific API endpoint code and UI component examples for gated datasets with click-through licensing?
+== s3_0662 e | recommends option 3 in prose
+Q m :: Which would you prefer?
+O Fix the migration script
+O Manual migration
+O Incremental approach
+== s3_0663 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s3_0664 e neg
+== s3_0665 e
+Q e p :: Would you like me to steelman the opposing view, or explore any of these threads in more depth?
+O steelman the opposing view
+O explore any of these threads in more depth
+== s3_0666 e neg | hard: '?' only in a ternary inside code
+== s3_0667 e neg
+== s3_0668 e | French: which direction to explore first
+Q m :: Quelle direction veux-tu explorer en priorité ?
+O **Cloud rapide** (Twilio/Vapi)
+O **Open-source** (FreeSWITCH/Asterisk)
+O **Recherche sur une techno spécifique**
+== s3_0669 e
+Q o :: What are your thoughts on where meaning comes from in your own experience?
+== s3_0670 e neg
+== s3_0671 e neg
+== s3_0672 e
+Q y p :: Is there anything specific you'd like me to adjust or add?
+== s3_0673 e neg
+== s3_0674 e neg
+== s3_0675 e
+Q e p :: Want me to go with 75, or do you have a different target in mind?
+O go with 75
+O do you have a different target in mind
+== s3_0676 e
+Q o :: What specific constraints are you working with?
+== s3_0677 m neg | hard: riddle posed and answered in the same turn
+== s3_0678 e neg
+== s3_0679 m neg | hard: self-answered joke question
+== s3_0680 e neg
+== s3_0681 e neg
+== s3_0682 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s3_0683 e
+Q o :: Feel free to paste the complete statement!
+== s3_0684 e neg
+== s3_0685 e
+Q y p :: Want me to scope that out?
+== s3_0686 e neg
+== s3_0687 h amb | clarification with For example matrix operations; alternative reading: open with illustrations
+Q m :: What would you like to do with this matrix?
+O Compute its **rank**, **transpose**, or **row-reduced form**
+O Multiply it by another matrix or a vector
+O Compute the **sum of all entries**
+== s3_0688 e
+Q y p :: Would you like more details on any of these?
+== s3_0689 e neg
+== s3_0690 e
+Q o :: What kind of content are you most interested in sharing or consuming?
+== s3_0691 e neg
+== s3_0692 h amb | in-character Umbridge offer; alternative reading: story dialogue
+Q y p :: Would you like some tea?
+== s3_0693 e
+Q o :: Could you please specify what you are building?
+== s3_0694 e
+Q y :: How's that?
+== s3_0695 e neg
+== s3_0696 m neg | hard: self-answered joke; closing 'Let me know if…' has no question mark
+== s3_0697 m neg | hard: '?' only in shell `$?` inside a Bash tool call
+== s3_0698 e neg
+== s3_0699 h amb | in-character question to the user's character; alternative reading: story dialogue
+Q o :: does it gall you?
+== s3_0700 e neg
+== s3_0701 e neg
+== s3_0702 e neg
+== s3_0703 e
+Q y :: Could you please double-check the customer ID and line ID to ensure they are correct and fully accurate?
+== s3_0704 e neg
+== s3_0705 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s3_0706 e neg
+== s3_0707 e neg
+== s3_0708 e neg
+== s3_0709 e neg
+== s3_0710 e neg
+== s3_0711 e neg
+== s3_0712 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== s3_0713 e
+Q y p :: Want me to investigate the worker polling configuration or any of these specific issues further?
+== s3_0714 e
+Q y :: Does this help explain these points?
+== s3_0715 e
+Q y p :: Want me to go ahead with this simpler version?
+== s3_0716 e neg
+== s3_0717 e
+Q o :: What do you find most rewarding about your work?
+Q o :: Any recent favorites or recommendations?
+== s3_0718 e neg
+== s3_0719 e
+Q o :: What are you actually trying to figure out?
+== s3_0720 h amb | clarification with For example booking details; alternative reading: open with illustrations
+Q m :: Could you please clarify what type of booking you're looking for?
+O Are you looking to book a one-way or round-trip flight
+O What is your origin and destination
+O What cabin class would you prefer
+== s3_0721 m neg | hard: '?' only in theatrical dialogue
+== s3_0722 e neg
+== s3_0723 m neg | hard: '?' only in shell `$?` inside a Bash tool call
+== s3_0724 e
+Q y p :: Want me to look at how the code in this repo handles session-key freshness — whether it's leaning on timestamps, nonces, or something homegrown?
+== s3_0725 e
+Q o :: What state are you in?
+== s3_0726 e neg
+== s3_0727 e neg
+== s3_0728 m neg | hard: Chinese conditional offer '如果你愿意…' without a question mark
+== s3_0729 e
+Q o :: What's the actual situation?
+== s3_0730 e
+Q o :: What does your margin structure look like?
+== s3_0731 e neg
+== s3_0732 e
+Q o :: Could you please specify your origin and destination airports so I can search for a business class flight tomorrow for you?
+== s3_0733 e neg
+== s3_0734 e neg
+== s3_0735 e
+Q y :: can you confirm your dev server is running and picking up changes?
+== s3_0736 m neg | hard: '?' only in story dialogue
+== s3_0737 e neg
+== s3_0738 e
+Q o :: What specific aspect interests you most?
+== s3_0739 e neg
+== s3_0740 e neg
+== s3_0741 e neg
+== s3_0742 m neg | hard: slogan-writing self-check advice, not asked of the assistant
+== s3_0743 e neg
+== s3_0744 e neg
+== s3_0745 e
+Q y p :: Want me to consolidate this?
+== s3_0746 e
+Q m :: What aspects of this question interest you most? The psychological, philosophical, or perhaps theological dimensions?
+O The psychological
+O philosophical
+O theological dimensions
+== s3_0747 h amb | in-character interrogation; alternative reading: story dialogue
+Q o :: Did you, in any of those nights down there among them, pray?
+== s3_0748 e
+Q y p :: Would you like tips on how to keep costs down?
+== s3_0749 e neg
+== s3_0750 e neg
+== s3_0751 e
+Q o :: What specific aspect of policy evaluation were you thinking about?
+== s3_0752 e neg
+== s3_0753 e
+Q m :: What aspects of this question interest you most? The nature of knowledge, ethics, or something else?
+O The nature of knowledge
+O ethics
+== s3_0754 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s3_0755 e neg
+== s3_0756 e neg
+== s3_0757 e neg
+== s3_0758 e neg
+== s3_0759 e neg
+== s3_0760 e neg
+== s3_0761 e neg
+== s3_0762 e
+Q y p :: Would you like me to fix the edge function to align the array filtering with the RPC, so both return consistent results?
+== s3_0763 h amb | in-character tea offer; alternative reading: story dialogue
+Q y p :: Would you like some?
+== s3_0764 e | 'either or both' in the question text sets multiSelect
+Q y p ms :: Want me to implement either or both fixes?
+== s3_0765 e
+Q o :: What specific aspect would be most useful to expand on?
+== s3_0766 e | 'either or both' in the question text sets multiSelect
+Q y p ms :: Want me to dig into the dep graph code to scope out a concrete implementation plan for either or both?
+== s3_0767 m neg | hard: rhetorical closing question in a German fable
+== s3_0768 e neg
+== s3_0769 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== s3_0770 e
+Q o :: Could you please provide the product ID you're interested in?
+== s3_0771 e
+Q y p :: Want me to sketch the Java side (e.g., a Spring filter/interceptor + the table schema)?

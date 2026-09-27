@@ -1,0 +1,3127 @@
+# Batch-3 (labeler new-a) hand annotations for gold/batch3/new-a/handlabeled.jsonl. Format: see scripts/build_gold.py.
+# Keys refer to data/hf3a/queue.jsonl. Every block was written by reading the item; nothing here is generated.
+# Rules: gold/CONVENTIONS.md (read before labeling), then the batch-2 decisions in gold/batch2/SOURCES.md.
+
+== a0000 e neg
+== a0001 e neg
+== a0002 e neg
+== a0003 m neg | hard: '?' only in a C# ternary inside code
+== a0004 e neg
+== a0005 e neg
+== a0006 h amb | "Could this be one of these common problems?" asks the user to pick from the following list of candidate problems (each phrased as a question; options without '?'); the "What is being asked?" etc. inside the "What's Missing" list describe missing inputs and are followed by an imperative "Please provide:", so not separate records. Alternative reading: those sub-questions are addressed information requests
+Q m :: Could this be one of these common problems?
+O Stars changing brightness over time with rectangular region queries
+O Finding stars visible within certain brightness thresholds
+O Simulating periodic brightness patterns
+== a0007 e neg
+== a0008 m | two records: open "What do you think?" then a two-armed interest question
+Q o :: What do you think?
+Q e :: Does the question of "reality as it is" matter to you personally, or are you more interested in how we can best understand the reality we experience?
+O matter to you personally
+O more interested in how we can best understand the reality we experience
+== a0009 m | one sentence asking for three pieces of missing information
+Q o :: Which behavior is considered old, which clients still rely on it, and is a compatibility window required?
+== a0010 h amb | three inline follow-up targets, then the standalone imperative "Say which you prefer." asks the user to choose (labeled as a question, as new-b's direct-imperative decision); the chosen target is work the agent would do, so a proposal; alternative reading: offer without a question (hard negative)
+Q m p :: Say which you prefer.
+O Python `ai.ask` support
+O a unified `cubrc`/`cuberay` CLI only
+O list-comprehension-style syntax
+== a0011 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== a0012 e neg | hard: '?' only in a Verilog ternary in inline code
+== a0013 e neg
+== a0014 m neg | hard: numbered investing advice contains questions the reader should ask themselves; closing "Let me know if you have any other questions!" has no question
+== a0015 e neg | hard: '?' only in JS ternaries inside code
+== a0016 e neg | hard: '?' only in the shell variable `$?`
+== a0017 m | the bolded "what actually helps…?" and "what makes me feel vindicated?" are quoted framings; the addressed question is the last one
+Q o :: What specifically did you discover?
+== a0018 e neg | hard: self-answered rhetorical question in quotes ("How many times does 5 go into 150?")
+== a0019 e neg
+== a0020 e neg | hard: '?' only in sample program output
+== a0021 e neg
+== a0022 e neg | hard: '?' only inside a URL query string
+== a0023 e
+Q o :: How can I help you today?
+== a0024 m neg | hard: '?' only inside a parenthetical list of examples within a conditional offer ("If you can share what you're doing … I can suggest …"), no question addressed to the user
+== a0025 e neg
+== a0026 e | the "Happy to do that if…" offer has no question; the addressed question is the closing proposal
+Q y p :: Want me to push that correction?
+== a0027 m neg | hard: "Can the information come through dialogue…?" is writing advice inside a technique list
+== a0028 e neg
+== a0029 e neg | hard: '?' only in optional chaining inside code
+== a0030 e
+Q y p :: Would you like me to check if there's runtime occupancy data in the profile results?
+== a0031 e neg
+== a0032 e neg
+== a0033 e neg
+== a0034 e neg
+== a0035 e neg
+== a0036 e neg
+== a0037 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a0038 m neg | hard: "which temperature occupies more of the canvas?" is guidance for the reader's own analysis; the closing bold offer has no question
+== a0039 e neg
+== a0040 e
+Q o :: What's your view on this?
+== a0041 m neg | hard: the only '?' is inside a WebFetch tool-call prompt
+== a0042 e neg
+== a0043 h amb | "Could you give me a bit more detail?" followed by "For example:" diagnostic sub-questions; per the convention the list supplies selectable observations (options without '?'); alternative reading: open clarification with illustrative examples
+Q m :: Could you give me a bit more detail?
+O Are you referring to a **specific topic or situation**
+O Are you asking about something **technical, personal, or news-related**
+O Did you mean to continue a previous conversation
+== a0044 e
+Q o :: What do you think?
+== a0045 e neg | hard: self-answered "5 Whys" questions inside a post-mortem example
+== a0046 e neg | hard: '?' only in optional chaining inside code
+== a0047 e neg
+== a0048 e neg
+== a0049 e neg
+== a0050 m neg | hard: '?' only inside a parenthetical list of example use cases within an imperative offer ("If you want, share … and I can suggest …")
+== a0051 e neg | hard: '?' only in a Ruby predicate method (`vip?`) inside code
+== a0052 e neg
+== a0053 m neg | hard: "The question for your class is: … a failure … or a feature …?" frames a discussion question for the user's class rather than asking the user to answer
+== a0054 e neg
+== a0055 m | the parenthetical cloud names illustrate the first arm and are not options
+Q e p :: Would you like me to elaborate on any specific deployment scenario (AWS, GCP, Azure) or add more details about monitoring and scaling strategies?
+O elaborate on any specific deployment scenario
+O add more details about monitoring and scaling strategies
+== a0056 e
+Q y p :: Want me to add the config and benchmark it?
+== a0057 e neg
+== a0058 e neg | hard: '?' only in a Groovy elvis operator inside code
+== a0059 e | French: "What is the problem you found?"
+Q o :: Quel est le problème que vous avez trouvé ?
+== a0060 m | "insight or significance" are two attributes of one yes/no inquiry, not two distinct answers
+Q y :: Do you find your dreams provide insight or significance in your life?
+== a0061 e neg | hard: '?' only as query placeholders in quoted package documentation
+== a0062 e neg
+== a0063 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a0064 m | "Tell me:" introduces two addressed information questions (the e.g. moods are examples)
+Q o :: What is the **mood** you want to evoke (e.g., dread, whimsy, nostalgia)?
+Q o :: Whose **perspective** are we following?
+== a0065 e neg
+== a0066 h amb | "What do you think?" right after three mission briefing ideas, followed by "Once we decide on a lead"; labeled as a choice among the briefings as in batch 2's "thoughts on these options" rule; alternative reading: open request for an opinion
+Q m :: What do you think?
+O Mission Briefing 1
+O Mission Briefing 2
+O Mission Briefing 3
+== a0067 e neg | hard: '?' only in nullish-coalescing and optional chaining inside code
+== a0068 e neg
+== a0069 e neg
+== a0070 e neg
+== a0071 e neg | hard: '?' only in nullish-coalescing inside inline TypeScript
+== a0072 e neg
+== a0073 e neg | hard: '?' only in C# nullable type names (`int?`)
+== a0074 e neg
+== a0075 m | "like budget or what to pack" illustrates possible questions; one yes/no inquiry
+Q y :: Do you have any other questions about planning this trip, like budget or what to pack?
+== a0076 h | two records: an information request whose "such as" list illustrates the needed details (open, lead-in ends with ':'), then "For example, are you asking about:" with a numbered list of candidate problem types to choose from (trailing parentheticals omitted)
+Q o :: Could you provide additional details such as:
+Q m :: For example, are you asking about:
+O A combinatorics problem
+O Routes between specific cities
+O Something from a textbook or image you're referencing
+== a0077 e neg | hard: '?' only in Swift optional chaining inside code
+== a0078 e neg
+== a0079 e neg | hard: '?' only in a Ruby predicate method (`opts.key?`)
+== a0080 m neg | hard: '?' only in FAQ headings of a generated README inside code
+== a0081 e
+Q y p :: Want me to run rocprofv3 on the CK path as well so we can compare vgpr/lds and kernel duration directly?
+== a0082 e neg
+== a0083 m neg | hard: "Ask yourself: What need would cheating fulfill? What am I actually craving?" are self-reflection prompts for the user, not questions to answer to the assistant
+== a0084 m | French: "Do you want me to help you with something more specific?"; a general offer of further help
+Q y p :: Voulez-vous que je vous aide avec quelque chose de plus spécifique ?
+== a0085 e neg
+== a0086 e neg | hard: '?' only in code comments
+== a0087 e neg
+== a0088 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== a0089 m neg | hard: rhetorical parentheticals "(is the code right?)" and "(is the biology right?)"
+== a0090 e neg
+== a0091 m neg | hard: the only '?' is in screenplay dialogue
+== a0092 e neg | hard: '?' only in a JS ternary inside a tool call
+== a0093 e neg
+== a0094 e neg
+== a0095 e neg
+== a0096 e neg | hard: self-answered "How many levels exist?"
+== a0097 e neg | hard: '?' only inside an ASCII diagram
+== a0098 e neg
+== a0099 e neg | hard: '?' only in shell `$?` and `${var:?}` expressions
+== a0100 m | "or do you have any other questions about your dreams" is an escape arm, leaving one named possibility; "Would you like to know more" (no "me") is not a proposal
+Q y :: Would you like to know more about any of these techniques or do you have any other questions about your dreams?
+== a0101 m neg | hard: rhetorical questions inside a creative monologue ("Twelfth floor? Sure.", "Now — where to?")
+== a0102 e neg | hard: '?' only as SQL placeholders and a JS ternary inside code
+== a0103 h | three bold questions; the one-liners after "What does it do?" are examples; the second and third each continue into their answer choices (parentheticals omitted)
+Q o :: What does it do?
+Q m :: Who uses it? ~~ or the public?
+O Just you
+O a small group
+O the public
+Q m :: Where does it run? ~~ or desktop?
+O Web app
+O mobile app
+O desktop
+== a0104 e neg
+== a0105 e neg | hard: '?' only as a bound parameter in a printed query plan
+== a0106 m | "any of these issues" refers to the two listed findings; a single proposal to fix them, as with "implement any of these"
+Q y p :: Would you like me to try and fix any of these issues?
+== a0107 e neg
+== a0108 m | interrogative heading "Could you please provide:" requests the problem statement and samples; the parenthetical "(what is the input format?)" explains item 1
+Q o :: Could you please provide:
+== a0109 e neg
+== a0110 e
+Q o :: What aspects of art's relationship to existence interest you most?
+== a0111 e neg | hard: '?' only in a C ternary inside quoted code
+== a0112 e neg
+== a0113 e | the joke's question is self-answered; the closing offer is a proposal
+Q y p :: Want another one?
+== a0114 m neg | hard: '?' only in quoted example phrases for the user to say to relatives
+== a0115 e neg | hard: '?' only as a keyboard-shortcut key in a table and in the closing instruction
+== a0116 m | three consecutive addressed information questions ("unique or better" is one attribute pair)
+Q o :: What are the key features and benefits?
+Q o :: Who is your target customer?
+Q o :: What makes your offering unique or better than competitors?
+== a0117 e neg
+== a0118 e neg
+== a0119 e neg
+== a0120 e neg | hard: '?' only in Rust error propagation inside code
+== a0121 e neg | hard: '?' only in Rust error propagation inside code
+== a0122 e neg | hard: '?' only in optional chaining inside a table cell
+== a0123 e neg
+== a0124 e neg
+== a0125 e neg
+== a0126 m neg | hard: the only '?' is a quoted survey question; the closing "If you want, I can help…" is an offer without a question
+== a0127 m | design choice between two approaches; "Would you rather" asks the user's preference, so not a proposal
+Q e :: Would you rather refactor `benchmark_compile_time()` to accept `benchmark_mode: str` and inject it via `lambda: benchmark_compile_time(mode='ci')`, or accept the global coupling in exchange for minimal dispatch complexity?
+O refactor `benchmark_compile_time()` to accept `benchmark_mode: str`
+O accept the global coupling
+== a0128 m neg | hard: the quoted question is advice for the writer to ask themselves
+== a0129 e neg | hard: '?' only as a glob character in inline code
+== a0130 e neg
+== a0131 e neg
+== a0132 e neg
+== a0133 e neg | hard: '?' only in a table header ("Match?")
+== a0134 m | French: "Do you want me to test the Nextcloud connection or help you with something else?"; the second arm is an escape hatch
+Q y p :: Tu veux que je teste la connexion Nextcloud ou que je t'aide avec autre chose ?
+== a0135 e neg
+== a0136 e neg
+== a0137 e neg | hard: '?' only in a quoted command description ("what have we been doing here?")
+== a0138 e
+Q y p :: Would you like me to expand on any specific aspect?
+== a0139 e neg
+== a0140 h amb | information request; the "You can either:" list describes ways to supply the details (share code, upload, describe) and a demo alternative follows with "let me know which approach you prefer" (no question); alternative reading: a multi_choice over those approaches
+Q o :: Could you please provide more details about the form you want me to fix?
+== a0141 e neg
+== a0142 e neg | hard: '?' only in nullish-coalescing and ternaries inside a tool call
+== a0143 e neg | hard: '?' only in a URL query fragment (`?list=true`)
+== a0144 e
+Q o :: What specific aspect would you like to think through further?
+== a0145 e
+Q o :: What do you think?
+== a0146 e neg
+== a0147 m neg | hard: '?' only in characters' dialogue in a comedic scene
+== a0148 e neg | hard: '?' only in C# nullable type names
+== a0149 e neg
+== a0150 e
+Q o :: How can I help you today?
+== a0151 e neg
+== a0152 e neg | hard: '?' only in optional chaining and nullish-coalescing inside code
+== a0153 m neg | hard: '?' only in quoted dialogue of a rewritten passage and in quoted example lines
+== a0154 e neg
+== a0155 e neg
+== a0156 e
+Q y p :: Shall I proceed with implementing P16?
+== a0157 e neg
+== a0158 m neg | hard: the only '?' is an e.g. parenthetical inside a list of required inputs introduced by "I need you to provide:"; no addressed question
+== a0159 e | French: "What name do you want to give the new repo?"
+Q o :: Quel nom tu veux donner au nouveau repo ?
+== a0160 e neg
+== a0161 e neg | hard: '?' only in a URL query string inside Go test code
+== a0162 e neg
+== a0163 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a0164 m neg | hard: bold "Where to watch?" is a self-answered heading
+== a0165 e neg
+== a0166 m | five numbered detective questions, each its own record; item 4 has two consecutive questions (two records); item 1 offers two distinct answers; items 2 and 5 are yes/no with attribute pairs
+Q e :: Was the man alone in the mountain field, or were there others with him?
+O alone in the mountain field
+O were there others with him
+Q y :: Did the man have any injuries or signs of trauma on his body?
+Q o :: What was the man's approximate age and physical condition?
+Q o :: Can you describe the unopened package?
+Q o :: What was its size, shape, and any distinguishing features?
+Q y :: Were there any other notable objects or clues found near the man's body?
+== a0167 e neg
+== a0168 e neg
+== a0169 e
+Q o :: What specific aspect interests you most?
+== a0170 e neg | hard: '?' only as the missing term in the sequence "2, 4, ?, 16, 32"
+== a0171 e neg | hard: '?' only in narrative prose of a story
+== a0172 e neg
+== a0173 e neg | hard: '?' only in a nullable type inside the reasoning block
+== a0174 e neg
+== a0175 m neg | hard: "Ask yourself three key questions…" self-reflection questions, answered conditionally in the text
+== a0176 e neg | hard: '?' only in dialogue of an Italian short story
+== a0177 e neg | hard: '?' only in ternaries inside code
+== a0178 e neg | hard: self-answered test questions ("Is it made of one type of atom? → Element.")
+== a0179 e neg | hard: '?' only as a glob wildcard in the explanation
+== a0180 e neg
+== a0181 e neg
+== a0182 e neg
+== a0183 e neg
+== a0184 e | French "Shall we start?" after a plan; confirms the plan, so a proposal
+Q y p :: On commence ?
+== a0185 e
+Q o :: What are your thoughts on this question?
+== a0186 e neg
+== a0187 e neg
+== a0188 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a0189 m neg | hard: a self-review checklist of questions to ask before finalizing a section
+== a0190 e neg | hard: '?' only in optional chaining inside code
+== a0191 h amb | "A few ideas:" bullets include two questions put directly to the user (media enjoyed, hobby) and the close asks the user to pick a topic without '?'; labeled as two open questions; alternative reading: the bullets are topic suggestions and the message has no addressed question
+Q o :: What's a book, movie, TV show, or other piece of media you've enjoyed recently?
+Q o :: Is there a hobby, skill or topic you're currently passionate about?
+== a0192 e neg
+== a0193 e neg
+== a0194 m | two named aspects plus the escape arm "or something else"
+Q e :: What specific aspect concerns you most - the utilitarian calculus, the discrimination concern, or something else?
+O the utilitarian calculus
+O the discrimination concern
+== a0195 e neg | hard: '?' only in a JS ternary inside code
+== a0196 e neg
+== a0197 e neg
+== a0198 e neg
+== a0199 e neg | hard: '?' only in the shell variable `$?`
+== a0200 e | open greeting question, then a restated yes/no offer whose two arms are attributes of the same inquiry (as batch 1/2 "Is there anything else…" items)
+Q o :: How can I help you today?
+Q y :: Is there something you'd like to chat about or a question I can assist you with?
+== a0201 e neg | hard: '?' only in dialogue of a Dutch short story
+== a0202 h amb | the closing question asks the user to decide whether `dev_source_map` belongs to build-mode configuration or runtime context; alternative reading: a yes/no "Have you considered…?" prompt
+Q e :: Have you considered whether `dev_source_map` is logically part of the build mode *configuration* (justifying global access) or *runtime context* (justifying explicit parameterization)?
+O build mode *configuration*
+O *runtime context*
+== a0203 m neg | hard: quoted rhetorical reframing ("why are these voters irrational?")
+== a0204 e neg
+== a0205 e neg | hard: '?' only in nginx regexes and URL query strings inside code
+== a0206 e neg | hard: self-answered heading "When to use which?"
+== a0207 e neg
+== a0208 m | bold interrogative lead-in with a list of requested inputs; the parenthetical "(what question needs to be answered?)" explains item 1
+Q o :: Could you please provide:
+== a0209 h | French: two numbered either/or questions under "Questions importantes avant de continuer"; "L'option 2 serait plus simple" states a lean toward the second arm of question 2; "Veux-tu installer" (no "me") is not a proposal
+Q e :: Ce VPS est-il dédié uniquement au mail, ou il y a d'autres services (comme Traefik) ?
+O dédié uniquement au mail
+O il y a d'autres services
+Q e d=1 :: Veux-tu installer ISPConfig complet (avec son interface d'administration) ou juste la stack mail (Postfix + Dovecot + Roundcube) sans panneau de contrôle ?
+O ISPConfig complet
+O juste la stack mail
+== a0210 m | "most promising or concerning" asks which aspects, not a choice between two answers
+Q o :: What aspects of technological progress do you find most promising or concerning?
+== a0211 e neg | hard: '?' only in a URL template inside code
+== a0212 e neg
+== a0213 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a0214 m neg | hard: '?' only in a quoted example message ("I miss you, when can we talk?")
+== a0215 e neg
+== a0216 m neg | hard: '?' only in the tentative parenthetical "(perhaps Charlotte?)" inside a list of ideas
+== a0217 e neg
+== a0218 e neg
+== a0219 e
+Q o :: What specific aspect concerns you most?
+== a0220 m neg | hard: rhetorical "will we do so wisely … or recklessly …?" inside the assistant's own argument
+== a0221 e neg
+== a0222 e neg | hard: '?' only as optional-parameter markers in a table
+== a0223 e neg | hard: '?' only inside RFC2047 encoded-word examples
+== a0224 e neg
+== a0225 e neg
+== a0226 e neg
+== a0227 e neg | hard: '?' only in C# null-coalescing inside code
+== a0228 m neg | hard: the italic questions are the user's own questions quoted and answered ("To answer your questions directly")
+== a0229 e neg | hard: '?' only in a C ternary in inline code
+== a0230 m | "such as" names examples of aspects, so a single yes/no offer
+Q y p :: Would you like me to elaborate on any specific aspect, such as setting up external DNS, configuring an Ingress controller, or implementing blue-green deployments?
+== a0231 e neg
+== a0232 e neg
+== a0233 e neg
+== a0234 m | French: the proposal to generate the functional spec is asked, then asked again in different words after the outline; two records per the batch-2 restated-question rule
+Q y p :: Souhaitez-vous que je **génère le CDC fonctionnel** avec les user stories à partir du CDC technique que j'ai lu ?
+Q y p :: Voulez-vous que je génère ce CDC fonctionnel complet avec toutes les user stories ?
+== a0235 e neg | hard: '?' only in a JS ternary inside code
+== a0236 e neg | hard: '?' only inside escaped byte strings in Go test code
+== a0237 e neg
+== a0238 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a0239 h amb | imperative lead-in "please let me know which of the following applies" asks the user to pick one of three numbered situations (options: bold labels; each item is itself phrased as a question); alternative reading: three separate yes/no questions
+Q m :: To get started, please let me know which of the following applies to your situation:
+O Historical/Genealogical Research
+O Document Analysis
+O Verification Logic
+== a0240 e neg
+== a0241 m neg | hard: '?' only in self-answered pun jokes; the closing "Let me know if…" has no question
+== a0242 e neg | hard: '?' only in optional chaining inside a tool call
+== a0243 e neg
+== a0244 e | the quoted "Who decides who is qualified?" is part of the argument
+Q o :: What specific aspect of this concerns you most?
+== a0245 e neg
+== a0246 e neg | hard: self-answered question heading in a proof
+== a0247 e neg | hard: '?' only in Swift `try?` inside a table
+== a0248 e neg
+== a0249 e neg
+== a0250 e
+Q o :: What is on your mind today?
+== a0251 m neg | hard: '?' only in table headers and an italic rhetorical question
+== a0252 m | two alternatives the user must pick between: accept the duplication, or name a domain reason
+Q e :: Would you accept duplicating that guard in each branch, or is there a domain reason `checkout_com` must stay this way?
+O accept duplicating that guard in each branch
+O is there a domain reason `checkout_com` must stay this way
+== a0253 m neg | hard: rhetorical questions inside an explanation of epistemology
+== a0254 e neg | hard: '?' only in nullish-coalescing inside inline code
+== a0255 e neg | hard: '?' only in a JSX ternary inside code
+== a0256 m neg | hard: offer without a question ("If you want, I can go straight into…")
+== a0257 e neg
+== a0258 e neg | hard: '?' only in a table header ("Present?")
+== a0259 h | French: "As-tu :" introduces two yes/no questions about equipment (each item one tool with alternatives), then "Que préfères-tu ?" asks to choose among Options A–C
+Q y :: Un fer à souder ou des pinces crocodiles ?
+Q y :: Un adaptateur USB-UART (CP2102, CH340, FTDI) ?
+Q m :: Que préfères-tu ?
+O Option A : Méthode hardware (UART)
+O Option B : Acheter un adaptateur USB-UART
+O Option C : Abandonner ce routeur
+== a0260 m | an open opinion question, then a yes/no follow-up about a particular domain
+Q o :: What's your perspective on perfection?
+Q y :: Are you thinking about it in a particular domain of life?
+== a0261 e neg
+== a0262 e neg
+== a0263 e neg
+== a0264 e neg | hard: '?' only in nullish-coalescing inside a comparison table and recommendation
+== a0265 e neg
+== a0266 m | role-play: the assistant speaks as an interviewer to the user playing Lincoln; the question is addressed to the user
+Q o :: What would you say were the key principles or values that guided you in leading the country through such a tumultuous period, especially regarding the issue of slavery and the Civil War?
+== a0267 e neg
+== a0268 e neg
+== a0269 e
+Q o :: What specifically prompted your question?
+== a0270 e neg | hard: '?' only in a Java ternary inside code
+== a0271 e neg
+== a0272 e neg | hard: '?' only in sample chat-log output
+== a0273 e neg
+== a0274 e neg
+== a0275 m | "tools or methods" are attributes of one offer of further suggestions, which the assistant would give
+Q y p :: Would you like more specific suggestions on tools or methods?
+== a0276 e
+Q y :: Does that help clarify it?
+== a0277 m | the "like" examples illustrate compound tags; one yes/no information question
+Q y :: Are there concrete plans to support such compound tags—like a comma-separated `flags` field or nested `mode: {primary, secondary}`?
+== a0278 h amb | the heading "What about the second finding?" is followed by an imperative request to describe the ASan output with parenthetical sub-questions; labeled the heading as the addressed open question; alternative reading: the heading is a section title and the request is the imperative
+Q o :: What about the second finding?
+== a0279 e neg
+== a0280 e neg | hard: '?' only in FAQ headings of generated documentation inside code
+== a0281 m neg | hard: offer without a question ("If you want, I can run …")
+== a0282 e neg
+== a0283 m neg | hard: self-answered "Can all elements become equal? Yes"; closing note asks for a problem statement without a question
+== a0284 e | French: "Do you want me to help you implement this separate-worker architecture?"
+Q y p :: Tu veux que je t'aide à implémenter cette architecture de workers séparés?
+== a0285 m neg | hard: quoted rhetorical questions in the closing sentence
+== a0286 e neg | hard: '?' only as a rune literal inside Go code
+== a0287 e neg
+== a0288 e
+Q y p :: Would you like me to expand on any specific aspect?
+== a0289 e neg | hard: self-answered heading "Why Python?"
+== a0290 e neg | hard: '?' only in a quoted example prompt for the demo ("What can you do?")
+== a0291 m | English-practice dialogue: a suggestion of the topic, the first conversation question, and its restatement in other words at the end (separate records per the batch-2 rule)
+Q y p :: How about we discuss travel?
+Q o :: what's the most interesting place you've ever visited, and what made it so memorable for you?
+Q o :: So tell me, where's an interesting place you've traveled to?
+== a0292 m neg | hard: "Check: is it symmetric? unbounded-ish?" is advice for the reader's own checks
+== a0293 e neg
+== a0294 e
+Q o :: What specifically prompted this reframing for you?
+== a0295 e neg
+== a0296 e neg | hard: '?' only in story dialogue
+== a0297 e neg
+== a0298 e neg
+== a0299 e neg | hard: '?' only in the shell variable `$?`
+== a0300 e
+Q e :: Are you looking to play solo or with a group of friends?
+O solo
+O with a group of friends
+== a0301 m | the "For example:" list illustrates kinds of equations, ending in "Or any other type"; an open request for the equation
+Q o :: Could you please share the equation you'd like me to solve?
+== a0302 e neg | hard: '?' only in optional chaining inside code
+== a0303 m | role-play as Sam; two consecutive open questions put to the user
+Q o :: what's your Shire?
+Q o :: What's the little thing that makes all this worth finishing?
+== a0304 e neg
+== a0305 e neg | hard: '?' only in a Ruby predicate method inside code
+== a0306 m | asks to confirm the agent's recommended plan, so a proposal
+Q y p :: Would you like to proceed with removing the placeholder parser and integrating `PEGTL`?
+== a0307 e neg
+== a0308 e neg | hard: '?' only in a table header
+== a0309 e | French: "Do you want us to explore that?" (undervolting)
+Q y p :: Tu veux qu'on explore ça ?
+== a0310 m | open opinion question, then a two-armed question about the user's motive
+Q o :: What are your thoughts on happiness?
+Q e :: Are you asking about this for personal reasons or more as a philosophical question?
+O for personal reasons
+O as a philosophical question
+== a0311 e neg
+== a0312 e neg
+== a0313 e neg
+== a0314 e neg
+== a0315 e neg
+== a0316 e neg
+== a0317 e neg
+== a0318 e neg
+== a0319 m | the "Harder Questions Worth Asking" bullets are reflection prompts for the user's own analysis; the addressed question is the last one
+Q o :: What specific situation are you thinking about?
+== a0320 e neg | hard: '?' only in a JS ternary inside code
+== a0321 m neg | hard: self-answered "Why not simply rely on HTTP multipart/form-data?"
+== a0322 m neg | hard: leaked reasoning ("should we report the pipeline as cancelled or successful?") answered by the model itself
+== a0323 e neg | hard: '?' only in C# null-conditional invocation
+== a0324 e neg
+== a0325 e
+Q e :: Are you planning to run outdoors, or are you thinking about hitting a treadmill?
+O run outdoors
+O hitting a treadmill
+== a0326 e neg | hard: '?' only in a quoted line from the reading passage
+== a0327 e neg
+== a0328 m neg | hard: "Ask three questions:" lists questions for the reader to ask about a drug, each answered in the text
+== a0329 e neg
+== a0330 m | the "such as" middleware and the parenthetical databases are examples inside the two arms
+Q e p :: Would you like me to expand on any specific area, such as the application-level tenant middleware, or create the equivalent for a different database (MySQL, MongoDB)?
+O expand on any specific area
+O create the equivalent for a different database
+== a0331 m neg | hard: self-answered bold heading "Should you remove it?"
+== a0332 e neg
+== a0333 h amb | "Is there something practical I can help you with?" followed by two fragment questions naming concrete kinds of help; labeled one choice span over the two named arms; alternative reading: yes/no offer with examples
+Q e :: Is there something practical I *can* help you with? ~~ doctor's appointment?
+O Finding resources in your area
+O Organizing your thoughts before a doctor's appointment
+== a0334 m | French: "Do you want me to detail a specific phase, or shall we start answering the questionnaire together?"; the "(qui est responsable des erreurs ?)" in the list is an item description
+Q e p :: Souhaites-tu que je détaille une phase spécifique ou qu'on commence à répondre au questionnaire ensemble ?
+O je détaille une phase spécifique
+O qu'on commence à répondre au questionnaire ensemble
+== a0335 e
+Q o :: What aspects of this question interest you most?
+== a0336 e neg | hard: '?' only in a quoted TODO comment from Go documentation
+== a0337 e neg
+== a0338 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== a0339 m neg | hard: the question is part of a drafted social-media post addressed to its readers ("Let's swap recipes in the comments")
+== a0340 e neg | hard: '?' only as a keyboard-shortcut key in inline code
+== a0341 e | three bulleted information questions
+Q o :: What book are you writing the report on?
+Q o :: What are the key points you want to cover in your introduction?
+Q o :: How long does the introduction need to be?
+== a0342 e neg | hard: '?' only in optional-call and nullish-coalescing inside code
+== a0343 e neg
+== a0344 m neg | hard: rhetorical "why carve out this one?" inside an argument list
+== a0345 e neg
+== a0346 m neg | hard: the essay's rhetorical question ("She asks a harder question: What does it mean…?")
+== a0347 e neg
+== a0348 e neg
+== a0349 e neg
+== a0350 e neg
+== a0351 m | one addressed sentence with two information requests behind a conditional lead-in; the "vs." parenthetical qualifies the first part rather than making the whole a choice
+Q o :: what does your p99 actually measure (single service call vs. full request chain), and what's the geographic distribution of your clients?
+== a0352 e neg | hard: '?' only as SQL placeholders inside code
+== a0353 m | the bullet "are you already employed there or is this a new offer?" is a consideration inside the analysis; the addressed question is the closing one ("Would you like to…" without "me": not a proposal)
+Q y :: Would you like to think through your specific situation more?
+== a0354 e neg | hard: '?' only in a quoted design phrase ("should I journal on destruction?")
+== a0355 e neg | hard: '?' only in a C# nullable type inside code
+== a0356 m neg | hard: offer without a question ("If you want, I can give you …")
+== a0357 e neg
+== a0358 m neg | hard: '?' only in listed example problem types, a parenthetical inside an imperative "Please provide:" list, and quoted example statements
+== a0359 m | French: "What's the next step — investigate the 10 failures, add anonymization, or something else?"; two named steps plus an escape arm; a which-question, not a proposal
+Q e :: Quelle est la prochaine étape — investiguer les 10 échecs, ajouter l'anonymisation, ou autre chose ?
+O investiguer les 10 échecs
+O ajouter l'anonymisation
+== a0360 e
+Q o :: What aspects of this relationship between knowledge and belief interest you most?
+== a0361 e neg | hard: '?' only in quoted Go documentation
+== a0362 e neg | hard: '?' only as a glob character in a scope note
+== a0363 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== a0364 m neg | hard: "Ask yourself:" self-reflection questions
+== a0365 e neg | hard: '?' only in TypeScript optional properties inside a tool call
+== a0366 e | interactive story: the question asks the user to decide what the character does next
+Q o :: What do you think Benny should do with the injured bird?
+== a0367 m | the reply is a stub greeting inside a dict-like wrapper; the greeting question is still addressed to the user
+Q o :: What need?
+== a0368 e neg
+== a0369 e
+Q o :: What specific concerns are driving your question?
+== a0370 e neg
+== a0371 e neg | hard: '?' only in Rust error propagation inside code
+== a0372 e neg
+== a0373 e neg
+== a0374 e neg
+== a0375 e
+Q e p :: Would you like me to focus on library resources specifically, or would you prefer I cover a broader range of study tools and educational materials?
+O focus on library resources specifically
+O cover a broader range of study tools and educational materials
+== a0376 m | the numbered bold questions are decision factors, each followed by guidance; the addressed question is the closing one
+Q o :: What does your market structure actually look like?
+== a0377 e neg
+== a0378 e neg | hard: '?' only in TypeScript optional members and optional chaining inside code
+== a0379 e neg
+== a0380 e neg | hard: '?' only in optional chaining inside code
+== a0381 m | "older findings or failed attempts" describe what the scan would find; one proposal
+Q y p :: Would you like me to scan the earlier parts of the log to find older findings or failed attempts that aren't in the current summary?
+== a0382 e neg
+== a0383 e neg | hard: '?' only in a table header
+== a0384 e | French: "Do you want me to help you plan the exact partitioning?"
+Q y p :: Voulez-vous que je vous aide à planifier le partitionnement exact selon votre configuration actuelle ?
+== a0385 e
+Q y p :: Would you like me to elaborate on any of these approaches specifically?
+== a0386 e neg
+== a0387 e neg
+== a0388 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a0389 h | keep the proposed aesthetic, or switch to one of two named alternatives; a preference question, not a proposal
+Q m :: Does this aesthetic resonate with you, or would you prefer something more grounded in **Gothic Fantasy** or **Modern Noir**?
+O this aesthetic
+O **Gothic Fantasy**
+O **Modern Noir**
+== a0390 e neg
+== a0391 m neg | hard: '?' only in quoted example greetings
+== a0392 e neg | hard: '?' only in TypeScript optional fields inside a tool call
+== a0393 e neg
+== a0394 e
+Q o :: What specific situation were you thinking about?
+== a0395 e neg
+== a0396 m neg | hard: '?' only in a quoted decision-problem statement
+== a0397 e neg
+== a0398 e neg
+== a0399 e neg
+== a0400 e | open greeting question, then a yes/no follow-up (as a0200)
+Q o :: How can I help you today?
+Q y :: Is there something specific you'd like to learn about or discuss?
+== a0401 h | an open request for context, then item 4's lead-in "are you looking for:" introduces four selectable kinds of help (the "(if so, please share it)" aside omitted)
+Q o :: Could you please provide more context?
+Q m :: are you looking for:
+O An algorithm/approach explanation
+O A complete solution in some programming language
+O Help debugging your code
+O Understanding the problem
+== a0402 e neg
+== a0403 e neg | hard: '?' only in optional chaining inside code
+== a0404 e neg
+== a0405 e neg | hard: '?' only in a C# nullable type inside code
+== a0406 e neg
+== a0407 e neg
+== a0408 e neg
+== a0409 m | the two options are ways the user could fix it; the addressed question is a single proposal to run the migration
+Q y p :: Would you like me to run the migration for you?
+== a0410 e
+Q e p :: Would you like me to work through another specific example or explain a particular application in more detail?
+O work through another specific example
+O explain a particular application in more detail
+== a0411 e neg
+== a0412 e neg
+== a0413 e
+Q y p :: Would you like me to expand on any specific aspect?
+== a0414 m neg | hard: "Is the friend protective? Envious? Concerned?" are illustrative questions in an explanation; the closing bold request is an imperative ("Please paste … and let me know the vibe…") whose e.g. parenthetical contains the only other '?'
+== a0415 e
+Q m p :: Would you like me to modify the color scheme, add more team members, or adjust the layout in any way?
+O modify the color scheme
+O add more team members
+O adjust the layout in any way
+== a0416 e neg | hard: '?' only in story dialogue
+== a0417 e neg | hard: '?' only in escaped JS code inside a tool call
+== a0418 e neg
+== a0419 e neg
+== a0420 e
+Q o :: What are your thoughts on this?
+== a0421 e neg
+== a0422 m neg | hard: leaked reasoning with self-directed questions; the only other '?' is the Rust operator
+== a0423 e neg
+== a0424 e neg
+== a0425 m | asks the user to confirm the proposed itinerary, a confirmation of the assistant's plan
+Q y p :: Does this general structure sound good to you?
+== a0426 m neg | hard: rhetorical parenthetical "(arrestees? everyone at birth?)"
+== a0427 e neg | hard: '?' only in Rust error propagation inside code
+== a0428 m neg | hard: parenthetical questions define narratological dimensions inside an explanation
+== a0429 e neg
+== a0430 m neg | hard: '?' only in FAQ entries of generated documentation
+== a0431 e neg
+== a0432 e neg
+== a0433 e neg
+== a0434 e neg
+== a0435 e neg
+== a0436 e neg
+== a0437 e neg
+== a0438 e
+Q y p :: Would you like me to expand on any specific aspect?
+== a0439 e
+Q o :: What specific software or domain are you working in?
+== a0440 e neg
+== a0441 m neg | hard: '?' only in Polish example phrases taught to the user
+== a0442 e neg | hard: '?' only in an echo string inside a Bash tool call
+== a0443 e neg
+== a0444 e neg
+== a0445 e neg
+== a0446 m neg | hard: '?' only in a quoted comparison ("is a_i ≤ a_j?")
+== a0447 e neg
+== a0448 e neg
+== a0449 m | "about food festivals or anything else" is one open-ended follow-up offer (yes/no, as batch 1/2 "anything else" items)
+Q y :: Do you have any other questions about food festivals or anything else you'd like to know?
+== a0450 e neg | hard: '?' only in screenplay dialogue
+== a0451 e neg
+== a0452 m neg | hard: the bold questions are reflection prompts ("The question isn't really … It's: are you …? … Only you know which one is true."), not questions for the assistant to receive an answer to
+== a0453 e neg
+== a0454 e neg
+== a0455 e neg
+== a0456 e neg
+== a0457 e neg
+== a0459 e neg | hard: '?' only in Angular safe-navigation inside template code
+== a0460 e neg | hard: '?' only in URL query strings inside Go code
+== a0461 e neg
+== a0462 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a0463 e neg | hard: '?' only in a table header ("Divisible?")
+== a0464 e neg
+== a0465 m neg | hard: self-answered joke; the closing "Let me know if you'd like to hear another one" has no question
+== a0466 e neg | hard: '?' only in a JSX ternary inside a tool call
+== a0467 e neg
+== a0468 m | "The real question worth pushing on: …?" is posed for reflection; the addressed question is the last one
+Q o :: What specifically draws you to this framing?
+== a0469 m neg | hard: rhetorical "Is justice about punishment … or rehabilitation …?" inside a list of perspectives
+== a0470 e neg | hard: '?' only in Rust error propagation inside code
+== a0471 m neg | hard: leaked reasoning ("should the pipeline emit records during transformation or only at flush?") answered by the model itself
+== a0472 e neg
+== a0473 e
+Q e p :: Would you like me to go into detail about a specific body type, or would you prefer a general overview of all of them?
+O go into detail about a specific body type
+O a general overview of all of them
+== a0474 m neg | hard: '?' only inside a parenthetical within a conditional imperative ("If you want, describe what you see … (any peeling? uniform or patchy? …)")
+== a0475 e neg | hard: '?' only as SQL placeholders inside code
+== a0476 e neg
+== a0477 e neg
+== a0478 e neg | hard: '?' only in a list of invalid filename characters
+== a0479 m neg | hard: numbered offer list introduced by "If you want, next I can:" without a question
+== a0480 e neg
+== a0481 m neg | hard: Russian; the only '?' is a parenthetical inside a "Мне нужно знать:" list of required inputs, followed by an imperative request for the data
+== a0482 e neg
+== a0483 e
+Q o :: What are your thoughts about destiny?
+== a0484 e neg
+== a0485 e neg
+== a0486 e neg
+== a0487 m neg | hard: quoted rhetorical questions in the closing sentence
+== a0488 e neg | hard: '?' only in a quoted UI link label ("Forgot password?")
+== a0489 e neg
+== a0490 e neg | hard: '?' only in nullish-coalescing inside a tool call
+== a0491 e neg | hard: '?' only as a URL character discussed in backticks
+== a0492 e
+Q o :: What specific aspect interests you most?
+== a0493 e neg
+== a0494 e neg
+== a0495 e neg | hard: '?' only in nullish-coalescing and optional chaining inside code
+== a0496 m | asks whether the user has a musical preference (yes/no form, as batch 1/2 "Is there something specific…" items)
+Q y :: Do you have a particular type of music or sound that really speaks to you?
+== a0497 e neg
+== a0498 m | two alternatives about the setter's behavior; the e.g. illustrates the second arm
+Q e :: In your current code, does `self.flush_interval = value` *always* assign to `self._flush_interval`, or does it contain additional logic (e.g., `if value != self._flush_interval: self._rebuild_writer()`)?
+O *always* assign to `self._flush_interval`
+O contain additional logic
+== a0499 m neg | hard: questions are advice for the clinician's family conversation ("Ask the family: …?", "staying at home? Not being admitted?")
+== a0500 e neg
+== a0501 e neg
+== a0502 h amb neg | hard: code-review "Open questions / assumptions" list states unresolved hardware questions without addressing them to the user; the closing offer ("If you want, I can …") has no question; as batch 2's spec-review rule; alternative reading: the two open questions ask the user
+== a0503 e neg
+== a0504 e neg
+== a0505 e neg
+== a0506 e neg | hard: '?' only in a regex quoted from Go documentation
+== a0507 e neg
+== a0508 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a0509 e neg
+== a0510 e neg
+== a0511 m neg | hard: self-assessment questions inside advice points, answered by the reader
+== a0512 e neg | hard: '?' only in nullish-coalescing inside a tool call
+== a0513 e neg
+== a0514 e
+Q o :: What aspect would you like to examine more carefully?
+== a0515 e neg
+== a0516 e neg
+== a0517 e neg
+== a0518 e neg
+== a0519 m amb | "For instance:" introduces example topics ending in "Something else?", so an open clarification (e.g.-style list); alternative reading: a menu of selectable topics
+Q o :: Could you clarify what you'd like before/after examples of?
+# --- plan2 (data/hf3a/plan2.txt) from here on; blocks follow plan order ---
+== a0753 e neg | hard: '?' only in Swift optional chaining inside code
+== a0677 e neg | hard: '?' only in optional chaining inside code
+== a0547 e | French: "Do you want me to add this property?"
+Q y p :: Voulez-vous que j'ajoute cette property ?
+== a1706 m neg | hard: "Is the difference always the same?" etc. are self-test instructions for the reader; the closing bold offer has no question
+== a0669 e neg | hard: '?' only in nullish-coalescing inside a tool call
+== a0610 e neg
+== a0528 e neg
+== a0619 e neg
+== a0522 e neg
+== a1613 m | "landscapes or any specific animals" are two subjects of one yes/no interest question
+Q y :: Are you also interested in photographing landscapes or any specific animals?
+== a0950 e | the preceding "I can apply this fix for you." is what "proceed" refers to
+Q y p :: Shall I proceed?
+== a1651 m neg | hard: self-answered joke questions; the closing "Let me know if…" has no question
+== a1767 e | the numbered list requests inputs (imperative), the closing question is open
+Q o :: What would you like assistance with?
+== a0537 e neg
+== a1185 e
+Q y p :: Would you like me to expand on any specific aspect?
+== a1282 e
+Q o :: What specific aspect are you thinking through?
+== a0744 e
+Q o :: What aspects of selfhood are you most interested in exploring?
+== a1851 m | role-play; a clarifying question with two distinct readings to choose from
+Q e :: When you say everyone — do you mean a specific number of people, or is it more like a weather condition?
+O a specific number of people
+O more like a weather condition
+== a0532 e neg
+== a0653 e neg | hard: '?' only in Angular safe-navigation inside template code
+== a1896 m neg | hard: leaked reasoning with self-directed questions ("Should I add recover?")
+== a1880 m | asks approval for the assistant's proposed signature change, so a proposal
+Q y p :: Would it be acceptable to adjust all helper signatures to `def config_*environment: str) -> PipelineConfig`, even if most ignore it?
+== a1363 e neg | hard: '?' only as a SQL placeholder inside code
+== a1280 m | French: "Do you want me to add other improvements or create additional visual examples?"
+Q e p :: Voulez-vous que j'ajoute d'autres améliorations ou que je crée des exemples visuels supplémentaires ?
+O j'ajoute d'autres améliorations
+O je crée des exemples visuels supplémentaires
+== a1721 m | "such as" names example sections; the quoted quiz question earlier is sample content
+Q y p :: Would you like me to expand on any specific section, such as the **HACCP protocols** or **Microbial growth curves**?
+== a1887 e neg | hard: '?' only inside a WebFetch tool-call prompt
+== a0550 e neg
+== a0570 m | one sentence asking for two pieces of missing information
+Q o :: Which endpoint and percentile/traffic target define success, and may response semantics or caching change?
+== a1522 e
+Q o :: Could you please share the full problem statement?
+== a1605 m | "where to stay or how to get there" are two topics of one offer of tips (as a0275)
+Q y p :: Would you like any tips on where to stay or how to get there?
+== a0974 e
+Q y p :: Want me to parse the kernel stats and summarize hotspots?
+== a1642 m | the topics are attributes of one yes/no follow-up
+Q y :: Do you have any specific questions about exercise, nutrition, or healthy lifestyle habits?
+== a1754 h amb | "Could you please clarify…?" followed by "For example:" diagnostic sub-questions, taken as selectable options (as a0043, batch-2 rule); alternative reading: open clarification with examples
+Q m :: Could you please clarify what you'd like me to help with?
+O Are you asking for **advice** on how to handle this relationship
+O Do you want me to **analyze** the dynamics from an outside perspective
+O Is there a **specific decision** you're trying to make
+O Did you mean to include a **different problem** (math, logic, etc.) and accidentally pasted this instead
+== a0988 e | the joke is self-answered; the offer is a proposal
+Q y p :: Want another one?
+== a1211 m | "The real question worth asking: …?" is a reflection prompt; the addressed question is the last one
+Q o :: What specific aspect of this concerns you most?
+== a1793 m | asks for the user's reasoning about which is more fundamental; open rather than a two-way pick; the Mill paraphrase is rhetorical
+Q o :: What do you think makes either knowledge or happiness more fundamental to a well-lived life?
+== a1832 e
+Q y :: Is there a specific issue you're troubleshooting?
+== a0536 e neg
+== a0579 e neg
+== a0723 e neg | hard: '?' only in Kotlin safe calls inside code
+== a1214 m | "like …" names examples of areas; one yes/no offer
+Q y p :: Would you like me to dive deeper into any specific area like the service mesh, GitOps workflow, or observability setup?
+== a0773 e neg
+== a1716 m | "such as" names example sections; one yes/no offer
+Q y p :: Would you like me to expand on a specific section, such as the financial projections or the technical comparison of launch vehicles?
+== a1892 h | decision 1 is an either/or with a stated recommendation ("I'd recommend first-person"); decisions 2 and 3 are statements; the closing "Want any adjustments, or should I draft…?" has an open adjust-anything arm, so yes_no (dev d0766)
+Q e d=0 :: First-person from your embedded background throughout, or more detached/analytical with embedded examples as evidence?
+O First-person from your embedded background throughout
+O more detached/analytical with embedded examples as evidence
+Q y p :: Want any adjustments, or should I draft the full essay from this?
+== a0665 e neg
+== a0698 m | one sentence asking for two pieces of missing information; "dual reads or writes" qualifies the migration
+Q o :: Which database/driver is the target, and must this be a zero-downtime migration with dual reads or writes?
+== a1528 m | the numbered bold questions are critique points answered in the text; the addressed question is the last sentence with two information requests
+Q o :: What specifically are you trying to predict, and what data do you have on past claims?
+== a1057 e
+Q y :: Is there anything else you would like to know about styling or building out your wardrobe?
+== a0678 e
+Q y p :: Would you like me to add the missing headers to the file?
+== a1676 m neg | hard: a numbered list of questions for the user to ask themselves when choosing a phone
+== a1775 m | "any of these alternatives" refers to the listed offers; a single yes/no proposal as batch 1/2 "any of these" items
+Q y p :: Would any of these alternatives be helpful?
+== a0776 e
+Q y p :: Want another one?
+== a1251 m | dash list after the offer supplies three options (batch-2 rule)
+Q m p :: Want me to go deeper on any particular element - the evidence base, specific program models, or the political/implementation challenges?
+O the evidence base
+O specific program models
+O the political/implementation challenges
+== a0964 m | open opinion question, then one named context plus the escape arm "or another specific context"
+Q o :: What do you think?
+Q y :: Does this question relate to concerns about AI ethics or another specific context?
+== a1828 m | "Please provide:" introduces three items phrased as direct questions to the user (as a0341)
+Q o :: What needs to be computed, minimized, maximized, or determined?
+Q o :: Any constraints on $n$, $m$, $a_i$, $b_i$, or $k$?
+Q o :: What is the expected output format?
+== a0635 e neg | hard: '?' only in optional chaining inside code
+== a1895 m neg | hard: self-answered "Why …?" design-decision bullets
+== a0947 m | the mid-text "is the extra `preProcessEnvelope` field worth the indirection?" is a counterpoint the assistant raises and qualifies; the addressed question is the closing either/or
+Q e :: Are the `BillingMode` literals coming from a client-facing spec (where `HYBRID` duplication is already in the contract), or are they internal to this service’s state machine?
+O coming from a client-facing spec
+O internal to this service’s state machine
+== a0871 e | an offer of help with a platform, followed by "I can provide detailed instructions"
+Q y p :: Need help with a specific platform?
+== a1325 h amb | French: "Questions Clés à Trancher" lists four decision questions for the user (labeled each, as batch 2's "open questions for your input" rule), then a closing offer; alternative reading: the key questions are recorded in the document for later
+Q y :: Avez-vous déjà une solution de biométrie vocale ?
+Q y :: Les clients ont-ils une app mobile avec Face ID/Touch ID ?
+Q o :: Quel est le seuil de montant pour escalade humaine obligatoire ?
+Q e :: Faut-il privilégier la sécurité (plus de frictions) ou l'UX (plus fluide) ?
+O la sécurité
+O l'UX
+Q y :: Souhaites-tu approfondir un aspect particulier ?
+== a1708 m | the table's question column is a checklist; the addressed question is the bold closing one (the e.g. constraints are examples)
+Q o :: Where are you currently leaning, and what is your biggest constraint (e.g., financial, location, or interest)?
+== a0687 e neg | hard: '?' only in nullish-coalescing inside a tool call
+== a0591 e neg
+== a0628 m | one sentence asking for three pieces of missing information
+Q o :: What operation is retried, what idempotency guarantee exists, and what maximum attempts/deadline should apply?
+== a1574 m | an open clarification request, then a yes/no question; the list of possible meanings is not offered as a choice
+Q o :: Could you provide more context about what you're asking?
+Q y :: Are you working on a specific problem?
+== a1621 e
+Q y :: Is there something specific you would like to talk about or learn about today?
+== a1130 e neg | hard: '?' only in the grammar notation `WS?`
+== a1658 m | the assistant speaks like a curious interlocutor; three questions put to the user
+Q y :: Do you know much about the different types of ants and how they vary?
+Q o :: What got you interested in ants?
+Q y :: Have you studied them or read a lot about them?
+== a0711 e
+Q y :: Is there something else I can help you with today?
+== a0530 e
+Q y p :: Would you like me to expand on any specific aspect?
+== a1501 e
+Q o :: What specific aspect are you wrestling with most?
+== a1817 m | asks which aspects or species interest the user; open
+Q o :: What aspects of consciousness or which species are you most curious about?
+== a1842 h | an open question about the direction, then a three-way choice after a dash ("neither" is a real answer); the quoted "where did the revenue go?" is a phrase
+Q o :: Which direction is your EBITDA 'weirdly high'?
+Q m :: What does target's balance sheet look like — material inventory, material deferred revenue, or neither?
+O material inventory
+O material deferred revenue
+O neither
+== a1823 e
+Q o :: What do you think?
+== a1882 e
+Q y :: Does `config.mode` have a fixed, small set of values we can enum-derive from?
+== a1156 m | two distinct follow-up actions offered
+Q e p :: Would you like me to add any specific sections or expand on any area?
+O add any specific sections
+O expand on any area
+== a1466 m | French: "Do you want me to write a step-by-step guide for one of these options?"; a single proposal over the listed options
+Q y p :: Tu veux que je te fasse un guide pas-à-pas pour une de ces options ?
+== a1725 m | two distinct arms; "Would you like to know more" (no "me") is not a proposal; "like inches or millimeters" are examples
+Q e :: Are you measuring something specific, or would you like to know more about different measurement units like inches or millimeters?
+O measuring something specific
+O know more about different measurement units
+== a1886 e
+Q y p :: Want me to implement #2 and #3?
+== a0647 e neg
+== a1514 m | the numbered list describes the missing parts (each item a label plus an explanatory question, as a0006); the addressed question is the closing request
+Q o :: Could you please share the full problem?
+== a1597 m | two arms: accuracy as the main factor versus other factors
+Q e :: Would you say accuracy is your main deciding factor, or are other things like ease of use and cost also important to you?
+O accuracy is your main deciding factor
+O other things like ease of use and cost also important to you
+== a1040 m neg | hard: the assistant's own reasoning with self-directed questions, cut off mid-sentence
+== a1674 e
+Q o :: What's one of your favorite hobbies or activities that you really enjoy doing in your free time?
+== a1753 m | asks the user to confirm the assumed problem, with a fallback request if it differs; a confirmation (yes_no)
+Q y :: Could you please confirm this is the correct problem, or provide the complete problem statement if it's different?
+== a0806 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a0556 m | the bulleted questions are self-assessment prompts ("About yourself honestly", "Honest Questions to Ask Yourself"); the addressed question is the last one
+Q o :: What specific aspect feels most uncertain to you?
+== a0713 e
+Q o :: What aspects of being human do you find most meaningful or challenging?
+== a1049 m | three named concerns after a dash
+Q m :: What feels most urgent right now — the situation with your mom, the dynamic with your husband, or just needing someone to acknowledge that this is too much?
+O the situation with your mom
+O the dynamic with your husband
+O just needing someone to acknowledge that this is too much
+== a1883 h amb | "Which is the actual intention …?" asks the user to pick between the two intentions laid out in the preceding conditionals; alternative reading: open question
+Q e :: Which is the actual intention for `fallback_handler` here?
+O the *canonical* place for runtime-sensitive defaults
+O handle only truly unknown platforms
+== a0623 e neg
+== a1463 m | French: "Do you want me to continue with phases 6 and 7, or would you rather test what has been done first?"
+Q e p :: Voulez-vous que je **continue avec les phases 6 et 7**, ou préférez-vous d'abord **tester** ce qui a été fait?
+O **continue avec les phases 6 et 7**
+O **tester**
+== a1722 m | the italic theme question is part of the worldbuilding; the closing bold question offers two directions ("Would you like to…", no "me": not a proposal)
+Q e :: Would you like to dive deeper into the specific cause of this event, or perhaps develop the character arc for a survivor in this world?
+O dive deeper into the specific cause of this event
+O develop the character arc for a survivor in this world
+== a0809 m | the open lead-in is completed by two alternatives after the dash; one either/or record
+Q e :: What does your catalog structure look like — do you have clean attribute facets, or is most of the product info in unstructured descriptions?
+O clean attribute facets
+O unstructured descriptions
+== a0571 e neg
+== a1181 m neg | hard: rhetorical definitional questions ("Do you count each apple variety separately?")
+== a1607 m | "scoring or awarding prizes" are topics of one offer of ideas
+Q y p :: Would you like ideas for scoring or awarding prizes?
+== a0786 e neg | hard: the scheduler's numbered checks are phrased as questions and answered in the text
+== a1677 m | the user asked to be asked something; three consecutive questions (the middle one offers two answers)
+Q o :: If humanity discovered intelligent extraterrestrial life, how do you think it would affect the major religions of the world and people's belief systems?
+Q e :: Would the existence of aliens be compatible with or contradictory to the teachings of religions like Christianity, Islam, Hinduism, etc.?
+O compatible with
+O contradictory to
+Q o :: How would religious leaders and believers reconcile their faiths with this paradigm-shifting discovery?
+== a1778 e
+Q o :: Could you please share the specific problem or question you'd like me to work on?
+== a1123 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a1482 e
+Q o :: What specific aspect concerns you most?
+== a1796 e
+Q o :: What aspects of this question interest you most?
+== a0658 m neg | hard: rhetorical parentheticals ("whose microbiome is "healthy"?") in a list of challenges
+== a0562 e neg
+== a1359 m | the "like …" files are examples; one proposal
+Q y p :: Would you like me to create any additional documentation files (like an `API_REFERENCE.md` or `CONTRIBUTING.md`)?
+== a1333 m | French: "Do you know the total size of the uploads folder?" asks for the size, so open (convention: "Do you remember …" is open)
+Q o :: Tu connais la taille totale du dossier uploads ?
+== a1730 m | the three bold questions are what the dashboard should answer; the closing offer's "such as" names example sections
+Q y p :: Would you like me to draft a specific outline for a particular section, such as the **Digital Transformation** or **Risk Management** portion of the report?
+== a1889 e neg | hard: self-answered bold "Why use it?"
+== a0529 e neg
+== a1518 m | two distinct explanations the user can confirm
+Q e :: Did you perhaps change another supplier around the same time, or is there a specific consistency issue you're troubleshooting?
+O change another supplier around the same time
+O a specific consistency issue you're troubleshooting
+== a1593 m | the "or" lies inside the topic ("choosing between adopting a pet or buying from a breeder"); one yes/no offer
+Q y p :: Would you like any advice on choosing between adopting a pet or buying from a breeder?
+== a0937 m neg | hard: compaction summary; the only '?' is inside the quoted user request
+== a1186 m | the "key questions include" list is rhetorical; an open opinion question, then a two-way choice
+Q o :: What do you think about the nature of consciousness?
+Q e :: Do you tend more towards scientific or philosophical views on the matter?
+O scientific
+O philosophical views
+== a1763 m | the second arm ("or can I help you with something else") is an escape arm
+Q y :: Is there something specific you're actually trying to discuss, or can I help you with something else?
+== a0941 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a0795 e
+Q o :: What's driving your question?
+== a1804 m | an open question, then a differently worded follow-up naming three interests (separate records)
+Q o :: What's your interest in this question?
+Q m :: Are you curious about the physics, the philosophy, or perhaps how our perception of time affects our lives?
+O the physics
+O the philosophy
+O how our perception of time affects our lives
+== a1878 e
+Q y p :: Would you like more detail on any of these steps?
+== a1881 m | asks whether to continue the scripted tutorial; the following imperative explains how to answer
+Q y p :: Ready for Turn 3?
+== a1050 m | two distinct follow-up actions offered (as a1156)
+Q e p :: Would you like me to add any specific sections or expand on particular areas?
+O add any specific sections
+O expand on particular areas
+== a0899 e | French: "Do you want me to fix this bug?"
+Q y p :: Voulez-vous que je corrige ce bug ?
+== a1719 m | two named settings after the dash
+Q e :: Where do you feel your soul finds the most profound solace—in the high, thin air of the mountains, or the rhythmic vastness of the sea?
+O the high, thin air of the mountains
+O the rhythmic vastness of the sea
+== a1894 e
+Q e p :: Want me to sketch the Plug + Lua script, or look at the actual project you're contributing to?
+O sketch the Plug + Lua script
+O look at the actual project you're contributing to
+== a0629 e neg
+== a1560 e
+Q o :: What brand/model is it?
+== a0957 e
+Q o :: What kind of app are you building?
+== a1360 m | "(next planned step)" describes the first arm rather than recommending it; the e.g. illustrates the second
+Q e p :: Want me to move on to reducing VGPR pressure in the WMMA loop (next planned step) or try other tile shapes (e.g., larger blockN/repeatN)?
+O move on to reducing VGPR pressure in the WMMA loop
+O try other tile shapes
+== a1652 m | "Let me know what other aspects …" is not a separate question
+Q o :: What do you see as the most promising policy levers or strategies for increasing equity in K-12 education?
+== a0525 m neg | hard: '?' only in quoted questions being compared
+== a1063 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== a1479 m | "Why do women disproportionately enter lower-paying fields?" is a point in the analysis; the addressed question is the last one
+Q o :: What specific aspect would you like to examine more closely?
+== a1821 m | one opinion question; the perspectives are not named as answers in the question
+Q o :: What do you think - does one perspective resonate more with you?
+== a1835 e
+Q e p :: Want help structuring the equipment justification section itself, or working through the phonon measurement specs?
+O structuring the equipment justification section itself
+O working through the phonon measurement specs
+== a1879 e
+Q y :: Would you accept that if `'hybrid'`’s dual-region fallback is the only case where config outside `region_config` is needed?
+== a0949 e neg | hard: '?' only in optional chaining inside code
+== a1439 m | French: the framed "la question est : est-ce que …?" and the closing confirmation are differently worded versions of the same yes/no check (two records per the batch-2 rule)
+Q y :: est-ce que le vendeur voulait que le pack soit payé depuis son **wallet CEKEMA** plutôt que depuis son compte MTN MoMo physique ?
+Q y :: Est-ce que c'est bien ça le comportement attendu — que le vendeur puisse utiliser son solde CEKEMA pour payer son abonnement ?
+== a1692 m | asks the user to provide details; "analyze the event or continue the story" is the purpose, not two answers
+Q y :: Would you like to provide more details so I can help you analyze the event or continue the story?
+== a1885 m | the parenthetical languages qualify the snippet; one proposal
+Q y p :: Want me to generate a small code snippet (Python or JS, given your frontend background) that builds a Bloom filter and empirically measures the false positive rate against the predicted `p`?
+== a1537 e
+Q o :: Could you please share the **full problem statement**?
+== a1077 e | open greeting question, then a yes/no follow-up (as a0200)
+Q o :: How can I help you today?
+Q y :: Is there something on your mind you'd like to chat about or get some information on?
+== a1336 e
+Q y :: Is there anything else you need help with?
+== a1678 e
+Q y :: Do you have any favorite books or genres?
+== a1762 h amb | capability menu (bold categories) directly before "What would you like help with today?" supplies options (batch-2 menu rule); alternative reading: open greeting with an illustrative capability list
+Q m :: What would you like help with today?
+O Analysis & Problem-Solving
+O Writing & Content Creation
+O Research & Learning
+O Coding & Technical Tasks
+O General Assistance
+== a1209 e
+Q y p :: Would you like me to expand on any specific aspect?
+== a0810 e
+Q o :: What specific context are you thinking about?
+== a1783 m | the mid-text questions are rhetorical ("The question becomes: …"); the closing question offers two views
+Q e :: What's your perspective - do you see suffering as having any necessary role, or do you envision a future where it might be transcended?
+O suffering as having any necessary role
+O a future where it might be transcended
+== a1854 m | two distinct explanations offered
+Q e p :: Would you like me to explain how to maximize pieces or get closest to equal?
+O maximize pieces
+O get closest to equal
+== a0869 e
+Q e :: Does `certificate_origins` ever share entries with `saml_origins` under edge cases, or are they strictly disjoint?
+O ever share entries with `saml_origins` under edge cases
+O strictly disjoint
+== a1308 e
+Q y p :: Would you like me to walk you through any specific platform in more detail?
+== a0818 e neg
+== a1737 h amb | "you might consider:" introduces three questions whose answers would tailor the recommendation (labeled; the second and third enumerate answers); alternative reading: suggestions for the user's own reflection
+Q o :: What is your preferred **budget range**?
+Q m :: Are you traveling **solo, as a couple, or with family**?
+O solo
+O as a couple
+O with family
+Q e :: Do you prefer **warm or cold climates**?
+O warm
+O cold climates
+== a0651 e neg | hard: '?' only in nullish-coalescing inside a tool call
+== a1546 m neg | hard: self-answered heading ("Should She Inform Takashi First? Yes") and a quoted example line
+== a1204 e
+Q y :: Is there something on your mind today?
+== a1231 e
+Q y p :: Shall I proceed with a simple, hand-written parser for now?
+== a1648 e
+Q y :: Does this help clarify the difference between natural numbers and integers?
+== a0661 m neg | hard: '?' only in an e.g. parenthetical inside a list of required inputs; the request is an imperative
+== a0684 m | the riddle is self-answered; "Did you get it right?" is put to the user
+Q y :: Did you get it right?
+== a1235 e
+Q o :: What aspect interests you most?
+== a1820 e
+Q o :: What aspects of this perspective interest you most?
+== a1863 e
+Q y p :: Would you like help evaluating any specific details about the offer?
+== a0768 e
+Q e :: Does `BinaryLoader` have access to `build_profile` at call time, or would that require additional threading?
+O have access to `build_profile` at call time
+O require additional threading
+== a0641 e neg | hard: '?' only in TypeScript optional members inside code
+== a1008 m | two distinct next steps offered; "you prefer to add" still asks what the assistant should do, so a proposal
+Q e p :: Would you like me to help you run these diagnostics, or would you prefer to add CPU fallback logic to `main.py` so it gracefully degrades when CUDA fails?
+O help you run these diagnostics
+O add CPU fallback logic to `main.py`
+== a1698 e
+Q y p :: Would you like me to adjust these numbers based on specific prices from your local supermarket?
+== a1891 m | "for either the RabbitMQ or the Postgres-only variant" names the two variants to choose between
+Q e p :: Want me to sketch the relay and consumer code for either the RabbitMQ or the Postgres-only variant?
+O the RabbitMQ
+O the Postgres-only variant
+== a1525 m neg | hard: "Before you do it, check:" lists questions for the user's own verification, answered conditionally
+== a1603 e | open greeting question, then a yes/no follow-up (as a0200)
+Q o :: How can I help you today?
+Q y :: Is there something specific you would like to talk about or ask me?
+== a1396 e
+Q y :: Is there anything else you would like me to do?
+== a1627 e | two consecutive questions
+Q o :: What do you like most about your art school experience so far?
+Q y :: Is there a particular medium or style of art you're most excited about learning?
+== a1774 m | two bold bulleted yes/no questions (the e.g. titles illustrate the first); the closing imperative is not a question
+Q y :: Did you mean to ask about a specific problem?
+Q y :: Is this a continuation of a previous conversation?
+== a0592 e
+Q y p :: Want another one?
+== a0918 e
+Q o :: What specific scenario are you most interested in analyzing?
+== a1805 e
+Q o :: What specific aspects of this relationship interest you most?
+== a1829 m | the numbered list describes missing parts (label plus explanatory question, as a0006); the addressed question is the closing request
+Q o :: Could you please provide the complete problem description?
+== a0639 e neg | hard: '?' only as SQL placeholders inside code
+== a0565 h | asks which of the tabled platforms to use; the "Quick Deploy (Netlify - Recommended)" heading states a lean; a which-question, not a proposal
+Q m d=0 :: Which deployment platform would you like to use?
+O **Netlify**
+O **Vercel**
+O **GitHub Pages**
+O **AWS S3**
+== a1041 h | two either/or clarifications, then an open request and its compressed restatement (separate records per the batch-2 rule)
+Q e :: Could you clarify: is the redirect happening **automatically** after the timeout (without clicking anything), or when you click a button?
+O **automatically** after the timeout
+O when you click a button
+Q e :: And is this for Perfect Money specifically, or for MTN/mobile money deposits?
+O Perfect Money specifically
+O MTN/mobile money deposits
+Q o :: Could you give me more detail about exactly what flow triggers this?
+Q o :: Which payment method, and does it auto-redirect or do you click something?
+== a0593 h amb | "How would you like to begin?" followed by a sentence naming two ways to start; labeled as a choice between them; alternative reading: open question with an offer statement
+Q e :: How would you like to begin?
+O review your current device status
+O help you draft a new automation routine
+== a1884 m | two named kinds plus the escape arm "something else"
+Q e :: What kind of app is it — web service, batch jobs, something else?
+O web service
+O batch jobs
+== a1558 m | two named possibilities after the dash
+Q e :: What does the linter actually flag most often—deep nesting, or just long functions full of error returns?
+O deep nesting
+O long functions full of error returns
+== a0689 m | "bus or train" is part of the topic; one offer
+Q y p :: Would you like tips on how to evaluate whether a bus or train would work better for your specific situation?
+== a1121 e
+Q y p :: Shall I proceed with refactoring the macros to a template-based implementation?
+== a1665 m | the joke is self-answered; the follow-up asks whether the user has preferred topics (the kinds listed afterwards are examples)
+Q y :: Do you have any favorite joke topics or themes you'd like me to try?
+== a0679 m neg | hard: '?' only in a parenthetical inside the list of missing parts; the request is an imperative
+== a1093 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a1510 e
+Q o :: What specific aspect would you like to think through further?
+== a1797 e
+Q o :: What do you think makes a society good or ideal?
+== a1833 m | the "Questions that matter more than a general rule" list is for the parent's reflection; the addressed question is the last one
+Q o :: What's your sense of their financial maturity so far?
+== a0707 e neg | hard: '?' only in TypeScript optional fields and optional chaining inside code
+== a1206 e neg | hard: '?' only in a CLI confirmation prompt shown in sample output
+== a1365 h | French: "Which direction do you prefer?" after the three options and the recommendation table (option 1's heading is cut off, so the table's names are used); a which-question, not a proposal
+Q m :: Quelle direction préférez-vous ?
+O Mail-in-a-Box
+O iRedMail
+O Mailcow
+== a1724 m | the italic example line is a suggested phrase; the addressed question is the last paragraph
+Q y :: Are there specific topics or environments where you feel this friction most acutely?
+== a1890 e
+Q y p :: Want me to go deeper on any particular collector or language's implementation?
+== a1524 m | the "For example:" list names kinds of details (not questions); open request
+Q o :: Could you provide more details?
+== a1619 m | two arms: whether the advice resonates, or which area is hardest
+Q e :: Does any of that resonate with you or is there a specific area where you struggle the most?
+O any of that resonate with you
+O a specific area where you struggle the most
+== a1255 e
+Q y p :: Would you like me to apply these fixes to `baltamjit/CMakeLists.txt`?
+== a1672 h amb neg | hard: a numbered list of questions the assistant "could ask", followed by "Let me know if you'd like me to ask any of those" without a question mark; alternative reading: the listed questions are put to the user
+== a1768 h amb | "Could you please provide the actual problem…? For example:" diagnostic sub-questions taken as options (as a0043); alternative reading: open request with examples
+Q m :: Could you please provide the **actual problem** you'd like me to solve?
+O Are you working on a LeetCode problem
+O Is this an algorithm question from somewhere else
+O What is the problem asking you to compute or determine
+== a0876 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== a0615 e
+Q o :: What's prompting your question?
+== a0887 e
+Q o :: What aspect of infinity interests you most?
+== a1862 m | "Which path are you taking?" refers to the native-dialog path (its heading is cut off by the stored tail) and the fallback path, so no faithful option set; open
+Q o :: Which path are you taking?
+== a1745 e neg | hard: self-answered verification question ("Is 20 exactly 4 less than 24? Yes")
+== a0534 e neg
+== a1551 m | interrogative lead-in "Could you provide:" requesting the missing parts; the for-example sub-questions under item 3 illustrate one requested item
+Q o :: Could you provide:
+== a1582 e | open greeting question, then a yes/no follow-up (as a0200)
+Q o :: How can I help you today?
+Q y :: Is there something you'd like to talk about or ask about?
+== a1157 e
+Q y p :: Shall I proceed with implementing the double-buffered software pipeline?
+== a1670 e
+Q y :: Do you have any favorite artists, bands, or genres that you particularly like?
+== a1770 m | the quoted "What was so terrible?" is the dataset question; the bold request offers two ways to resolve the mismatch (clarify or verify), an information request (dev d0001)
+Q o :: Could you clarify what you're looking for, or verify if the question matches the provided article?
+== a0902 e
+Q y p :: Want another one?
+== a0905 e
+Q o :: What aspect interests you most?
+== a1809 e
+Q o :: What aspects of happiness feel most important in your own experience?
+== a1865 e
+Q o :: What's the next question that jumps out?
+# a0680 dropped: a real service password (docker-compose Redis) appears in the stored tail
+== a1742 e neg | hard: self-answered verification questions
+== a1888 m | two distinct deep-dives offered; "like race conditions" is an example
+Q e p :: Want me to go deeper into multithreading issues like race conditions, or how multiprocessing works?
+O multithreading issues
+O how multiprocessing works
+== a0767 h amb | the "actually useful questions" are framed as what to check (not labeled); the closing question's parenthetical lists CI tools without e.g., supplying options (dev d0369); alternative readings: the three numbered questions are addressed, and the parenthetical is illustrative
+Q m :: What CI/CD tool are you on (GitHub Actions, GitLab CI, Jenkins, CircleCI)?
+O GitHub Actions
+O GitLab CI
+O Jenkins
+O CircleCI
+== a1598 e | open greeting question, then a yes/no follow-up (as a0200)
+Q o :: How can I help you today?
+Q y :: Is there something you'd like to chat about or a question I can answer for you?
+== a0741 e neg
+== a1669 m | an open brainstorming question (the idea list follows as examples), then a tone question whose dash list supplies options
+Q o :: What are some things that come to mind when you think of this warm, vibrant season?
+Q m :: What kind of tone and style would you like the poem to have - playful, nostalgic, dreamy?
+O playful
+O nostalgic
+O dreamy
+== a1757 m | the "Common questions" list illustrates problem types, not a choice; the addressed question is the closing request
+Q o :: Could you please provide the specific question you'd like me to solve?
+== a0977 e
+Q y p :: Want another one?
+== a1227 e
+Q o :: What specific aspect interests you most?
+== a1808 e
+Q y p :: Would you like me to elaborate on any specific aspect of creating effective acceptance criteria?
+== a1852 m | "Which do you prefer?" is inside a suggested script for the client; the addressed question names three arrangements after the dash
+Q m :: What's your arrangement — hourly, fixed-price, or internal team?
+O hourly
+O fixed-price
+O internal team
+== a0588 e neg
+== a0822 m neg | hard: '?' only in example phrases and a self-reflection question
+== a1893 e
+Q e p :: Want me to draft a thesis statement, or sketch an outline that runs the steelman-then-rebuttal structure across sections?
+O draft a thesis statement
+O sketch an outline
+== a1545 m neg | hard: "Questions worth asking your advisor" are questions for a third party
+== a1036 e | open greeting question, then a yes/no follow-up (as a0200)
+Q o :: How can I help you today?
+Q y :: Is there something on your mind or a topic you'd like to explore?
+== a1051 e
+Q y p :: Would you like me to implement these improvements for you?
+== a1633 m | two ways to resolve an unreadable message (resubmit or give context); an information request (dev d0001)
+Q o :: Could you please try submitting your request again using standard text or provide more context about how I should interpret this data?
+== a1755 m | "or was there something specific you were hoping to work through" is an open escape arm, leaving one named offer
+Q y :: Would you like to talk more about strategies for coping, or was there something specific you were hoping to work through?
+== a0572 e
+Q y p :: Would you like me to expand on any specific aspect?
+== a0825 e
+Q o :: What aspect would you like to dig deeper into?
+== a0789 e neg | hard: '?' only in TypeScript optional parameters inside code
+== a1836 m | two arms: the explanation suffices, or go deeper on a step
+Q e :: Does this match what you were trying to figure out, or would it help to go deeper on a particular step?
+O match what you were trying to figure out
+O go deeper on a particular step
+== a1240 h | French: a heading-question proposing help with Option 1, then "Which option do you prefer?" over the two options, with Option 1 marked "(recommandé)"
+Q y p :: Voulez-vous que je vous aide avec l'Option 1 ?
+Q e d=0 :: Quelle option préférez-vous ?
+O Option 1 : Redimensionner la partition Linux
+O Option 2 : Sauvegarde externe
+== a0777 m neg | hard: parenthetical self-check question inside a method ("Is this a stranger flaming or a friend excluding?")
+== a1538 m | the numbered list describes needed information (label plus explanatory question, as a0006); the addressed question is the closing request
+Q o :: Could you paste the full problem so I can assist properly?
+== a1047 e
+Q y :: Is there a particular area that interests you?
+== a1414 e
+Q y :: Is there anything else I can help you with?
+== a1636 h | "such as:" introduces five questions put directly to the user (as a0341); where a question continues with "etc." examples, the continuation is part of the same open span
+Q o :: What is the main topic or purpose of the video? ~~ entertainment, etc.?
+Q o :: Approximately how long do you want the video to be?
+Q o :: Who is the target audience for the video?
+Q o :: What style or tone are you going for? ~~ inspiring, etc.?
+Q y :: Are there any key points, facts, or messages you want to make sure to include?
+== a1752 m | the reframe question ("have you considered …?") is rhetorical; the closing question offers two kinds of help
+Q e p :: Do you want me to help you think through specific aspects of this, or would resources for finding support be more helpful?
+O help you think through specific aspects of this
+O resources for finding support
+== a1168 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== a1504 e
+Q o :: What specific aspect interests you most?
+== a1785 m | an open opinion question, then a two-armed follow-up
+Q o :: What do you think?
+Q e :: Do you find one perspective more compelling, or perhaps see a middle ground?
+O one perspective more compelling
+O a middle ground
+== a1864 e
+Q y p :: Would you like help looking into the specific ordinances for your area?
+== a0568 e neg
+== a1734 m | the framework bullets pose analysis questions answered by the method; the addressed question is the bold closing one
+Q o :: Which company are we looking at today?
+== a1517 h amb | "Is there a particular reason…? For instance:" diagnostic sub-questions taken as options (as a0043); alternative reading: yes/no question with examples
+Q m :: Is there a particular reason you're drawing a connection between them?
+O Did the transition cause workspace disruptions that affected your engineering team
+O Was the vendor change part of broader cost-cutting that's also affecting headcount or tooling
+O Are cleaning schedules conflicting with after-hours deployment windows
+== a0539 m | "accessories or shoes" are topics of one yes/no follow-up
+Q y :: Do you have any questions about accessories or shoes?
+== a0524 e
+Q y :: Is there anything else I can help with?
+== a1646 m | the named varieties follow as examples; one yes/no question
+Q y :: Do you have a favorite apple variety?
+== a1751 e
+Q y :: Is there anything specific I can help clarify or any resources that would be useful for you right now?
+== a1193 e
+Q y p :: Want another one?
+== a1492 e
+Q o :: What specific aspect interests you most?
+== a1780 e
+Q o :: What's your perspective on how these two approaches to understanding might relate?
+== a1843 h | "two questions before we go further": the first opens with "What does the retry look like" and completes with two alternatives after the dash; the second is yes/no (the parenthetical names kinds of payments)
+Q e :: What does the retry actually look like — is the client sending the same `order_id` and same amount, or could the amount differ on retry?
+O sending the same `order_id` and same amount
+O could the amount differ on retry
+Q y :: Can a single order ever have multiple legitimate payments (split tender, retry-after-decline, top-up)?
+== a0626 m | French: "Do you want me to explain a particular section, or shall we start the practical exercises?"
+Q e p :: Voulez-vous que je vous explique une section en particulier ou qu'on commence les exercices pratiques ?
+O je vous explique une section en particulier
+O qu'on commence les exercices pratiques
+== a1715 m | two offers; the e.g. illustrates the first
+Q e p :: Would you like me to explain the specific mechanism of any particular medication (e.g., how Tretinoin interacts with skin receptors) or help you analyze the ingredients in your current products?
+O explain the specific mechanism of any particular medication
+O help you analyze the ingredients in your current products
+== a1271 h amb | "A few things that shape which path makes sense:" lists four questions whose answers the advice depends on (labeled, as a1737); the "Worth calculating: …?" line is a calculation prompt; alternative reading: considerations for the user's own reflection
+Q o :: What did your original offer letter or any remote-work agreement say?
+Q o :: What country/state?
+Q o :: How marketable is your role for remote positions right now?
+Q e :: Is this mandate being seriously enforced, or is there a history of exceptions at your company?
+O being seriously enforced
+O a history of exceptions at your company
+== a0618 e
+Q y p :: Would you like recommendations for specific rental companies?
+== a1007 e
+Q y p :: Want me to proceed with writing the full kernel using this layout?
+== a1683 e
+Q o :: What kind of challenges or questions did you have in mind?
+== a0546 e neg
+== a0821 m | the riddle is self-answered; the follow-up is put to the user
+Q y :: Did you get it right?
+== a1486 e
+Q o :: What makes you ask?
+== a1787 m | the thought-experiment questions are rhetorical; the addressed question is the last one
+Q o :: What aspects of personal identity do you find most compelling or concerning?
+== a1867 m | the bulleted "What's being measured?" is a critique point; the addressed question is the bold closing one
+Q o :: What does your current data actually look like?
+== a1397 m | French: "Do you want me to guide you step by step, or would you rather run these commands yourself?"
+Q e p :: Voulez-vous que je vous guide étape par étape, ou préférez-vous exécuter ces commandes vous-même ?
+O je vous guide étape par étape
+O exécuter ces commandes vous-même
+== a1701 m | "Which of these styles…" refers to a numbered list whose first entries are cut off by the stored tail, so no faithful option set; open
+Q o :: Which of these styles resonates with you most?
+== a1307 e
+Q y :: Were you curious about a specific type of tower?
+== a1608 e | open greeting question, then a yes/no follow-up (as a0200)
+Q o :: How can I help you today?
+Q y :: Is there something specific you would like to talk about or learn more about?
+== a0660 e
+Q y p :: Would you like me to proceed with running the tests?
+== a1686 m | "Let me know what you think!" has no question; the closing question offers two positions
+Q e :: Do you believe morality is primarily objective or subjective?
+O objective
+O subjective
+== a1772 m | the "If you're seeking:" list before the question supplies two named kinds of help plus the escape "Something else"
+Q e :: Could you clarify what kind of response or help you're looking for?
+O **Advice**
+O **Feedback on writing**
+== a0953 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== a1507 m | three named aspects after the dash
+Q m :: What specific aspect are you most interested in exploring - the economic case, the ethical framing, or the technical feasibility?
+O the economic case
+O the ethical framing
+O the technical feasibility
+== a0774 e
+Q e p :: Would you like me to compute the convolution of two specific functions, or would you like more details about the convolution process?
+O compute the convolution of two specific functions
+O more details about the convolution process
+== a1837 m | "Why six? Why hyenas specifically?" are playful rhetorical asides; the closing question offers two outcomes
+Q e :: Did the kid face any actual consequences or did "I was hungry" somehow hold up as a defense?
+O face any actual consequences
+O "I was hungry" somehow hold up as a defense
+== a1472 e | French: "Shall we start writing it?"; a proposal to begin the work
+Q y p :: On commence à l'écrire ?
+== a1169 e
+Q e :: Is this a case of someone failing to live up to their own hype, or is the entire 'scene' they represent just a bit too self-important for its own good?
+O someone failing to live up to their own hype
+O the entire 'scene' they represent just a bit too self-important
+== a0540 e
+Q o :: Could you please share the competitive programming problem you'd like me to solve?
+== a1618 e
+Q e :: Are there any sports you already enjoy, or are you looking to branch out into something completely new?
+O sports you already enjoy
+O branch out into something completely new
+== a1018 e neg
+== a1639 e
+Q o :: Can you tell me a bit more about what specific topics or problems you're working on?
+== a1769 e
+Q o :: Could you please share the specific problem you'd like me to solve?
+== a1021 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a0892 e
+Q o :: What's driving your question?
+== a1020 e
+Q o :: What are your thoughts on this question?
+== a1847 m | asks the user to consider seeing a doctor; not an action the assistant would take
+Q y :: Would you be open to talking to a doctor about the sleep issue specifically?
+== a1268 e | French: "Do you have your MTN API keys?"
+Q y :: Tu as tes clés API MTN ?
+== a1693 e
+Q o :: What is the plot you have in mind?
+== a1533 e
+Q o :: Could you please share the full problem description?
+== a1611 e
+Q y :: Is there a particular sport or era you're most interested in?
+== a0885 e
+Q y p :: Would you like me to proceed with integrating ANTLR into our project?
+== a0533 e neg
+== a1758 e
+Q o :: What would you like me to solve?
+== a1159 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a1106 m | "Ask honestly:" introduces self-reflection questions; the addressed question is the last one
+Q o :: What specific situation are you navigating?
+== a1792 e
+Q o :: What aspects of this question interest you most?
+== a1856 m | the batch-effects question in step 3 is part of an instruction list; the addressed question is the last one
+Q o :: What does the raw data look like?
+== a1465 e | French: "Do you want me to update the STT sidecar to use Silero VAD with the right telephony parameters?"
+Q y p :: Veux-tu que je mette à jour le sidecar STT pour utiliser Silero VAD avec les bons paramètres pour la téléphonie ?
+== a1727 e
+Q e :: Do you enjoy writing nature-focused prose, or were you perhaps envisioning a specific place?
+O writing nature-focused prose
+O envisioning a specific place
+== a1540 m | the "if you can:" list names ways to supply context; open request
+Q o :: Could you clarify the context?
+== a1615 e
+Q y :: Have you started looking at specific stores or designers for the outfits?
+== a0831 e neg
+== a1681 m | "Let me know if any particular areas jump out" has no question; the closing question is open
+Q o :: What kinds of things are you working on or interested in?
+== a1766 m | bold interrogative lead-in whose numbered items (punctuated with '?') list what to provide; one open request (as a0208)
+Q o :: Could you please provide:
+== a0716 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a1096 m | the italic line is a suggested script and the "What I'd think critically about" questions are self-reflection; the addressed question is the last one
+Q o :: What's your specific concern about this situation?
+== a0998 e
+Q o :: What aspects of personal freedom are you most interested in exploring?
+== a1855 m | the bulleted questions near the top belong to a considerations list whose heading is cut off; the bold closing question is addressed
+Q o :: What's your current field?
+== a1467 e | French: "Do you want me to add it?"
+Q y p :: Veux-tu que je l'ajoute ?
+== a1044 m | the italic reflective question is part of the story concept; "such as" names example settings; "Would you like to explore" (no "me") is not a proposal
+Q y :: Would you like to explore a specific setting for this theme, such as a dystopian future, a mythological past, or a contemporary internal drama?
+== a1548 m | the "For example:" list names kinds of details; open request
+Q o :: Could you share the full details of what you'd like help with?
+== a1609 m | "like …" gives examples; one offer
+Q y p :: Would you like suggestions on organizing and sharing your final collection, like creating a photo book or an Instagram series?
+== a1215 e neg
+== a1679 m | the topics after the question are examples ("like …")
+Q o :: What specific questions or aspects of the philosophy of existence did you want to explore?
+== a1760 m | "please clarify:" introduces four questions put directly to the user (as a0341); the second offers two answers
+Q o :: What specific conduct is alleged?
+Q e :: Has a lawsuit been filed or is this a demand letter?
+O a lawsuit been filed
+O a demand letter
+Q o :: What is the client's business relationship to the patent holder?
+Q o :: What jurisdiction applies?
+== a0761 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a1512 e
+Q o :: What aspects concern you most?
+== a1811 e
+Q o :: What aspects of human change are you most curious about?
+== a1877 m | asks the user to share details on three topics; an information request (open), not a choice
+Q o :: Would you like to share more about your climate, whether you have standing water, or your budget?
+== a0788 e neg
+== a1712 m | the heading "Can you still see them tonight?" is self-answered; the closing question is put to the user
+Q y :: Did you manage to spot any "earthgrazers" (long, slow meteors that streak across the horizon)?
+== a1564 m | three observable behaviors after the dash
+Q m :: What does it do when you flip the switch—humming, silence, or nothing?
+O humming
+O silence
+O nothing
+== a1599 e
+Q y :: Is there something specific you would like to talk about or learn today?
+== a1101 m neg | hard: offer list introduced by "If you want, the next useful checks are:" without a question
+== a1640 m amb | topic ideas listed before "What sorts of subjects most interest you?" (the philosophy bullet's questions are examples of topics); labeled open; alternative reading: the list is a menu of options
+Q o :: What sorts of subjects most interest you?
+== a1764 e
+Q y p :: Would you like help finding supportive resources?
+== a1150 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a1258 e
+Q o :: What prompted this question?
+== a0548 e
+Q o :: What are your thoughts on how mortality shapes your sense of meaning?
+== a1839 m | the "For example:" list gives example questions (quoted), not choices
+Q o :: Could you please provide the actual question you'd like me to solve?
+== a0925 e neg | hard: '?' only in a URL query string in an endpoint list
+== a1731 e
+Q e p :: Would you like me to expand on any of these sections, or perhaps help you polish a specific paragraph you've already written?
+O expand on any of these sections
+O help you polish a specific paragraph you've already written
+== a1567 e
+Q y :: Is there a particular reason you're looking for these figures?
+== a1623 e
+Q y :: Would you like to dive deeper into any specific culture or region?
+== a0726 e neg
+== a1661 m neg | hard: '?' only inside quoted writing prompts
+== a1776 m | the request and its differently worded restatement (two records)
+Q o :: Could you please share the problem you'd like me to solve?
+Q o :: What problem would you like me to work on?
+== a1132 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== a1219 m | three named contexts after the dash
+Q m :: What specific context are you thinking about - academic research, journalism, policy work?
+O academic research
+O journalism
+O policy work
+== a1791 e
+Q y p :: Would you like me to elaborate on any specific quantification method?
+== a1827 m | the numbered list describes missing parts (as a0006); the addressed question is the closing request
+Q o :: Could you please provide the full problem statement?
+== a1473 e | French: "Do you want me to also update gitlab-ci-preprod.yml to use the V1-prefixed variables?"
+Q y p :: Voulez-vous que je mette également à jour le fichier `gitlab-ci-preprod.yml` pour utiliser les variables avec le préfixe `V1` (ex: `VPS_USER_V1_PREPROD`) afin de garder la cohérence entre les environnements ?
+== a1747 m | the modeling steps contain guidance questions; the bold closing question asks the user to share details
+Q y :: Would you like to provide the specific details of the situation?
+== a1541 m | the quoted example problems contain their own questions; the addressed question is the request
+Q o :: Could you please share the specific problem you'd like me to solve?
+== a0945 e
+Q y :: Is there something specific you would like to discuss or ask about today?
+== a0872 e
+Q y :: Are there any other questions?
+== a1644 e
+Q o :: What specific topic or concept would you like me to explain?
+== a1771 m | the listed possibilities are the assistant's guesses, not a question
+Q y :: Is there something specific I can actually help you with today?
+== a0700 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a0931 m | "The deeper question worth asking: What does this framing actually justify doing?" is a reflection prompt; the addressed question is the last one
+Q o :: What specific aspect are you most interested in pursuing?
+== a1798 e
+Q o :: What aspects of immortality do you find most compelling or concerning?
+== a1866 h amb | capability menu ("I'm ready to help you with:") before "What would you like help with?" supplies options (batch-2 menu rule; "And many other topics" is an escape arm); the quoted example questions are examples; alternative reading: open question
+Q m :: What would you like help with?
+O **Mathematics**
+O **Logic puzzles**
+O **Physics problems**
+O **Programming/algorithm problems**
+# a1459 dropped: an API secret key appears in the stored tail
+== a1720 m | "Which of these should we prioritize?" refers to numbered pillars whose first entries are cut off by the stored tail, so no faithful option set; open
+Q o :: Which of these should we prioritize?
+== a1521 m neg | hard: "The key evaluative questions I'd ask …: Who produced it …?" are the assistant's own criteria
+== a0906 m | "size or style" are attributes of one yes/no question
+Q y :: Do you have a general idea of the size or style you are leaning toward?
+== a0898 m | the heading "Why did it fail earlier…?" is self-answered; the closing question is a proposal
+Q y p :: Should I proceed to profile the real kernel now using `cycles` and `1048576`?
+== a1657 e
+Q o :: What specifically are you wondering about or looking for help with when it comes to Linux?
+== a1756 m | two named concerns after the dash
+Q e :: What would be most helpful to focus on first - the repair situation, or the frustration with your husband?
+O the repair situation
+O the frustration with your husband
+== a1083 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a0991 e
+Q o :: What specific aspect would you like examined more critically?
+== a0874 e
+Q o :: What aspects of this question interest you most?
+== a1860 m | the "Key factors" questions are for the user's self-assessment; the closing offer ("Would you like to discuss", no "me") is not a proposal
+Q y :: Would you like to discuss any of these in more detail based on your situation?
+== a1471 e | French: "Do you want me to implement WhoisXML for the checks?"
+Q y p :: Tu veux que j'implémente WhoisXML pour les vérifications ?
+== a1728 m | the template's table cells contain prompts for the user to fill in; the addressed question is the bold closing one
+Q o :: What genre or setting are you imagining for your Frisk?
+== a1536 h | "it would be useful to know:" introduces four questions put to the user; the third's "or something else" leaves it open; the fourth's colon list names three problems (options)
+Q o :: Where did this method originate (internal policy, external advisor, software documentation)?
+Q o :: What ERP/reconciliation platform are you using?
+Q o :: What are the "three ledger axes"—are you thinking legal entity / management / statutory, or something else?
+Q m :: What's the underlying problem: out-of-balance IC accounts, accrual timing differences between entities, multi-GAAP reporting?
+O out-of-balance IC accounts
+O accrual timing differences between entities
+O multi-GAAP reporting
+== a0796 e | open greeting question, then a yes/no follow-up (as a0200)
+Q o :: How can I help you today?
+Q y :: Is there something specific you'd like to talk about or learn more about?
+== a0545 m | the options listed before are alternatives inside the plan; the addressed question is a single proposal
+Q y p :: Would you like me to proceed with implementing it?
+== a1202 h amb | three brain teasers posed to the user to solve ("for you to ponder"), then an offer without a question; labeled each puzzle question; alternative reading: puzzle content rather than questions awaiting an answer
+Q o :: How can you do this using only these two jugs and no other measuring tools?
+Q o :: Why does he do this?
+Q o :: What am I?
+== a1761 m | an interrogative lead-in with a list of what to provide, then a restated open question (two records)
+Q o :: Could you please provide:
+Q o :: What would you like me to help you solve?
+== a0611 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a1488 e
+Q o :: What specific aspect would you like to examine further?
+== a1799 m | an open opinion question, then a yes/no follow-up whose second arm is its negation
+Q o :: What do you think?
+Q y :: Does happiness seem like the ultimate purpose to you, or do you find meaning in life comes from something else?
+== a0621 e neg | hard: '?' only in TypeScript optional members and optional chaining inside code
+== a1072 e | French: "Do you want me to continue on a specific task?"
+Q y p :: Souhaites-tu que je continue sur une tâche spécifique?
+== a0747 e neg | hard: '?' only in optional chaining inside code
+== a1550 h | "That depends on things you haven't mentioned:" introduces three questions put to the user; the closing question offers two readings
+Q o :: How close to graduation?
+Q y :: Have you considered switching majors, transferring somewhere cheaper, or taking a leave of absence rather than a full exit?
+Q o :: What would you actually do instead?
+Q e :: When you say you hate your major—is it the subject matter specifically, or is it the whole situation (the school, the debt, the bad grades all compounding)?
+O the subject matter specifically
+O the whole situation
+== a1624 e
+Q y :: Is there something specific you would like to talk about or ask me today?
+== a1267 m amb neg | hard: a numbered menu of two offers ("1. I can patch both docs now. 2. I can just give you exact replacement text") without any question or request; alternative reading: an implicit choice
+== a0702 e neg | hard: '?' only in a mis-encoded species name ("Ad??lie")
+== a0567 m neg | hard: '?' only in a translated sentence (Arabic and Galician question marks)
+== a0551 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a1294 e
+Q o :: What's the specific exam context?
+== a1795 e
+Q o :: What aspects of this question interest you most?
+== a1831 m | put to the user to decide which toolkit fits (parentheticals are examples)
+Q e :: Are you studying a specific debate (Hobbes vs Filmer, the 1640s pamphlet wars) or a long-running conceptual field (the European career of 'civilization' from Mirabeau to the present)?
+O a specific debate
+O a long-running conceptual field
+== a1453 e | French: "Do you want me to guide you step by step with your real values?"
+Q y p :: Tu veux que je te guide étape par étape avec tes vraies valeurs ?
+== a1735 m | a which-question over the three numbered gadgets plus an escape arm
+Q m :: Which one sparks your curiosity, or do you have a specific device in mind that you've been eyeing?
+O **The Rabbit R1 or Humane AI Pin**
+O **The Apple Vision Pro (or Meta Quest 3)**
+O **Framework Laptop 16**
+== a1523 m | dash list after the offer supplies three options (batch-2 rule)
+Q m p :: Want me to go deeper on any piece — the launch sequence, specific social content ideas, or the email nurture copy?
+O the launch sequence
+O specific social content ideas
+O the email nurture copy
+== a1145 e
+Q y p :: Would you like tips on how to find a local track club or coach?
+== a1285 e neg
+== a1655 e neg | hard: self-answered heading "Why learn HTML?"
+== a1759 e
+Q y :: Is there something else I can assist you with today?
+== a1113 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a1086 e
+Q o :: What specific aspect concerns you most about this scenario?
+== a1784 m | an open opinion question, then a two-way choice
+Q o :: What do you think?
+Q e :: Does happiness seem more like a destination or a byproduct of how we live?
+O a destination
+O a byproduct of how we live
+== a0563 e neg
+== a1441 m | French: "Do you want me to modify or complete some parts?"; the two verbs describe one offer of edits
+Q y p :: Souhaites-tu que je modifie ou complète certaines parties ?
+== a1729 e neg | hard: self-answered verification question
+== a1565 m | the numbered list (including the "What you need help with" sub-list) describes what the assistant needs (as a0006); the addressed question is the closing request
+Q o :: Could you please paste the rest of the problem?
+== a1606 m | "closet space or built-in shelving" are attributes of one yes/no question
+Q y :: Does your room have any closet space or built-in shelving you could work with?
+== a1320 e
+Q y p :: Would you like me to prepare a fix for these issues, particularly the data loss and compilation problems?
+== a1095 e | role-play as Thor
+Q o :: How may the mighty Thor assist you on this fine day?
+== a1777 m | the bold closing question invites the user to share; not a proposal
+Q y :: Would you like to share what happened?
+== a0889 e
+Q y p :: Would you like me to expand on any specific aspect?
+== a0750 e
+Q o :: What specific aspect interests you most?
+== a1819 m | the definitional question in the bullets is rhetorical; the addressed question is the last one
+Q o :: What aspects of this question interest you most?
+== a1826 m | three named aspects between dashes; "you'd like to dig into" asks the user's preference, not a proposal
+Q m :: Is there a particular aspect — the crystal structures, the SEI chemistry, or something about newer technologies like silicon anodes or solid-state batteries — you'd like to dig into further?
+O the crystal structures
+O the SEI chemistry
+O something about newer technologies like silicon anodes or solid-state batteries
+== a1474 m | French: "Which solution do you prefer?" over the two solutions
+Q e :: Quelle solution préfères-tu ?
+O Solution 1 : Installer Mailcow officiel
+O Solution 2 : Utiliser docker-mailserver
+== a1718 e
+Q y :: Is there anything else you'd like to calculate or organize with this list?
+== a1137 e
+Q e :: Is there a specific part that's been wearing you down the most, or did you just need to say it out loud to someone?
+O a specific part that's been wearing you down the most
+O just need to say it out loud to someone
+== a1614 e
+Q y :: Do you have any other questions about professional development or learning resources?
+== a1191 e
+Q o :: Could you please provide the content of `/home/[USER]/mfem-src/examples/ex38.cpp`?
+== a1647 e
+Q o :: What specific topics or concepts would you like me to explain or quiz you on?
+== a1773 e neg | hard: self-answered verification questions
+== a1073 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a1508 e
+Q o :: What specifically prompted your question?
+== a1813 e
+Q o :: What are your thoughts on when truth-telling might be obligatory or when other values might take precedence?
+== a0724 m neg | hard: '?' only in a parenthetical inside legal analysis ("did he know about the gun?")
+== a0912 m | French: the heading "Why does your Android seem faster?" is self-answered; the closing question is a proposal
+Q y p :: Tu veux que je t'aide à diagnostiquer pourquoi ta connexion Wi-Fi est lente ?
+== a1151 e
+Q o :: What can I do for you?
+== a1575 m | the numbered list describes needed parts (as a0006); the addressed question is the closing request
+Q o :: Could you please share the rest of the problem?
+== a1617 e
+Q y p :: Would you like suggestions on what kind of messages or prompts to ask contributors to write about?
+== a0962 e
+Q y p :: Want me to proceed with Step 1 (implementing `(2,4,2,2,8,2)` config)?
+== a1632 m | "rephrase or clarify" are two wordings of one request
+Q o :: Could you please rephrase or clarify what you are trying to say?
+== a1765 m | the question in section 3 is put to the user and offers two readings; the "questions to reflect on" are self-reflection; the closing offer is yes/no
+Q e :: Has she crossed boundaries, or are you sensing something unspoken?
+O crossed boundaries
+O sensing something unspoken
+Q y :: Would you like to talk more about any specific part of this?
+== a0836 e
+Q y p :: Want another one?
+== a1487 m | the "Genuinely investigate" bullets are questions for the manager to look into; the addressed question is the last one
+Q o :: What specific aspect are you finding most difficult to navigate?
+== a1803 e
+Q y p :: Would you like me to demonstrate this process with a specific example matrix?
+== a1848 m neg | hard: the italic tension questions ("Where do you land?", "What's the telos?") are prompts for the user's paper, not questions to answer to the assistant
+== a1430 m | French: "Do you want me to modify or complete some user stories?"; one offer of edits
+Q y p :: Voulez-vous que je modifie ou complète certaines user stories ?
+== a1704 m | bold lead-in continued by a which-question naming the three archetypes (one span)
+Q m :: What about you? ~~ shift in direction?
+O the Crucible
+O the Encounter
+O the Epiphany
+== a1519 m | the bold "Why sufficient?" is self-answered; the closing question offers two things
+Q e p :: Would you like me to explain a specific part in more detail, or help with the original problem statement?
+O explain a specific part in more detail
+O help with the original problem statement
+== a1595 m | "color or fabric" is one attribute pair in a yes/no preference check
+Q y :: Do you have a particular color or fabric in mind for the blazer you are looking for?
+== a1315 e
+Q y p :: Would you like me to try and fix any of these issues?
+== a1668 m amb | two different next steps (order vs. menu questions); a yes/no reading is also possible
+Q e :: Did you want to place an order or can I answer any questions about our menu for you?
+O place an order
+O answer any questions about our menu
+== a0630 e neg
+== a1509 e
+Q y p :: Would you like specific recipes scaled to 50 servings?
+== a0608 e | restated follow-up is a separate record
+Q o :: What draws you to this question?
+Q y :: Is it something you've been reflecting on personally?
+== a1846 m neg | hard: "Need help?" is a section heading; '?' also in a query string
+== a1394 e | French: "Want me to check the real reseller prices via their API?"
+Q y p :: Tu veux que je vérifie les vrais prix reseller via leur API ?
+== a1709 m
+Q o :: What have you been playing lately?
+Q e :: Does it make the clock disappear, or does it make the time feel well-spent?
+O make the clock disappear
+O make the time feel well-spent
+== a1516 m | dash-introduced components after the offer supply options
+Q m p :: Want me to go deeper on any component — the browser pool design, the proxy health tracker, or the queue/scheduler?
+O the browser pool design
+O the proxy health tracker
+O the queue/scheduler
+== a0880 e
+Q o :: How can I help you today?
+== a1148 e
+Q y p :: Would you like me to implement that?
+== a1075 h | numbered questions put directly to the user (as a0341); e.g. lists are examples; item 3 restates as a choice
+Q y :: Do you have any dietary restrictions or preferences (e.g. vegetarian, gluten-free, low-carb, etc.)?
+Q o :: What main ingredients do you have on hand or are you open to using?
+Q o :: How much time and effort are you looking to spend on cooking tonight?
+Q e :: Quick and easy, or do you have time for something a bit more involved?
+O Quick and easy
+O something a bit more involved
+Q o :: What style or cuisine of food are you in the mood for?
+== a0928 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a1264 m | the bold "what about regimes that don't?" is a rhetorical challenge in a list
+Q o :: What specific version of pacifism interests you most?
+== a0900 e
+Q o :: What's your own intuition about this question?
+== a1873 h amb | the bold quoted question is generated content; "or explore a different aspect" is an escape arm; the alternatives list could also be read as options
+Q y p :: Would you like me to answer any of these questions or explore a different aspect of the passage?
+== a0758 m | French: "Has the frontend already been updated for these endpoints, or is that the next step?"
+Q e :: Est-ce que le frontend a déjà été mis à jour pour utiliser ces nouveaux endpoints, ou c'est la prochaine étape ?
+O le frontend a déjà été mis à jour
+O c'est la prochaine étape
+== a1732 m neg | hard: bold "Why?" is self-answered
+== a0797 m neg | hard: parenthetical "standardize? how many components? what does each PC mean?" names modeling decisions, not questions to the user
+== a1196 e
+Q o :: How can I help you today?
+== a1239 m neg | hard: the bold numbered heading repeats the user's own question and is answered
+== a1643 e
+Q o :: What sorts of topics are you interested in writing about for your practice?
+== a1032 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a1499 e
+Q o :: What specific aspect concerns you most?
+== a0913 e
+Q o :: What aspects of this question interest you most?
+== a1849 e
+Q o :: What specific aspect concerns you most?
+== a1451 m | French: "Do you have these two values?"
+Q y :: Tu as ces deux valeurs ?
+== a1711 m neg | hard: the only '?' sits in a suggested phrasing for the friend inside a table
+== a0855 m
+Q e :: Were you exploring a specific real question this was meant to capture, or testing whether I'd invent confident-sounding numbers?
+O exploring a specific real question this was meant to capture
+O testing whether I'd invent confident-sounding numbers
+== a1626 m amb | two separate follow-ups joined by "or"; a yes/no reading is also possible
+Q e :: Do you have any questions about the recipe or want suggestions for other Thai dishes to try next?
+O questions about the recipe
+O suggestions for other Thai dishes to try next
+== a1420 e
+Q y p :: Would you like me to create a **targeted tuning script** that focuses on RDNA-likely configurations?
+== a0748 m | a question posed to the user as a conversation prompt, with a follow-up
+Q o :: If you could travel back in time and change one decision or event in your life, what would you change and why?
+Q o :: How do you think your life would be different as a result of changing that one thing?
+== a0863 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a1480 e
+Q o :: What specific constraints are you working with?
+== a0697 m | "elaborate … or provide examples" are two offers under one yes/no
+Q y p :: Would you like me to elaborate on any of these approaches or provide specific examples for your context?
+== a0983 m neg | hard: box-drawing decision guide; no question to the user
+== a1341 e | French: "Do you want me to restart the Docker service?"
+Q y p :: Voulez-vous que je redémarre le service Docker ?
+== a1739 m | "a different match or a specific youth/women's team fixture" are both things to specify; one yes/no clarification
+Q y :: Are you looking for a result from a different match or a specific youth/women's team fixture?
+== a1259 m | the bulleted items describe missing parts of the statement (as a0006)
+Q o :: Could you please share the **full problem statement**?
+== a1591 m | two distinct topics offered; "Would you like to know" has no "me"
+Q e :: Would you like to know about the best time of year to visit or more about the activities available?
+O the best time of year to visit
+O more about the activities available
+== a0586 e
+Q y p :: Shall I proceed?
+== a1650 m | the "I'm curious what …?" clause is an addressed open question; the follow-up is a separate yes/no record
+Q o :: I'm curious what has shaped your perspective on meaning and purpose over time?
+Q y :: Are there any key experiences or insights that have really influenced your views?
+== a0746 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a1056 e
+Q o :: What specific aspect interests you most?
+== a1806 e
+Q o :: What aspects of a "good life" resonate most with you or seem most important?
+== a1838 e
+Q o :: What type of restaurant are you running?
+== a0803 m | French: "Which option do you prefer?" over three headed options; option 1 is recommended
+Q m d=0 :: Quelle option préférez-vous ?
+O Clonezilla Live USB
+O Installer partclone
+O Réduire la partition source + dd
+== a1705 e
+Q o :: How can I help you further with this specific number?
+== a1527 h amb | "For example:" diagnostic sub-questions supply options (batch-2 decision)
+Q m :: Could you clarify what you'd like to discuss or ask?
+O Were you responding to something from a previous conversation?
+O Did you mean to paste or type more text?
+O Is there a specific topic or question you'd like help with?
+== a1244 e
+Q o :: How can I help you today?
+== a0801 e neg
+== a1630 m
+Q o :: What do you think?
+Q e :: Do you believe Cobb is dreaming or that he's made it back to the real world by the end of the film?
+O Cobb is dreaming
+O he's made it back to the real world
+== a0915 m | the riddle is self-answered; the check-in is a real yes/no question
+Q y :: Did you get it right?
+== a1144 e
+Q o :: What specific type of situation are you considering?
+== a0804 m | "What do you think -" leads into one two-way question
+Q e :: What do you think - are you more optimistic or pessimistic about humanity's capacity for lasting peace?
+O optimistic
+O pessimistic
+== a1874 h neg | hard: "ask: is the adaptation …?" are questions the reader should put to papers
+== a0607 e | French: "Do you want to test with 50 workers to start?"; no "me", so not a proposal by the letter
+Q y :: Tu veux tester avec 50 workers pour commencer ?
+== a1750 e
+Q y p :: Would you like me to refine a specific bullet point for a particular job application?
+== a1568 m | "I'd be curious where" has no question mark; one yes/no question closes
+Q y :: Is there a specific monitoring issue you're troubleshooting?
+== a1236 e
+Q y :: Does that make sense so far?
+== a0642 e
+Q y :: Is there anything else I can help you with?
+== a1688 m neg | hard: generated quiz items with a)–d) answers, not questions to the user
+== a0666 e
+Q e p :: Would you like me to show this as an equation or create a similar problem?
+O show this as an equation
+O create a similar problem
+== a1243 m | "lasting long? happy? both?" is a rhetorical list inside a bullet
+Q o :: What angle interests you most?
+== a1789 m
+Q o :: What interests you about this possibility?
+Q e :: Are you curious about the philosophical implications or the technological aspects of such a scenario?
+O the philosophical implications
+O the technological aspects
+== a1850 e | "Which one" has no enumerated languages
+Q o :: Which one are you working in?
+== a1476 m | two headed options precede the which-question
+Q e :: Which do you want to do?
+O Rebase local on top of remote
+O Force push
+== a1743 m neg | hard: numbered questions are what the doctor will ask, not questions to the assistant's user
+== a1530 e
+Q o :: What error (if any) are you seeing?
+== a1586 e
+Q o :: What would you like to talk about or explore today?
+== a1405 e | one combined deliverable
+Q y p :: Want me to compute effective GFLOPS from these durations and produce a concise comparison table (HIP vs CK, including fp8_to_half + scale/bias cost)?
+== a1689 m
+Q e :: What about you - would you choose space or ocean?
+O space
+O ocean
+== a1201 e
+Q y p :: Want another one?
+== a1288 m | the italic self-check question is rhetorical
+Q o :: What specifically prompted this question?
+== a1810 e
+Q o :: What particular context or example were you thinking about?
+== a0935 m | the imperative "Tell me about the house" is followed by an open question
+Q o :: What does it look like from outside?
+== a0526 e neg
+== a1740 m
+Q e :: Do you have a specific type of cuisine in mind, or are you looking for a place with outdoor seating to enjoy the last of the sunshine?
+O a specific type of cuisine
+O a place with outdoor seating
+== a1556 h amb | "or something else about it (…)" is an escape arm with examples, so only one option remains; an either_or reading is also possible
+Q o :: What's making you hesitate most - the religious content itself, or something else about it (the attention, the effort, what it would feel like to perform something you don't believe in)?
+== a0599 e
+Q o :: How can I help you today?
+== a0694 e
+Q y p :: Would you like me to apply this fix?
+== a1660 h neg amb | hard: "questions and ideas to consider" are prompts for the user's own story writing (as a1848); could also be read as questions put to the user
+== a0731 e
+Q m p :: Would you like me to revise this, make it longer, or create something in a different style?
+O revise this
+O make it longer
+O create something in a different style
+== a0765 e
+Q o :: What made you curious about this?
+== a1807 e
+Q y p :: Would you like me to elaborate on any specific aspect of dependency management?
+== a1871 m neg | hard: bold "Is it necessary?" is self-answered; "Is there a genuine reversal …?" is a self-check for the writer
+== a1427 e | French: "Shall we launch that now?"; a proposal to run the next step (as a0184)
+Q y p :: Tu veux qu'on lance ça maintenant ?
+== a1746 m | "Is there any … you would like me to help draft" is a yes/no offer
+Q y p :: Is there any specific department or workflow you would like me to help draft further instructions for?
+== a0782 m | the dash leads into a three-way choice
+Q m :: What's the specific situation—are you dealing more with recruitment, retention, or filling particular subject areas?
+O recruitment
+O retention
+O filling particular subject areas
+== a1622 e
+Q y :: Is there anything else you would like to know about Golden Retrievers or dog ownership in general?
+== a0771 m | a which-question over the two numbered next steps the assistant offered
+Q e p :: Which should I do next?
+O Replace the LDS epilogue with a cshuffle epilogue
+O Expand autotune parameters
+== a1690 m amb | the three moves are named in the preceding sentence
+Q m :: What would you like to do?
+O call
+O raise
+O fold
+== a0648 e
+Q o :: What subject are you preparing for?
+== a1478 e
+Q o :: What aspect would you like to examine further?
+== a0987 m | "region or integrand" are attributes of one more example
+Q y p :: Would you like me to demonstrate another example with a different type of region or integrand?
+== a1858 m | the heading "Why subtract 1 when X = NM?" is self-answered
+Q o :: Could you please provide the complete problem statement?
+== a0860 e neg
+== a1738 h amb | the numbered worlds mostly lie before the modeled tail, so the which-question is open here; the stakes list is for the user to ask themselves
+Q o :: Which of these worlds or hooks resonates with you?
+== a1577 m | the quoted questions in the "Concerned Friend" note are content, not questions to the user
+Q m p :: Want me to make it meaner, funnier, or tailor it to specific foods they've been taking?
+O make it meaner
+O funnier
+O tailor it to specific foods they've been taking
+== a0580 e
+Q o :: How can I help you today?
+== a1166 e neg
+== a1637 e
+Q o :: Could you please clarify or provide more context about what specifically you are referring to in terms of temperature?
+== a1043 e
+Q y p :: Want another one?
+== a1483 e
+Q o :: What specific aspect interests you most?
+== a1800 e
+Q y p :: Would you like me to compute the divergence of a specific vector field for you?
+== a1857 m | the numbered items describe the missing parts of the statement (as a0006)
+Q o :: Could you please provide the **complete problem statement**, including:
+== a1468 e
+Q y p :: Would you like me to implement these fixes?
+== a1142 m
+Q o :: What specific area of tinkering captures your interest lately?
+Q m :: Are you more focused on **hardware modifications** (like overclocking or retro-restorations), **software exploration** (such as virtualization or self-hosting), or perhaps **embedded systems** and robotics?
+O hardware modifications
+O software exploration
+O embedded systems
+== a1544 m | the "For example:" items are kinds of context, not sub-questions
+Q o :: Could you please provide more context?
+== a0919 m | "artist or genre" is one attribute pair
+Q y :: Do you have a particular artist or genre you're interested in seeing?
+== a1309 e
+Q y p :: Want me to look at the kernel code to work out the specific swizzle?
+== a1659 e
+Q y :: Do you have any particular views or theories of morality that resonate with you?
+== a0965 e
+Q y p :: Want another one?
+== a1002 e
+Q o :: What specific context are you thinking about?
+== a1815 e
+Q y p :: Would you like me to elaborate on any specific aspect of this algorithm design?
+== a1875 h | "Three questions before I commit" are put directly to the user; item 3's bold label has no '?', its question follows
+Q o :: **Client languages?**
+Q o :: **Existing observability?**
+Q y :: Do you have a process for proto review, generated client publishing, and versioning?
+== a1462 m | French: "What is the output of the mount command?"
+Q o :: Quelle est la sortie de la commande de montage (`sudo mount -t ntfs-3g /dev/sda5 ~/test_mount`) ?
+== a1702 m neg | hard: bold "Why not C …?" and "Why not B?" are self-answered
+== a1571 h neg amb | hard: "Important questions to consider" are checks for the buyer's own situation; could also be read as questions put to the user
+== a1025 m
+Q e :: Does everyone in your group already have their own gear, or will you need to rent?
+O already have their own gear
+O need to rent
+== a1175 e
+Q y p :: Would you like me to proceed?
+== a0943 h amb | capability menu before the which-question supplies options (batch-2 decision)
+Q m :: What kind of conversation would you find most interesting or helpful?
+O Intellectual topics
+O Creative topics
+O Casual chat
+O Providing advice, emotional support, or a friendly ear
+O Analyzing things from multiple angles
+O Helping with tasks and questions
+== a0688 e
+Q o :: What specific constraints are you working with?
+== a1790 e
+Q o :: What aspects of this question interest you most?
+== a1853 m neg | hard: "Does the text naturalize …?" questions are criteria for the classroom, not questions to the user
+== a1030 h neg amb | hard: the proposal is followed by its execution in the same stored turn, so nothing is left for the user to answer; could also be read as a yes/no proposal
+== a1713 e | "(Sci-Fi, Noir, Indie?)" sits inside an imperative as examples
+Q o :: What kind of movies have you been interested in lately?
+== a1552 m amb | the "I can help with:" list supplies options; the heading "What Would You Like Help With?" introduces the same choice
+Q m p :: Which direction interests you?
+O save every C-th update
+O per-node segment tree
+O segment tree with edge intervals
+O two-pointer ordering trick
+O a particular subtask solution
+== a1616 m amb | "Do you know which …" asks for information; the three assistants follow "like" as examples
+Q o :: Do you know which voice assistant you might prefer to use, like Alexa, Google Assistant, or Siri?
+== a0846 e
+Q y p :: Would you like me to attempt to fix these problems?
+== a1628 e
+Q o :: What specific topics or problems are you working on?
+== a0944 e
+Q o :: What's driving your interest in this framing specifically?
+== a1812 e
+Q o :: What's your take on art's social influence?
+== a1870 m | the "If you're asking about" headings are not questions
+Q o :: Could you clarify what you mean by "load-bearing capacity" in this context?
+Q o :: What are you growing, and what's your setup?
+== a0644 e neg
+== a0631 m amb | the two starting points follow in the next sentence
+Q e p :: How would you like to begin?
+O outlining the **Beringia Migration theories**
+O dive straight into the **Olmec heartland**
+== a1566 m
+Q e :: What drew you to the question—is this theoretical, or are you wrestling with a system where static requirements aren't cutting it?
+O is this theoretical
+O wrestling with a system where static requirements aren't cutting it
+== a0751 e
+Q o :: How can I help you today?
+Q y :: Is there something specific you'd like to chat about or learn more about?
+== a0566 e
+Q y p :: Would you like me to do that?
+== a1687 e
+Q y :: Does this help explain the solution?
+== a1276 e
+Q o :: What's the context behind your question?
+== a1782 e
+Q o :: What's your perspective on ambition's dual nature?
+== a1861 e
+Q o :: What specific seasonal patterns or industry context are you working with?
+== a1316 e | French: "What style do you prefer for the site?"
+Q o :: Quel style preferez-vous pour le site ?
+== a1733 m amb | the two offered next steps follow the question
+Q e p :: How would you like to proceed?
+O analyze a specific floor plan
+O explain how to calculate the wealth corners for your current year
+== a0581 m
+Q o :: what tipped it after 3 years?
+Q e :: did he do something extra cute or did it just kinda sneak up on you?
+O did he do something extra cute
+O did it just kinda sneak up on you
+== a1583 m | two distinct extras; "Would you also like" has no "me"
+Q e :: Would you also like some ideas on how to plan fun cycling routes or perhaps tips on the swimming side of things as well?
+O ideas on how to plan fun cycling routes
+O tips on the swimming side of things
+== a1426 e
+Q y p :: Shall I proceed?
+== a0632 e
+Q y :: Did you enjoy the film?
+Q o :: What worked or didn't work for you?
+== a1484 e
+Q o :: What specific context were you thinking about?
+== a0848 e | the earlier "If you'd like me to demonstrate …, please provide one" is a conditional offer
+Q y p :: Would you like me to demonstrate with a specific matrix example?
+== a1845 h amb | direct questions to the user listed after "I need to know:" are labeled per item (as a0341); could also be read as describing missing parts (a0006)
+Q o :: **What is the problem asking?**
+Q o :: **What is the input?**
+Q o :: **What conditions must the output sequence satisfy?**
+== a0963 e | French: "Want me to prepare a template email to Orange support?"
+Q y p :: Veux-tu que je te prépare un email type à envoyer au support Orange ?
+== a1696 m | the bold "What am I?" riddles are answered in the same turn
+Q o :: How did you do?
+== a1569 e
+Q o :: Could you please share the full problem statement?
+== a1601 e
+Q o :: How can I help you today?
+Q y :: Is there something you'd like to chat about or any questions I can answer for you?
+== a1081 e | one combined action
+Q y p :: Would you like me to make the necessary changes to `ioctl_adapter.cpp`, rebuild `rocprofiler`, and then re-run the profiling?
+== a1115 m neg | hard: generated quiz items with a)–d) answers
+== a1502 e
+Q o :: What aspect interests you most?
+== a1779 m | "Can we ever fully know our 'true self'?" is a rhetorical challenge in a list
+Q o :: What do you think makes a life authentic?
+Q e :: Is it about being true to certain core values, or perhaps about the honesty with which we confront our limitations?
+O being true to certain core values
+O the honesty with which we confront our limitations
+== a1834 m | "I'm curious whether …" has no question mark
+Q o :: What draws you to this question?
+== a1412 e | French: "Is that the next step?"
+Q y :: Est-ce la prochaine étape ?
+== a0837 m | two ways to supply the same information (d0001)
+Q o :: **Could you please provide the diagram or the specific name of the shape mentioned in your exercise?**
+== a0894 m | the "For example:" items are kinds of things to share, not sub-questions
+Q o :: Could you share more details about what you'd like me to explain?
+== a1581 m | the three areas follow "like" as examples
+Q y :: Have you noticed any specific areas where you feel like you're struggling the most, like seasoning, timing, or technique?
+== a1348 m | one offer covering both fixes
+Q y p :: Would you like me to fix the include directory visibility and the flag overwriting issues?
+== a1649 e
+Q y :: Do any of these backstories resonate with you?
+== a1195 e
+Q o :: What specific aspect interests you most?
+== a1788 e
+Q o :: What specific aspect of requirements management is most challenging for your team right now?
+== a1840 h | "Are you looking to:" is an interrogative lead-in to a dash list of options; the closing question restates it openly
+Q m :: Are you looking to:
+O Review/improve
+O Write one from scratch
+O Format/structure advice
+Q o :: What's your situation?
+== a1475 e | French: "Shall we start the parser?"
+Q y p :: On commence le parseur ?
+== a1710 m | "Does it look balanced on a book cover?" is a self-check inside a checklist
+Q o :: What genre do you primarily write in?
+== a1570 m | the bold "Can we transform `s` …?" is a variant heading
+Q o :: Could you share the full problem?
+== a1584 e
+Q o :: How can I help you today?
+Q y :: Is there something you would like to know or discuss?
+== a0911 m neg | hard: the closing offer is conditional and has no question mark
+== a1631 h | direct questions listed after an interrogative lead-in are labeled per item (as a0341); "some other type of shelter" is an escape arm
+Q o :: could you share a bit more information?
+Q o :: What general area or region are you planning to visit in July?
+Q y :: Are you looking for a campground with specific amenities like showers, electric hookups, etc?
+Q e :: Do you prefer a more developed campground or a primitive, back-to-nature experience?
+O a more developed campground
+O a primitive, back-to-nature experience
+Q e :: Will you be camping in a tent, RV, or some other type of shelter?
+O a tent
+O RV
+Q y :: Are there any specific activities you're interested in, like hiking, fishing, swimming, etc?
+== a1477 m | the parenthetical "sparkling water? …" and "At what quality threshold …?" are rhetorical
+Q o :: What specific angle interests you most?
+== a1814 m
+Q o :: What do you think?
+Q e :: Do you ever find yourself limited by available words, or able to think beyond what you can easily express?
+O limited by available words
+O able to think beyond what you can easily express
+== a0708 e
+Q y :: Would you like details on any of these options?
+== a0886 e neg
+== a1726 m | the two chapters follow "such as" as examples
+Q y p :: Would you like me to expand on a specific chapter, such as the **CC2530 hardware circuit design** or the **Z-Stack software flowcharts**?
+== a1515 h amb | "Could you clarify:" introduces three direct questions; the numbered alignment kinds supply options for the first ("Something else entirely" is an escape arm)
+Q m :: **What kind of alignment** you need?
+O Sequence alignment
+O Text/string alignment
+O AI alignment
+O Image alignment
+O Data alignment
+Q o :: **What language or tools** you'd like me to use?
+Q o :: **Any input/output format** or constraints?
+== a1620 m | two distinct follow-ups; no "me"
+Q e :: Would you like to know more about how these work or explore other techniques?
+O know more about how these work
+O explore other techniques
+== a1071 m amb | "kernel(s)" allows choosing both
+Q e ms :: Which kernel(s) do you want to change — the main `flash_attn/flash_attn_triton.py` one, or the AMD ones in `flash_attn/flash_attn_triton_amd/`?
+O the main `flash_attn/flash_attn_triton.py` one
+O the AMD ones in `flash_attn/flash_attn_triton_amd/`
+== a1667 h amb | role-play: the assistant speaks as [Person2] directly to the user's character; could also be read as story dialogue
+Q y :: do you like grappa?
+Q e :: Do you want to meet there directly or would you like to grab a pre-dinner drink somewhere nearby first?
+O meet there directly
+O grab a pre-dinner drink somewhere nearby first
+== a1318 e
+Q o :: What specific aspect concerns you most?
+== a0819 e
+Q o :: What do you think?
+Q y :: Is the pursuit of objectivity valuable even if perfect objectivity remains out of reach?
+== a1859 m
+Q o :: what do you want to know?
+Q e :: Are you trying to understand how decorators work under the hood, or are you trying to write one for a specific use case?
+O understand how decorators work under the hood
+O write one for a specific use case
+== a1470 e | French: "Do you want me to add this validation to the DepositValidator?"
+Q y p :: Voulez-vous que j'ajoute cette validation dans le `DepositValidator` ?
+== a1714 m | the questions in the table and the peer-check bullet are suggested phrasings
+Q o :: How do you feel the teacher would react if you asked for a simple clarification on the "wronged" part of the situation?
+== a1539 m | the numbered readings are the assistant's guesses; the addressed question is open
+Q o :: Could you clarify the actual connection?
+== a0736 e
+Q m :: Are you more interested in apparel, collectible figures, or home decor items?
+O apparel
+O collectible figures
+O home decor items
+== a1381 e
+Q y :: Is there anything else I can help you with?
+== a1662 e
+Q o :: What are some topics you're passionate about or find fascinating?
+== a0780 e
+Q o :: What specific context are you thinking about?
+== a0527 e neg
+== a1869 m | the bold "Would I Watch It?" heading echoes the user's question
+Q e :: Is this a show concept you're developing, or just a funny thought experiment?
+O a show concept you're developing
+O just a funny thought experiment
+== a1469 e | French: "Do you want me to run these commands for you?"
+Q y p :: Voulez-vous que j'exécute ces commandes pour vous?
+== a0903 m neg | hard: heading "Why use the GCD?" is self-answered
+== a1146 e
+Q o :: Could you share where you came across this?
+== a0932 e
+Q y :: Does that help clarify things?
+== a1432 e | one combined validation run
+Q y p :: Want me to rerun `test_scaled_mm_hip.py` and `benchmark_scaled_mm_hip.py` (unsandboxed) to validate correctness and measure speed?
+== a1671 m amb | a topic menu precedes a yes/no question; the menu could also be read as options
+Q y :: Is there a particular direction you'd like to take our conversation?
+== a0670 e
+Q o :: What's prompting your question?
+== a1794 e
+Q y p :: Would you like me to work through a specific example in detail?
+== a1868 m | the bold question headings are self-answered
+Q o :: Could you share the full problem context for a more precise explanation?
+== a1464 m | French: "Do you want me to continue with the remaining phases, or would you rather test what has been done first?"
+Q e p :: **Voulez-vous que je continue avec les phases restantes ou préférez-vous d'abord tester ce qui a été fait?**
+O continue avec les phases restantes
+O d'abord tester ce qui a été fait
+== a1736 m | the pun guess is answered in the next line; "or do you have a different stroke in mind" is an escape arm
+Q y :: Did I nail the color, or do you have a different stroke in mind?
+== a1535 m | the elements follow "like" as examples
+Q y p :: Want me to develop any specific element further — like sample social media copy, influencer outreach scripts, or the brand visual identity?
+== a1067 e
+Q y p :: Would you like me to suggest some specific bags that balance weight and style?
+== a0756 e
+Q y p :: Want me to also add the ROCr diagnostic log points now?
+== a1654 e
+Q o :: How did I do?
+== a1013 e
+Q o :: What specifically prompted your question?
+== a1822 e
+Q o :: Where do you find yourself leaning on this question?
+== a1824 m
+Q e p :: Would you like me to go deeper into any specific organ system, or discuss how this framework changes in the setting of pregnancy or malignancy-associated overlap?
+O go deeper into any specific organ system
+O discuss how this framework changes in the setting of pregnancy or malignancy-associated overlap
+== a1461 m | French: "Do you want to continue with Systran/faster-whisper-large-v3?"; no "me", so not a proposal by the letter
+Q y :: Voulez-vous continuer avec `Systran/faster-whisper-large-v3` ?
+== a1744 m | the issues after "like" are examples
+Q o :: **Which part of the environment is the biggest trigger for you?**
+== a1561 m
+Q e :: Are you working on this as part of a larger creative project, or just having fun writing chaos?
+O part of a larger creative project
+O just having fun writing chaos
+== a1587 h amb | one sentence with three asks under a single question mark; the last clause alone is an either/or
+Q o :: What city or area are you looking at, what kind of music are you into, and do you have a preference for large arena shows or smaller, more intimate venues?
+== a0985 e
+Q y p :: Would you also like me to fix the **potential data loss** issue?
+== a1680 m
+Q e :: Do you agree that mRNA vaccines are at the top of the list, or is there another scientific advance from the past 5 years you find especially groundbreaking and impactful?
+O mRNA vaccines are at the top of the list
+O another scientific advance from the past 5 years
+== a1497 e
+Q o :: What specific situation are you navigating?
+== a1042 e
+Q o :: What aspects of this issue interest you most?
+== a1872 e
+Q o :: What are you building?
+== a1052 e neg
+== a1707 m neg | hard: "Does it have a natural cadence …?" is a self-check in a tips list
+== a1526 m neg | hard: story narration; the closing question is answered in the next line
+== a1596 e
+Q o :: What would you like to talk about or learn about?
+== a1139 e
+Q y p :: Shall I proceed with this fix?
+== a1684 e
+Q o :: What specific aspect of relativity theory did you have a question about?
+== a0968 e
+Q o :: What specifically draws you to this reframing?
+== a1031 e
+Q o :: What aspects of this relationship between technology and humanity interest you most?
+== a1825 e
+Q o :: What's your child's age and what specifically engages them?
+== a1122 h amb | the numbered bold items are things to check after "Vérifiez:", not questions to answer; the closing pair asks for the setup and restates it as a choice ("autre serveur web" is a broad second arm)
+Q o :: **Quelle est votre configuration?**
+Q e :: XAMPP local ou autre serveur web?
+O XAMPP local
+O autre serveur web
+== a0649 m neg | hard: the only question is a suggested phrasing for staff
+== a0920 e
+Q o :: Could you share the numbers in the sequence you're asking about?
+== a0841 e
+Q y :: Is there something specific you would like to discuss or learn about?
+== a1303 m | a which-question over the two numbered next steps
+Q e p :: Which next step do you want me to run?
+O side LDS swizzle (no padding) and recheck LDSBankConflict + perf
+O shuffle LDS access and apply a swizzle there
+== a1653 e | game role-play; the move list is the assistant's own
+Q o :: What will your Charmander do?
+== a1490 e
+Q o :: What aspect interests you most?
+== a0952 e
+Q y p :: Would you like me to elaborate on any specific aspect of inclusive requirements gathering?
+== a1876 m | "or something else" is an escape arm; the bold "would the team notice …?" is a rhetorical test and the quoted question is a suggested prompt
+Q e :: What's your sense of the root cause — is it follow-through, safety, or something else?
+O follow-through
+O safety
+== a0951 e neg
+== a0531 e neg
+== a1542 e
+Q o :: Could you share what specifically in the updated code prompted this concern?
+== a1188 e
+Q y p :: Would you like me to walk you through it step by step?
+== a1261 m neg | hard: the closing offer is conditional and has no question mark
+== a0990 h | direct questions listed after an interrogative lead-in are labeled per item (as a0341)
+Q o :: could you please provide me with some additional information?
+Q o :: What is the name of the company you are applying to?
+Q o :: What specific skills, experience, or projects would you like to highlight that are relevant to this role?
+Q y :: Are there any key requirements or qualifications mentioned in the job posting that you want to make sure to address?
+Q o :: What is it about this particular company or position that interests you and makes you want to apply?
+== a1171 m | "can someone be punished …?" is a rhetorical point in a list
+Q o :: What specific angle interests you most?
+== a1801 e
+Q o :: What aspects of this question interest you most?
+== a1841 e
+Q y p :: Want me to get more specific about any of these?
+== a1062 m | French: the bold "Key question" asks whether the downstream service must validate the token; the closing question asks for the expected behaviour
+Q y :: est-ce que ton service downstream **doit** valider le token sur les endpoints `/public/**` ?
+Q o :: Quel est le comportement attendu pour cette route ?
+== a1694 m neg | hard: the numbered bold questions form a checklist the reader should ask
+== a0827 m neg | hard: "(why own what arrives instantly?)" is rhetorical
+== a1580 m | two distinct kinds of tips; no "me"
+Q e :: Would you like tips on how to get started or what kind of guitar to buy?
+O how to get started
+O what kind of guitar to buy
+== a0859 e
+Q y p :: Do you want me to attempt the `BDataType = ck::f8_t` optimization to utilize the converter you added?
+== a1170 e
+Q y :: Is there anything I can help you with today as you start your day?
+== a1496 m | the "harder questions worth asking" are rhetorical
+Q o :: What specific aspect interests you most?
+== a1781 e
+Q o :: What specific situation or context prompted your question about prioritizing the many versus the few?
+== a1844 e
+Q o :: **What's your experience with it?**
+== a0975 m | French: "Do you want me to create a migration script?"; the turn continues with advice after the question
+Q y p :: Voulez-vous que je crée un script de migration pour corriger l'encodage des produits existants ?
+== a1703 e
+Q y p :: Would you like me to analyze a specific paragraph of your current content and provide a 'before and after' rewrite?
+== a1555 m | bold "What kind of issues?" is a self-answered heading
+Q o :: What kind of issues did the inspection turn up?
+== a1610 e
+Q o :: How can I help you today?
+Q y :: Is there something specific you'd like to talk about or need assistance with?
+== a1273 e neg
+== a1666 m | five direct questions; each is a separate record
+Q o :: Where did you go hiking?
+Q o :: What was the weather like?
+Q y :: Did you see any interesting plants or animals along the way?
+Q o :: What kind of work do you do?
+Q y :: Has it been particularly busy or stressful lately?
+== a1481 m | "or something else" is an escape arm
+Q e :: What's your specific interest here - policy evaluation, research design, or something else?
+O policy evaluation
+O research design
+== a1009 e
+Q o :: What's your perspective on how these concepts interact in your own life?
+== a0640 h amb | direct questions listed after "I need to know:" are labeled per item (as a1845); could also be read as describing missing parts (a0006)
+Q o :: **Could you please provide the complete problem statement?**
+Q o :: What is the actual task/question to solve?
+Q o :: What are the input parameters (e.g., dimensions of fabric, shape of pattern, colors, etc.)?
+Q o :: What should the output be?
+Q y :: Are there any constraints?
+== a1695 m amb | the four cities follow "Whether it is" as examples
+Q o :: **Which city shall we explore today?**
+== a1547 e
+Q o :: Could you post the full problem (constraints on $n$, $m$, $w_i$, $c_i$; input format; sample test)?
+== a0637 e neg
+== a1279 e | "you would like me to" makes this an offer
+Q y p :: Is there anything else you would like me to profile or inspect?
+== a1685 m | two ways to supply the same information (d0001)
+Q o :: What kind of code are you working on or what specific Python questions do you have?
+== a1498 m | the "harder questions" list is rhetorical
+Q o :: What specific aspect interests you most?
+== a0627 e
+Q o :: What are your thoughts on forgiveness?
+Q y :: Have you been considering this in relation to a specific situation?
+== a1830 m neg | hard: bold "What is AMOC?", "Is it weakening?", "Why is it weakening?" are self-answered
+== a1379 e | French: "Do you want to wait or add the token?"
+Q e :: Tu veux attendre ou ajouter le token ?
+O attendre
+O ajouter le token
+== a1748 m
+Q e :: Are you looking at this from the perspective of a **developer** trying to improve a model, or a **consumer/advertiser** frustrated by the lack of accuracy?
+O a **developer** trying to improve a model
+O a **consumer/advertiser** frustrated by the lack of accuracy
+== a1549 m | the topics follow "perhaps" as examples with an escape arm
+Q y :: Would you like to explore a specific topic — perhaps degree sequences, regular graphs, or something else?
+== a1136 m | "rear speakers or other accessories" is one topic
+Q y :: Would you like to talk about adding rear speakers or other accessories to take it even further?
+== a1199 e | "I can" makes this an offer
+Q y p :: Is there anything else I can optimize or move to compile time?
+== a1634 m amb | a topic menu precedes a yes/no question (as a1671)
+Q y :: Is there a particular health topic you're most interested in or have questions about?
+== a1505 e
+Q o :: What context prompted this question?
+== a0589 m | the numbered reframing questions are rhetorical
+Q o :: What aspects of equality do you think are most important for societies to pursue?
+== a1373 e
+Q y p :: Would you like me to run these installation commands for you?
+== a1741 m
+Q e :: Are you looking to start a shop, or do you have a specific technical or strategic question about how the platform functions?
+O start a shop
+O a specific technical or strategic question
+== a1058 m
+Q e :: Do you want to talk about her, or about what today felt like?
+O talk about her
+O about what today felt like
+== a1602 m | "show or genre" is one attribute pair
+Q y :: Would you like to hear more about a specific show or genre?
+== a1029 e
+Q y p :: **Would you like me to perform this refactoring?**
+== a1673 e
+Q o :: What sorts of topics are you most passionate about or curious to explore?
+== a1116 m
+Q e :: What specifically draws you to this question - the performance angle or the wellbeing angle?
+O the performance angle
+O the wellbeing angle
+== a1802 e
+Q o :: What are your thoughts on what makes a goal worthy of pursuit?
+== a0696 e neg
+== a1749 h amb | the story directions mostly lie before the modeled tail, so the which-question is open here; the "June 1st Motif" questions are prompts for the writer
+Q o :: Which of these directions resonates most with the story you want to tell?
+== a1205 m amb | asks the user to share data; the shared data is the answer, so open (could also be read as yes/no)
+Q o :: Want to share the actual review data or scoring rubric you're working with?
+== a0867 e
+Q o :: How can I help you today?
+Q y :: Is there something on your mind you'd like to talk about or any questions I can answer for you?
+== a1691 e
+Q o :: What topic or prompt would you like me to use as the basis for the short story?
+== a1491 m | the leading bullet questions are self-checks for the user's own judgement
+Q o :: What's the specific situation?
+== a0834 m
+Q e :: What do you think - do you see this more as a binary question, or do you also see it as existing on a spectrum of partial understanding?
+O a binary question
+O a spectrum of partial understanding
+== a1092 e | French: "How many mailboxes do you have to migrate?"
+Q o :: Tu as combien de boîtes mail à migrer?
+== a1717 m | two different preferences offered as alternatives
+Q e :: Are you in the mood for a specific genre, or do you have a particular streaming service you prefer?
+O a specific genre
+O a particular streaming service
+== a1576 h | an open request followed by a five-way choice with an escape arm
+Q o :: which system are you thinking about, and what specifically do you see as broken?
+Q m :: Is it access, cost, quality, choice, administrative burden, or something else?
+O access
+O cost
+O quality
+O choice
+O administrative burden
+== a1220 e
+Q y :: Any other questions before you get started?
+== a1638 m neg | hard: generated quiz with its own answer key
+== a1493 m
+Q m :: What specific aspect interests you most - resource allocation, enforcement, or decision legitimacy?
+O resource allocation
+O enforcement
+O decision legitimacy
+== a1816 m
+Q e p :: Would you like me to elaborate on any of these approaches or discuss specific requirement management techniques for a particular type of adaptive system?
+O elaborate on any of these approaches
+O discuss specific requirement management techniques for a particular type of adaptive system
+== a1445 m | French: "Which motherboard / GPU do you have?"
+Q o :: Quelle carte mère / GPU as-tu ?
+== a1697 m | the follow-up "If you can provide details on whether …" is conditional
+Q o :: **Could you specify which departments are struggling the most?**
+== a1088 m | a which-question over the four headed telescope categories
+Q m :: Which one were you curious about?
+O Largest optical telescope (operational)
+O Largest optical telescope (under construction)
+O Largest radio telescope
+O Largest space telescope
+== a1592 e
+Q y :: Is there anything specific you would like to talk about or any questions you have?
+== a0778 m neg | hard: "amirite??" is a rhetorical tag in a comic explanation
+== a1270 m | the dash adds the assistant's guess to an open question
+Q o :: What specifically prompted your question - evaluating a health claim?
+== a0861 e
+Q y p :: Would you like me to elaborate on any specific aspect of these differences?
+== a0743 e neg
+== a0573 m neg | hard: the parenthetical "(Is it the food, the timing, or the attitude?)" is a checklist self-check
+== a1513 h amb | the bold questions after "I need to know:" are labeled per item (as a1845); e.g. lists are examples
+Q o :: Could you please paste the complete problem statement?
+Q o :: **What operations are allowed?**
+Q o :: **What do you need to output?**
+Q y :: **Any costs** associated with each operation?
+== a0811 m | two distinct kinds of tips; no "me"
+Q e :: Would you like tips on how to set the weight or how many sets and reps to do?
+O how to set the weight
+O how many sets and reps to do
+== a0686 m neg | hard: '?' only inside a regex and its explanation
+== a0596 e
+Q o :: What specific aspect would you like to dig into further?
+== a1786 e
+Q y p :: Would you like me to work through a specific differential operator example?
+== a1345 m | French: "Do you want me to check another folder …?"; the parenthetical ends in "etc.", so the folders are examples
+Q y p :: Voulez-vous que je vérifie un autre dossier de la structure (usecase, persistence, messaging, etc.) ?
+== a1723 m | the checklist questions are self-reflection prompts
+Q o :: What is one small, authentic choice you can make today?
+== a1563 e
+Q y :: Is there something specific you'd like to explore about them?
+== a1612 h amb | a which-question over the three described methods, with a second arm offering more details
+Q m :: Which of these sounds most doable for you, or would you like more details on any of them?
+O gradual adjustment approach
+O "wake time anchor" technique
+O "all-nighter reset,"
+== a0852 h amb | role-play: the Genie's "So what'll it be, master?" is part of the performance; the out-of-character check is the real question
+Q o :: How was that?
+== a0956 m | the aspects follow "like" as examples
+Q y :: Would you like more detail on any particular aspect, like the orbital shell breakdown or debris concerns?
+== a1818 e
+Q o :: What aspects of justice do you find most compelling or important?
+== a1286 e | French: "Shall we add an explicit check on `$finalPrice > 0`?"
+Q y p :: Veux-tu qu'on ajoute une vérification explicite sur `$finalPrice > 0` dans `paiement_mtn.php` ?
+== a1699 m neg | hard: "Do they lean in …?" are observation prompts and the italic question is a suggested phrasing
+== a1572 e
+Q o :: Could you please share the equations you'd like me to solve?
+== a1579 h amb | a reflective three-way question inside advice; it is put to the user but framed as self-evaluation
+Q m :: Do you want to move into a leadership role within marketing, pivot to a related field like product management or data analytics, or perhaps start your own venture?
+O move into a leadership role within marketing
+O pivot to a related field
+O start your own venture
+== a1641 e
+Q o :: What are your thoughts on it?
+Q y :: Do you have any favorite parts or elements from the story?
+== a1300 m | "Who programs the values?" is rhetorical
+Q o :: What specific aspect concerns you most?
+== a0645 m
+Q o :: What's your perspective on this?
+Q e :: Do you find yourself leaning more toward seeing love as a choice or as something that happens to us?
+O a choice
+O something that happens to us
+== a1232 m amb | French: the parenthetical closed list of two repos supplies options (d0369)
+Q e p :: Tu veux que je te prépare le contenu des fichiers pour le premier repo (`afriland-infrastructure` ou `afriland-audio-ingestion`) ?
+O `afriland-infrastructure`
+O `afriland-audio-ingestion`
+== a1700 e
+Q o :: How can I assist you with your project or research today?
+== a1529 h amb | capability menu before the closing question supplies options; "can you paste it?" belongs to option 1's description
+Q o :: Could you clarify what you need help with?
+Q m :: What would you like help with?
+O The full problem statement
+O Writing a solution
+O Understanding the explanation
+O Debugging your code
+== a1600 e
+Q y :: Is there something specific you would like to talk about or learn more about today?
+== a1663 e
+Q o :: What kind of story did you have in mind?
+Q y :: Is there a particular genre, theme, or idea you want to explore?
+== a1306 e
+Q o :: What specific aspect interests you most?
+== a1385 m | French: "Do you plan to implement Orange withdrawals too, or just MTN for now?"
+Q e :: Tu comptes implémenter les retraits Orange aussi ou juste MTN pour l'instant ?
+O implémenter les retraits Orange aussi
+O juste MTN pour l'instant
+== a0877 m amb | the design directions mostly lie before the modeled tail, so the which-question is open here
+Q o :: **Which direction sounds most like what you had in mind?**
+== a1534 h amb | "Questions that would help calibrate" are put to the user (labeled per item); the parenthetical closed list supplies options (d0369) with an escape arm
+Q m :: What decision does this index drive?
+O Review prioritization
+O deprecation candidates
+O documentation updates
+Q m :: Are you measuring per-file, per-module, or codebase-wide?
+O per-file
+O per-module
+O codebase-wide
+Q y :: Does your codebase have distinct zones with different expected change rates?
+Q o :: What's the primary use case?
+== a0893 e
+Q y p :: Would you like me to explain how the combinations work?
+== a1675 e
+Q o :: Could you please clarify your question or comment?
+== a0840 e
+Q o :: What aspect interests you most?
+== a0662 m | French: "Tu veux que je nettoie le projet pour:" has no question mark; the closing "Shall we continue with this cleanup?" is the proposal
+Q y p :: On continue avec ce nettoyage ?
+== a1573 m | "price point or down payment scenario" is one attribute pair; "Car payments, student loans?" is a checklist prompt
+Q y p :: Want me to run the numbers for a different price point or down payment scenario?
+== a1625 m
+Q m :: Are you looking to build muscle, improve cardiovascular health, lose weight, or maintain general fitness?
+O build muscle
+O improve cardiovascular health
+O lose weight
+O maintain general fitness
+== a1664 e
+Q o :: What do you make of CRISPR and its potential?
+Q y :: Are there any aspects of it that particularly fascinate or concern you?
+== a1312 e
+Q o :: What specific context are you considering?
+== a0728 m | French: "Do you want me to fix the sidecar with large-v3 or distil-large-v3?"
+Q e p :: Veux-tu que je corrige le sidecar avec `large-v3` ou `distil-large-v3` ?
+O `large-v3`
+O `distil-large-v3`
+== a0561 m neg | hard: "corrected toward what?" is rhetorical and "(laser? lamp + pinhole? LED?)" sits inside a conditional offer
+== a1163 m | info request (as "Do you know")
+Q o :: Do you have any idea roughly how many hours you sleep each night?
+== a1656 e
+Q o :: What do you think?
+Q y :: Do you lean one way or the other on the question?
+== a0980 e
+Q o :: What specific aspect interests you most?
+== a1301 e
+Q o :: Could you please share the specific question, task, or problem you'd like help with?
+== a1228 m | two ways to supply the same information (d0001)
+Q o :: What kind of work do you do, or what area are you looking to develop in?
+== a1250 m | the kinds of writing are examples of one offer
+Q y p :: Is there any kind of story, poem, or other piece of writing you'd like me to try crafting for you?
+== a1506 e
+Q o :: What specific aspect are you most interested in exploring?
+== a1562 m neg | hard: the "10 questions" are a checklist the user should answer for themselves before trading
+== a1585 e
+Q y :: Is there something on your mind you would like to talk about or any questions I can help you with today?
+== a1635 h amb | riddles posed to the user to solve (as a1202), each labeled; alternative reading: puzzle content
+Q o :: What am I? ^1
+Q o :: What has to be broken before you can use it?
+Q o :: What am I? ^2
+Q o :: What gets wet while drying?
+Q o :: What is it?
+== a1495 m
+Q y :: Do you have a specific source or context for this question?
+== a1532 e | the "For example:" items are kinds of context, not sub-questions
+Q o :: Could you provide more context?
+== a1588 m | "Do you have any sense of …" asks for information (as "Do you know")
+Q o :: Do you have any sense of what kind of look or feel you're drawn to?
+== a1242 h amb | role-play as Thanos; the in-character question is addressed to the user; could also be read as story dialogue
+Q o :: What business do you have with me?
+== a1203 e
+Q o :: What specific aspect interests you most?
+== a1213 m | the numbered items describe the missing parts (as a0006)
+Q o :: Could you please share the complete problem?
+== a1594 m | two distinct kinds of help; no "me"
+Q e :: Would you like help figuring out how to get tickets or plan your travel to Chicago?
+O figuring out how to get tickets
+O plan your travel to Chicago
+== a1629 h amb | role-play: the assistant plays a curious learner asking the user; could also be read as performance
+Q y :: Was he some kind of famous writer or something?
+Q o :: What time period was he from?
+== a0652 e
+Q o :: What specific aspect concerns you most?
+== a1557 h amb | the conditional bullets before the question supply the directions
+Q m :: Which direction is useful?
+O **materiality benchmarks**
+O **standard errors / confidence intervals on sample results**
+O **equity-research or risk modeling**
+O trying to evaluate whether it makes sense
+== a1014 m | "a budget … or a specific type of setting" are two attributes of one preference check
+Q y :: Do you have a budget in mind or a specific type of setting you prefer?
+== a1682 m neg | hard: the numbered questions are debate topics offered as content; the closing request is imperative
+== a0634 e neg
+== a1553 m | "Could you share:" is an interrogative lead-in; the listed items describe what to share (as a0006)
+Q o :: Could you share:
+== a0655 e
+Q y :: Do you have any preferences when it comes to cuisine or dietary restrictions?
+== a1125 e
+Q y :: Does this help explain evolution in a way a child could understand?
+== a0704 e
+Q o :: What aspect interests you most?
+== a1554 m neg | hard: "Questions worth asking" are for the user to put to the researchers
+== a1097 e
+Q y :: Is there something specific you'd like to chat about or learn more about today?
+== a1152 m | "what if one of them is a retired cop …?" is a brainstorming suggestion
+Q o :: What do you think about those ideas?
+== a1135 e
+Q o :: What specific leadership context are you thinking about?
+== a0737 h amb | "Could you let me know:" introduces three direct questions (labeled per item); the heading "How can I help?" introduces them; solution 1's name lies before the tail
+Q o :: **The full problem statement** (so I can verify the conditions like the merge rule)?
+Q m :: **What you're stuck on** — understanding the editorial, implementing it, or debugging code?
+O understanding the editorial
+O implementing it
+O debugging code
+Q o :: **Which solution** you'd like to pursue?
+== a1604 m | "activities or lesson plans" is one attribute pair
+Q y :: Would you like suggestions on specific activities or lesson plans for any of these areas?
+== a1645 m amb | asks for approval of the proposed rules; could also be read as open
+Q y :: How does that sound?
+== a1500 e
+Q o :: What specific aspect concerns you most here?
+== a1578 h amb | two arms, the second listing three deliverables; could also be read as either_or
+Q m p :: Want me to tailor this to a specific setting (primary care, SNF, ACO) or produce patient-facing handouts, EHR templates, or a staffing/revenue model?
+O tailor this to a specific setting
+O patient-facing handouts
+O EHR templates
+O a staffing/revenue model
+== a1589 h amb | "or maybe a bit of both" allows choosing both
+Q o :: could you tell me a little about what draws you to yoga?
+Q e ms :: Are you looking for something physical like flexibility and strength, or are you more interested in the mental and relaxation aspects, or maybe a bit of both?
+O something physical
+O the mental and relaxation aspects
+== a1511 e
+Q o :: What specifically prompted your question?
+== a1520 m | the questions in the body ("How would you write 10 …?", "What time is midnight?") are rhetorical
+Q o :: What got you thinking about this?
+Q e :: Are you more curious about the mathematical side or the philosophical idea of "nothingness"?
+O the mathematical side
+O the philosophical idea of "nothingness"
+== a1590 e
+Q o :: What would you like to talk about or learn more about today?
+== a1153 e
+Q o :: What aspect interests you most?
+== a1531 m
+Q e :: Is there something specific you're hoping to work through, or did you just need to put this somewhere?
+O something specific you're hoping to work through
+O just need to put this somewhere
+== a1046 m neg | hard: "(does a quick video call count?)" is a rhetorical aside in a caveat
+== a1543 h amb | "For example:" diagnostic sub-questions supply options (batch-2 decision)
+Q m :: Could you clarify what you'd like help with?
+O **explain the full problem**
+O **solving the problem**
+O **implementation**
+O **verify/explain the math**
+== a0535 e | "Would you like help" has no "me"
+Q y :: Would you like help thinking through any specific aspect of this?
+== a1559 h amb | the guess in item 2 is put to the user as a yes/no check; could also be read as a rhetorical possibility
+Q y :: could it be the **"proper purpose" doctrine** (directors must exercise powers for their proper corporate purpose, not collateral ends)?
+Q o :: Could you share where you encountered this term?
+== a1503 e
+Q o :: What specific aspect would you like stress-tested?
+== a0577 m | the "Key Factors" questions are considerations
+Q o :: What specific aspect of this tradeoff interests you most?
+== a1485 e
+Q o :: What specific aspect concerns you most?
+== a1187 m | "(is it easily discoverable?)" is a parenthetical gloss
+Q o :: What specific aspect are you trying to reason through?
+== a0853 e | no "me"
+Q y :: Do you want details about a specific jurisdiction?
+== a1035 e
+Q o :: What specific aspect interests you most?
+== a1024 m | "Who authoritatively determines …?" is rhetorical
+Q o :: What specific aspect concerns you most?
+== a1489 m | the bold "What's your goal: …?" is a consideration in a list
+Q o :: What specific situations are you thinking about?
+== a1494 e
+Q o :: What specific doctrine or religion were you considering?
+# --- plan3 (data/hf3a/plan3.py): top-up of the small agentic/coding datasets, labeled in plan3.txt order ---
+== a1992 m neg | hard: '?' only in C# nullable types (`string?`)
+== a1952 m | a capability menu precedes an open "what to build" question, not a choice among the listed tools
+Q o :: What do you want to build?
+== a1972 m
+Q e :: Would you like to talk more about specific strategies for studying, or about how to handle the emotional impact of their comments?
+O specific strategies for studying
+O how to handle the emotional impact of their comments
+== a1922 m neg | hard: "(vector matches query?)" is a table gloss
+== a2006 m
+Q e :: Which is it — frustration with messy code (refactor) or a fundamental architecture problem (maybe rewrite)?
+O frustration with messy code (refactor)
+O a fundamental architecture problem (maybe rewrite)
+== a1993 m neg | hard: '?' only in `??`
+== a1998 m neg | hard: the closing "does the specific numeric answer reveal …?" is a habit to adopt, not a question to the user
+== a1897 m neg | hard: '?' only in JSDoc optional fields
+== a1995 m neg | hard: '?' only in a C# nullable type inside reasoning
+== a1937 m neg | hard: interview-style "Q: Why …?" headings answered in place
+== a2002 m | two distinct additions
+Q e p :: Would you like me to add any additional gesture types (like swipe, open palm, fist) or more UI controls?
+O any additional gesture types
+O more UI controls
+== a1953 m | two distinct deliverables
+Q e p :: Want me to sketch the Go evaluation code or the schema as a concrete example for the post?
+O the Go evaluation code
+O the schema
+== a1973 m neg | hard: scorecard questions and the quoted interview question are template content
+== a1923 e neg | hard: '?' only inside a regex
+== a2007 m neg | hard: bold heading self-answered; the "ask:" list is for the reader
+== a1994 m neg | hard: '?' only in `??` code references
+== a1999 m neg | hard: the questions are quoted inside a lesson
+== a1898 m neg | hard: the heading "When would the imperative spread style be better?" is self-answered; `variantId?:` is a type
+== a1996 m neg | hard: '?' only in optional chaining
+== a1938 m neg | hard: "Retries left?" is a diagram label
+== a2003 m neg | hard: "Forgot Password?" is a UI label
+== a1954 m neg | hard: a leaked tool call; '?' only in shell `$?`
+== a1974 e
+Q y :: Is there something legitimate I can help you with today?
+== a1924 e neg | hard: '?' only as the Rust error operator
+== a2008 m | the questions in "Testing requirements" are example checks; the dash list is examples
+Q o :: **What's your context?**
+Q y :: Are you seeing specific pain points—requirements ambiguity, lost history, stale documentation?
+== a2000 m neg | hard: "What is actually being authenticated?" is self-answered; the '?' marks in the text diagram are labels
+== a1899 e neg | hard: '?' only in optional chaining
+== a1997 m neg | hard: '?' only in `?.`
+== a1939 e neg | hard: '?' only in Swift `try?`
+== a2004 m neg | hard: the question is a suggested conversation starter
+== a1955 h neg | hard: a leaked tool call whose prompt asks questions of a web page, not of the user
+== a1975 m
+Q o :: **Could you please provide the specific problem statement?**
+== a1925 e neg | hard: '?' only in the Kotlin elvis operator
+== a2009 e
+Q o :: What are you trying to deploy?
+== a2001 m neg | hard: the question is quoted as the calibration test's question
+== a1900 e neg | hard: '?' only in a ternary
+== a1940 e neg | hard: "Retry?" is a diagram label
+== a2005 m neg | hard: "What's the weather?" is an example voice command
+== a1956 h amb | "Try it yourself" exercise questions are posed to the user to solve (as a1202); the parenthetical "Why can't they cross?" is self-answered; alternative reading: exercise content
+Q o :: what does the picture look like near the origin?
+Q o :: What happens at (π, 0)?
+Q o :: What is the pendulum doing physically there?
+Q o :: What kind of trajectory corresponds to a pendulum spinning over the top, round and round?
+Q y p :: Want to work through the pendulum together?
+== a1976 m
+Q e p :: Would you like me to apply this framework to a specific city configuration, or elaborate on any particular component?
+O apply this framework to a specific city configuration
+O elaborate on any particular component
+== a1926 e neg | hard: '?' only as the Rust error operator
+== a2010 e
+Q o :: What city or general area are you in?
+== a1901 m neg | hard: "(but then why is `CSVReportGenerator` used?)" is rhetorical inside analysis
+== a1941 e neg | hard: '?' only in `??` and TS types
+== a1957 m | a which-question over the three numbered topics; "(or something else)" is an escape arm
+Q m :: Which of these (or something else) were you actually asking about?
+O Language learning
+O Retirement savings
+O Running
+== a1977 e
+Q o :: Could you please share the problem, question, or task you'd like me to work on?
+== a1927 e neg | hard: '?' only in C# nullable types
+== a2011 e
+Q o :: What type of space or market are you looking at?
+== a1902 e neg | hard: '?' only inside a regex
+== a1942 e neg | hard: '?' only in optional chaining and a URL query string
+== a1958 m | two distinct sketches
+Q e p :: Want me to sketch what the sanitizer CI setup or the subprocess lifecycle in Django would look like?
+O the sanitizer CI setup
+O the subprocess lifecycle in Django
+== a1978 m | an interrogative lead-in with a list of kinds of input (examples), then a restated open question (as a1761)
+Q o :: Could you please provide:
+Q o :: What would you like help with?
+== a1928 e neg | hard: '?' only in C# nullable types
+== a2012 e
+Q o :: What specifically is your slowest model?
+== a1903 e neg | hard: '?' only inside a regex
+== a1943 e neg | hard: '?' only in TS optional properties
+== a1959 m
+Q e p :: Want me to sketch an essay structure around the "valid but unsoundable" line, or dig deeper into one of the three objections?
+O sketch an essay structure around the "valid but unsoundable" line
+O dig deeper into one of the three objections
+== a1979 m | the numbered items describe missing parts with explanatory questions (as a0006)
+Q o :: Could you please share:
+== a1929 e neg | hard: '?' only in optional chaining
+== a2013 m | the numbered bold questions restate the user's question; the Level 4/5 question is a consideration
+Q o :: What specialty and what specific concern is driving this?
+== a1904 e neg | hard: '?' only in Rust `{:?}` format strings
+== a1944 e neg | hard: "Retry?" and "max?" are diagram labels
+== a1960 m
+Q e p :: Want me to sketch the talk outline or example backfill/verification scripts?
+O the talk outline
+O example backfill/verification scripts
+== a1980 e
+Q o :: What equation would you like me to solve?
+== a1930 e neg | hard: '?' only in ternaries and optional chaining
+== a2014 m | the bullet's "Are you asking whether …?" is a clarification put to the user
+Q y :: Are you asking whether children display different emotional competencies at the art table vs. the block area?
+Q o :: What's the actual problem you're trying to solve?
+== a1905 e neg | hard: '?' only as the Rust error operator
+== a1945 e neg | hard: '?' only in Rust `{:?}`
+== a1961 m | the italic editorial test is a quoted self-check
+Q e p :: Want me to help you draft an outline, or pressure-test any specific section for that understanding-vs-capability line?
+O help you draft an outline
+O pressure-test any specific section
+== a1981 m | the quoted question is generated content
+Q e p :: Would you like me to provide a detailed answer to this question, or would you prefer a different question on this topic?
+O provide a detailed answer to this question
+O a different question on this topic
+== a1931 e neg | hard: '?' only in Rust `{:?}`
+== a2015 e | "Would you like help" has no "me"
+Q y :: Would you like help thinking through any specific part of this?
+== a1906 h neg amb | hard: leaked meta phrasing ("If you want to push back on the user:") introduces a rhetorical "wouldn't you rather …?"; could also be read as a question to the user
+== a1946 e neg | hard: '?' only in a ternary
+== a1962 m | two distinct kinds of help; "Want help" has no "me"
+Q e :: Want help outlining the essay structure or drafting a specific section?
+O outlining the essay structure
+O drafting a specific section
+== a1982 e
+Q o :: What problem would you like me to work on?
+== a1932 e neg | hard: '?' only in TS optional properties
+== a1907 m neg | hard: the bold "When would you *not* refactor?" is self-answered
+== a1947 m neg | hard: story narration; "And you know what?" is rhetorical
+== a1963 e | the example follows "say," as an illustration
+Q y p :: Want me to walk through a concrete example — say, proving $\lim_n \int_0^1 \frac{n\sin(x/n)}{x(1+x^2)}dx$ via DCT — to see the machinery in action?
+== a1983 m amb | a capability list precedes a yes/no question (as a1671)
+Q y :: Is there something specific I can assist you with today?
+== a1933 e neg | hard: '?' only in optional chaining and a ternary
+== a1908 e neg | hard: '?' only in a ternary
+== a1948 e neg | hard: '?' only in ternaries
+== a1964 m neg | hard: a leaked tool call whose prompt asks questions of a web page
+== a1984 m
+Q e :: Is there someone safe you can reach out to right now, or would you like help thinking through who that might be?
+O someone safe you can reach out to right now
+O help thinking through who that might be
+== a1934 e neg | hard: '?' only as SQL placeholders
+== a1909 e neg | hard: '?' only in Ruby predicate methods
+== a1949 e neg | hard: '?' only in a ternary
+== a1965 m | the bold numbered question is a design checklist item answered in place
+Q e p :: Want me to sketch the Haskell handler or the Express middleware version?
+O the Haskell handler
+O the Express middleware version
+== a1985 m amb | the "If you're looking for:" list supplies options ("Something else entirely" is an escape arm)
+Q m :: What would you actually like help with?
+O **Advice** about this situation
+O **Analysis** of what this might mean
+== a1935 e neg | hard: '?' only in optional chaining
+== a1910 e neg | hard: '?' only in a ternary
+== a1950 e neg | hard: '?' only in the Ruby method name `running?`
+== a1966 m neg | hard: a leaked tool call whose prompt asks questions of a web page
+== a1986 m amb | asks the user to share details; the details are the answer (as a1205); the parenthetical in step 2 is a suggested question
+Q o :: Would you like to share more details?
+== a1936 e neg | hard: '?' only in TS optional parameters and chaining
+== a1911 e neg | hard: '?' only in Ruby `File.exist?`
+== a1951 m neg | hard: the only question is inside an example chat message
+== a1967 e neg | hard: a leaked tool call; '?' only in `$?`
+== a1987 m neg amb | hard: the questions list the missing information (as a0006); the ask itself is imperative
+== a1912 e neg | hard: '?' only in PHP tags
+== a1968 m neg | hard: "Layout can flow freely?" is a rule-of-thumb label
+== a1988 m neg | hard: "Lucky?" is a table header and the heading question is answered by a proof
+== a1913 e neg | hard: '?' only in PHP `??` and a ternary
+== a1969 e neg | hard: a leaked tool call; '?' only in `$?`
+== a1989 m neg | hard: the question is a quoted grammaticality test
+== a1914 e neg | hard: '?' only in `??` and a ternary
+== a1970 m | "want help" has no "me"
+Q y :: want help sketching that implementation?
+== a1990 m neg | hard: the questions are generated answers to the user's "what question" task
+== a1915 e neg | hard: '?' only in a ternary
+== a1971 e neg | hard: a leaked Edit tool call; '?' only in a regex
+== a1991 m neg amb | hard: the numbered questions describe missing parts (as a0006); the ask itself is imperative
+== a1916 e neg | hard: '?' only in Ruby predicate methods
+== a1917 e neg | hard: '?' only as SQL placeholders
+== a1918 e neg | hard: '?' only in a ternary
+== a1919 e neg | hard: '?' only in a mention of `?.`
+== a1920 e neg | hard: '?' only in `?.` and `??`
+== a1921 e neg | hard: '?' only as SQL placeholders

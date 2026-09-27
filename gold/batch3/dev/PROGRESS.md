@@ -1,0 +1,10 @@
+# Batch 3 "dev" labeling progress
+
+One line per round: items so far, datasets, question/negative split, boundary questions, hard negatives, amb.
+
+- Round 1 (queue d0000–d0261 in order, 2026-09-24): 261 items, 70 datasets, 49 with a question / 212 negative (69 hard), 59 questions (30 boundary), 2 amb; d0064 dropped (demo credentials). The round-robin head is dominated by small, question-poor datasets, so the tail was re-planned (`data/batch3/dev/plan_tail.txt`: every `?` item plus 1 in 4 non-`?` items). build 0 errors, validate 0 errors.
+- Round 2 (plan_tail positions 0–217, 2026-09-24): 478 items, 70 datasets, 154 with a question / 324 negative (168 hard), 186 questions (80 boundary), 16 amb; d0356 dropped (quoted database password). build 0 errors, validate 0 errors.
+- Round 3 (plan_tail2 positions 0–197, 2026-09-24): 675 items, 70 datasets, 263 with a question / 412 negative (239 hard), 317 questions (134 boundary), 28 amb. Before this round, 35 remaining traceweave/Jadson `?` items (almost all quoted-`?` negatives) were skipped (`plan_skipped.txt`) and 202 extra `?` items from peteromallet/tau2/dacorvo were appended as d1320+ (`extend_queue.py`); d0600 skipped (tail starts mid-question). build 0 errors, validate 0 errors.
+- Round 4 (plan_tail2 positions 198–461, 2026-09-24): 939 items, 70 datasets, 429 with a question / 510 negative (313 hard), 507 questions (214 boundary), 53 amb. build 0 errors, validate 0 errors.
+- Round 5 (plan_tail2 positions 462–711, 2026-09-24): 1189 items, 70 datasets, 615 with a question / 574 negative (370 hard), 738 questions (323 boundary), 79 amb. build 0 errors, validate 0 errors.
+- Round 6 (plan_tail2 positions 712–790, 2026-09-24): all planned items labeled: 1268 items, 683 with a question / 585 negative (373 hard), 811 questions (357 boundary), 81 amb. Then 71 easy negatives moved to annotations_reserve.txt to bring the question share near 60%, and 6 dotless emails in three tau2 records masked. Final: 1197 items, 70 datasets, 683 with a question (57.1%) / 514 negative (373 hard), 811 questions (357 boundary), 81 amb. build 0 errors, validate 0 errors.

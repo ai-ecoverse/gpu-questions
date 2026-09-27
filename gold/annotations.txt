@@ -1,0 +1,1604 @@
+# Hand annotations for gold/handlabeled.jsonl. Format: see scripts/build_gold.py.
+# Every block was written by reading the item; nothing here is generated.
+
+== q0000 m | hard: offer phrased without '?' ("If you want, I can draft…"); the only '?' is inside inline code `queueable?:`
+== q0001 m | two confirm-the-plan questions in a numbered list (propose: yes means proceed); list markers and bold labels excluded
+Q y p :: keep current behavior (execute immediately even while streaming), not queueable in this PR — OK?
+Q y p :: out of scope (still would be sent as text if user presses Enter) — OK to leave for later, since proposal is Alt+Enter?
+== q0002 m | descriptive package list doubles as the choices for "which module(s)"; "(s)" means multi-select, which the compiler's MULTI_RE misses
+Q m ms :: Which module(s) would you like to work on today?
+O pi-ai
+O pi-agent-core
+O pi-coding-agent
+O pi-mom
+O pi-tui
+O pi-web-ui
+O pi-pods
+== q0003 e | "package(s)" means multi-select, which MULTI_RE misses; PROPOSE_RE matches "should I" in a which-question
+Q m ms :: Which package(s) should I work on: `ai`, `agent`, `coding-agent`, `mom`, `tui`, `pods`, or `web-ui`?
+O ai
+O agent
+O coding-agent
+O mom
+O tui
+O pods
+O web-ui
+== q0004 e | hard: '??' is a nullish operator in code whose fence starts before the tail
+== q0005 m | hard: rhetorical self-review questions given as advice
+== q0006 m | "a different color or label" is one change, not two options; a proposal, but PROPOSE_RE only knows "want me to"
+Q y p :: Want the `!` indicator to use a different color or label?
+== q0007 e
+Q m :: How do you want to proceed?
+O Discard local changes and untracked files, then pull
+O Stash changes (including untracked), pull, then reapply
+O Commit local changes first, then pull
+== q0008 e
+Q y :: Need anything else?
+== q0009 e
+Q y p :: Want me to install a specific extension for you?
+== q0010 h | hard: design questions inside a plan ("What does a smart task look like?") and a quoted example; message is cut off
+== q0011 e | "Want a diff?" is an offer; PROPOSE_RE misses "want a"
+Q y p :: Want a diff?
+== q0012 e
+Q y p :: Want me to revert it?
+== q0013 e
+Q y p :: Want me to revert it?
+== q0014 m | Q starts after the lead-in "Per your guidelines I have to stop and ask:"
+Q m :: how do you want to handle these before I clean up the branch?
+O Ignore them and proceed with branch cleanup
+O Stash/commit them
+O You handle them first, then I proceed
+== q0015 m | the two diagram subjects are distinct deliverables, so the offer is either/or
+Q e p :: Want me to sketch a diagram of the message flow or the data structures involved?
+O the message flow
+O the data structures involved
+== q0016 e | PROPOSE_RE misses "want a"
+Q y p :: Want a diagram showing the exact context list building steps?
+== q0017 h | the final offer names the two routes; the numbered fix list above is background context
+Q e :: Which route do you prefer?
+O propose a shrinkwrap-based fix (option 1) and estimate blast radius more concretely
+O open an upstream issue
+== q0018 e
+Q y p :: Want me to tweak the wording to match your exact recent PR style?
+== q0019 m | asks for information (repo or date), so open; starts with "Do", which the compiler reads as yes/no
+Q o :: Do you remember the repo directory (e.g. pi-mono) or approximate date so I can narrow it further?
+== q0020 e | hard: question quoted from the user
+== q0021 m | "Would you like me to:" followed by a numbered list; Q runs through the '?' of the last item
+Q e p :: Would you like me to: ~~ (after you test it)?
+O Create a keybindings.json with an alternative key for you
+O Help add support for whatever sequence Warp sends (after you test it)
+== q0022 e
+Q o :: What do you want to work on?
+== q0023 m
+Q e p :: Want me to also review the `crush` repo or dig deeper into any area?
+O review the `crush` repo
+O dig deeper into any area
+== q0024 e | PROPOSE_RE matches "can I" in "How can I help"
+Q o :: How can I help you today?
+== q0025 e
+Q e p :: Want me to sketch the extension with current APIs (noting limits), or draft the minimal API patch?
+O sketch the extension with current APIs (noting limits)
+O draft the minimal API patch
+== q0026 h | human-reviewed correction: preserve the two visible list labels, including the truncated second label
+Q e :: Which module would you like to work on, or is there a specific task you'd like me to perform?
+O `packages/ai`
+O packages/
+== q0027 e | PROPOSE_RE matches "can I" in "How can I help"
+Q o :: How can I help you with the monorepo today?
+== q0028 m | clarifying either/or; the second option is a whole clause
+Q e :: Are you referring to the **thinking** process, or did you try to run something that didn't behave as expected?
+O the **thinking** process
+O did you try to run something that didn't behave as expected
+== q0029 e | one open question with two parts; "(topic, tone, format)" are hints, not options
+Q o :: What kind of text do you want, and how long should it be (topic, tone, format)?
+== q0030 m | option labels drop the trailing parenthetical explanations
+Q m :: Which rollback do you want?
+O Revert only the files I changed for this task in `~/pi-mono`
+O Revert all tracked changes in `~/pi-mono`
+O Also delete the untracked items listed above
+== q0031 e | PROPOSE_RE matches "can I" in "How can I help"
+Q o :: How can I help you today?
+== q0032 e
+Q o :: What would you like to work on?
+== q0033 m | the follow-up "If so, tell me which ones" has no '?'; PROPOSE_RE misses "want a"
+Q y p :: Want a deeper review of specific packages?
+== q0034 m | bold covers only part of each option, so inner '**' stays in the span
+Q m :: What would you like to do?
+O Discard local changes** and fast-forward
+O Stash, pull, pop
+O Commit your changes first**, then pull with rebase
+== q0035 e
+Q y p :: Want me to rebase `fix-slow-resume-load` onto main and push it?
+== q0036 h | three questions under a Questions heading; the third asks for a location (open), which the compiler reads as yes/no
+Q e :: Should the board size adapt to terminal width (and clamp game logic), or should we error/notify when the terminal is too narrow?
+O adapt to terminal width (and clamp game logic)
+O error/notify when the terminal is too narrow
+Q y :: Do you want classic snake behavior that allows moving into the tail when not eating?
+Q o :: If “ping” refers to a different module, can you point me to it?
+== q0037 h | two either/or questions; second options are clause fragments
+Q e :: Do you want strict scoring the moment the ball reaches the paddle line, or is the current one-tick “grace” intentional?
+O strict scoring the moment the ball reaches the paddle line
+O the current one-tick “grace” intentional
+Q e :: Should the game pause when the terminal is too narrow, or is “keep running in the background” acceptable?
+O pause when the terminal is too narrow
+O keep running in the background
+== q0038 m | parenthetical elaboration dropped from option 1
+Q m :: How do you want to proceed?
+O Commit only the ping changes
+O Include `extensions/space-invaders.ts` in this commit
+O Inspect `extensions/space-invaders.ts` together first
+== q0039 m | inline (1)/(2)/(3) options; example parentheticals dropped from the labels
+Q m :: Should it (1) honor the list’s starting number (e.g., start at `2.`), (2) preserve the exact numbers you typed (`2., 3., 4., 1.`), or (3) treat these as plain text instead of a list?
+O honor the list’s starting number
+O preserve the exact numbers you typed
+O treat these as plain text instead of a list
+== q0040 h | options sit in the sentence before "Which behavior do you want?"; the bullet list above lists user-side workarounds, not agent options
+Q e :: Which behavior do you want?
+O honor the list start number
+O preserve the exact numbers
+== q0041 e
+Q e p :: Want me to show the diff or walk through the hint selection logic?
+O show the diff
+O walk through the hint selection logic
+== q0042 e | a request for information, so open
+Q o :: Could you clarify what you need help with?
+== q0043 e | options follow the question after "Options:"; "(s)" means multi-select; PROPOSE_RE matches "should I"
+Q m ms :: Which module(s) should I work on?
+O packages/ai
+O packages/agent
+O packages/coding-agent
+O packages/mom
+O packages/tui
+O packages/web-ui
+O packages/pods
+== q0044 m | hard: offer phrased without '?'; the only '?' is inside inline code `state.model?.contextWindow`
+== q0045 h | open task question fused with a module choice; the module list is labeled as options
+Q m :: What task do you want to do, and which module should I work in (ai, agent, coding-agent, mom, tui, pods, web-ui)?
+O ai
+O agent
+O coding-agent
+O mom
+O tui
+O pods
+O web-ui
+== q0046 m | "or something else" is an escape hatch, not an option, so this is yes/no
+Q y :: Do you mean a git fast-forward (e.g., `git merge --ff-only`), or something else?
+== q0047 m | "or something else" is an escape hatch and is not labeled as an option
+Q e :: Which git operation do you want—fast-forward merge, pull with `--ff-only`, or something else?
+O fast-forward merge
+O pull with `--ff-only`
+== q0048 m | the shared qualifier "before switching to the PR branch" is left out of the options; PROPOSE_RE matches "should I"
+Q m :: How should I proceed—stash everything, commit, or discard the local changes before switching to the PR branch?
+O stash everything
+O commit
+O discard the local changes
+== q0049 e
+Q o :: Where is the extension installed?
+== q0050 m | asks how the key was set, so open; the trailing offer has no '?'
+Q o :: Can you confirm how you set the key?
+== q0051 e
+Q y p :: Would you like me to modify the extension to only inject the context once?
+== q0052 e | options follow the '?' in parentheses; "(s)" means multi-select
+Q m ms :: Which module(s) do you want to work on?
+O ai
+O agent
+O coding-agent
+O mom
+O tui
+O pods
+O web-ui
+== q0053 e
+Q o :: What follow-up do you want?
+== q0054 e
+Q e p :: Want me to add a `README.md` or wire it into the `~/pi-extensions/README.md` index?
+O add a `README.md`
+O wire it into the `~/pi-extensions/README.md` index
+== q0055 e
+Q y p :: Want me to switch it to a symlink so updates in `~/pi-extensions` stay in sync?
+== q0056 m | PROPOSE_RE misses "want a"
+Q e p :: Want a diff or tweaks to the clock emoji/new label?
+O a diff
+O tweaks to the clock emoji/new label
+== q0057 m
+Q e :: Is there a specific issue you're investigating, or are you testing current queue behavior?
+O a specific issue you're investigating
+O testing current queue behavior
+== q0058 m | list after the question is cut off in the source after six items
+Q m ms :: Which module(s) would you like to work on?
+O packages/ai
+O packages/agent
+O packages/coding-agent
+O packages/mom
+O packages/tui
+O packages/web-ui
+== q0059 e | "Pick one or more" confirms multi-select; PROPOSE_RE matches "should I"
+Q m ms :: Which package(s) should I work on?
+O packages/ai
+O packages/agent
+O packages/coding-agent
+O packages/mom
+O packages/tui
+O packages/web-ui
+O packages/pods
+== q0060 h | "any or all of these" is multi-select over the recommended list; option labels are the bold list labels
+Q m p ms :: Want me to implement any or all of these?
+O Two-phase loading (A)
+O Session cache (B)
+O Keep the current lazy All-tab behavior
+== q0061 h | open "What's your read?" over two options discussed above; default from prose ("I'd lean toward A")
+Q e d=0 :: What's your read?
+O A
+O Modified C
+== q0062 m | asks for a task, so open, although it starts with "Is there"
+Q o :: Is there something specific you'd like me to do with this file?
+== q0063 m | hard: offer phrased without '?'; the only '?' is inside inline code
+== q0064 m | hard: rhetorical heading ("Why do they use it?"); message is cut off
+== q0065 h | open module question; modules are only named in prose; a second question is cut off without '?'; the tail includes a <thinking> block
+Q o ms :: Which module(s) should we focus on for this?
+== q0066 m | Q includes the lead-in clause of the same sentence
+Q y p :: Since you asked about the "best ever" todo app, would you like me to start by reading the READMEs for `packages/agent` and `packages/tui` to see how they could serve as the foundation?
+== q0067 h | an either/or offer mid-message and a yes/no offer at the end, separated by an issue draft
+Q e p :: Want me to rerun or dig into those failures?
+O rerun
+O dig into those failures
+Q y p :: Want me to open the issue in GitHub?
+== q0068 m | hard: the only '?' is in inline code `consumeText?()`
+== q0069 m | hard: rhetorical heading ("Any semantic changes?")
+== q0070 e | PROPOSE_RE misses "want a"
+Q y p :: Want a diff?
+== q0071 e
+Q e p :: Want me to prep a release (version bump + changelog) or just commit?
+O prep a release (version bump + changelog)
+O just commit
+== q0072 e
+Q y p :: Want me to show the diff?
+== q0073 m | an open question followed by two yes/no sub-questions in a list
+Q o :: What did you see after the relaunch?
+Q y :: Did `/relaunch-1` show up (autocomplete or running it)?
+Q y :: Was `/relaunch` still the only command?
+== q0074 m | one compound yes/no question
+Q y :: Do you see `/relaunch-5` in autocomplete, and does it relaunch without dropping you into the shell prompt?
+== q0075 m | open request, then a compound question whose second half is either/or; labeled yes/no as a whole
+Q o :: Can you share what happened exactly?
+Q y :: Did `/relaunch-4` appear, and did it relaunch cleanly or show an error/prompt?
+== q0076 m
+Q m :: Is there anything you'd like me to help with for this extension - reviewing more of the README, checking the implementation, or making any changes?
+O reviewing more of the README
+O checking the implementation
+O making any changes
+== q0077 e
+Q o :: What can I help you with today?
+== q0078 e
+Q y p :: Want me to show the diff?
+== q0079 m | "Do you want me to:" followed by a two-item list; Q runs through the last item's '?'
+Q e p :: Do you want me to: ~~ push that instead?
+O commit and push to `origin/main`
+O create a feature branch and push that instead
+== q0080 e
+Q e p :: Want me to show a diff or walk through the logic?
+O show a diff
+O walk through the logic
+== q0081 e
+Q e p :: Want me to search other related repos or update a specific file/path?
+O search other related repos
+O update a specific file/path
+== q0082 e
+Q e p :: Want me to search non-README docs or a specific file/path?
+O search non-README docs
+O a specific file/path
+== q0083 h | one choice split over two sentences ("Shall I…? Or would you rather…?"), labeled as one Q span; default is the agent's proposed lineup
+Q e p d=0 :: Shall I proceed with that lineup ~~ for the first release?
+O proceed with that lineup
+O trim to a tighter set
+== q0084 e
+Q e p :: Want me to commit on a feature branch for you, or leave it for you to review and shape the commit?
+O commit on a feature branch for you
+O leave it for you to review and shape the commit
+== q0085 m | quoted questions inside backticks and quotes are not addressed to the user
+Q y p :: Want me to ship that patch now?
+== q0086 m | "Want the A or B adjusted?" names two aspects of one change, so yes/no (same rule as "a different color or label"); PROPOSE_RE misses "want the"
+Q y p :: Want the blocked timeout duration or detection logic adjusted?
+== q0087 m | PROPOSE_RE misses "want the"
+Q e p :: Want the 🛑 label text to say “blocked or error” in the title itself, or keep just the emoji?
+O say “blocked or error” in the title itself
+O keep just the emoji
+== q0088 e | generic closing question, labeled yes/no like "Need anything else?"
+Q y :: Anything else you want adjusted in `tab-status`?
+== q0089 e
+Q y p :: Want me to revert the `length` addition and keep it simple (just `"error"`)?
+== q0090 m | "apply these" covers the whole list; the prose ranking (#1 biggest win) is not a choice between answers
+Q y p :: Want me to apply these?
+== q0091 e
+Q y p :: Want me to refactor it?
+== q0092 m | two separate yes/no offers
+Q y p :: Want me to add one (e.g., render the mermaid diagram) and wire it up?
+Q y p :: Want diffs?
+== q0093 e | the "If you want, I can also…" sentence has no '?'
+Q y p :: Want me to show the diff?
+== q0094 e
+Q o :: How can I help today?
+== q0095 e
+Q o :: What can I help you with?
+== q0096 e
+Q y p :: Want me to rename the internal states to `doneCommitted` / `doneNoCommit` to match that style?
+== q0097 h | yes/no offer followed by "If yes, pick:" and a two-item list, labeled as the question's options; the closing "Also confirm…" has no '?'
+Q e p :: Want me to set this up?
+O create local repo only
+O create GitHub repo via `gh`
+== q0098 m | generic follow-up with example additions in parentheses, read as a multi-select
+Q m ms :: Anything else you want added (badge, description, or versioned tags)?
+O badge
+O description
+O versioned tags
+== q0099 e
+Q e p :: Want me to run any quick checks or adjust the estimation strategy?
+O run any quick checks
+O adjust the estimation strategy
+== q0100 m | two questions under "Questions before implementation"; first options are clause fragments
+Q e :: Should `--estimate` be the only flag, or do you want `--no-estimate` too?
+O `--estimate` be the only flag
+O `--no-estimate` too
+Q y :: Do you want a visible indicator in the UI when estimation is enabled?
+== q0101 m | hard: questions quoted from the `gh auth login` prompts; the closing offer has no '?'
+== q0102 m | options are the numbered "I can:" items before "Which do you prefer?"; default from prose ("safer to keep Paddle Ball")
+Q e d=1 :: Which do you prefer?
+O Rename the command to `/pong` (and title text/README)
+O Keep `/paddle-ball` and add `/pong` as an alias while branding it “Paddle Ball”
+== q0103 e
+Q m :: How do you want to proceed?
+O Exclude it and commit only the ping-related files
+O Include it in the commit
+O Inspect it together before deciding
+== q0104 h | three numbered questions; the first ("Would you prefer:" + A/B/C list) has no '?', so the compiler drops it; option labels stop before the explanations
+Q m :: Would you prefer:
+O True split screen
+O Mode toggle
+O Widget
+Q e :: Would you be okay with `git diff` output (with syntax highlighting via `delta`) initially, or do you need side-by-side / word-level diff from day one?
+O `git diff` output
+O side-by-side / word-level diff from day one
+Q e :: do you mean rendered (like `glow` does) or just syntax-highlighted?
+O rendered
+O just syntax-highlighted
+== q0105 e
+Q e p :: Want me to implement the inline comment dialog, or would you like to test this version first?
+O implement the inline comment dialog
+O test this version first
+== q0106 e
+Q y p :: Do you want me to commit + tag `files-widget/v0.1.2` and push?
+== q0107 e | PROPOSE_RE matches "should I" in a wh-question
+Q o :: What should I work on?
+== q0108 e
+Q y p :: Want me to show the diff?
+== q0109 e
+Q e p :: Want me to show the diff or explain the locking logic?
+O show the diff
+O explain the locking logic
+== q0110 e
+Q y :: Anything else?
+== q0111 e
+Q y p :: Want me to go ahead and apply these?
+== q0112 e
+Q y p :: Want me to go ahead?
+== q0113 e
+Q y p :: Want me to fold those in and delete the file?
+== q0114 e
+Q y p :: Want me to look at anything specific?
+== q0115 e | hard: '?' is a game "? block", not a question; no question to the user
+== q0116 e | hard: '?' only inside inline code (`?` blocks)
+== q0117 h | an open request followed by four bulleted sub-questions; the "e.g." editors are examples, not options
+Q o :: Can you share a bit more detail?
+Q o :: What app/editor are you trying to add the extension to (e.g., VS Code, IntelliJ, Unity, Godot)?
+Q o :: What OS are you on?
+Q o :: What exact error message do you get?
+Q e :: Do you mean the LibGDX “badlogic” game framework (or a specific extension named `badlogic-game`)?
+O the LibGDX “badlogic” game framework
+O a specific extension named `badlogic-game`
+== q0118 m | Q follows a list marker, which is excluded
+Q e p :: Want me to show a diff and walk through the logic, or further simplify the task template into a reference file?
+O show a diff and walk through the logic
+O further simplify the task template into a reference file
+== q0119 e
+Q e p :: Want me to show a diff or simplify the verification guidance further?
+O show a diff
+O simplify the verification guidance further
+== q0120 m | default from the prose recommendation ("Snake first")
+Q e p d=0 :: Want me to build Snake (quick, 20 min) or dive into a Mario platformer (more substantial)?
+O build Snake (quick, 20 min)
+O dive into a Mario platformer (more substantial)
+== q0121 m | a parenthetical question inside the list item repeats the main question and is not labeled; default from prose ("leaning towards combined")
+Q e d=0 :: Should Cache be one column (combined read+write) or two columns (R and W separately)?
+O one column (combined read+write)
+O two columns (R and W separately)
+== q0122 e | the recommendation is the proposal itself
+Q y p :: Want me to do #1 + #2?
+== q0123 e
+Q y p :: Want me to make that change?
+== q0124 e
+Q o :: What reorganization are you thinking about?
+== q0125 e
+Q y p :: Would you like me to make these changes?
+== q0126 e
+Q y p :: Shall I implement all these changes?
+== q0127 m | Q starts after the lead-in "Your call though -"; the prose recommends answering no ("skip it"), which a yes/no question cannot mark as default
+Q y p :: want me to republish?
+== q0128 m | "What's next?" in bold, followed by a numbered list of next steps; parenthetical dropped from option 4
+Q m :: What's next?
+O Update the ground truth JSON with the article-derived voting cap data
+O Close Issue #13 with the findings
+O Update `long-task-progress.md` with this session
+O Move to other tasks
+== q0129 m | the second option is a clause fragment
+Q e p :: Would you like me to file an issue on the extension repo, or is this expected behavior in your current setup?
+O file an issue on the extension repo
+O this expected behavior in your current setup
+== q0130 e
+Q y p :: Want me to add it to settings.json?
+== q0131 e | PROPOSE_RE matches "should I" in a wh-question
+Q o :: What should I review?
+== q0132 h | two questions under a Questions heading, followed by a list of suggested fixes that are not options
+Q e :: Should `ralph_done` be a no‑op when `ctx.hasPendingMessages()` is true, or should we persist a `pendingIteration` flag to prevent double‑queue across sessions?
+O `ralph_done` be a no‑op when `ctx.hasPendingMessages()` is true
+O persist a `pendingIteration` flag to prevent double‑queue across sessions
+Q y :: Do you want the completion banner to avoid triggering a new turn (custom message / UI notify)?
+== q0133 e
+Q y p :: Want me to commit and push this change?
+== q0134 e | the closing "Happy to show diffs…" has no '?'
+Q y p :: Want me to tag the initial releases (e.g., `usage-extension/v0.1.2` and `tab-status/v0.1.0`)?
+== q0135 e
+Q e p :: Want me to draft GitHub releases from the changelogs or show diffs?
+O draft GitHub releases from the changelogs
+O show diffs
+== q0136 e
+Q e p :: Want me to tweak any release notes or add older `/usage` history to the 0.1.2 release notes?
+O tweak any release notes
+O add older `/usage` history to the 0.1.2 release notes
+== q0137 m | "Do you want me to:" with a numbered list; Q runs through the last item's '?'
+Q e p :: Do you want me to: ~~ for auto-discovery?
+O add `~/pi-extensions/extensions/space-invaders.ts` to the `extensions` array in `~/.pi/agent/settings.json`
+O copy the file into `~/.pi/agent/extensions/` for auto-discovery
+== q0138 h | three questions under "Questions to confirm", each after a label that is excluded; defaults come from the closing "I suggest" sentence
+Q e d=1 :: keep it monochrome, or add simple ANSI colors like the snake example?
+O keep it monochrome
+O add simple ANSI colors like the snake example
+Q e d=0 :: do you want “snappy per-press moves” (2 cells per press) or a more continuous drift for a couple ticks after a press?
+O snappy per-press moves
+O a more continuous drift for a couple ticks after a press
+Q y p :: ok to allow 2 bullets at once, and cut cooldown to 1–2 ticks?
+== q0139 e | PROPOSE_RE does not match "should you"
+Q m :: How should you like to proceed—ignore it for this commit, delete it, or include it?
+O ignore it for this commit
+O delete it
+O include it
+== q0140 m
+Q y p :: Want me to prototype it?
+== q0141 m
+Q y p :: Want me to prototype this?
+== q0142 e
+Q y p :: Want me to try it as-is?
+== q0143 e
+Q y p :: Want me to start building?
+== q0144 h | one choice split over two sentences, the first in bold; labeled as one Q span
+Q e p :: Want me to add Pause Menu (doom-035)?** Or shall we proceed with what we have?
+O add Pause Menu (doom-035)
+O proceed with what we have
+== q0145 m
+Q e p :: Want to test it now, or should I continue implementing combat?
+O test it now
+O continue implementing combat
+== q0146 e
+Q o :: Which repository (and issue tracker) are you referring to?
+== q0147 e
+Q o :: How can I help?
+== q0148 e
+Q y p :: Want me to commit this on `main`?
+== q0149 e
+Q y p :: Want me to commit this cleanup?
+== q0150 h | one sentence fuses an either/or (Copy or Insert) with a yes/no about hotkeys; labeled as one either/or; the numbered list above is not what the question asks about
+Q e :: Which default do you want (Copy or Insert), and do you want `c/i/r` hotkeys in the picker?
+O Copy
+O Insert
+== q0151 m | hard: rhetorical bold question ("Missing for the full classic arcade?") answered in the same line
+== q0152 m | yes/no offer; the A/B/C fix options above are context, not answers to this question
+Q y p :: Would you like me to clean this up for you?
+== q0153 e
+Q e p :: Want me to run any checks or do other cleanup in `usage-extension`?
+O run any checks
+O do other cleanup in `usage-extension`
+== q0154 e
+Q e :: Are you asking about timezone handling in `usage-extension` specifically, or broader repo behavior?
+O timezone handling in `usage-extension` specifically
+O broader repo behavior
+== q0155 e | option list before the question; parenthetical dropped from option 2
+Q m :: Which direction do you want?
+O Keep local time and document it in `README.md`
+O Switch to UTC
+O Add a timezone override env var (IANA TZ) for deterministic cutoffs
+== q0156 m | "also" left out of option 2
+Q e p :: Want me to show a diff or also update your local `~/.pi/agent/settings.json`?
+O show a diff
+O update your local `~/.pi/agent/settings.json`
+== q0157 e
+Q e p :: Should I also remove it from the examples folder in the repo, or keep it there as a reference for others?
+O remove it from the examples folder in the repo
+O keep it there as a reference for others
+== q0158 m | "4. Something else?" is an escape-hatch list item and is not labeled as an option or question
+Q m :: What would you like to tackle?
+O Create a `CLAUDE.md` with Claude-specific guidelines
+O Create a `GEMINI.md` for Google models
+O Test the extension
+== q0159 h | open "What do you think?" over three numbered solutions; default from prose ("I'd lean toward option 2")
+Q m d=1 :: What do you think?
+O Tell user to create AGENTS.md
+O setup.sh creates empty AGENTS.md if missing
+O Provide a starter AGENTS.md to copy
+== q0160 e
+Q o :: What would you like to test?
+== q0161 e
+Q e p :: Want me to check if you already have asciinema installed, or help you craft a specific demo script for files-widget?
+O check if you already have asciinema installed
+O help you craft a specific demo script for files-widget
+== q0162 h | one choice over two sentences, labeled as one Q span; the "is that optional?" inside suggestion 2 is part of the review and not labeled
+Q e p :: Want me to propose a revised version ~~ once it's recorded?
+O propose a revised version with the demo placeholder and tweaks
+O just add the demo once it's recorded
+== q0163 m | two either/or questions separated by instructions
+Q e :: Did the recording capture your full demo, or did it end too early?
+O capture your full demo
+O end too early
+Q e p :: Want me to try the conversion, or would you like to re-record?
+O try the conversion
+O re-record
+== q0164 e
+Q e p :: Want me to show the diff or walk through the changes?
+O show the diff
+O walk through the changes
+== q0165 m | clarification request needs an open answer; "or something else" is an escape hatch
+Q o :: Can you clarify what’s regressed—do you mean the files-widget UI no longer shows git diff stats, or something else?
+== q0166 e
+Q y p :: Want me to add a fallback (e.g. try `git diff --numstat`/`--cached` separately, or resolve repo root + `--relative`) to fix this?
+== q0167 e | PROPOSE_RE misses "want the"
+Q y p :: Want the diff?
+== q0168 h | the "Key Questions" list belongs to the issue being summarized and is not addressed to the user; the final question is about what the user wants to do, so not a proposal
+Q e :: Would you like to discuss the design approach or start implementing one of these options?
+O discuss the design approach
+O start implementing one of these options
+== q0169 e | the closing request has no '?'
+Q y p :: Want me to show the diff?
+== q0170 e
+Q y p :: Want me to show the diff?
+== q0171 e
+Q e p :: Want me to show the diffs or add a `.npmignore` for future releases?
+O show the diffs
+O add a `.npmignore` for future releases
+== q0172 e
+Q e p :: Want me to show diffs or walk through any specific change?
+O show diffs
+O walk through any specific change
+== q0173 m | '?' also appears as tile glyphs in the table
+Q y p :: Want me to dive deeper into any specific part?
+== q0174 h | rhetorical questions in the problem statement are not labeled; the closing pair presents the current no-auto-resume plan against auto-resume as one choice
+Q e :: Does this make sense? Or would you prefer auto-resume if there's exactly one active loop?
+O DON'T auto-resume
+O auto-resume if there's exactly one active loop
+== q0175 e
+Q y p :: Want me to add it?
+== q0176 e
+Q y p :: Want me to implement this?
+== q0177 m | options come from the recommendation sentence, which recommends each tool for a different case, so no default
+Q e :: What's your preference?
+O vhs
+O `Cmd+Shift+5`
+== q0178 e
+Q e p :: Want me to add Snake or Tetris next?
+O Snake
+O Tetris
+== q0179 e
+Q y p :: Want me to implement these fixes?
+== q0180 e | option labels stop before " - explanation"; "(current)" marks the status quo, not a recommendation
+Q m :: Which do you prefer?
+O extensions/arcade/wip/badlogic-game.ts
+O extensions/arcade/badlogic-game.ts
+O Keep `wip/` at repo root
+== q0181 e | Q starts after the em-dash lead-in
+Q o :: what would you like to do next?
+== q0182 m | the "Next steps if you want" list is not a set of answers to the question
+Q o :: How would you like to proceed with those?
+== q0183 e
+Q y p :: Want me to run any specific interactive test now?
+== q0184 e
+Q e p :: Want me to run a quick smoke test in a session, or keep it as-is?
+O run a quick smoke test in a session
+O keep it as-is
+== q0185 e
+Q y p :: Want me to bake that into the issue draft and suggest a safer default (e.g., unbound action + `/paste raw` command)?
+== q0186 h | options are in the "I can…, and/or…" sentence before "Which do you want?"; "and/or" makes it multi-select, but the cue is outside the prompt
+Q e ms :: Which do you want?
+O implement that
+O add an alternate keybinding for Ghostty
+== q0187 e
+Q e p :: Want me to add auto‑load in settings.json or tweak the shortcut list?
+O add auto‑load in settings.json
+O tweak the shortcut list
+== q0188 e
+Q e p :: Want me to show the exact diff or clean this up?
+O show the exact diff
+O clean this up
+== q0189 e
+Q y p :: Want me to show the diff?
+== q0190 m | PROPOSE_RE misses "want the"
+Q e p :: Want the diff or a GitHub release draft?
+O the diff
+O a GitHub release draft
+== q0191 e
+Q y p :: Want me to draft the GitHub release notes from the changelog?
+== q0192 e
+Q y p :: Want me to make the root package publishable (add version/remove `private`) and publish it too?
+== q0193 e
+Q y p :: Want me to draft the GitHub release notes from the changelog?
+== q0194 m | "a different filename or speed" names two aspects of one change, so yes/no; PROPOSE_RE misses "want a"
+Q y p :: Want a different filename or speed?
+== q0195 e | PROPOSE_RE misses "want it"
+Q y p :: Want it renamed?
+== q0196 e
+Q y :: Anything else to update?
+== q0197 e | the follow-up "If yes, confirm…" has no '?'
+Q y p :: Want me to bump the patch version and publish?
+== q0198 e
+Q e p :: Want me to add tags per `RELEASING.md` or show diffs?
+O add tags per `RELEASING.md`
+O show diffs
+== q0199 e
+Q y p :: Want me to add this filter for blocks?
+== q0200 e
+Q y :: Anything else?
+== q0201 e
+Q o :: What would you like to work on?
+== q0202 m | Q starts after the lead-in "The core question:"
+Q y :: does this direction match what you had in mind?
+== q0203 m | the "I'd suggest" list spells out "these"; it is the proposal, not a set of alternatives
+Q y p :: Want me to implement these?
+== q0204 h | the italic questions in the list are issue questions answered in place, not addressed to the user
+Q e p :: Want me to update the issue bodies, or would you rather discuss next priorities (e.g., build the progressive disclosure infra, tackle charts/tables, or address conventions/context)?
+O update the issue bodies
+O discuss next priorities
+== q0205 m | "Do you want this as:" with a two-item list; explanations dropped from labels
+Q e :: Do you want this as: ~~ (first non-pre)?
+O 0.9.1-pre
+O 0.9.1
+== q0206 m
+Q y p :: Do you want me to implement **Option A** (expose `connections.getSecrets()` for extensions)?
+== q0207 e
+Q y p :: Want me to start implementing?
+== q0208 e | Q starts after "Hey —"
+Q e :: do you mean **Pi the coding agent** (this tool), or **π (3.14159...)**?
+O Pi the coding agent
+O π (3.14159...)
+== q0209 m | hard: question quoted inside a drafted forum reply; the closing offer has no '?'
+== q0210 m | "or something else" is an escape hatch and is not labeled; '?' also appears in inline code
+Q e :: What's your instinct on the trigger — gear, hamburger, or something else?
+O gear
+O hamburger
+== q0211 m | a quoted user question earlier in the message is not labeled
+Q e :: What's your instinct — one big manager or a few focused ones?
+O one big manager
+O a few focused ones
+== q0212 m | the eight named areas answer "any of these"; the agent offers to investigate one or more
+Q m p ms :: Want to dig into any of these?
+O Toast-only error handling
+O Empty state hints are stealth mega-prompts
+O Status bar discoverability
+O Welcome screen
+O Accessibility
+O Tab management
+O No dark mode
+O `components.css` is a 2,200-line monolith
+== q0213 h | "one of these" refers to the naming table, so the table rows are the options; default from "My recommendation: Auto / Confirm"; a quoted "proceed?" earlier is not labeled
+Q m d=0 :: Want to go with one of these, or do you have a different take?
+O Auto / Confirm ^1
+O Direct / Review
+O Run / Ask
+O Trust / Approve
+== q0214 h | an open naming request whose unspecified "others" cannot form an option, followed by a parenthesized yes/no that repeats the recommendation
+Q o :: Which naming do you prefer — **Auto / Confirm**, or one of the others?
+Q y p :: Or should I just go with Auto / Confirm as recommended?
+== q0215 e
+Q y p :: Want me to open a PR?
+== q0216 m | the "e.g." items are examples of workarounds, not options
+Q y p :: Would you like to explore any of these workarounds (e.g., switching to the unified manifest for `preferredWidth`, or making the layout more responsive at wider widths)?
+== q0217 m | "or do you have a preference" is an escape hatch, so yes/no
+Q y p :: Want me to pick one off and run with it the same way (worktree → PR → review → merge), or do you have a preference?
+== q0218 e
+Q y p :: Want me to take #195?
+== q0219 h | PR A and PR B are the two halves of the split, not alternatives; "What's your preference?" restates the split question and is labeled open
+Q y p :: Want me to break it into two?
+Q o :: What's your preference?
+== q0220 e
+Q e p :: Would you like to start working on any of these tasks, or discuss the approach further?
+O start working on any of these tasks
+O discuss the approach further
+== q0221 h | bold open question followed by "Was it:" and candidate causes that end in '?'; the candidates are labeled as its options, and "Something else entirely?" is an escape hatch
+Q e :: What specifically broke when you tried it?
+O The sideload step itself
+O The taskpane loading but API calls failing
+== q0222 h | "What do you think?" followed by three specific sub-questions
+Q o :: What do you think?
+Q e :: Do you want sheet visibility in this tool, or does it belong in `modify_structure`?
+O in this tool
+O in `modify_structure`
+Q e :: Is `activate` useful or redundant given the `sheet` param on other tools?
+O useful
+O redundant
+Q o :: Anything I'm missing that you had in mind?
+== q0223 m | options list sits between the question and a restated "What should I put in?"; plural "platforms/links" read as multi-select
+Q m ms :: What sponsor platforms/links do you want in it?
+O github
+O buy_me_a_coffee
+O ko_fi
+O patreon
+O custom
+Q o :: What should I put in?
+== q0224 e | hard: questions quoted inside example prompts
+== q0225 e
+Q e p :: Want me to start on #172 and #171, or file the hardening items as issues first?
+O start on #172 and #171
+O file the hardening items as issues first
+== q0226 h | a two-sentence either/or after "So the question is:", then an either/or offer; the prose leans toward landing api.http but does not recommend an answer explicitly
+Q e :: does #167 `api.http` ~~ enough cover?
+O need to land before release
+O the "Experimental" badge enough cover
+Q e p :: Want me to file an issue for provider-native search, or fold it into #179?
+O file an issue for provider-native search
+O fold it into #179
+== q0227 m | hard: the only '?' is in an inline-code URL query; the closing offer has no '?'
+== q0228 h | "one of these options" refers to Options 1-3, but Option 1's label is cut off from the tail, so labeled yes/no
+Q y p :: Want me to implement one of these options?
+== q0229 e
+Q e p :: Would you like to work through the design decisions, or jump into implementing a first pass?
+O work through the design decisions
+O jump into implementing a first pass
+== q0230 h | open-questions list (bold questions) addressed to the user, then two closing questions
+Q y :: Should `/instructions` also show a read-only preview of detected `@pi:` comments?
+Q y :: Should the agent be able to *write* workbook instructions?
+Q e :: Overlay vs. panel?
+O Overlay
+O panel
+Q e :: do we add tabs there, or make `/instructions` its own dedicated editor?
+O add tabs there
+O make `/instructions` its own dedicated editor
+Q o :: What's your thinking on these?
+Q y :: And does the `workbook.settings` approach feel right for workbook-level, or do you see downsides I'm missing?
+== q0231 m | bold question; default from prose ("I'd lean separate")
+Q e d=0 :: Should convention writes be a separate tool (`conventions` / `set_conventions`) or modes on the existing `instructions` tool?
+O a separate tool (`conventions` / `set_conventions`)
+O modes on the existing `instructions` tool
+== q0232 e
+Q e p :: Want me to commit this, or would you like to review the diff first?
+O commit this
+O review the diff first
+== q0233 e
+Q e p :: Want me to close #1 with a comment summarizing what shipped, or split the remaining items into new issues first?
+O close #1 with a comment summarizing what shipped
+O split the remaining items into new issues first
+== q0234 m | hard: rhetorical heading answered right below ("Does that pollute context?")
+== q0235 m | hard: the user's question is quoted back in a blockquote
+== q0236 m | hard: the user's phrase is quoted in a heading; no question to the user
+== q0237 e
+Q e p :: Want me to dig into any specific aspect, or look at improving the discoverability/messaging?
+O dig into any specific aspect
+O look at improving the discoverability/messaging
+== q0238 e
+Q y p :: Want me to start with **6a (Skills)**?
+== q0239 e
+Q y p :: Want me to start with the PR 8 popover fix?
+== q0240 h | a naming choice, its restatement in a numbered list (same two alternatives), and an either/or split over two sentences
+Q e :: Which takes priority?
+O Local helper
+O Proxy
+Q e :: Which naming convention wins for Settings?
+O Local helper ^1
+O Proxy ^2
+Q e p :: Should I fix PR 5 + PR 8 first, then proceed to PR 6? Or tackle PR 6 and fix these inline?
+O fix PR 5 + PR 8 first, then proceed to PR 6
+O tackle PR 6 and fix these inline
+== q0241 m | the heading "Is it worth it?" is answered in place and not labeled
+Q e p :: Want me to ship it, or would you rather observe how #274 behaves first and decide later?
+O ship it
+O observe how #274 behaves first and decide later
+== q0242 e
+Q y p :: Want me to clean that up?
+== q0243 e
+Q y p :: Want me to watch PR #359 checks and merge as soon as it’s green?
+== q0244 e
+Q y p :: Want me to keep watching checks and merge as soon as it’s green/mergeable?
+== q0245 m | "either of these fixes" points to the two fixes described above
+Q e p :: Want me to implement either of these fixes?
+O add the key missing docs to `builtin-docs.ts`
+O create bundled Agent Skills for tmux and python-bridge
+== q0246 e
+Q y p :: Want me to commit this?
+== q0247 e | a quoted user question earlier is not labeled
+Q y p :: Want me to commit these?
+== q0248 e
+Q y p :: Want me to implement this?
+== q0249 m | hard: quoted questions describe two intents of a code guard; the closing offer has no '?'
+== q0250 e
+Q y p :: Want me to sketch out what Option B would look like?
+== q0251 m | the user would start the dev server; "anything else" is an escape hatch
+Q y :: Want to fire up the dev server and see how it looks, or tackle anything else?
+== q0252 m
+Q e :: Is this from the system prompt, or is the model being overly cautious on its own?
+O from the system prompt
+O the model being overly cautious on its own
+Q y p :: Want me to check the system prompt for formatting instructions and tighten the guidance so it just picks a standard and applies it?
+== q0253 h | the bold design questions in the list are considerations the agent answers itself ("My instinct"), so only the closing question is labeled; a quoted "Did you know?" is not a question
+Q e p :: Want me to implement that now, or do you want to refine the approach first?
+O implement that now
+O refine the approach first
+== q0254 e
+Q y p :: Want me to `git push` the latest commits to GitHub?
+== q0255 e
+Q y p :: Want me to push now?
+== q0256 m | yes/no offer, then "Or do you prefer a different word?", which asks for a word, so open
+Q y p :: Want me to go ahead with "Backups" (user-facing strings only)?
+Q o :: Or do you prefer a different word?
+== q0257 m | a confirm string inside inline code ends in '?' and is not labeled
+Q y p :: Want me to go ahead and rename all user-facing strings from "recovery checkpoints" → "backups" with "Pi's edits" language?
+== q0258 m | a "Q:" heading repeats the user's question and is answered in place; only the two closing questions are labeled
+Q y :: Does this match your expectations?
+Q y :: Anything you'd want different before I finalize the implementation?
+== q0259 e | hard: the only '?' is the `??` operator in inline code
+== q0260 m | hard: rhetorical heading answered right below ("Should we implement anything…?")
+== q0261 e
+Q y p :: Want me to push this branch and open a tiny docs PR?
+== q0262 e
+Q y p :: Want me to watch checks and merge it once green?
+== q0263 m | the closing "I can push" sentence has no '?'
+Q e p :: Do you want me to **trash it**, or keep it around / commit it as a separate feature later?
+O trash it
+O keep it around / commit it as a separate feature later
+== q0264 m | two yes/no proposals; the second starts after "Also:"; PROPOSE_RE misses "OK if I"
+Q y p :: OK if I `git restore` these 5 files to get back to a clean tree?
+Q y p :: want me to **push** the two new commits (`bb2b2ac`, `1ae6943`) to `origin/main` now?
+== q0265 h | "and also" joins two actions the user can both pick, so multi-select; the cue is not in MULTI_RE
+Q e ms :: Which direction do you want: **commit/push the UI+tool diffs**, and also **update README architecture**?
+O commit/push the UI+tool diffs
+O update README architecture
+== q0266 m | hard: the only '?' is inside inline code (`/?url=...`); the closing offer has no '?'
+== q0267 m
+Q o :: What specific use case is the agent trying to accomplish?
+== q0268 m | the heading "Could we make that even smoother?" is answered in place ("Yes —")
+Q y p :: Want me to look at whether the sidebar UI infrastructure supports that kind of interactive card?
+== q0269 e
+Q y p :: Want me to set that up?
+== q0270 m | hard: the user's questions are quoted back and answered
+== q0271 e
+Q y p :: Shall I reorder?
+== q0272 m
+Q e :: What do you think — system diagram + 3 pillars, or keep it even leaner?
+O system diagram + 3 pillars
+O keep it even leaner
+== q0273 e
+Q e p :: Want me to apply these, or adjust any of the names?
+O apply these
+O adjust any of the names
+== q0274 e | PROPOSE_RE misses "want a"
+Q y p :: Want a diff?
+== q0275 e
+Q y p :: Want me to dig further and compile a complete list?
+== q0276 m | "Now:" introduces the agent’s own investigation, not a request for the user to identify tools
+
+== q0277 m | "e.g." marks illustrative improvements; the referenced full set is incomplete in this tail
+Q y p :: Would you like me to work on any of these improvements — e.g., a landing page, a better onboarding flow, or the AppSource submission prep?
+== q0278 h | open questions carried over from the spec, then an invitation to discuss them; all four labeled
+Q y :: Should `⋯` include a muted workbook name line?
+Q y :: Should `+` get a right-click menu?
+Q e :: Should the Agent N counter reset per load or be persistent?
+O reset per load
+O be persistent
+Q y p :: Want to discuss any of these before we move to implementation?
+== q0279 e
+Q y p :: Shall I update the spec and implement it — just the `⋯` button in the tab strip row and this menu?
+== q0280 e | two yes/no checks
+Q y :: Is it loading now?
+Q y :: Can you see the `⋯` button and the tabs?
+== q0281 e
+Q y p :: Want me to proceed?
+== q0282 e
+Q y p :: Want me to `git commit` + `git push` this second pass as e.g. `refactor(ui): tighten theme overrides`?
+== q0283 m | the fragment "bridge URL set?" belongs to a feature description, not a question
+Q y p :: Want me to push both commits (`c2f0127` + `799fa75`) to `origin/main` now?
+== q0284 e
+Q y p :: Want me to push `a2260bd` to `origin/main` now?
+== q0285 m | hard: '?' marks status fields in a feature description ("bridge URL set?"); the closing offer has no '?'
+== q0286 e
+Q o :: What would you like to change in the quick config?
+== q0287 m | the numbered test questions describe what tests check, not questions to the user
+Q y p :: Would you like me to propose a slimmer, more pragmatic test setup focused on these?
+== q0288 e | PROPOSE_RE misses "want the"
+Q y p :: Want the diff for the new audit file?
+== q0289 h | a debugging checklist with several questions to the user; the first includes its lead-in clause; the "e.g." terminals are examples
+Q o :: Before I start digging into code, can you grab a bit more signal so we can tell if the **core is stalled** or just the **renderer**?
+Q y :: Does the **TIME** counter tick down when it “freezes”?
+Q o :: Terminal + OS?
+Q y :: Did you build the **kitty‑shm** addon?
+== q0290 m | three bulleted questions after "If you can tell me:"
+Q y :: Does TIME tick?
+Q y :: Does Mario move at all?
+Q o :: Which ROM file you’re using (name/hash)?
+== q0291 e | PROPOSE_RE misses "want a"
+Q e p :: Want a diff or brief rationale?
+O a diff
+O brief rationale
+== q0292 e
+Q e p :: Want me to verify on the site or search for confirmation?
+O verify on the site
+O search for confirmation
+== q0293 e
+Q y p :: Want me to confirm the package browser shows the GIF once it refreshes?
+== q0294 e | PROPOSE_RE misses "want a"
+Q e p :: Want a diff or a walkthrough of any section?
+O a diff
+O a walkthrough of any section
+== q0295 e | the recommendation is the proposal itself
+Q y p :: Want me to draft the fork/metadata plan and a `VENDOR.md` template?
+== q0296 e | PROPOSE_RE misses "want a"
+Q e p :: Want a diff or a walkthrough of any specific change?
+O a diff
+O a walkthrough of any specific change
+== q0297 e | PROPOSE_RE misses "want a"
+Q y p :: Want a diff?
+== q0298 e
+Q y p :: Want me to publish to npm now?
+== q0299 m | second question starts after the em dash
+Q y p :: Want me to commit/tag/push?
+Q y p :: do you want one?
+== q0300 m | PROPOSE_RE matches "should I"
+Q y p :: Should I update `DELIGHTFUL_EXPERIENCE_INTENT.md` with these official design tokens and principles?
+== q0301 e
+Q y p :: Want to discuss any specific aspect?
+== q0302 m
+Q e p :: Want me to start implementing, or should we resolve the open questions first (dark mode, vim keys, etc.)?
+O start implementing
+O resolve the open questions first
+== q0303 m | hard: '?' only inside a code listing whose fence starts before the tail (a checklist string and optional chaining)
+== q0304 m | "Want me to:" followed by three list items ending in '?'; parentheticals dropped from labels
+Q m p :: Want me to: ~~ Make the checklist configurable per-project?
+O Add a project-level opt-out
+O Add a notification for the human too
+O Make the checklist configurable per-project
+== q0305 e | PROPOSE_RE misses the bare "Commit it?"
+Q y p :: Commit it?
+== q0306 m
+Q m p :: Would you like me to tweak anything - different skeleton characters, more/fewer body lines, or add animation?
+O different skeleton characters
+O more/fewer body lines
+O add animation
+== q0307 m | option labels are the bold labels; "Option B is cleaner but more invasive" is a trade-off, not a recommendation
+Q e :: Which approach would you prefer?
+O Option A (minimal change)
+O Option B (cleaner)
+== q0308 m | a request phrased as a question, then an either/or
+Q y :: Can you try running it directly with `./economist browse leaders` from the project directory to see if you get more info?
+Q e :: Also, does this happen immediately or after a few seconds?
+O immediately
+O after a few seconds
+== q0309 e
+Q y p :: Want me to show diffs?
+== q0310 m | the numbered simplifications are the options; "any of these" means multi-select
+Q m p ms :: Want me to tackle any of these?
+O Dedup RSS cache dir naming
+O Reduce FetchSection fallback repetition
+O Left/right paging logic duplication
+== q0311 e | PROPOSE_RE misses "want diffs"
+Q y p :: Want diffs for the refactor changes?
+== q0312 h | three numbered questions under "Questions to align"
+Q e :: Do you want **both** `economist demo` **and** `--demo`, or just one?
+O both
+O just one
+Q e :: Should demo mode be **available for `read`/`headlines`**, or only for TUI (`browse`)?
+O available for `read`/`headlines`
+O only for TUI (`browse`)
+Q e :: Should the UI explicitly **label demo mode** (e.g., “Leaders — Demo”) or keep it clean for screenshots?
+O label demo mode
+O keep it clean for screenshots
+== q0313 m | the bold "Why not live fetch?" is rhetorical and answered in place
+Q e p :: Want me to proceed with that PD‑excerpt approach, or stick with synthetic text for now?
+O proceed with that PD‑excerpt approach
+O stick with synthetic text for now
+== q0314 e
+Q e p :: Want me to show the diff or adjust which articles/paragraphs we include?
+O show the diff
+O adjust which articles/paragraphs we include
+== q0315 m | "the product’s goals or user persona" names two aspects of one tailoring, so yes/no
+Q y p :: Want me to tailor these to the product’s goals or user persona?
+== q0316 e
+Q y p :: Want me to show a diff?
+== q0317 h | options come from the "unless you want to…" sentence; keeping things as they are is an unlisted third answer
+Q e :: Which do you prefer?
+O switch the formula to `head`
+O a specific commit tarball
+== q0318 m | the "highest-impact first step" note is not a choice between answers
+Q y p :: Want me to start building any of this?
+== q0319 e
+Q m :: Which deck did you want to try it on — `sandbox/workshop.pptx`, `sandbox/vykhukhol.pptx`, or one of the elephant YAMLs?
+O sandbox/workshop.pptx
+O sandbox/vykhukhol.pptx
+O one of the elephant YAMLs
+== q0320 e
+Q y p :: Want me to build an actual waterfall chart PPTX with those deliberate misalignments so you can see them visually?
+== q0321 h | "Would you like me to:" has no '?', so the compiler drops it; a nested "(public or private?)" sits inside option 1; no default: "I'd create it under…" concerns account placement, not new versus existing remote
+Q e p :: Would you like me to:
+O Create a new GitHub repo
+O Add an existing remote
+Q e :: public or private?
+O public
+O private
+== q0322 h | three numbered decisions, each after a bold label that is excluded
+Q y :: Add `#92D050` and `#00B050` to custom colors?
+Q e :: Clear it, or use a placeholder like "[Project]"?
+O Clear it
+O use a placeholder like "[Project]"
+Q o :: What should it say?
+== q0323 e | option labels are the bold labels before " - "
+Q m :: Which do you prefer?
+O Keep as-is
+O You delete in PowerPoint
+O I create fresh
+== q0324 e | the closing "I can also refine…" has no '?'
+Q y p :: Want me to go ahead and build this?
+== q0325 e
+Q y p :: Want me to update the README/SKILL to briefly note both failure modes?
+== q0326 e
+Q y p :: Want me to re-open the fixed deck?
+== q0327 e
+Q y p :: Want me to look into adding that to the CLI?
+== q0328 h | three numbered questions; the second starts after its "X vs Y:" label
+Q e :: Which extension did you mean as "nicest UI/icons" — cachemire or contextimate?
+O cachemire
+O contextimate
+Q e :: keep orange as a deliberate brand constant, or derive accent from the active theme too?
+O keep orange as a deliberate brand constant
+O derive accent from the active theme too
+Q e :: Do you want the contextimate stacked bar / percent column, or keep it pure table and just fix grammar + methodology placement?
+O the contextimate stacked bar / percent column
+O keep it pure table and just fix grammar + methodology placement
+== q0329 m | the second option is a clause fragment
+Q e p :: Want me to also live-test the fixed-k suffixes in a real pi session via tmux before you merge, or is the golden coverage enough for this one?
+O live-test the fixed-k suffixes in a real pi session via tmux before you merge
+O the golden coverage enough for this one
+== q0330 m | PROPOSE_RE misses "want a"; the "Say merge…" instruction has no '?'
+Q y p :: Want a gpt-5.5 review pass on this one too before you call it?
+== q0331 e
+Q y p :: Want me to post this analysis (with the table) as a comment on #6?
+== q0332 m | a parenthetical user-style question in item 3 is not addressed to the user; the question is yes/no on the agent's pick
+Q y p :: Want me to grab #10 now and run the full implement → review → merge loop on it?
+== q0333 e
+Q o :: What would you like me to tackle?
+== q0334 e
+Q y p :: Want me to render a live snapshot via `scripts/contextimate/render-snapshot.mjs` to eyeball the new header in the TUI?
+== q0335 e
+Q e p :: Want me to add that cache-cost note to the tools section, or commit these as-is?
+O add that cache-cost note to the tools section
+O commit these as-is
+== q0336 m | "Any cuts or additions…?" is answered with "no" or free text; labeled yes/no like "Anything else?"
+Q y :: Any cuts or additions before I pounce?
+== q0337 m | the prose says what the agent would do first, but neither listed answer is recommended
+Q e :: Want all three tiers, or a subset?
+O all three tiers
+O a subset
+== q0338 m | hard: the only '?' is inside a quoted code string; the closing request has no '?'
+== q0340 m | "or something else entirely" is an escape hatch and is not labeled
+Q e :: Anything you'd like next — commit and push it, bump the version for a release, or something else entirely?
+O commit and push it
+O bump the version for a release
+== q0342 e | the seven trace rows are selectable by start time; "any" permits multiple
+Q m p ms :: Want me to read any of these traces to see what was discussed?
+O 11:50
+O 11:55
+O 12:00
+O 14:39
+O 14:03
+O 19:01
+O 20:02
+== q0343 m | the numbered list gives the user's options for their own problem, not answers to the question
+Q o :: What are you trying to do?
+== q0344 e
+Q y p :: Want me to commit the spec file and the fixes?
+== q0345 e
+Q y p :: Do you want me to commit these final changes?
+== q0346 e
+Q o :: How can I assist you further with the Hugging Face repository code or anything else?
+== q0347 m | two numbered questions after "please confirm:"
+Q o :: What is the local path of the file you want to upload?
+Q y :: Are you sure you want to upload it to that specific dataset repository?
+== q0348 m | hard: the user's question is quoted inside a session summary
+== q0349 h | an open clarification, then "Do you want me to:" with a numbered list that ends in '?'; option labels are the bold phrases
+Q o :: what do you mean by “sessions” here?
+Q m p :: Do you want me to: ~~ push them to Hugging Face?
+O Upload local files/session logs to Hugging Face Hub
+O Share Gradio app sessions
+O Export pi/coding-agent sessions
+== q0350 e | hard: the only '?' is inside inline code (`Echo 2: Again?`)
+== q0351 e | hard: the only '?' marks are inside inline code (`Echo 1: Really?`)
+== q0352 m | bold question followed by a numbered list; explanations dropped from labels
+Q m :: What would you like me to do?
+O Update the Product Hunt badge to a placeholder for Gradio 7
+O Update version references to show 7.0
+O Leave the README as-is
+== q0353 e
+Q o :: What would you like me to help you with today?
+== q0354 e | quoted example requests have no '?'
+Q o :: What can I help you with?
+== q0356 e
+Q o :: How can I help you today?
+== q0357 e
+Q o :: How can I help you today?
+== q0358 e
+Q m :: How do you want me to proceed?
+O Continue and work around those existing changes carefully
+O Pause while you clean up / confirm they’re intentional
+O Tell me exactly which files I’m allowed to touch
+== q0359 h | open question followed by "For example:" and four example sub-questions, labeled as multi-select options (without their '?')
+Q m ms :: Since I can't see the images, could you describe what specifically looks different between the two?
+O Is the color / accent wrong or missing
+O Is the border/background styling missing
+O Does it not look clickable
+O Is it rendering as plain text instead of a link
+== q0360 e
+Q o :: What do you want to work on in this repo?
+== q0361 m | Chinese; closing offer ("如果你愿意，我可以…") has no question mark
+== q0362 h | hard: Chinese two-option offer with a recommendation but no question mark
+== q0363 m | Chinese; closing offer has no question mark
+== q0364 e
+== q0365 e | the "Whether you want to…" sentence has no '?'
+Q o :: How can I help you today?
+== q0366 e
+Q o :: What can I help with in `pi-web`?
+== q0367 h | open question followed by three one-phrase example questions, labeled as options (without their '?')
+Q m :: So, what can I help you with today?
+O Bug fixes
+O New features
+O Just exploring
+== q0368 m | Chinese; closing offer has no question mark
+== q0369 e
+Q o :: Hello! What do you want to work on in this repo?
+== q0370 e
+Q o :: What can I help you with in this repo?
+== q0371 e
+Q o :: Could you let me know which file, document, or text you’d like a summary of?
+== q0372 e
+Q y :: Did you make any additional corrections beyond these?
+== q0373 m | the example parenthetical is part of the question
+Q o :: What additional build arguments would you like to add to the `container/Containerfile` (e.g., a custom Node version, environment variables, etc.)?
+== q0374 h | open question followed by "For example, do you want to:" and a list of example sub-questions; "Anything else?" escape hatch not labeled
+Q m :: could you let me know what you’d like to do with it?
+O Generate a file containing numbers up to 3000
+O Perform some calculation or conversion
+O Use it as a limit for a search or file operation
+== q0375 m | the "### Want Me to Implement This?" heading repeats the real question and is not labeled; "I can also add:" list has no '?'
+Q y p :: Would you like me to apply this change to the `./ppi` file?
+== q0376 m | the earlier `!` instructions are not questions
+Q e :: what do you want to do with the repo — just read it, or a specific change?
+O just read it
+O a specific change
+== q0377 e
+Q o :: what do you want to work on in the repo?
+== q0378 h | five numbered questions under "What I'd want your call on" plus a closing proposal; bold labels excluded where they are not the question; "(my lean)" markers are recommendations
+Q m :: dataset repo per session (my lean), one growing dataset, or bucket sync?
+O dataset repo per session
+R (my lean)
+O one growing dataset
+O bucket sync
+Q e :: HF viewer first then in-app pane (my lean), or go straight to building the pane?
+O HF viewer first then in-app pane
+R (my lean)
+O go straight to building the pane
+Q e :: **Does a share carry the workspace**, or conversation + git pointer only?
+O carry the workspace
+O conversation + git pointer only
+Q e :: briefing handoff (my lean), or do you actually want real transcript translation?
+O briefing handoff
+R (my lean)
+O real transcript translation
+Q e :: **Who's the recipient** — a teammate with their own Agent Manager Space, or someone with just a browser?
+O a teammate with their own Agent Manager Space
+O someone with just a browser
+Q e p :: Want me to turn this into a design doc in the repo, or prototype the bundle exporter for one harness end-to-end so we can look at real output?
+O turn this into a design doc in the repo
+O prototype the bundle exporter for one harness end-to-end
+== q0379 m | hard: joke setup question, rhetorical
+== q0380 m | hard: rhetorical joke question
+== q0381 m | hard: the only question is quoted inside a joke
+== q0382 m | hard: joke setup question, rhetorical
+== q0383 m | the request needs the class lists, not yes/no permission; the recommendation answers an earlier question
+Q o :: can you check those two URLs while logged in and share the class lists?
+== q0384 m | hard: the only '?' is inside a URL in inline code
+== q0385 e
+Q y p :: Want me to create the Modal script to do the merge + GGUF conversion and upload?
+== q0387 m | hard: the only '?' is inside inline code (`struct<type, text?>`)
+== q0388 e
+Q y p :: Want me to start building Phase 2 now?
+== q0389 e
+Q y p :: Want to proceed with Phase 3?
+== q0390 m | hard: the only '?' is inside quoted Hindi model output
+== q0391 e
+Q y p :: Want me to turn this into a concrete 4-day build plan (today → June 15) with the trimmed feature scope and a Gradio app skeleton?
+== q0392 h | "(a) … or (b) …" offer, but the agent then suggests both, so multi-select; list letters excluded from labels
+Q e p ms :: Want me to (a) update the PRD's model stack + award strategy sections to reflect this OpenBMB-local plan, or (b) write the 4-day build schedule (Jun 11→15) with the trimmed scope?
+O update the PRD's model stack + award strategy sections to reflect this OpenBMB-local plan
+O write the 4-day build schedule (Jun 11→15) with the trimmed scope
+== q0393 m | the (a)/(b) steps are a single plan; "do both?" is yes/no
+Q y p :: Want me to do both?
+== q0394 e
+Q y p :: Want me to draft the fine-tuning dataset plan (what marking-scheme data to collect and how to format it) next?
+== q0395 e
+Q y p :: Want me to scaffold the repo structure now?
+== q0396 h | the two numbered questions are for the hackathon Discord, not the user, so not labeled; the closing sentence joins an offer and a yes/no question, labeled as one Q
+Q y p :: Want me to start, and do you have the Modal CLI authenticated (`modal token set`) so I can target a real deploy?
+== q0397 m | hard: rhetorical self-question ("Did I confirm it…? Not yet.")
+== q0398 m | hard: the only question is quoted (“does the method split…?”)
+== q0399 m | hard: bold headings repeat the user's questions and are answered
+== q0400 m | hard: the only '?' is inside a URL query string
+== q0401 e
+Q y p :: Want me to wire that in and re-render spf_001 so you can see both players tracked?
+== q0402 e
+Q y p :: Should I go make those speed-vs-time plots — pulling a goal, a clean miss, and ideally a post/rebound clip — so we can confirm the fingerprints are really there?
+== q0403 m | "and/or" list after "Want me to:" means multi-select; trailing parentheticals dropped
+Q e p ms :: Want me to: ~~ push for 12/12?
+O send the updated 12
+O dig into `spf_006`
+== q0404 e
+Q o :: What else should we add before committing and pushing?
+== q0405 e
+Q o :: What would you like to work on?
+== q0406 e
+Q o :: What's on your mind?
+== q0407 e
+Q o :: What specifically would you like to know more about?
+== q0408 m | two open questions with the same intent around a table of suggestions; both labeled
+Q o :: How can I help you today?
+Q o :: What are you working on?
+== q0409 e
+Q o :: What would you like to do?
+== q0410 e | the e.g. examples are part of the question, not options
+Q o :: Could you clarify what “this” is—e.g., a specific file, piece of code, or some output you’re seeing?
+== q0411 e
+Q o :: What would you like to work on today?
+== q0412 e
+Q o :: How can I assist you today?
+== q0413 e
+Q o :: Could you please clarify what “this” refers to or specify the information you’re looking for?
+== q0414 m | hard: garbled output where '?' marks are noise
+== q0415 m | hard: garbled output with a stray '?'
+== q0416 e
+Q y p :: Would you like me to show the omitted portion of ~~ lines that were skipped)?
+== q0417 e
+Q o :: What would you like me to do?
+== q0418 e
+Q o :: How can I assist you with the vtcode project today?
+== q0419 m | "or something else" escape hatch not labeled
+Q m p :: Want me to explore a specific area — agents, LLM layer, skills system, or something else?
+O agents
+O LLM layer
+O skills system
+== q0420 e | the "Whether it's…" sentence has no '?'
+Q o :: How can I help you today?
+== q0421 e
+Q o :: What would you like to work on in the repo today?
+== q0422 e | the e.g. examples are part of the question
+Q o :: Could you clarify what “this” is—e.g., a specific file, directory, error message, or something else you’d like explained?
+== q0423 m | hard: '?' only in table cells ("Built-in HF export?"); the closing offer has no '?'
+== q0424 e
+Q y p :: Should I add a small Playwright mobile viewport check to the repo?
+== q0425 e
+Q y p :: Want me to do both?
+== q0426 e
+Q y p :: Want me to fix the two profile builders as a follow-up?
+== q0427 m | hard: the only '?' marks are URL params in inline code (`?site=`)
+== q0428 m | trailing reasoning text after the question
+Q y p :: Want me to start the dev server so you can click through it?
+== q0429 m | "one of these" points at a list mostly cut off by the tail; labeled as a yes/no offer
+Q y p :: Would you like me to integrate one of these into your site?
+== q0430 m | yes/no offer plus a conditional follow-up question
+Q y p :: Would you like me to go ahead and add it?
+Q o :: If so, what site code did you pick (or plan to pick) on GoatCounter?
+== q0431 e
+Q e p :: Want me to update `docs/features/README.md` to reflect this, or start on Feature 4?
+O update `docs/features/README.md` to reflect this
+O start on Feature 4
+== q0432 m | hard: '?' only in URLs (`player.html?p=username`)
+== q0433 e
+Q y p :: Want me to re-upload all sessions with the latest converter improvements (cleaner user prompts, no `<user_query>` wrappers)?
+== q0434 m | hard: the only question is a quoted user prompt
+== q0435 m | hard: '?' only in table cells ("Hook loaded?")
+== q0436 e
+Q y p :: Want me to commit and push this so it goes live?
+== q0437 m | trailing reasoning text after the question
+Q y p :: Want me to push this one?
+== q0438 e
+Q e p :: Want me to push, or would you rather redeploy the Apps Script first so the count-only mode is live at the same time?
+O push
+O redeploy the Apps Script first
+== q0439 m | trailing reasoning text; "either of these" is one option covering both listed fixes
+Q e p :: Want me to implement either of these, or would you rather explore a bigger architectural change (like pre-rendering at build time)?
+O implement either of these
+O explore a bigger architectural change
+== q0440 m | hard-ish: trailing reasoning contains a quoted user question and an options list, neither labeled
+Q y p :: Want me to create this index file?
+== q0441 h | "Want me to fix this? The options are:" + numbered list, then a confirm question for the recommended option; default from prose ("Option 2 is the most robust")
+Q m p d=1 :: Want me to fix this?
+O Preload all tournament data
+O Build a player index at crawl time
+O Show a warning
+Q y p :: Want me to go that route?
+== q0442 h | open question plus a question listing example symptoms, labeled as options
+Q o :: What specific behavior are you seeing?
+Q m :: Could you describe what's buggy — is it returning wrong results, freezing, not updating when you change the query?
+O returning wrong results
+O freezing
+O not updating when you change the query
+== q0443 e
+Q y p :: Want me to start implementing?
+== q0444 m | "Do you know what … should be?" asks for the URL, so open; trailing reasoning text
+Q o :: Do you know what the correct GitHub URL should be?
+== q0445 e | the requested answer is the build result
+Q o :: Could you build it now (osx-arm64) and share the result?
+== q0446 h | "Did this address…, or would you like me to…?" mixes a check-in with an offer; labeled as a two-way choice
+Q e p :: Did this summary address your questions, or would you like me to retrieve ~~ deemed necessary?
+O this summary address your questions
+O retrieve the surrounding turns from the session ID
+== q0447 e | "sessions or implementation details" is one search, not two options
+Q y p :: Would you like me to search for more recent sessions or implementation details to find out which OEC variant was chosen and the reasoning behind that decision?
+== q0448 m | hard: questions only inside quoted model-comparison output
+== q0449 m | hard: questions only inside quoted model-comparison output
+== q0450 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0451 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0452 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0453 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0454 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0455 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0456 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0457 m | hard: rhetorical question inside an essay ending
+== q0458 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0459 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0460 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0461 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0462 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0463 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0464 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0465 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0466 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0467 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0468 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0469 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0470 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0471 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0472 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0473 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0474 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0475 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0476 m | hard: rhetorical question inside an essay ending
+== q0477 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0478 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0479 m | hard: rhetorical question inside an essay ending
+== q0480 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0481 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0482 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0483 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0484 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0485 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0486 m | hard: rhetorical questions inside an essay ending
+== q0487 m | hard: rhetorical questions inside an essay ending
+== q0488 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0489 m | hard: rhetorical questions inside an essay ending
+== q0490 m | hard: rhetorical questions inside an essay ending
+== q0491 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0492 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0493 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0494 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0495 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0496 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0497 m | hard: rhetorical questions inside an essay ending
+== q0498 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0499 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0500 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0501 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0502 m | hard: '?' only as the Rust error operator inside dumped code
+== q0503 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0504 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0505 m | hard: rhetorical questions inside an essay ending
+== q0506 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0507 h | a parenthetical either-or question inside list item 4, plus the closing request for the listed details
+Q e :: should this be today, or another date?
+O today
+O another date
+Q o :: Could you please provide this information?
+== q0508 m | hard: rhetorical questions inside an essay ending
+== q0509 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0510 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0511 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0512 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0513 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0514 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0515 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0516 m | hard: numbered rhetorical questions inside an essay ending
+== q0517 h | open question followed by a bullet list of example tasks (labeled as options, bold labels only), then a second open question
+Q m :: What would you like to do?
+O Deploy Python functions
+O Set up a Modal project
+O Create GPU-accelerated workloads
+O Schedule cron jobs
+Q o :: What's your use case?
+== q0518 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0519 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0520 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0521 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0522 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0523 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0524 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0525 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0526 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0527 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0528 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0529 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0530 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0531 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0532 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0533 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0534 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0535 e
+Q o :: How can I assist you today?
+== q0536 e
+Q o :: How can I help you with your code today?
+== q0537 m | hard: quoted questions inside model-comparison output (style analysis)
+== q0538 h | hard: '?' only inside a quoted search prompt and a URL query; the closing offer ("just ask") has no '?'
+== q0539 m | terse "caveman" style open question
+Q o :: What need?
+== q0540 h | two-way offer; default from the prose recommendation ("full bake now")
+Q e p d=1 :: Want a 2nd 20s proto with the upgrades first, or trust it and go straight to full bake of all ~28?
+O a 2nd 20s proto with the upgrades first
+O trust it and go straight to full bake of all ~28
+== q0541 m | hard: rhetorical self-question in a status note ("video already uploaded? no —")
+== q0542 m | hard: '?' only in a URL test hook (`?test=1…`)
+== q0543 e | terse "caveman" style
+Q o :: What need fix?
+== q0544 e | terse "caveman" style
+Q o :: What need?
+== q0545 e | terse "caveman" style
+Q o :: What need?
+== q0546 m | hard: '?' only in a cache-bust query (`?v=3`)
+== q0547 e
+Q y p :: Want me to build the confidence-gated version and measure what % of questions exit at the fast path?
+== q0548 e
+Q y p :: Want me to build that?
+== q0549 m | hard: '?' only as a key name ("Press `?`")
+== q0550 m | hard: '?' only in cache-bust URLs (`style.css?v=2`)
+== q0551 m | terse style; the "Tell me what run" follow-up has no '?'
+Q o :: Which script/program print this?
+== q0552 m | terse "Want X instead?" read as an offer to change the format
+Q y p :: Want "B" instead?
+== q0553 m | the "If they're stray…" sentence explains both answers but has no '?'
+Q y :: Are they yours (or a ralph session you started)?
+== q0554 e
+Q y p :: Want me to journal/commit the output-test script as a permanent eval?
+== q0555 e
+Q y p :: Want me to delete the extra agents and close GLI-233?
+== q0556 m | "some or all" of a numbered list mostly cut off by the tail; labeled as a yes/no offer
+Q y p :: Want me add some or all as Rules 8+?
+== q0557 e | terse style
+Q y p :: Want me restructure file along these lines?
+== q0558 m | "some set" of a numbered list mostly cut off by the tail; labeled as a yes/no offer
+Q y p :: Want me implement some set?
+== q0559 e
+Q y p :: Want these folded into research.md as a third section (community ideas + the two arxiv links)?
+== q0560 e
+Q y p :: Want me to apply the dedup/self-merge fix in `tournament.py`?
+== q0561 m | hard: '?' only in a URL (`test-scene.html?map=...`)
+== q0562 m | hard: '?' only in a URL param (`?ff=5`)
+== n0563 e
+== n0564 e
+== n0565 m | Chinese; closing suggestion has no question mark
+== n0566 e
+== n0567 e
+== n0568 m | closing offer ("If you want, I can…") has no '?'
+== n0569 e
+== n0570 e
+== n0571 e
+== n0572 e
+== n0573 e
+== n0574 e
+== n0575 e
+== n0576 e
+== n0577 e
+== n0578 e
+== n0579 e
+== n0580 e
+== n0581 e
+== n0582 m | a "Questions or Assumptions:" heading with "None."; no '?'
+== n0583 e
+== n0584 e
+== n0585 e
+== n0586 e
+== n0587 e
+== n0588 e
+== n0589 e
+== n0590 e
+== n0591 e
+== n0592 m | closing offer has no '?'
+== n0593 m | "Say the word" invites a reply without asking a question
+== n0594 e
+== n0595 e
+== n0596 e
+== n0597 e
+== n0598 e
+== n0599 e
+== n0600 m | closing offer has no '?'
+== n0601 m | Chinese open question with a full-width question mark (？)
+Q o :: 有什么我可以帮你的吗？
+== n0602 e
+== n0603 m | asks the user to reply with a phrase, but no question
+== n0604 e
+== n0605 e
+== n0606 m | hard: Korean; '?' only as `?` block names in inline code
+== n0607 e
+== n0608 e
+== n0609 e
+== n0610 e
+== n0611 e
+== n0612 m | Chinese; closing offer has no question mark
+== n0613 e
+== n0614 e
+== n0615 m | closing offer has no '?'
+== n0616 e
+== n0617 e
+== n0618 e
+== n0619 e
+== n0620 e
+== n0621 e
+== n0622 m | closing offer has no '?'
+== n0623 e
+== n0624 e
+== n0625 e
+== n0626 e
+== n0627 e
+== n0628 e
+== n0629 e
+== n0630 e
+== n0631 e
+== n0632 e
+== n0633 e
+== n0634 e
+== n0635 m | two offers, neither with '?'
+== n0636 e
+== n0637 e
+== n0638 e
+== n0639 m | invitation to ask for more, no '?'
+== n0640 m | "tell me what you see" request, no '?'
+== n0641 e
+== n0642 e
+== n0643 e
+== n0644 e
+== n0645 e
+== n0646 e
+== n0647 e
+== n0648 e
+== n0649 e
+== n0650 e
+== n0651 e
+== n0652 e
+== n0653 e
+== n0654 e
+== n0655 m | instruction to sign in and report back, no '?'
+== n0656 m | closing offer has no '?'
+== n0657 e
+== n0658 h | pick-which prompt with no '?' ("Say \"go\" … add numbers for the taste ones")
+== n0659 m | closing offer has no '?'
+== n0660 e
+== n0661 e
+== n0662 e
+== n0689 m | Chinese yes/no offer with a full-width question mark (？); the follow-up sentence is an instruction
+Q y p :: 需要我直接按推荐方案把这两处改掉吗？
+== n0708 m | hard: '?' only in a table header ("Had actually played?")
+== n0725 m | hard: '?' only in Elixir function names in inline code (`checks_ready?/2`)
+== n0817 m | hard: rhetorical heading ("### So what's in the wheel?") answered right below
