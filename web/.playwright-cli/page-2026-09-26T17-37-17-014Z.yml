@@ -1,8 +1,0 @@
-- main [ref=e2]:
-  - heading "gpu-questions" [level=1] [ref=e3]
-  - paragraph [ref=e4]: Local ONNX tagger in the browser. Features, CRF, and compile run in TypeScript.
-  - textbox [ref=e5]: Want me to merge it now, or wait for CI?
-  - generic [ref=e6]:
-    - button "Parse" [ref=e7] [cursor=pointer]
-    - paragraph [ref=e8]: Loading ONNX model…
-  - generic [ref=e9]: "[]"

@@ -15,3 +15,4 @@ web/public/model/
 *.tgz
 .DS_Store
 .pytest_cache/
+web/.playwright-cli/
