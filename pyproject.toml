@@ -2,7 +2,7 @@
 name = "gpu-questions"
 version = "0.1.0"
 description = "Tiny token tagger that turns agent questions into structured answer options"
-requires-python = ">=3.13,<3.14"
+requires-python = ">=3.14,<3.15"
 dependencies = ["torch", "numpy"]
 
 [dependency-groups]
